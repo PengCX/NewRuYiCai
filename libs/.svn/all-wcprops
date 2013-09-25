@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/MyRepositories/!svn/ver/3/ruyicai/libs
+END
+jsr305-1.3.9.jar
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/MyRepositories/!svn/ver/3/ruyicai/libs/jsr305-1.3.9.jar
+END
+roboguice-2.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/MyRepositories/!svn/ver/3/ruyicai/libs/roboguice-2.0.jar
+END
+android-support-v4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/MyRepositories/!svn/ver/3/ruyicai/libs/android-support-v4.jar
+END
+guice-3.0-no_aop.jar
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/MyRepositories/!svn/ver/3/ruyicai/libs/guice-3.0-no_aop.jar
+END
+javax.inject-1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/MyRepositories/!svn/ver/3/ruyicai/libs/javax.inject-1.jar
+END

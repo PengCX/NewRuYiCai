@@ -1,0 +1,387 @@
+# view res/layout/buylotteryhall_activity.xml #generated:30
+# view res/layout/functions_activity.xml #generated:10
+# view res/layout/viewpagers_activity.xml #generated:11
+-keep class android.support.v4.view.ViewPager { <init>(...); }
+
+# view AndroidManifest.xml #generated:16
+-keep class android.test.InstrumentationTestRunner { <init>(...); }
+
+# view AndroidManifest.xml #generated:42
+-keep class com.ruyicai.android.controller.activity.functions.FunctionsActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:49
+-keep class com.ruyicai.android.controller.activity.home.HomeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:509
+-keep class com.ruyicai.android.controller.activity.home.accountrecharge.AccountRechargeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:545
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.ActionCenterActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:55
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.BuyLotteryHallActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:539
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.LotteryInformationActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:551
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.LucklyPickActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:412
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.arrange3.ArrangeThreeActivityGroup { <init>(...); }
+
+# view AndroidManifest.xml #generated:427
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.arrange3.ArrangeThreeGroupSixActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:422
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.arrange3.ArrangeThreeGroupThreeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:417
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.arrange3.ArrangeThreeSelfSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:462
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.arrange5.ArrangeFiveActivityGroup { <init>(...); }
+
+# view AndroidManifest.xml #generated:472
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.arrange5.ArrangeFiveRandomSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:467
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.arrange5.ArrangeFiveSelfSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:577
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.betinformation.PresentInformationActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:567
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.bettinginformation.AppendInformationActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:562
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.bettinginformation.BettingInformationActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:557
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.bettinginformation.BettingInformationActivityGroup { <init>(...); }
+
+# view AndroidManifest.xml #generated:572
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.bettinginformation.UnionInformationActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:497
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.compete.basketball.CompeteBasketBallActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:221
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.compete.football.CompeteFootballActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:190
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.constantly.ConstantlyActivityGroup { <init>(...); }
+
+# view AndroidManifest.xml #generated:210
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.constantly.ConstantlyBigSmallActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:215
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.constantly.ConstantlyFiveStarActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:195
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.constantly.ConstantlyOneStarActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:205
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.constantly.ConstantlyThreeStarActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:200
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.constantly.ConstantlyTwoStarActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:65
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.doubleball.DoubleBallActivityGroup { <init>(...); }
+
+# view AndroidManifest.xml #generated:75
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.doubleball.DoubleBallCourageSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:70
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.doubleball.DoubleBallSelfSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:281
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.elevenluckgold.ElevenLuckGoldActivityGroup { <init>(...); }
+
+# view AndroidManifest.xml #generated:321
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.elevenluckgold.ElvenLuckGoldBeforOneSelfSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:341
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.elevenluckgold.ElvenLuckGoldBeforThreeGroupSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:331
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.elevenluckgold.ElvenLuckGoldBeforThreeSelfSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:336
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.elevenluckgold.ElvenLuckGoldBeforTwoGroupSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:326
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.elevenluckgold.ElvenLuckGoldBeforTwoSelfSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:316
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.elevenluckgold.ElvenLuckGoldOptionalEightActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:301
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.elevenluckgold.ElvenLuckGoldOptionalFiveActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:296
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.elevenluckgold.ElvenLuckGoldOptionalFourActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:311
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.elevenluckgold.ElvenLuckGoldOptionalSevenActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:306
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.elevenluckgold.ElvenLuckGoldOptionalSixActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:291
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.elevenluckgold.ElvenLuckGoldOptionalThreeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:286
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.elevenluckgold.ElvenLuckGoldOptionalTwoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:492
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.football.FootBallActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:346
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.guangdong11xuan5.GuangDongElevenSelectFiveActivityGroup { <init>(...); }
+
+# view AndroidManifest.xml #generated:387
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.guangdong11xuan5.GuangDongElevenSelectFiveBeforOneSelfSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:407
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.guangdong11xuan5.GuangDongElevenSelectFiveBeforThreeGroupSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:397
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.guangdong11xuan5.GuangDongElevenSelectFiveBeforThreeSelfSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:402
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.guangdong11xuan5.GuangDongElevenSelectFiveBeforTwoGroupSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:392
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.guangdong11xuan5.GuangDongElevenSelectFiveBeforTwoSelfSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:382
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.guangdong11xuan5.GuangDongElevenSelectFiveOptionalEightActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:367
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.guangdong11xuan5.GuangDongElevenSelectFiveOptionalFiveActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:362
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.guangdong11xuan5.GuangDongElevenSelectFiveOptionalFourActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:377
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.guangdong11xuan5.GuangDongElevenSelectFiveOptionalSevenActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:372
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.guangdong11xuan5.GuangDongElevenSelectFiveOptionalSixActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:357
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.guangdong11xuan5.GuangDongElevenSelectFiveOptionalThreeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:352
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.guangdong11xuan5.GuangDongElevenSelectFiveOptionalTwoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:226
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.happyevery.GuangDongHappyVeryActivityGroup { <init>(...); }
+
+# view AndroidManifest.xml #generated:256
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.happyevery.GuangDongHappyVeryOptionalFiveActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:251
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.happyevery.GuangDongHappyVeryOptionalFourActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:246
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.happyevery.GuangDongHappyVeryOptionalThreeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:241
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.happyevery.GuangDongHappyVeryOptionalTwoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:231
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.happyevery.GuangDongHappyVerySelectOneNumBettingActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:236
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.happyevery.GuangDongHappyVerySelectOneRedBettingActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:266
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.happyevery.GuangDongHappyVerySelectThreeBeforDirectly { <init>(...); }
+
+# view AndroidManifest.xml #generated:276
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.happyevery.GuangDongHappyVerySelectThreeBeforGroupActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:261
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.happyevery.GuangDongHappyVerySelectTwoLinkDirectlyActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:271
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.happyevery.GuangDongHappyVerySelectTwoLinkGroup { <init>(...); }
+
+# view AndroidManifest.xml #generated:120
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveActivityGroup { <init>(...); }
+
+# view AndroidManifest.xml #generated:175
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveBeforOneGroupSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:160
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveBeforOneSelfSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:185
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveBeforThreeGroupSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:170
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveBeforThreeSelfSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:180
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveBeforTwoGroupSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:165
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveBeforTwoSelfSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:155
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalEightActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:140
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalFiveActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:135
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalFourActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:150
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalSevenActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:145
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalSixActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:130
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalThreeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:125
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalTwoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:60
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.selfselect.SelfSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:432
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.sevenhappy.ServenHappyActivityGroup { <init>(...); }
+
+# view AndroidManifest.xml #generated:442
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.sevenhappy.SevenHappyCourageSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:437
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.sevenhappy.SevenHappySelfSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:477
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.sevenstar.ServenStarActivityGroup { <init>(...); }
+
+# view AndroidManifest.xml #generated:487
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.sevenstar.ServenStarRandomSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:482
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.sevenstar.ServenStarSelfSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:80
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.superlotto.SuperLottoActivityGroup { <init>(...); }
+
+# view AndroidManifest.xml #generated:90
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.superlotto.SuperLottoCourageSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:85
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.superlotto.SuperLottoSelfSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:95
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.superlotto.SuperLottoTwelveSelectTwoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:447
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.twentytwoselectfive.TwentyTwoSelectFiveActivityGroup { <init>(...); }
+
+# view AndroidManifest.xml #generated:457
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.twentytwoselectfive.TwentyTwoSelectFiveCourageSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:452
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.twentytwoselectfive.TwentyTwoSelectFiveSelfSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:100
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.welfare3d.Welfare3DActivityGroup { <init>(...); }
+
+# view AndroidManifest.xml #generated:115
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.welfare3d.Welfare3DGroupSixActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:110
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.welfare3d.Welfare3DGroupThreeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:105
+-keep class com.ruyicai.android.controller.activity.home.buylotteryhall.welfare3d.Welfare3DSelfSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:503
+-keep class com.ruyicai.android.controller.activity.home.lotterynotice.LotteryNoticeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:521
+-keep class com.ruyicai.android.controller.activity.home.more.MoreActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:515
+-keep class com.ruyicai.android.controller.activity.home.usercenter.UserCenterActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:527
+-keep class com.ruyicai.android.controller.activity.loginorregister.LoginActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:533
+-keep class com.ruyicai.android.controller.activity.loginorregister.RegisterActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:29
+-keep class com.ruyicai.android.controller.activity.splash.SplashActivity { <init>(...); }
+
+# view res/layout/switchtabs_activitygroup.xml #generated:24
+-keep class com.ruyicai.android.controller.compontent.bar.BetBar { <init>(...); }
+
+# view res/layout/appendedinformation_activity.xml #generated:174
+# view res/layout/bettinginformation_activity.xml #generated:126
+# view res/layout/presentinformation_activity.xml #generated:183
+# view res/layout/unioninformation_activity.xml #generated:82
+-keep class com.ruyicai.android.controller.compontent.bar.BettingConfirmBar { <init>(...); }
+
+# view res/layout/compete_activity.xml #generated:17
+-keep class com.ruyicai.android.controller.compontent.bar.CompeteBar { <init>(...); }
+
+# view res/layout/compete_activity.xml #generated:37
+-keep class com.ruyicai.android.controller.compontent.bar.CompeteBetBar { <init>(...); }
+
+# view res/layout/spinners_activitygroup.xml #generated:17
+# view res/layout/switchtabs_activitygroup.xml #generated:15
+-keep class com.ruyicai.android.controller.compontent.bar.LotteryInformationBar { <init>(...); }
+
+# view res/layout/accountercharge_activity.xml #generated:11
+# view res/layout/buylotteryhall_activity.xml #generated:11
+# view res/layout/compete_activity.xml #generated:10
+# view res/layout/login_activity.xml #generated:12
+# view res/layout/lotterynotice_activity.xml #generated:10
+# view res/layout/more_activity.xml #generated:10
+# view res/layout/register_activity.xml #generated:11
+# view res/layout/spinners_activitygroup.xml #generated:11
+# view res/layout/superlotto_activity.xml #generated:10
+# view res/layout/switchtabs_activitygroup.xml #generated:9
+# view res/layout/usercenter_activity.xml #generated:11
+# view res/layout/welfare3d_activity.xml #generated:8
+-keep class com.ruyicai.android.controller.compontent.bar.TitleBar { <init>(...); }
+
+# view res/layout/compete_againstlist_wintielossitem.xml #generated:50
+# view res/layout/compete_againstlist_wintielossitem.xml #generated:59
+# view res/layout/compete_againstlist_wintielossitem.xml #generated:69
+-keep class com.ruyicai.android.controller.compontent.button.CompeteSelectButton { <init>(...); }
+
+# view res/layout/appendedinformation_activity.xml #generated:154
+-keep class com.ruyicai.android.controller.compontent.button.SwitchButton { <init>(...); }
+
+# view res/layout/buylotteryhall_activity.xml #generated:81
+-keep class com.ruyicai.android.controller.compontent.pagerindicator.BuyLotteryHallPageIndicator { <init>(...); }
+
+# view res/layout/doubleballcourageselect_viewpager_item.xml #generated:14
+# view res/layout/doubleballcourageselect_viewpager_item.xml #generated:24
+# view res/layout/doubleballcourageselect_viewpager_item.xml #generated:33
+-keep class com.ruyicai.android.controller.compontent.panel.SelectNumberPanel { <init>(...); }
+
+# view res/layout/selectnumber_panel.xml #generated:24
+-keep class com.ruyicai.android.controller.compontent.selectnumber.RandomSelectNumberButton { <init>(...); }
+
+# view res/layout/selectnumber_panel.xml #generated:32
+-keep class com.ruyicai.android.controller.compontent.selectnumber.SelectNumberBallGridView { <init>(...); }
+
+# view res/layout/appendedinformation_activity.xml #generated:103
+# view res/layout/appendedinformation_activity.xml #generated:78
+# view res/layout/bettinginformation_activity.xml #generated:79
+# view res/layout/presentinformation_activity.xml #generated:73
+-keep class com.ruyicai.android.controller.compontent.slideseekbar.SlideSeekBar { <init>(...); }
+

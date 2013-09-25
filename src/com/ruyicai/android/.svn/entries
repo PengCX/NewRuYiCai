@@ -1,0 +1,40 @@
+10
+
+dir
+34
+https://pengcx/svn/MyRepositories/ruyicai/src/com/ruyicai/android
+https://pengcx/svn/MyRepositories
+
+
+
+2013-05-04T12:31:28.903867Z
+34
+pengchengxiang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d3b2380c-9080-f14b-a556-ef95eda02dde
+
+controller
+dir
+
+model
+dir
+
+test
+dir
+
+tools
+dir
+

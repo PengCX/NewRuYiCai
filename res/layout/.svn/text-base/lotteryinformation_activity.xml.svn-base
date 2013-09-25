@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 彩票资讯页面 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lotteryinformation"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.ruyicai.android.controller.compontent.selectnumber.SelectNumberPanel
+        android:id="@+id/selectNumberPanel1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+    </com.ruyicai.android.controller.compontent.selectnumber.SelectNumberPanel>
+
+</LinearLayout>
