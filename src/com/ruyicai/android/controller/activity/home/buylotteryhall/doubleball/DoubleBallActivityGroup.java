@@ -33,6 +33,6 @@ public class DoubleBallActivityGroup extends LotterySwitchTabsActivityGroup {
 
 	@Override
 	protected void setSwitchTabHostOnTabChangeListener() {
-		
+
 	}
 }

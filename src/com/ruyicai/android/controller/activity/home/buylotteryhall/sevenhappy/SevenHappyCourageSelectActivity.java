@@ -1,7 +1,6 @@
 package com.ruyicai.android.controller.activity.home.buylotteryhall.sevenhappy;
 
 import com.ruyicai.android.controller.activity.viewpagers.SelectNumberActivity;
-import com.ruyicai.android.controller.compontent.bar.BetBarInterface;
 import com.ruyicai.android.controller.compontent.panel.SelectNumberPanel;
 import com.ruyicai.android.controller.compontent.selectnumberpanel.SelectNumberBallType;
 
@@ -11,11 +10,7 @@ import com.ruyicai.android.controller.compontent.selectnumberpanel.SelectNumberB
  * @author xiang_000
  * @since RYC1.0 2013-4-29
  */
-public class SevenHappyCourageSelectActivity extends SelectNumberActivity
-		implements BetBarInterface {
-	{
-//		set_fBettingBarInterface(this);
-	}
+public class SevenHappyCourageSelectActivity extends SelectNumberActivity {
 
 	@Override
 	protected boolean isAddPlayMethodTextView() {
@@ -92,25 +87,5 @@ public class SevenHappyCourageSelectActivity extends SelectNumberActivity
 			selectNumberPanel.initSelectNumberPanelShow("胆码区：", 6, 10, 1, 33,
 					SelectNumberBallType.REDBALL, lossValues, true);
 		}
-	}
-
-	@Override
-	public void setNumberBasketButton() {
-
-	}
-
-	@Override
-	public void setClearSelectedNumberButton() {
-
-	}
-
-	@Override
-	public void setAddToNumberBasketButton() {
-
-	}
-
-	@Override
-	public void setBettingButton() {
-
 	}
 }

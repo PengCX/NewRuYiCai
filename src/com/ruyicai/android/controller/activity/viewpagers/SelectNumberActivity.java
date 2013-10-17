@@ -36,7 +36,7 @@ public abstract class SelectNumberActivity extends ViewPagesActivity {
 	private PageChangeRadioButtonsInterface			_fPageChangeRadioButtonsInterface;
 	/** 玩法文本框接口 */
 	private PlayMethodTextViewInterface				_fPlayMethodTextViewInterface;
-	
+
 	public PageChangeRadioButtonsInterface get_fPageChangeRadioButtonsInterface() {
 		return _fPageChangeRadioButtonsInterface;
 	}
@@ -54,7 +54,6 @@ public abstract class SelectNumberActivity extends ViewPagesActivity {
 			PlayMethodTextViewInterface _fPlayMethodTextViewInterface) {
 		this._fPlayMethodTextViewInterface = _fPlayMethodTextViewInterface;
 	}
-
 
 	{
 		_fSelectNumberPanelList = new ArrayList<ArrayList<SelectNumberPanel>>();
@@ -209,5 +208,20 @@ public abstract class SelectNumberActivity extends ViewPagesActivity {
 			_fPlayMethodTextViewInterface.setPlayMethodTextViewContent();
 			initSlideAreaShow();
 		}
+	}
+
+	/**
+	 * 获取选号面板选择的号码字符串
+	 */
+	public String getSelectNumberPanelsSelectedNumberString() {
+		int nowShowPage = _fSlideAreaViewPager.getCurrentItem();
+		List<SelectNumberPanel> nowShowPageSelectNumberPanels = _fSelectNumberPanelList
+				.get(nowShowPage);
+		int panelNum = nowShowPageSelectNumberPanels.size();
+		for (int panel_i = 0; panel_i < panelNum; panel_i++) {
+			SelectNumberPanel selectNumberPanel = nowShowPageSelectNumberPanels.get(panel_i);
+//			List<Integer> selectedNumbers = selectNumberPanel.getSelectedBallNumbers();
+		}
+		return "";
 	}
 }

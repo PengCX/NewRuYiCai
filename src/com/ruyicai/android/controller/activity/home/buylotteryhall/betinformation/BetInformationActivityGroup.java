@@ -13,7 +13,7 @@ import android.widget.TabHost.OnTabChangeListener;
  * @since RYC1.0 2013-4-18
  */
 public class BetInformationActivityGroup extends SwitchTabsActivityGroup {
-	
+
 	@Override
 	public void setTitleTextView() {
 		_fTitleBar._fTitleTextView

@@ -3,15 +3,10 @@ package com.ruyicai.android.controller.activity.home.buylotteryhall.sevenstar;
 import android.view.View;
 
 import com.ruyicai.android.controller.activity.viewpagers.SelectNumberActivity;
-import com.ruyicai.android.controller.compontent.bar.BetBarInterface;
 import com.ruyicai.android.controller.compontent.panel.SelectNumberPanel;
 import com.ruyicai.android.controller.compontent.selectnumberpanel.SelectNumberBallType;
 
-public class ServenStarSelfSelectActivity extends SelectNumberActivity
-		implements BetBarInterface {
-	{
-//		set_fBettingBarInterface(this);
-	}
+public class ServenStarSelfSelectActivity extends SelectNumberActivity {
 
 	@Override
 	protected boolean isAddPlayMethodTextView() {
@@ -158,25 +153,5 @@ public class ServenStarSelfSelectActivity extends SelectNumberActivity
 					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
-	}
-
-	@Override
-	public void setNumberBasketButton() {
-
-	}
-
-	@Override
-	public void setClearSelectedNumberButton() {
-
-	}
-
-	@Override
-	public void setAddToNumberBasketButton() {
-
-	}
-
-	@Override
-	public void setBettingButton() {
-
 	}
 }

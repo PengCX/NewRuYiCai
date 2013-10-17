@@ -11,7 +11,7 @@ import com.ruyicai.android.controller.compontent.selectnumberpanel.SelectNumberB
  * @since RYC1.0 2013-4-21
  */
 public class DoubleBallCourageSelectActivity extends SelectNumberActivity {
-	
+
 	@Override
 	protected boolean isAddPlayMethodTextView() {
 		return false;
@@ -113,23 +113,23 @@ public class DoubleBallCourageSelectActivity extends SelectNumberActivity {
 		}
 	}
 
-//	@Override
-//	public void setNumberBasketButton() {
-//
-//	}
-//
-//	@Override
-//	public void setClearSelectedNumberButton() {
-//
-//	}
-//
-//	@Override
-//	public void setAddToNumberBasketButton() {
-//
-//	}
-//
-//	@Override
-//	public void setBettingButton() {
-//
-//	}
+	// @Override
+	// public void setNumberBasketButton() {
+	//
+	// }
+	//
+	// @Override
+	// public void setClearSelectedNumberButton() {
+	//
+	// }
+	//
+	// @Override
+	// public void setAddToNumberBasketButton() {
+	//
+	// }
+	//
+	// @Override
+	// public void setBettingButton() {
+	//
+	// }
 }

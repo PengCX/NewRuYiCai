@@ -1,7 +1,6 @@
 package com.ruyicai.android.controller.activity.home.buylotteryhall.superlotto;
 
 import com.ruyicai.android.controller.activity.viewpagers.SelectNumberActivity;
-import com.ruyicai.android.controller.compontent.bar.BetBarInterface;
 import com.ruyicai.android.controller.compontent.panel.SelectNumberPanel;
 import com.ruyicai.android.controller.compontent.selectnumberpanel.SelectNumberBallType;
 
@@ -13,12 +12,7 @@ import android.view.View;
  * @author xiang_000
  * @since RYC1.0 2013-4-21
  */
-public class SuperLottoTwelveSelectTwoActivity extends SelectNumberActivity
-		implements BetBarInterface {
-
-	{
-//		set_fBettingBarInterface(this);
-	}
+public class SuperLottoTwelveSelectTwoActivity extends SelectNumberActivity {
 
 	@Override
 	protected boolean isAddPlayMethodTextView() {
@@ -70,25 +64,5 @@ public class SuperLottoTwelveSelectTwoActivity extends SelectNumberActivity
 					SelectNumberBallType.BLUEBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
-	}
-
-	@Override
-	public void setNumberBasketButton() {
-
-	}
-
-	@Override
-	public void setClearSelectedNumberButton() {
-
-	}
-
-	@Override
-	public void setAddToNumberBasketButton() {
-
-	}
-
-	@Override
-	public void setBettingButton() {
-
 	}
 }

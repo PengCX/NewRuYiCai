@@ -7,6 +7,7 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 /**
  * 投注栏：包含号码篮、清空号码篮、加入号码篮和投注按钮
@@ -17,6 +18,9 @@ import android.widget.LinearLayout;
 public class BetBar extends LinearLayout {
 	/** 上下文对象 */
 	private Context			_fContext;
+
+	/** 已选号码 */
+	private TextView		_fSelectedNumberTextView;
 	/** 号码篮按钮 */
 	public Button			_fNumberBasketButton;
 	/** 清除选择号码按钮 */
@@ -34,6 +38,7 @@ public class BetBar extends LinearLayout {
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		layoutInflater.inflate(R.layout.bettingbar, this);
 
+		_fSelectedNumberTextView = (TextView) findViewById(R.id.bettingbar_textview_selectednumber);
 		_fNumberBasketButton = (Button) findViewById(R.id.bettingbar_button_numberbasket);
 		_fClearSelectNumberButton = (Button) findViewById(R.id.bettingbar_button_clearselectednumber);
 		_fAddToNumberBasketButton = (Button) findViewById(R.id.bettingbar_button_addtonumberbasket);
@@ -90,5 +95,15 @@ public class BetBar extends LinearLayout {
 		_fBetBarInterface.setClearSelectedNumberButton();
 		_fBetBarInterface.setAddToNumberBasketButton();
 		_fBetBarInterface.setBettingButton();
+	}
+
+	/**
+	 * 设置已选择号码文本标签的文本
+	 * 
+	 * @param aShowTextString
+	 *            要显示的文本字符串
+	 */
+	public void set_fSelectedNumberTextViewText(String aShowTextString) {
+		_fSelectedNumberTextView.setText(aShowTextString);
 	}
 }

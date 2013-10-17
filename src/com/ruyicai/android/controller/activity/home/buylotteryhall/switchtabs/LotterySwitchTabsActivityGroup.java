@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.ruyicai.android.R;
 import com.ruyicai.android.controller.activity.home.buylotteryhall.betinformation.BetInformationActivityGroup;
+import com.ruyicai.android.controller.activity.viewpagers.SelectNumberActivity;
 import com.ruyicai.android.controller.compontent.bar.BetBar;
 import com.ruyicai.android.controller.compontent.bar.BetBarInterface;
 import com.ruyicai.android.controller.compontent.bar.LotteryInformationBar;
@@ -47,7 +48,7 @@ public abstract class LotterySwitchTabsActivityGroup extends
 		// 设置投注栏接口，初始化显示
 		initBetBarShow();
 
-		//重设TabHost的相对布局参数
+		// 重设TabHost的相对布局参数
 		reSetTabHostRelativeLayoutParams();
 	}
 
@@ -154,5 +155,22 @@ public abstract class LotterySwitchTabsActivityGroup extends
 				startActivity(intent);
 			}
 		});
+	}
+
+	/**
+	 * 更新投注页面，投注栏已选号码的显示：获取当前选号页面选号面板选择的投注号码字符串，让投注栏的已选号码标签显示
+	 */
+	public void updateBetBarSelectedNumberShow() {
+		String selectedNumberString = getNowPageSelectedNumberString();
+		_fBetBar.set_fSelectedNumberTextViewText(selectedNumberString);
+	}
+
+	/**
+	 * 获取当前页面选择的号码的字符串
+	 * 
+	 * @return 当前选择的号码的字符串
+	 */
+	private String getNowPageSelectedNumberString() {
+		return ((SelectNumberActivity)getCurrentActivity()).getSelectNumberPanelsSelectedNumberString();
 	}
 }

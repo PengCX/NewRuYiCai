@@ -23,18 +23,18 @@ import roboguice.inject.InjectView;
 public abstract class SwitchTabsActivityGroup extends RoboActivityGroup
 		implements TitleBarInterface {
 	/** 选项卡导航栏标签的跳转页面类数组 */
-	protected Class<?>[]			_fSwithTabClasses;
+	protected Class<?>[]	_fSwithTabClasses;
 	/** 选项卡导航栏标签的视图数组 */
-	protected View[]				_fSwtichTabViews;
+	protected View[]		_fSwtichTabViews;
 	/** 选项卡导航栏标签标记字符串数组 */
-	protected int[]					_fSwitchTabTagIds;
+	protected int[]			_fSwitchTabTagIds;
 
 	/** 引用视图：标题栏 */
 	@InjectView(R.id.switchtabs_activitygroup_titlebar)
-	protected TitleBar				_fTitleBar;
+	protected TitleBar		_fTitleBar;
 	/** 引用视图：tabHost导航栏 */
 	@InjectView(R.id.switchtabs_activitygroup_tabhost)
-	protected TabHost				_fSwitchTabHost;
+	protected TabHost		_fSwitchTabHost;
 
 	/**
 	 * 设置切换选项卡类集合

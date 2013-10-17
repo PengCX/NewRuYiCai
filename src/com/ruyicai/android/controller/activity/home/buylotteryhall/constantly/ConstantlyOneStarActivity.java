@@ -5,14 +5,12 @@ import android.view.View;
 import com.ruyicai.android.R;
 import com.ruyicai.android.controller.activity.viewpagers.PlayMethodTextViewInterface;
 import com.ruyicai.android.controller.activity.viewpagers.SelectNumberActivity;
-import com.ruyicai.android.controller.compontent.bar.BetBarInterface;
 import com.ruyicai.android.controller.compontent.panel.SelectNumberPanel;
 import com.ruyicai.android.controller.compontent.selectnumberpanel.SelectNumberBallType;
 
 public class ConstantlyOneStarActivity extends SelectNumberActivity implements
-		BetBarInterface, PlayMethodTextViewInterface {
+		PlayMethodTextViewInterface {
 	{
-//		set_fBettingBarInterface(this);
 		set_fPlayMethodTextViewInterface(this);
 	}
 
@@ -71,26 +69,6 @@ public class ConstantlyOneStarActivity extends SelectNumberActivity implements
 					10, SelectNumberBallType.REDBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
-	}
-
-	@Override
-	public void setNumberBasketButton() {
-
-	}
-
-	@Override
-	public void setClearSelectedNumberButton() {
-
-	}
-
-	@Override
-	public void setAddToNumberBasketButton() {
-
-	}
-
-	@Override
-	public void setBettingButton() {
-
 	}
 
 }

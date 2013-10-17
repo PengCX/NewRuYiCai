@@ -354,4 +354,18 @@ public class SelectNumberBallsTableLayout extends TableLayout {
 					.setSelected();
 		}
 	}
+
+	/**
+	 * 获取已选择的小球号码字符串
+	 * 
+	 * @return 已选择的小球号码字符串
+	 */
+	public String getSelectedNumbersString() {
+		List<Integer> selectedNumbers = getSelectedBallNumbers();
+		int numberNum = selectedNumbers.size();
+		for (int number_i = 0; number_i < numberNum; number_i++) {
+
+		}
+		return null;
+	}
 }

@@ -1,6 +1,8 @@
 package com.ruyicai.android.controller.compontent.selectnumberpanel;
 
 import com.ruyicai.android.R;
+import com.ruyicai.android.controller.activity.home.buylotteryhall.switchtabs.LotterySwitchTabsActivityGroup;
+import com.ruyicai.android.controller.activity.viewpagers.SelectNumberActivity;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -8,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.Toast;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -181,9 +182,9 @@ public class SelectNumberBall extends LinearLayout {
 				_fNumberTextView.setTextColor(getResources().getColor(
 						R.color.black));
 			}
-			
-			//
-			Toast.makeText(_fContext, _fNumber, Toast.LENGTH_SHORT).show();
+
+			((LotterySwitchTabsActivityGroup) ((SelectNumberActivity) _fContext)
+					.getParent()).updateBetBarSelectedNumberShow();
 		}
 	}
 }

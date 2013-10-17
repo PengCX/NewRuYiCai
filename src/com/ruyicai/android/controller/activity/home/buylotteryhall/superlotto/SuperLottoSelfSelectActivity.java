@@ -17,10 +17,10 @@ import com.ruyicai.android.controller.compontent.selectnumberpanel.SelectNumberB
  * @author xiang_000
  * @since RYC1.0 2013-4-21
  */
-public class SuperLottoSelfSelectActivity extends SelectNumberActivity{
+public class SuperLottoSelfSelectActivity extends SelectNumberActivity {
 
 	{
-//		set_fBettingBarInterface(this);
+		// set_fBettingBarInterface(this);
 	}
 
 	@Override
@@ -99,29 +99,33 @@ public class SuperLottoSelfSelectActivity extends SelectNumberActivity{
 		}
 	}
 
-//	@Override
-//	public void setNumberBasketButton() {
-//		_fBettingBar._fNumberBasketButton
-//				.setOnClickListener(new SuperLottoSelfSelectBettingBarButtonOnClickListenter());
-//	}
-//
-//	@Override
-//	public void setClearSelectedNumberButton() {
-//		_fBettingBar._fClearSelectNumberButton
-//				.setOnClickListener(new SuperLottoSelfSelectBettingBarButtonOnClickListenter());
-//	}
-//
-//	@Override
-//	public void setAddToNumberBasketButton() {
-//		_fBettingBar._fAddToNumberBasketButton
-//				.setOnClickListener(new SuperLottoSelfSelectBettingBarButtonOnClickListenter());
-//	}
-//
-//	@Override
-//	public void setBettingButton() {
-//		_fBettingBar._fBettingButton
-//				.setOnClickListener(new SuperLottoSelfSelectBettingBarButtonOnClickListenter());
-//	}
+	// @Override
+	// public void setNumberBasketButton() {
+	// _fBettingBar._fNumberBasketButton
+	// .setOnClickListener(new
+	// SuperLottoSelfSelectBettingBarButtonOnClickListenter());
+	// }
+	//
+	// @Override
+	// public void setClearSelectedNumberButton() {
+	// _fBettingBar._fClearSelectNumberButton
+	// .setOnClickListener(new
+	// SuperLottoSelfSelectBettingBarButtonOnClickListenter());
+	// }
+	//
+	// @Override
+	// public void setAddToNumberBasketButton() {
+	// _fBettingBar._fAddToNumberBasketButton
+	// .setOnClickListener(new
+	// SuperLottoSelfSelectBettingBarButtonOnClickListenter());
+	// }
+	//
+	// @Override
+	// public void setBettingButton() {
+	// _fBettingBar._fBettingButton
+	// .setOnClickListener(new
+	// SuperLottoSelfSelectBettingBarButtonOnClickListenter());
+	// }
 
 	/**
 	 * 选号 页面投注栏按钮点击监听实现类

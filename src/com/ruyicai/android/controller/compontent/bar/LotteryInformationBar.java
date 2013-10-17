@@ -76,15 +76,17 @@ public class LotteryInformationBar extends RelativeLayout implements
 	 *            彩种类型枚举
 	 */
 	public void initLotteryInformationShow(LotteryType aLotteryType) {
-//		// 获取彩种信息栏显示上期开奖号码，期数为一期
-//		HistoryOfLotteryInfoIntenet historyOfLotteryInfoIntenet = new HistoryOfLotteryInfoIntenet(
-//				aLotteryType.get_fLotteryNumber(), "1", "1");
-//		historyOfLotteryInfoIntenet.startBackGroundThreadToGetDataFromIntenet();
+		// // 获取彩种信息栏显示上期开奖号码，期数为一期
+		// HistoryOfLotteryInfoIntenet historyOfLotteryInfoIntenet = new
+		// HistoryOfLotteryInfoIntenet(
+		// aLotteryType.get_fLotteryNumber(), "1", "1");
+		// historyOfLotteryInfoIntenet.startBackGroundThreadToGetDataFromIntenet();
 	}
 
 	@Override
 	public void finishedBackgroundThreadAndGetResultString(String aResultString) {
-		LogTools.showLog(TAG, "彩种信息栏获取历史开奖信息字符串：" + aResultString, LogTools.INFO);
+		LogTools.showLog(TAG, "彩种信息栏获取历史开奖信息字符串：" + aResultString,
+				LogTools.INFO);
 	}
 
 }

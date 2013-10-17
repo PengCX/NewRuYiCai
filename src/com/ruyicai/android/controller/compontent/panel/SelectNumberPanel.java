@@ -1,5 +1,7 @@
 package com.ruyicai.android.controller.compontent.panel;
 
+import java.util.List;
+
 import com.ruyicai.android.R;
 import com.ruyicai.android.controller.compontent.button.RandomSelectNumberButton;
 import com.ruyicai.android.controller.compontent.selectnumberpanel.SelectNumberBallType;
@@ -235,5 +237,14 @@ public class SelectNumberPanel extends LinearLayout {
 		if (_fRandomSelectNumberButton != null) {
 			_fRandomSelectNumberButton.setVisibility(visibility);
 		}
+	}
+
+	/**
+	 * 获取当前选择的小球号码集合
+	 * 
+	 * @return 当前选择的小球号码集合
+	 */
+	public String getSelectedNumbersString() {
+		return _fSelectNumberBallsTableLayout.getSelectedNumbersString();
 	}
 }

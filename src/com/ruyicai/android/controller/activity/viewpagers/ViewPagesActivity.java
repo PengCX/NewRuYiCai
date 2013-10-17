@@ -71,7 +71,6 @@ public abstract class ViewPagesActivity extends BaseActivity {
 	 */
 	protected abstract void addPlayMethodTextView();
 
-
 	/**
 	 * 根据页面索引获取并初始化滑动区域视图
 	 * 

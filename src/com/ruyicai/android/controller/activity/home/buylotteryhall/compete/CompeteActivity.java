@@ -130,10 +130,12 @@ public abstract class CompeteActivity extends BaseActivity implements
 				dialog.show();
 				break;
 			case R.id.competebar_button_eventchange:
-				Toast.makeText(CompeteActivity.this, "赛事选择按钮", Toast.LENGTH_SHORT).show();
+				Toast.makeText(CompeteActivity.this, "赛事选择按钮",
+						Toast.LENGTH_SHORT).show();
 				break;
 			case R.id.competebar_button_realtimescore:
-				Toast.makeText(CompeteActivity.this, "即时比分按钮", Toast.LENGTH_SHORT).show();
+				Toast.makeText(CompeteActivity.this, "即时比分按钮",
+						Toast.LENGTH_SHORT).show();
 				break;
 			}
 		}

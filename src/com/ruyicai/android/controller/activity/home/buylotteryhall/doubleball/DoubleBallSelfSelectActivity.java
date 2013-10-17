@@ -20,7 +20,6 @@ import com.ruyicai.android.controller.compontent.selectnumberpanel.SelectNumberB
 public class DoubleBallSelfSelectActivity extends SelectNumberActivity {
 	private static final String	TAG	= "DoubleBallSelfSelectActivity";
 
-
 	@Override
 	protected boolean isAddPlayMethodTextView() {
 		return false;
@@ -96,31 +95,7 @@ public class DoubleBallSelfSelectActivity extends SelectNumberActivity {
 					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 	}
-
-//	@Override
-//	public void setNumberBasketButton() {
-//		_fBettingBar._fNumberBasketButton
-//				.setOnClickListener(new DoubleBallSelfSelectBettingBarButtonOnClickListenter());
-//	}
-//
-//	@Override
-//	public void setClearSelectedNumberButton() {
-//		_fBettingBar._fClearSelectNumberButton
-//				.setOnClickListener(new DoubleBallSelfSelectBettingBarButtonOnClickListenter());
-//	}
-//
-//	@Override
-//	public void setAddToNumberBasketButton() {
-//		_fBettingBar._fAddToNumberBasketButton
-//				.setOnClickListener(new DoubleBallSelfSelectBettingBarButtonOnClickListenter());
-//	}
-//
-//	@Override
-//	public void setBettingButton() {
-//		_fBettingBar._fBettingButton
-//				.setOnClickListener(new DoubleBallSelfSelectBettingBarButtonOnClickListenter());
-//	}
-
+	
 	/**
 	 * 选号 页面投注栏按钮点击监听实现类
 	 * 
