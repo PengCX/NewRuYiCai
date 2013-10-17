@@ -20,7 +20,6 @@ import com.ruyicai.android.R;
 import com.ruyicai.android.controller.activity.BaseActivity;
 import com.ruyicai.android.controller.activity.home.HomeActivity;
 import com.ruyicai.android.controller.adapter.viewpager.ViewPagerAdapter;
-import com.ruyicai.android.model.bean.PhoneInfo;
 import com.ruyicai.android.tools.ImageTools;
 
 /**
@@ -141,7 +140,6 @@ public class FunctionsActivity extends BaseActivity implements OnClickListener {
 		ImageView _fFunctionItemImageView = (ImageView) functionView
 				.findViewById(R.id.functions_imageview_viewpageitem);
 
-		PhoneInfo phoneInfo = PhoneInfo.getInstance(this);
 		int screenWidth = _fWindowManager.getDefaultDisplay().getWidth();
 		int screenHeight = _fWindowManager.getDefaultDisplay().getHeight();
 

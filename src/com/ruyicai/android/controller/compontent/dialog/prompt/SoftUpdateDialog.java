@@ -5,7 +5,6 @@ import com.ruyicai.android.controller.activity.splash.SplashActivity;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.graphics.Typeface;
 import android.widget.TextView;
 import android.widget.Toast;
 

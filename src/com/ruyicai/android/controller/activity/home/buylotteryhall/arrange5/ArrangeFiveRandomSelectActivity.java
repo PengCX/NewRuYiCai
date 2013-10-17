@@ -48,4 +48,5 @@ public class ArrangeFiveRandomSelectActivity extends SelectNumberActivity
 	protected void initSelectNumberPanelsWithPage(int aPage_i) {
 
 	}
+
 }

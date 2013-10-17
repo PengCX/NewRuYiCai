@@ -92,4 +92,5 @@ public class ConstantlyOneStarActivity extends SelectNumberActivity implements
 	public void setBettingButton() {
 
 	}
+
 }

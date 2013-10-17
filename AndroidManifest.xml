@@ -216,7 +216,7 @@
             android:name=".controller.activity.home.buylotteryhall.constantly.ConstantlyFiveStarActivity"
             android:screenOrientation="portrait" >
         </activity>
-   
+
         <!-- 竞彩足球选号页面 -->
         <activity
             android:name="com.ruyicai.android.controller.activity.home.buylotteryhall.compete.football.CompeteFootballActivity"
@@ -555,22 +555,22 @@
 
         <!-- 投注信息页面组 -->
         <activity
-            android:name=".controller.activity.home.buylotteryhall.bettinginformation.BettingInformationActivityGroup"
+            android:name=".controller.activity.home.buylotteryhall.betinformation.BetInformationActivityGroup"
             android:screenOrientation="portrait" >
         </activity>
         <!-- 投注信息页面 -->
         <activity
-            android:name=".controller.activity.home.buylotteryhall.bettinginformation.BettingInformationActivity"
+            android:name=".controller.activity.home.buylotteryhall.betinformation.BetInformationActivity"
             android:screenOrientation="portrait" >
         </activity>
         <!-- 追号信息页面 -->
         <activity
-            android:name=".controller.activity.home.buylotteryhall.bettinginformation.AppendInformationActivity"
+            android:name=".controller.activity.home.buylotteryhall.betinformation.AppendInformationActivity"
             android:screenOrientation="portrait" >
         </activity>
         <!-- 合买信息页面 -->
         <activity
-            android:name=".controller.activity.home.buylotteryhall.bettinginformation.UnionInformationActivity"
+            android:name=".controller.activity.home.buylotteryhall.betinformation.UnionInformationActivity"
             android:screenOrientation="portrait" >
         </activity>
         <!-- 赠送信息页面 -->

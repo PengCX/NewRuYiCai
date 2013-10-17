@@ -130,10 +130,10 @@ public abstract class CompeteActivity extends BaseActivity implements
 				dialog.show();
 				break;
 			case R.id.competebar_button_eventchange:
-				Toast.makeText(CompeteActivity.this, "赛事选择按钮", 1).show();
+				Toast.makeText(CompeteActivity.this, "赛事选择按钮", Toast.LENGTH_SHORT).show();
 				break;
 			case R.id.competebar_button_realtimescore:
-				Toast.makeText(CompeteActivity.this, "即时比分按钮", 1).show();
+				Toast.makeText(CompeteActivity.this, "即时比分按钮", Toast.LENGTH_SHORT).show();
 				break;
 			}
 		}
@@ -146,7 +146,7 @@ public abstract class CompeteActivity extends BaseActivity implements
 	 * @author Administrator
 	 * @since RYC1.0 2013-7-11
 	 */
-	class CompeteExpandableListAdapter<T> extends BaseExpandableListAdapter {
+	class CompeteExpandableListAdapter extends BaseExpandableListAdapter {
 		/** 上下文对象 */
 		private Context					_fcontext;
 		/** 显示分组信息集合 */

@@ -1,7 +1,5 @@
 package com.ruyicai.android.controller.activity.home.buylotteryhall.superlotto;
 
-import android.view.View;
-
 import com.ruyicai.android.R;
 import com.ruyicai.android.controller.activity.home.buylotteryhall.switchtabs.LotterySwitchTabsActivityGroup;
 import com.ruyicai.android.model.bean.lottery.LotteryType;
@@ -18,11 +16,6 @@ public class SuperLottoActivityGroup extends LotterySwitchTabsActivityGroup {
 	public void setTitleTextView() {
 		_fTitleBar._fTitleTextView.setText(LotteryType.SUPER_LOTTO
 				.get_fLotteryName());
-	}
-
-	@Override
-	protected void initLotteryInformationBarShow() {
-		_fLotteryInformationBar.setVisibility(View.VISIBLE);
 	}
 
 	@Override

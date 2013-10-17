@@ -137,4 +137,5 @@ public class Welfare3DGroupSixActivity extends SelectNumberActivity implements
 	public void setBettingButton() {
 
 	}
+
 }

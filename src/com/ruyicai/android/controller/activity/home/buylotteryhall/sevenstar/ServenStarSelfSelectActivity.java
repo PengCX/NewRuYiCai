@@ -179,5 +179,4 @@ public class ServenStarSelfSelectActivity extends SelectNumberActivity
 	public void setBettingButton() {
 
 	}
-
 }

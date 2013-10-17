@@ -86,5 +86,4 @@ public class GuangDongHappyVerySelectOneNumBettingActivity extends
 	public void setBettingButton() {
 
 	}
-
 }

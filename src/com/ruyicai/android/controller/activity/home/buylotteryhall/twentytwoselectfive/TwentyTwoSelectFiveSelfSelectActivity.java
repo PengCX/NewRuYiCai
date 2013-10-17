@@ -48,5 +48,4 @@ public class TwentyTwoSelectFiveSelfSelectActivity extends SelectNumberActivity
 	public void setBettingButton() {
 
 	}
-
 }

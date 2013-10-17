@@ -23,8 +23,6 @@ import com.ruyicai.android.tools.LogTools;
  * @since RYC1.0 2013-4-15
  */
 public abstract class ViewPagesActivity extends BaseActivity {
-	private static final String	TAG					= "ViewPagesActivity";
-
 	/** 滑动页面的页数 */
 	private static final int	VIEWPAGE_PAGE_NUM	= 2;
 

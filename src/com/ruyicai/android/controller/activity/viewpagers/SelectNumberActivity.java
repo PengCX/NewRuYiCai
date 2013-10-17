@@ -22,7 +22,7 @@ import com.ruyicai.android.controller.compontent.textview.PlayMethodTextView;
  * @since RYC1.0 2013-4-21
  */
 public abstract class SelectNumberActivity extends ViewPagesActivity {
-	/** 选号面板集合 */
+	/** 选号面板集合-当前页面可以左右侧滑，一个页面的选号面板保存在一个集合，故使用集合的集合类型 */
 	protected List<ArrayList<SelectNumberPanel>>	_fSelectNumberPanelList;
 	/** 页面中选号面板的个数 */
 	protected int									_fNumOfSelectNumberPanel;

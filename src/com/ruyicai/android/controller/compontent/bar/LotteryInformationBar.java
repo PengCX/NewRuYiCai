@@ -3,7 +3,6 @@ package com.ruyicai.android.controller.compontent.bar;
 import com.ruyicai.android.R;
 import com.ruyicai.android.model.bean.lottery.LotteryType;
 import com.ruyicai.android.model.intenet.BaseIntenet.BaseIntenetCallBackInterface;
-import com.ruyicai.android.model.intenet.home.buylotteryhall.HistoryOfLotteryInfoIntenet;
 import com.ruyicai.android.tools.LogTools;
 
 import android.content.Context;
@@ -77,10 +76,10 @@ public class LotteryInformationBar extends RelativeLayout implements
 	 *            彩种类型枚举
 	 */
 	public void initLotteryInformationShow(LotteryType aLotteryType) {
-		// 获取彩种信息栏显示上期开奖号码，期数为一期
-		HistoryOfLotteryInfoIntenet historyOfLotteryInfoIntenet = new HistoryOfLotteryInfoIntenet(
-				aLotteryType.get_fLotteryNumber(), "1", "1");
-		historyOfLotteryInfoIntenet.startBackGroundThreadToGetDataFromIntenet();
+//		// 获取彩种信息栏显示上期开奖号码，期数为一期
+//		HistoryOfLotteryInfoIntenet historyOfLotteryInfoIntenet = new HistoryOfLotteryInfoIntenet(
+//				aLotteryType.get_fLotteryNumber(), "1", "1");
+//		historyOfLotteryInfoIntenet.startBackGroundThreadToGetDataFromIntenet();
 	}
 
 	@Override

@@ -18,7 +18,6 @@ import com.ruyicai.android.controller.activity.home.HomeActivity;
 import static com.ruyicai.android.controller.compontent.dialog.DialogType.*;
 
 import com.ruyicai.android.model.bean.PhoneInfo;
-import com.ruyicai.android.model.bean.SoftWareInfo;
 import com.ruyicai.android.model.preferences.AppSharedPreferences;
 import com.ruyicai.android.tools.ImageTools;
 
@@ -29,8 +28,6 @@ import com.ruyicai.android.tools.ImageTools;
  * @since RYC1.0 2013-2-22
  */
 public class SplashActivity extends BaseActivity {
-	private static final String	TAG						= "SplashActivity";
-
 	/** 页面自动跳转前，Logo显示时间（毫秒) */
 	private static final int	LOGO_SHOW_TIME			= 3000;
 
@@ -39,8 +36,6 @@ public class SplashActivity extends BaseActivity {
 
 	/** 手机信息对象 */
 	private PhoneInfo			_fPhoneInfo;
-	/** 软件信息对象 */
-	private SoftWareInfo		_fSoftWareInfo;
 	/** 应用程序共享参数对象 */
 	AppSharedPreferences		_fAppSharedPreferences;
 

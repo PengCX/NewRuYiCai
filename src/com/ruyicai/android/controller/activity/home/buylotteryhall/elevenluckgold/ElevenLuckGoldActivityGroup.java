@@ -2,19 +2,6 @@ package com.ruyicai.android.controller.activity.home.buylotteryhall.elevenluckgo
 
 import com.ruyicai.android.R;
 import com.ruyicai.android.controller.activity.home.buylotteryhall.activitygroups.SpinnersActivityGroup;
-import com.ruyicai.android.controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveBeforOneGroupSelectActivity;
-import com.ruyicai.android.controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveBeforOneSelfSelectActivity;
-import com.ruyicai.android.controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveBeforThreeGroupSelectActivity;
-import com.ruyicai.android.controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveBeforThreeSelfSelectActivity;
-import com.ruyicai.android.controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveBeforTwoGroupSelectActivity;
-import com.ruyicai.android.controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveBeforTwoSelfSelectActivity;
-import com.ruyicai.android.controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalEightActivity;
-import com.ruyicai.android.controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalFiveActivity;
-import com.ruyicai.android.controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalFourActivity;
-import com.ruyicai.android.controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalSevenActivity;
-import com.ruyicai.android.controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalSixActivity;
-import com.ruyicai.android.controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalThreeActivity;
-import com.ruyicai.android.controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalTwoActivity;
 import com.ruyicai.android.model.bean.lottery.LotteryType;
 
 /**

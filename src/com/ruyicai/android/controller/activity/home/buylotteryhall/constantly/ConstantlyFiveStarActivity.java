@@ -164,4 +164,5 @@ public class ConstantlyFiveStarActivity extends SelectNumberActivity implements
 	public void setBettingButton() {
 
 	}
+
 }

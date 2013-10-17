@@ -166,4 +166,5 @@ public class ConstantlyTwoStarActivity extends SelectNumberActivity implements
 	public void setBettingButton() {
 
 	}
+
 }

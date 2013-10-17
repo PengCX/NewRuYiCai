@@ -19,5 +19,4 @@ public class GuangDongHappyVeryOptionalThreeActivity extends
 			break;
 		}
 	}
-
 }

@@ -15,5 +15,4 @@ public class ElvenLuckGoldOptionalThreeActivity extends
 					.setText(R.string.elevenluckgold_textview_optionalthree_courageselectplaymethod);
 		}
 	}
-
 }

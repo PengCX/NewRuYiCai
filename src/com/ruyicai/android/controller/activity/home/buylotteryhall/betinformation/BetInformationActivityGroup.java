@@ -3,7 +3,7 @@ package com.ruyicai.android.controller.activity.home.buylotteryhall.betinformati
 import com.ruyicai.android.R;
 import com.ruyicai.android.controller.activity.home.buylotteryhall.switchtabs.SwitchTabsActivityGroup;
 
-import android.view.View;
+import android.os.Bundle;
 import android.widget.TabHost.OnTabChangeListener;
 
 /**
@@ -13,6 +13,7 @@ import android.widget.TabHost.OnTabChangeListener;
  * @since RYC1.0 2013-4-18
  */
 public class BetInformationActivityGroup extends SwitchTabsActivityGroup {
+	
 	@Override
 	public void setTitleTextView() {
 		_fTitleBar._fTitleTextView
@@ -22,11 +23,6 @@ public class BetInformationActivityGroup extends SwitchTabsActivityGroup {
 	@Override
 	public void setTitleButton() {
 
-	}
-
-	@Override
-	protected void initLotteryInformationBarShow() {
-		_fLotteryInformationBar.setVisibility(View.GONE);
 	}
 
 	@Override

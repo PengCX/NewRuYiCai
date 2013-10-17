@@ -309,7 +309,7 @@ public class SelectNumberBallsTableLayout extends TableLayout {
 	 * 
 	 * @return 选中小球号码集合
 	 */
-	public List getSelectedBallNumbers() {
+	public List<Integer> getSelectedBallNumbers() {
 		List<Integer> selectedNumberList = new ArrayList<Integer>();
 
 		for (int ball_i = 0; ball_i < _fSelectBallNum; ball_i++) {

@@ -162,5 +162,4 @@ public class ArrangeThreeGroupThreeActivity extends SelectNumberActivity
 	public void setBettingButton() {
 
 	}
-
 }

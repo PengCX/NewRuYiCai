@@ -102,4 +102,5 @@ public class ConstantlyBigSmallActivity extends SelectNumberActivity implements
 	public void setBettingButton() {
 
 	}
+
 }

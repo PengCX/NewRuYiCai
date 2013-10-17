@@ -47,5 +47,4 @@ public class TwentyTwoSelectFiveCourageSelectActivity extends
 	public void setBettingButton() {
 
 	}
-
 }

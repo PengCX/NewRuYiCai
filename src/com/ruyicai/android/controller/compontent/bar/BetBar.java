@@ -26,7 +26,7 @@ public class BetBar extends LinearLayout {
 	/** 投注按钮 */
 	public Button			_fBettingButton;
 	/** 投注栏接口对象 */
-	private BetBarInterface	_fBarInterface;
+	private BetBarInterface	_fBetBarInterface;
 
 	{
 		// 初始化代码块
@@ -61,5 +61,34 @@ public class BetBar extends LinearLayout {
 	public BetBar(Context aContext, AttributeSet aAttributeSet) {
 		super(aContext, aAttributeSet);
 		_fContext = aContext;
+	}
+
+	/**
+	 * 获取投注栏接口
+	 * 
+	 * @return 投注栏接口
+	 */
+	public BetBarInterface get_fBetBarInterface() {
+		return _fBetBarInterface;
+	}
+
+	/**
+	 * 获取投注栏接口
+	 * 
+	 * @param _fBarInterface
+	 *            投注栏接口
+	 */
+	public void set_fBetBarInterface(BetBarInterface _fBarInterface) {
+		this._fBetBarInterface = _fBarInterface;
+	}
+
+	/**
+	 * 初始化投注栏的显示
+	 */
+	public void initBetBarShow() {
+		_fBetBarInterface.setNumberBasketButton();
+		_fBetBarInterface.setClearSelectedNumberButton();
+		_fBetBarInterface.setAddToNumberBasketButton();
+		_fBetBarInterface.setBettingButton();
 	}
 }

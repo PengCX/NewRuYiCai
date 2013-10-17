@@ -21,5 +21,4 @@ public class JiangXiElevenSelectFiveOptionalThreeActivity extends
 					.setText(R.string.jiangxi11xuan5_textview_courageselect_optionalthreepalymethod);
 		}
 	}
-
 }

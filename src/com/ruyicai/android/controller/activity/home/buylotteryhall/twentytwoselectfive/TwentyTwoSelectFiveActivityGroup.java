@@ -2,7 +2,6 @@ package com.ruyicai.android.controller.activity.home.buylotteryhall.twentytwosel
 
 import com.ruyicai.android.R;
 import com.ruyicai.android.controller.activity.home.buylotteryhall.switchtabs.LotterySwitchTabsActivityGroup;
-import com.ruyicai.android.controller.activity.home.buylotteryhall.switchtabs.SwitchTabsActivityGroup;
 import com.ruyicai.android.model.bean.lottery.LotteryType;
 
 /**

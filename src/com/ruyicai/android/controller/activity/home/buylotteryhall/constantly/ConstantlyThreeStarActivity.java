@@ -116,4 +116,5 @@ public class ConstantlyThreeStarActivity extends SelectNumberActivity implements
 	public void setBettingButton() {
 
 	}
+
 }

@@ -70,8 +70,8 @@ public class LotteryNoticeListViewAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(int aPosition, View aConvertView, ViewGroup aParent) {
-		ViewHoler viewHoler = null;
-		if (viewHoler == null) {
+		ViewHoler viewHoler;
+		if (aConvertView == null) {
 			viewHoler = new ViewHoler();
 
 			LayoutInflater fInflater = LayoutInflater.from(_fContext);

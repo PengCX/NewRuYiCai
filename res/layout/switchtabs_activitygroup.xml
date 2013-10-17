@@ -10,22 +10,25 @@
         android:id="@+id/switchtabs_activitygroup_titlebar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-    <!-- 开奖信息栏：默认的情况下是隐藏的 -->
+    <!-- 开奖信息栏占位：在需要的时候加载彩种信息栏 -->
 
-    <com.ruyicai.android.controller.compontent.bar.LotteryInformationBar
-        android:id="@+id/switchtabs_activitygroup_lotteryinfomationbar"
+    <ViewStub
+        android:id="@+id/switchtabs_activitygroup_lotteryinfomationbar_viewstub"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/switchtabs_activitygroup_titlebar"
-        android:visibility="gone" />
+        android:inflatedId="@+id/switchtabs_activitygroup_lotteryinfomationbar_linearlayout"
+        android:layout="@layout/lottery_informationbar_included" />
 
-    <!-- 投注栏 -->
+    <!-- 投注栏占位：在需要的时候加载投注栏 -->
 
-    <com.ruyicai.android.controller.compontent.bar.BetBar
-        android:id="@+id/switchtabs_activitygroup_betbar"
+    <ViewStub
+        android:id="@+id/switchtabs_activitygroup_betbar_viewstub"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" />
+        android:layout_alignParentBottom="true"
+        android:inflatedId="@+id/switchtabs_activitygroup_betbar_linearlayout"
+        android:layout="@layout/betbar_included" />
 
     <!-- 自选和胆拖选项卡 -->
 
@@ -33,8 +36,7 @@
         android:id="@+id/switchtabs_activitygroup_tabhost"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/switchtabs_activitygroup_betbar"
-        android:layout_below="@id/switchtabs_activitygroup_lotteryinfomationbar"
+        android:layout_below="@id/switchtabs_activitygroup_titlebar"
         android:background="@color/white" >
 
         <RelativeLayout

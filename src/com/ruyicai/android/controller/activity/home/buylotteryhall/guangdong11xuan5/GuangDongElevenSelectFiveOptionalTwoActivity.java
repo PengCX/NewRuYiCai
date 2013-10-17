@@ -31,26 +31,21 @@ public class GuangDongElevenSelectFiveOptionalTwoActivity extends
 
 	@Override
 	public void setNumberBasketButton() {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void setClearSelectedNumberButton() {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void setAddToNumberBasketButton() {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void setBettingButton() {
-		// TODO Auto-generated method stub
 
 	}
-
 }
