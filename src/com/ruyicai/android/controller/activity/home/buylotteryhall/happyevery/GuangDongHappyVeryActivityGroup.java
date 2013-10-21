@@ -14,7 +14,7 @@ public class GuangDongHappyVeryActivityGroup extends SpinnersActivityGroup {
 
 	@Override
 	public void setTitleTextView() {
-		_fTitleBar._fTitleTextView.setText(LotteryType.GUANGDONG_HAPPYVERY
+		_fTitleBar._fLeftTextView.setText(LotteryType.GUANGDONG_HAPPYVERY
 				.get_fLotteryName());
 	}
 

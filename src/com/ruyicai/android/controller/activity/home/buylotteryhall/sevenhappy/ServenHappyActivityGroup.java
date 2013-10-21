@@ -14,7 +14,7 @@ public class ServenHappyActivityGroup extends LotterySwitchTabsActivityGroup {
 
 	@Override
 	public void setTitleTextView() {
-		_fTitleBar._fTitleTextView.setText(LotteryType.SERVEN_HAPPY
+		_fTitleBar._fLeftTextView.setText(LotteryType.SERVEN_HAPPY
 				.get_fLotteryName());
 	}
 

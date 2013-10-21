@@ -29,8 +29,8 @@ public class LoginActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login_activity);
 
-		_fTitleBar.set_fTitleBarInterface(new LoginTitleBarInterface());
-		_fTitleBar.initTitleBarShow();
+//		_fTitleBar.set_fTitleBarInterface(new LoginTitleBarInterface());
+//		_fTitleBar.initTitleBarShow();
 
 		// 初始化新用户注册等列表
 		initNewUserRegisterListViewShow();
@@ -64,7 +64,7 @@ public class LoginActivity extends BaseActivity {
 
 	/**
 	 * 获取新用户注册列表字符串资源数组
-	 * 
+	 *
 	 * @return 字符串资源数组
 	 */
 	private int[] getNewUserRegisterListStringIds() {
@@ -79,7 +79,7 @@ public class LoginActivity extends BaseActivity {
 
 	/**
 	 * 获取微博登陆列表的字符串资源Id数组
-	 * 
+	 *
 	 * @return 字符串资源Id数组
 	 */
 	private int[] getMicroBlogLoginListStringIds() {
@@ -93,7 +93,7 @@ public class LoginActivity extends BaseActivity {
 
 	/**
 	 * 获取微博登陆列表的图标资源Id数组
-	 * 
+	 *
 	 * @return 图标资源Id数组
 	 */
 	private int[] getMicroBlogLoginListIconIds() {
@@ -107,20 +107,20 @@ public class LoginActivity extends BaseActivity {
 
 	/**
 	 * 登录页面实现标题栏显示接口类
-	 * 
+	 *
 	 * @author xiang_000
 	 * @since RYC1.0 2013-4-9
 	 */
 	class LoginTitleBarInterface implements TitleBarInterface {
 		@Override
 		public void setTitleTextView() {
-			_fTitleBar._fTitleTextView.setText(R.string.login_title_text);
+			_fTitleBar._fLeftTextView.setText(R.string.login_title_text);
 		}
 
 		@Override
 		public void setTitleButton() {
-			_fTitleBar._fLoginOrRegistButton.setVisibility(View.GONE);
-			_fTitleBar._fLoginOrRegistButton.setEnabled(false);
+			_fTitleBar._fRightButton.setVisibility(View.GONE);
+			_fTitleBar._fRightButton.setEnabled(false);
 		}
 	}
 }

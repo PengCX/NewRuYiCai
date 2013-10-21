@@ -28,8 +28,8 @@ public class LotteryNoticeActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.lotterynotice_activity);
 
-		_fTitleBar.set_fTitleBarInterface(new LotteryNoticeTitltBarInterface());
-		_fTitleBar.initTitleBarShow();
+//		_fTitleBar.set_fTitleBarInterface(new LotteryNoticeTitltBarInterface());
+//		_fTitleBar.initTitleBarShow();
 
 		int[] lotteryIconResourceIds = getNoticeListViewIconResoruceIds();
 		String[] lotteryNameStrings = LotteryType.getAllLotteryNames();
@@ -44,7 +44,7 @@ public class LotteryNoticeActivity extends BaseActivity {
 
 	/**
 	 * 获取开奖公告列表开奖期号字符串数组
-	 * 
+	 *
 	 * @return 开奖公告期号字符串数组
 	 */
 	private String[] getNoticeListViewNoticeIssueStrings() {
@@ -72,7 +72,7 @@ public class LotteryNoticeActivity extends BaseActivity {
 
 	/**
 	 * 获取开奖公告列表开奖日期字符串数组
-	 * 
+	 *
 	 * @return 开奖日期字符串数组
 	 */
 	private String[] getNoticeListViewNoticeDataStrings() {
@@ -100,7 +100,7 @@ public class LotteryNoticeActivity extends BaseActivity {
 
 	/**
 	 * 获取开奖列表图标图片资源Id数组
-	 * 
+	 *
 	 * @return 图标图片资源Id数组
 	 */
 	private int[] getNoticeListViewIconResoruceIds() {
@@ -129,16 +129,16 @@ public class LotteryNoticeActivity extends BaseActivity {
 	class LotteryNoticeTitltBarInterface implements TitleBarInterface {
 		@Override
 		public void setTitleTextView() {
-			_fTitleBar._fTitleTextView
+			_fTitleBar._fLeftTextView
 					.setText(R.string.lotterynotice_titlebar_text);
 		}
 
 		@Override
 		public void setTitleButton() {
-			_fTitleBar._fLoginOrRegistButton.setVisibility(View.VISIBLE);
-			_fTitleBar._fLoginOrRegistButton
+			_fTitleBar._fRightButton.setVisibility(View.VISIBLE);
+			_fTitleBar._fRightButton
 					.setText(R.string.lotterynotice_titlebar_buttontext);
-			_fTitleBar._fLoginOrRegistButton
+			_fTitleBar._fRightButton
 					.setOnClickListener(new OnClickListener() {
 
 						@Override

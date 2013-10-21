@@ -40,8 +40,8 @@ public class UserCenterActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.usercenter_activity);
 
-		_fTitleBar.set_fTitleBarInterface(new UserCenterTitleBarInterface());
-		_fTitleBar.initTitleBarShow();
+//		_fTitleBar.set_fTitleBarInterface(new UserCenterTitleBarInterface());
+//		_fTitleBar.initTitleBarShow();
 
 		// 初始化登录区域的显示
 		initLoginAreaShow();
@@ -100,7 +100,7 @@ public class UserCenterActivity extends BaseActivity {
 
 	/**
 	 * 获取账户资金列表的字符串资源Id数组
-	 * 
+	 *
 	 * @return 字符串资源Id数组
 	 */
 	private int[] getAccountCapitalStringIds() {
@@ -117,7 +117,7 @@ public class UserCenterActivity extends BaseActivity {
 
 	/**
 	 * 获取账户资金列表图片资源Id数组
-	 * 
+	 *
 	 * @return 图片资源Id数组
 	 */
 	private int[] getAccountCapitalIconIds() {
@@ -134,7 +134,7 @@ public class UserCenterActivity extends BaseActivity {
 
 	/**
 	 * 获取我的彩票的字符串资源Id数组
-	 * 
+	 *
 	 * @return 字符串资源Id数组
 	 */
 	private int[] getMyLotteryStringIds() {
@@ -151,7 +151,7 @@ public class UserCenterActivity extends BaseActivity {
 
 	/**
 	 * 获取我的彩票列表的图片资源Id数组
-	 * 
+	 *
 	 * @return 图片资源Id数组
 	 */
 	private int[] getMyLotteryIconIds() {
@@ -168,7 +168,7 @@ public class UserCenterActivity extends BaseActivity {
 
 	/**
 	 * 获取账户设置列表的图片资源Id数组
-	 * 
+	 *
 	 * @return 图片资源Id数组
 	 */
 	private int[] getAccountSetIconIds() {
@@ -184,7 +184,7 @@ public class UserCenterActivity extends BaseActivity {
 
 	/**
 	 * 获取账户设置列表的字符串资源Id数组
-	 * 
+	 *
 	 * @return 字符串资源Id数组
 	 */
 	private int[] getAccountSetStringIds() {
@@ -200,7 +200,7 @@ public class UserCenterActivity extends BaseActivity {
 
 	/**
 	 * 按钮事件监听类：实现对注册登录页面的按钮事件处理
-	 * 
+	 *
 	 * @author Administrator
 	 * @since RYC1.0 2013-4-3
 	 */
@@ -230,21 +230,21 @@ public class UserCenterActivity extends BaseActivity {
 
 	/**
 	 * 用户中心实现标题栏接口类
-	 * 
+	 *
 	 * @author xiang_000
 	 * @since RYC1.0 2013-4-9
 	 */
 	class UserCenterTitleBarInterface implements TitleBarInterface {
 		@Override
 		public void setTitleTextView() {
-			_fTitleBar._fTitleTextView
+			_fTitleBar._fLeftTextView
 					.setText(R.string.usercenter_titlebar_text);
 		}
 
 		@Override
 		public void setTitleButton() {
-			_fTitleBar._fLoginOrRegistButton.setVisibility(View.GONE);
-			_fTitleBar._fLoginOrRegistButton.setEnabled(false);
+			_fTitleBar._fRightButton.setVisibility(View.GONE);
+			_fTitleBar._fRightButton.setEnabled(false);
 		}
 	}
 

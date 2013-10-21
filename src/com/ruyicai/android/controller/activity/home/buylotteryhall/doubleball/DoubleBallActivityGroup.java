@@ -14,7 +14,7 @@ public class DoubleBallActivityGroup extends LotterySwitchTabsActivityGroup {
 
 	@Override
 	public void setTitleTextView() {
-		_fTitleBar._fTitleTextView.setText(LotteryType.DOUBLE_BALL
+		_fTitleBar._fLeftTextView.setText(LotteryType.DOUBLE_BALL
 				.get_fLotteryName());
 	}
 

@@ -15,7 +15,7 @@ public class TwentyTwoSelectFiveActivityGroup extends
 
 	@Override
 	public void setTitleTextView() {
-		_fTitleBar._fTitleTextView.setText(LotteryType.TWENTYTWO_SELECT_FIVE
+		_fTitleBar._fLeftTextView.setText(LotteryType.TWENTYTWO_SELECT_FIVE
 				.get_fLotteryName());
 	}
 

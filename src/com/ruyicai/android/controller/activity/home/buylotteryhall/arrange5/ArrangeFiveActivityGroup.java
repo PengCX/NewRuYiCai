@@ -14,7 +14,7 @@ public class ArrangeFiveActivityGroup extends LotterySwitchTabsActivityGroup {
 
 	@Override
 	public void setTitleTextView() {
-		_fTitleBar._fTitleTextView.setText(LotteryType.ARRANGE_FIVE
+		_fTitleBar._fLeftTextView.setText(LotteryType.ARRANGE_FIVE
 				.get_fLotteryName());
 	}
 

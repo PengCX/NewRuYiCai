@@ -11,7 +11,7 @@ import com.ruyicai.android.controller.compontent.bar.TitleBarInterface;
 
 /**
  * 注册页面
- * 
+ *
  * @author Administrator
  * @since RYC1.0 2013-4-3
  */
@@ -25,20 +25,20 @@ public class RegisterActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.register_activity);
 
-		_fTitleBar.set_fTitleBarInterface(new RegisterTitleBarInterface());
-		_fTitleBar.initTitleBarShow();
+//		_fTitleBar.set_fTitleBarInterface(new RegisterTitleBarInterface());
+//		_fTitleBar.initTitleBarShow();
 	}
 
 	class RegisterTitleBarInterface implements TitleBarInterface {
 		@Override
 		public void setTitleTextView() {
-			_fTitleBar._fTitleTextView.setText(R.string.register_title_text);
+			_fTitleBar._fLeftTextView.setText(R.string.register_title_text);
 		}
 
 		@Override
 		public void setTitleButton() {
-			_fTitleBar._fLoginOrRegistButton.setVisibility(View.GONE);
-			_fTitleBar._fLoginOrRegistButton.setEnabled(false);
+			_fTitleBar._fRightButton.setVisibility(View.GONE);
+			_fTitleBar._fRightButton.setEnabled(false);
 		}
 	}
 

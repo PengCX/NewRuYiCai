@@ -31,7 +31,7 @@ import com.ruyicai.android.model.bean.lottery.compete.against.AgainstInfo;
 
 /**
  * 竞彩选号页面父类
- * 
+ *
  * @author Administrator
  * @since RYC1.0 2013-7-4
  */
@@ -54,9 +54,9 @@ public abstract class CompeteActivity extends BaseActivity implements
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.compete_activity);
 
-		// 设置标题栏接口
-		_fTitleBar.set_fTitleBarInterface(this);
-		_fTitleBar.initTitleBarShow();
+//		// 设置标题栏接口
+//		_fTitleBar.set_fTitleBarInterface(this);
+//		_fTitleBar.initTitleBarShow();
 
 		// 设置竞彩栏
 		_fCompeteBar.set_fCompeteBarInterface(this);
@@ -113,7 +113,7 @@ public abstract class CompeteActivity extends BaseActivity implements
 
 	/**
 	 * 竞彩栏点击事件监听实现类
-	 * 
+	 *
 	 * @author xiang_000
 	 * @since RYC1.0 2013-5-4
 	 */
@@ -144,7 +144,7 @@ public abstract class CompeteActivity extends BaseActivity implements
 
 	/**
 	 * 对阵列表适配器
-	 * 
+	 *
 	 * @author Administrator
 	 * @since RYC1.0 2013-7-11
 	 */
@@ -158,7 +158,7 @@ public abstract class CompeteActivity extends BaseActivity implements
 
 		/**
 		 * 構造方法
-		 * 
+		 *
 		 * @param groups
 		 *            分組的名称集合
 		 * @param againstLists

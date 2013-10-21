@@ -101,8 +101,8 @@
 
 
     <!-- 购彩大厅 -->
-    <string name="buylotteryhall_titlebar_text">购彩大厅</string>
-    <string name="buylotteryhall_titlebar_buttontext">登陆注册</string>
+    <string name="buylotteryhall_titlebar_lefttext">购彩大厅</string>
+    <string name="buylotteryhall_titlebar_rightbuttontext">登陆注册</string>
     <string name="buylotteryhall_bottombarbutton_text1">彩票资讯</string>
     <string name="buylotteryhall_bottombarbutton_text2">活动中心</string>
     <string name="buylotteryhall_bottombarbutton_text3">幸运选号</string>
@@ -113,7 +113,7 @@
 
     <!-- 账户充值 -->
     <string name="accountrecharge_titlebar_text">账户充值</string>
-    <string name="accountrecharge_titlebar_buttontext">@string/buylotteryhall_titlebar_buttontext</string>
+    <string name="accountrecharge_titlebar_buttontext">@string/buylotteryhall_titlebar_rightbuttontext</string>
     <string name="accountrecharge_prompt_text">登录”如意彩“（www.ruyicai.com）用网银网上充值免手续费，支持更多银行</string>
     <string name="accountrecharge_listitem_alipaysecurity">支付宝安全支付（免手续费）</string>
     <string name="accountrecharge_listitem_alipaysecuritydescription">安全便捷，免输入密码，支持银行卡充值</string>
@@ -156,7 +156,7 @@
 
     <!-- 更多 -->
     <string name="more_titlebar_text">更多</string>
-    <string name="more_titlebar_buttontext">@string/buylotteryhall_titlebar_buttontext</string>
+    <string name="more_titlebar_buttontext">@string/buylotteryhall_titlebar_rightbuttontext</string>
     <string name="more_listitem_customerhotline">客服热线</string>
     <string name="more_listitem_helpercenter">帮助中心</string>
     <string name="more_listitem_checkupdate">检测更新</string>

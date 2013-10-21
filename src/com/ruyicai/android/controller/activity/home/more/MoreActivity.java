@@ -28,8 +28,8 @@ public class MoreActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.more_activity);
 
-		_fTitleBar.set_fTitleBarInterface(new MoreTitleBarInterface());
-		_fTitleBar.initTitleBarShow();
+//		_fTitleBar.set_fTitleBarInterface(new MoreTitleBarInterface());
+//		_fTitleBar.initTitleBarShow();
 
 		int[] itemsStringResourceIds = getItemsStringResourceIds();
 		SimpleListViewAdapter simpleListViewAdapter = new SimpleListViewAdapter(
@@ -39,7 +39,7 @@ public class MoreActivity extends BaseActivity {
 
 	/**
 	 * 获取更多列表的字符串资源Id数组
-	 * 
+	 *
 	 * @return 字符串资源Id数组
 	 */
 	private int[] getItemsStringResourceIds() {
@@ -60,22 +60,22 @@ public class MoreActivity extends BaseActivity {
 
 	/**
 	 * 更多页面实现标题栏显示接口类
-	 * 
+	 *
 	 * @author xiang_000
 	 * @since RYC1.0 2013-4-9
 	 */
 	class MoreTitleBarInterface implements TitleBarInterface {
 		@Override
 		public void setTitleTextView() {
-			_fTitleBar._fTitleTextView.setText(R.string.more_titlebar_text);
+			_fTitleBar._fLeftTextView.setText(R.string.more_titlebar_text);
 		}
 
 		@Override
 		public void setTitleButton() {
-			_fTitleBar._fLoginOrRegistButton.setVisibility(View.VISIBLE);
-			_fTitleBar._fLoginOrRegistButton
+			_fTitleBar._fRightButton.setVisibility(View.VISIBLE);
+			_fTitleBar._fRightButton
 					.setText(R.string.more_titlebar_buttontext);
-			_fTitleBar._fLoginOrRegistButton
+			_fTitleBar._fRightButton
 					.setOnClickListener(new OnClickListener() {
 
 						@Override

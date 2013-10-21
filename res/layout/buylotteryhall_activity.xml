@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- 购彩大厅页面 -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.ruyicai.android"
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
     android:background="@drawable/buylotteryhall_background"
     android:orientation="vertical" >
 
     <!-- 标题栏 -->
-
     <com.ruyicai.android.controller.compontent.bar.TitleBar
         android:id="@+id/buylotteryhall_title_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentTop="true"
+        custom:_fIsShowRightButton="true"
+        custom:_fLeftTextString="@string/buylotteryhall_titlebar_lefttext"
+        custom:_fRightButtonString="@string/buylotteryhall_titlebar_rightbuttontext" />
+
     <!-- 滑动通知栏 -->
 
     <TextView

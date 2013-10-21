@@ -15,7 +15,7 @@ public class GuangDongElevenSelectFiveActivityGroup extends
 
 	@Override
 	public void setTitleTextView() {
-		_fTitleBar._fTitleTextView
+		_fTitleBar._fLeftTextView
 				.setText(LotteryType.GUANGDONG_ELEVENE_SELECT_FIVE
 						.get_fLotteryName());
 	}

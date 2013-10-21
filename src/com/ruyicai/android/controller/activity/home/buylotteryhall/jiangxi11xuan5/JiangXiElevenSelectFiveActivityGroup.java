@@ -14,7 +14,7 @@ public class JiangXiElevenSelectFiveActivityGroup extends SpinnersActivityGroup 
 
 	@Override
 	public void setTitleTextView() {
-		_fTitleBar._fTitleTextView
+		_fTitleBar._fLeftTextView
 				.setText(LotteryType.JIANGXI_ELEVEN_SELECT_FIVE
 						.get_fLotteryName());
 	}

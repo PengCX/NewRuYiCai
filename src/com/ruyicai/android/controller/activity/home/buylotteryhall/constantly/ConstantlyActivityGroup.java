@@ -14,7 +14,7 @@ public class ConstantlyActivityGroup extends LotterySwitchTabsActivityGroup {
 
 	@Override
 	public void setTitleTextView() {
-		_fTitleBar._fTitleTextView.setText(LotteryType.CONSTANTLY
+		_fTitleBar._fLeftTextView.setText(LotteryType.CONSTANTLY
 				.get_fLotteryName());
 	}
 

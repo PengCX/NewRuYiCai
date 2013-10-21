@@ -18,7 +18,7 @@ import roboguice.inject.InjectView;
 
 /**
  * 下拉列表切换页面基类：包含标题栏、彩种开奖信息栏和下拉列表，使用下拉列表切换页面；适用于江西11选5投注页面
- * 
+ *
  * @author xiang_000
  * @since RYC1.0 2013-5-1
  */
@@ -64,9 +64,9 @@ public abstract class SpinnersActivityGroup extends RoboActivityGroup implements
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.spinners_activitygroup);
 
-		// 设置标题栏接口
-		_fTitleBar.set_fTitleBarInterface(this);
-		_fTitleBar.initTitleBarShow();
+//		// 设置标题栏接口
+//		_fTitleBar.set_fTitleBarInterface(this);
+//		_fTitleBar.initTitleBarShow();
 
 		// 初始化彩种信息栏
 		initLotteryInformationBarShow();
@@ -104,7 +104,7 @@ public abstract class SpinnersActivityGroup extends RoboActivityGroup implements
 
 	/**
 	 * 下拉列表选项选中事件监听器实现类
-	 * 
+	 *
 	 * @author xiang_000
 	 * @since RYC1.0 2013-5-1
 	 */

@@ -14,7 +14,7 @@ public class ElevenLuckGoldActivityGroup extends SpinnersActivityGroup {
 
 	@Override
 	public void setTitleTextView() {
-		_fTitleBar._fTitleTextView.setText(LotteryType.ELEVEN_LUCKGOLD
+		_fTitleBar._fLeftTextView.setText(LotteryType.ELEVEN_LUCKGOLD
 				.get_fLotteryName());
 	}
 

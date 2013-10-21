@@ -14,7 +14,7 @@ public class SuperLottoActivityGroup extends LotterySwitchTabsActivityGroup {
 
 	@Override
 	public void setTitleTextView() {
-		_fTitleBar._fTitleTextView.setText(LotteryType.SUPER_LOTTO
+		_fTitleBar._fLeftTextView.setText(LotteryType.SUPER_LOTTO
 				.get_fLotteryName());
 	}
 

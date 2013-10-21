@@ -28,9 +28,9 @@ public class AccountRechargeActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.accountercharge_activity);
 
-		_fTitleBar
-				.set_fTitleBarInterface(new AccountRechargeTitleBarInterface());
-		_fTitleBar.initTitleBarShow();
+//		_fTitleBar
+//				.set_fTitleBarInterface(new AccountRechargeTitleBarInterface());
+//		_fTitleBar.initTitleBarShow();
 
 		int[] iconResourceIds = getIconResourceIds();
 		int[] itemStringResourceIds = getItemStringResourceIds();
@@ -44,7 +44,7 @@ public class AccountRechargeActivity extends BaseActivity {
 
 	/**
 	 * 获取选项描述字符串字段Id数组
-	 * 
+	 *
 	 * @return 字符串资源Id数组
 	 */
 	private int[] getDescriptionResourceIds() {
@@ -64,7 +64,7 @@ public class AccountRechargeActivity extends BaseActivity {
 
 	/**
 	 * 获取选项字符串资源Id数组
-	 * 
+	 *
 	 * @return 字符串资源Id数组
 	 */
 	private int[] getItemStringResourceIds() {
@@ -85,7 +85,7 @@ public class AccountRechargeActivity extends BaseActivity {
 
 	/**
 	 * 获取图标资源Id数组
-	 * 
+	 *
 	 * @return 图标资源Id数组
 	 */
 	private int[] getIconResourceIds() {
@@ -105,23 +105,23 @@ public class AccountRechargeActivity extends BaseActivity {
 
 	/**
 	 * 账户充值实现标题栏接口类
-	 * 
+	 *
 	 * @author xiang_000
 	 * @since RYC1.0 2013-4-9
 	 */
 	class AccountRechargeTitleBarInterface implements TitleBarInterface {
 		@Override
 		public void setTitleTextView() {
-			_fTitleBar._fTitleTextView
+			_fTitleBar._fLeftTextView
 					.setText(R.string.accountrecharge_titlebar_text);
 		}
 
 		@Override
 		public void setTitleButton() {
-			_fTitleBar._fLoginOrRegistButton.setVisibility(View.VISIBLE);
-			_fTitleBar._fLoginOrRegistButton
-					.setText(R.string.buylotteryhall_titlebar_buttontext);
-			_fTitleBar._fLoginOrRegistButton
+			_fTitleBar._fRightButton.setVisibility(View.VISIBLE);
+			_fTitleBar._fRightButton
+					.setText(R.string.buylotteryhall_titlebar_rightbuttontext);
+			_fTitleBar._fRightButton
 					.setOnClickListener(new OnClickListener() {
 
 						@Override

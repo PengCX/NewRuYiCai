@@ -14,7 +14,7 @@ public class Welfare3DActivityGroup extends LotterySwitchTabsActivityGroup {
 
 	@Override
 	public void setTitleTextView() {
-		_fTitleBar._fTitleTextView.setText(LotteryType.WELFARE_3D
+		_fTitleBar._fLeftTextView.setText(LotteryType.WELFARE_3D
 				.get_fLotteryName());
 	}
 

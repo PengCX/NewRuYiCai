@@ -14,7 +14,7 @@ public class ServenStarActivityGroup extends LotterySwitchTabsActivityGroup {
 
 	@Override
 	public void setTitleTextView() {
-		_fTitleBar._fTitleTextView.setText(LotteryType.SEVEN_STAR
+		_fTitleBar._fLeftTextView.setText(LotteryType.SEVEN_STAR
 				.get_fLotteryName());
 	}
 

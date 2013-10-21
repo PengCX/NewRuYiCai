@@ -12,7 +12,7 @@ import com.ruyicai.android.model.bean.lottery.LotteryType;
 public class CompeteBasketBallActivity extends CompeteActivity {
 	@Override
 	public void setTitleTextView() {
-		_fTitleBar._fTitleTextView.setText(LotteryType.COMPETE_BASKETBALL
+		_fTitleBar._fLeftTextView.setText(LotteryType.COMPETE_BASKETBALL
 				.get_fLotteryName());
 	}
 }
