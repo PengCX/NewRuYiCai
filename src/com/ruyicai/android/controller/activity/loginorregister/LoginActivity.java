@@ -104,23 +104,4 @@ public class LoginActivity extends BaseActivity {
 
 		return iconResourceIds;
 	}
-
-	/**
-	 * 登录页面实现标题栏显示接口类
-	 *
-	 * @author xiang_000
-	 * @since RYC1.0 2013-4-9
-	 */
-	class LoginTitleBarInterface implements TitleBarInterface {
-		@Override
-		public void setTitleTextView() {
-			_fTitleBar._fLeftTextView.setText(R.string.login_title_text);
-		}
-
-		@Override
-		public void setTitleButton() {
-			_fTitleBar._fRightButton.setVisibility(View.GONE);
-			_fTitleBar._fRightButton.setEnabled(false);
-		}
-	}
 }

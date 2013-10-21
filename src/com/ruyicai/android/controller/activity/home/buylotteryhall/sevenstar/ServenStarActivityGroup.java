@@ -12,11 +12,11 @@ import com.ruyicai.android.model.bean.lottery.LotteryType;
  */
 public class ServenStarActivityGroup extends LotterySwitchTabsActivityGroup {
 
-	@Override
-	public void setTitleTextView() {
-		_fTitleBar._fLeftTextView.setText(LotteryType.SEVEN_STAR
-				.get_fLotteryName());
-	}
+//	@Override
+//	public void setTitleTextView() {
+//		_fTitleBar._fLeftTextView.setText(LotteryType.SEVEN_STAR
+//				.get_fLotteryName());
+//	}
 
 	@Override
 	protected void set_fSwithTabClasses() {

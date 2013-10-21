@@ -12,11 +12,11 @@ import com.ruyicai.android.model.bean.lottery.LotteryType;
  */
 public class ConstantlyActivityGroup extends LotterySwitchTabsActivityGroup {
 
-	@Override
-	public void setTitleTextView() {
-		_fTitleBar._fLeftTextView.setText(LotteryType.CONSTANTLY
-				.get_fLotteryName());
-	}
+//	@Override
+//	public void setTitleTextView() {
+//		_fTitleBar._fLeftTextView.setText(LotteryType.CONSTANTLY
+//				.get_fLotteryName());
+//	}
 
 	@Override
 	protected void set_fSwithTabClasses() {

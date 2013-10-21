@@ -13,16 +13,16 @@ import com.ruyicai.android.model.bean.lottery.LotteryType;
 public class TwentyTwoSelectFiveActivityGroup extends
 		LotterySwitchTabsActivityGroup {
 
-	@Override
-	public void setTitleTextView() {
-		_fTitleBar._fLeftTextView.setText(LotteryType.TWENTYTWO_SELECT_FIVE
-				.get_fLotteryName());
-	}
+//	@Override
+//	public void setTitleTextView() {
+//		_fTitleBar._fLeftTextView.setText(LotteryType.TWENTYTWO_SELECT_FIVE
+//				.get_fLotteryName());
+//	}
 
-	@Override
-	public void setTitleButton() {
-
-	}
+//	@Override
+//	public void setTitleButton() {
+//
+//	}
 
 	@Override
 	protected void set_fSwithTabClasses() {

@@ -16,7 +16,6 @@ import com.ruyicai.android.controller.activity.viewpagers.SelectNumberActivity;
 import com.ruyicai.android.controller.compontent.bar.BetBar;
 import com.ruyicai.android.controller.compontent.bar.BetBarInterface;
 import com.ruyicai.android.controller.compontent.bar.LotteryInformationBar;
-import com.ruyicai.android.controller.compontent.dropdownmenu.TitleDropDownMenu;
 import com.ruyicai.android.model.bean.lottery.LotteryType;
 
 /**
@@ -83,24 +82,24 @@ public abstract class LotterySwitchTabsActivityGroup extends
 		_fSwitchTabHost.setLayoutParams(relativeLayoutParams);
 	}
 
-	@Override
-	public void setTitleButton() {
-		_fTitleBar._fSpreadButton.setVisibility(View.VISIBLE);
-		_fTitleBar._fSpreadButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				if (_fTitleBar._fDropDownMenu == null) {
-					_fTitleBar._fDropDownMenu = new TitleDropDownMenu(
-							LotterySwitchTabsActivityGroup.this);
-					_fTitleBar._fDropDownMenu.ShowAsDropDownMenu(v);
-				} else {
-					_fTitleBar._fDropDownMenu.dismissDropDownMenu();
-					_fTitleBar._fDropDownMenu = null;
-				}
-			}
-		});
-	}
+//	@Override
+//	public void setTitleButton() {
+//		_fTitleBar._fSpreadButton.setVisibility(View.VISIBLE);
+//		_fTitleBar._fSpreadButton.setOnClickListener(new OnClickListener() {
+//
+//			@Override
+//			public void onClick(View v) {
+//				if (_fTitleBar._fDropDownMenu == null) {
+//					_fTitleBar._fDropDownMenu = new TitleDropDownMenu(
+//							LotterySwitchTabsActivityGroup.this);
+//					_fTitleBar._fDropDownMenu.ShowAsDropDownMenu(v);
+//				} else {
+//					_fTitleBar._fDropDownMenu.dismissDropDownMenu();
+//					_fTitleBar._fDropDownMenu = null;
+//				}
+//			}
+//		});
+//	}
 
 	@Override
 	public void setNumberBasketButton() {

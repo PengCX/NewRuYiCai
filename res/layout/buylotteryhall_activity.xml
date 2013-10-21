@@ -14,8 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         custom:_fIsShowRightButton="true"
-        custom:_fLeftTextString="@string/buylotteryhall_titlebar_lefttext"
-        custom:_fRightButtonString="@string/buylotteryhall_titlebar_rightbuttontext" />
+        custom:_fLeftTextId="@string/buylotteryhall_titlebar_lefttext"
+        custom:_fRightButtonId="@string/buylotteryhall_titlebar_rightbuttontext" />
 
     <!-- 滑动通知栏 -->
 

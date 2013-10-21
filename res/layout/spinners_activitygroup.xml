@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- 下拉列表切换导航页面 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
@@ -11,13 +11,15 @@
     <com.ruyicai.android.controller.compontent.bar.TitleBar
         android:id="@+id/spinners_activitygroup_titlebar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
     <!-- 开奖信息栏 -->
 
     <com.ruyicai.android.controller.compontent.bar.LotteryInformationBar
         android:id="@+id/spinners_activitygroup_lotteryinfomationbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinners_activitygroup_titlebar" />
 
     <!-- 下拉列表 -->
 
@@ -25,14 +27,25 @@
         android:id="@+id/spinners_activitygroup_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/spinners_activitygroup_lotteryinfomationbar"
         android:entries="@array/jiangxi11select5_spinners_items" />
+
+    <!-- 投注栏 -->
+
+    <com.ruyicai.android.controller.compontent.bar.BetBar
+        android:id="@+id/spinners_activitygroup_betbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
 
     <!-- Activity容器 -->
 
     <LinearLayout
         android:id="@+id/spinners_activitygroup_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:layout_above="@id/spinners_activitygroup_betbar"
+        android:layout_below="@id/spinners_activitygroup_spinner" >
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

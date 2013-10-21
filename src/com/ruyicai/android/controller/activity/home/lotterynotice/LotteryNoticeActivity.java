@@ -125,29 +125,4 @@ public class LotteryNoticeActivity extends BaseActivity {
 
 		return _iconResourceIds;
 	}
-
-	class LotteryNoticeTitltBarInterface implements TitleBarInterface {
-		@Override
-		public void setTitleTextView() {
-			_fTitleBar._fLeftTextView
-					.setText(R.string.lotterynotice_titlebar_text);
-		}
-
-		@Override
-		public void setTitleButton() {
-			_fTitleBar._fRightButton.setVisibility(View.VISIBLE);
-			_fTitleBar._fRightButton
-					.setText(R.string.lotterynotice_titlebar_buttontext);
-			_fTitleBar._fRightButton
-					.setOnClickListener(new OnClickListener() {
-
-						@Override
-						public void onClick(View v) {
-							Toast.makeText(LotteryNoticeActivity.this,
-									"你点击了开奖公告的登录按钮", Toast.LENGTH_LONG).show();
-						}
-					});
-		}
-	}
-
 }

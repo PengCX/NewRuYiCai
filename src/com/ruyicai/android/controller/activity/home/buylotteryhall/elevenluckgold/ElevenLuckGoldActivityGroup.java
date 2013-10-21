@@ -12,11 +12,11 @@ import com.ruyicai.android.model.bean.lottery.LotteryType;
  */
 public class ElevenLuckGoldActivityGroup extends SpinnersActivityGroup {
 
-	@Override
-	public void setTitleTextView() {
-		_fTitleBar._fLeftTextView.setText(LotteryType.ELEVEN_LUCKGOLD
-				.get_fLotteryName());
-	}
+//	@Override
+//	public void setTitleTextView() {
+//		_fTitleBar.set_fLeftTextString(LotteryType.ELEVEN_LUCKGOLD
+//				.get_fLotteryName());
+//	}
 
 	@Override
 	protected void set_fSpinnerItems() {
@@ -51,10 +51,10 @@ public class ElevenLuckGoldActivityGroup extends SpinnersActivityGroup {
 				ElvenLuckGoldBeforThreeGroupSelectActivity.class };
 	}
 
-	@Override
-	public void setTitleButton() {
-
-	}
+//	@Override
+//	public void setTitleButton() {
+//
+//	}
 
 	@Override
 	protected void initLotteryInformationBarShow() {

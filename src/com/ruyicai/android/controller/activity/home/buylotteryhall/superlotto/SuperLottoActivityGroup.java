@@ -1,5 +1,7 @@
 package com.ruyicai.android.controller.activity.home.buylotteryhall.superlotto;
 
+import android.os.Bundle;
+
 import com.ruyicai.android.R;
 import com.ruyicai.android.controller.activity.home.buylotteryhall.switchtabs.LotterySwitchTabsActivityGroup;
 import com.ruyicai.android.model.bean.lottery.LotteryType;
@@ -11,10 +13,11 @@ import com.ruyicai.android.model.bean.lottery.LotteryType;
  * @since RYC1.0 2013-4-5
  */
 public class SuperLottoActivityGroup extends LotterySwitchTabsActivityGroup {
-
+	
 	@Override
-	public void setTitleTextView() {
-		_fTitleBar._fLeftTextView.setText(LotteryType.SUPER_LOTTO
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		_fTitleBar.set_fLeftTextString(LotteryType.SUPER_LOTTO
 				.get_fLotteryName());
 	}
 

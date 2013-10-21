@@ -22,8 +22,7 @@ import roboguice.inject.InjectView;
  * @author xiang_000
  * @since RYC1.0 2013-5-1
  */
-public abstract class SpinnersActivityGroup extends RoboActivityGroup implements
-		TitleBarInterface {
+public abstract class SpinnersActivityGroup extends RoboActivityGroup {
 	/** 下拉列表跳转页面类数组 */
 	protected Class<?>[]			_fSpinnersClasses;
 	/** 下拉列表选项字符串数组 */
@@ -63,11 +62,6 @@ public abstract class SpinnersActivityGroup extends RoboActivityGroup implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.spinners_activitygroup);
-
-//		// 设置标题栏接口
-//		_fTitleBar.set_fTitleBarInterface(this);
-//		_fTitleBar.initTitleBarShow();
-
 		// 初始化彩种信息栏
 		initLotteryInformationBarShow();
 

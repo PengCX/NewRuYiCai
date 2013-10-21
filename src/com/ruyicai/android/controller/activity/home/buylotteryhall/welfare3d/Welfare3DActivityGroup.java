@@ -1,5 +1,7 @@
 package com.ruyicai.android.controller.activity.home.buylotteryhall.welfare3d;
 
+import android.os.Bundle;
+
 import com.ruyicai.android.R;
 import com.ruyicai.android.controller.activity.home.buylotteryhall.switchtabs.LotterySwitchTabsActivityGroup;
 import com.ruyicai.android.model.bean.lottery.LotteryType;
@@ -13,11 +15,12 @@ import com.ruyicai.android.model.bean.lottery.LotteryType;
 public class Welfare3DActivityGroup extends LotterySwitchTabsActivityGroup {
 
 	@Override
-	public void setTitleTextView() {
-		_fTitleBar._fLeftTextView.setText(LotteryType.WELFARE_3D
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		_fTitleBar.set_fLeftTextString(LotteryType.WELFARE_3D
 				.get_fLotteryName());
 	}
-
+	
 	@Override
 	protected void set_fSwithTabClasses() {
 		_fSwithTabClasses = new Class<?>[] { Welfare3DSelfSelectActivity.class,

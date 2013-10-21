@@ -1,5 +1,7 @@
 package com.ruyicai.android.controller.activity.home.buylotteryhall.doubleball;
 
+import android.os.Bundle;
+
 import com.ruyicai.android.R;
 import com.ruyicai.android.controller.activity.home.buylotteryhall.switchtabs.LotterySwitchTabsActivityGroup;
 import com.ruyicai.android.model.bean.lottery.LotteryType;
@@ -13,8 +15,9 @@ import com.ruyicai.android.model.bean.lottery.LotteryType;
 public class DoubleBallActivityGroup extends LotterySwitchTabsActivityGroup {
 
 	@Override
-	public void setTitleTextView() {
-		_fTitleBar._fLeftTextView.setText(LotteryType.DOUBLE_BALL
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		_fTitleBar.set_fLeftTextString(LotteryType.DOUBLE_BALL
 				.get_fLotteryName());
 	}
 

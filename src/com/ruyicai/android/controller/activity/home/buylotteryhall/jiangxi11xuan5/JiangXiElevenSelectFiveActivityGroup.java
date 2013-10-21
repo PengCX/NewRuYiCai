@@ -1,5 +1,7 @@
 package com.ruyicai.android.controller.activity.home.buylotteryhall.jiangxi11xuan5;
 
+import android.os.Bundle;
+
 import com.ruyicai.android.R;
 import com.ruyicai.android.controller.activity.home.buylotteryhall.activitygroups.SpinnersActivityGroup;
 import com.ruyicai.android.model.bean.lottery.LotteryType;
@@ -11,14 +13,14 @@ import com.ruyicai.android.model.bean.lottery.LotteryType;
  * @since RYC1.0 2013-4-5
  */
 public class JiangXiElevenSelectFiveActivityGroup extends SpinnersActivityGroup {
-
+	
 	@Override
-	public void setTitleTextView() {
-		_fTitleBar._fLeftTextView
-				.setText(LotteryType.JIANGXI_ELEVEN_SELECT_FIVE
-						.get_fLotteryName());
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		_fTitleBar.set_fLeftTextString(LotteryType.JIANGXI_ELEVEN_SELECT_FIVE
+				.get_fLotteryName());
 	}
-
+	
 	@Override
 	protected void set_fSpinnerItems() {
 		_fSpinnerStringIds = new int[] { R.string.spinner_item_optionaltwo,
@@ -52,11 +54,6 @@ public class JiangXiElevenSelectFiveActivityGroup extends SpinnersActivityGroup 
 				JiangXiElevenSelectFiveBeforOneGroupSelectActivity.class,
 				JiangXiElevenSelectFiveBeforTwoGroupSelectActivity.class,
 				JiangXiElevenSelectFiveBeforThreeGroupSelectActivity.class };
-	}
-
-	@Override
-	public void setTitleButton() {
-
 	}
 
 	@Override

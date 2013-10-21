@@ -1,18 +1,13 @@
 package com.ruyicai.android.controller.activity.home.accountrecharge;
 
 import roboguice.inject.InjectView;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.ListView;
 
 import com.ruyicai.android.R;
 import com.ruyicai.android.controller.activity.BaseActivity;
-import com.ruyicai.android.controller.activity.loginorregister.LoginActivity;
 import com.ruyicai.android.controller.adapter.listview.DescriptionListViewAdapter;
 import com.ruyicai.android.controller.compontent.bar.TitleBar;
-import com.ruyicai.android.controller.compontent.bar.TitleBarInterface;
 
 public class AccountRechargeActivity extends BaseActivity {
 
@@ -102,37 +97,4 @@ public class AccountRechargeActivity extends BaseActivity {
 
 		return iconResourceIds;
 	}
-
-	/**
-	 * 账户充值实现标题栏接口类
-	 *
-	 * @author xiang_000
-	 * @since RYC1.0 2013-4-9
-	 */
-	class AccountRechargeTitleBarInterface implements TitleBarInterface {
-		@Override
-		public void setTitleTextView() {
-			_fTitleBar._fLeftTextView
-					.setText(R.string.accountrecharge_titlebar_text);
-		}
-
-		@Override
-		public void setTitleButton() {
-			_fTitleBar._fRightButton.setVisibility(View.VISIBLE);
-			_fTitleBar._fRightButton
-					.setText(R.string.buylotteryhall_titlebar_rightbuttontext);
-			_fTitleBar._fRightButton
-					.setOnClickListener(new OnClickListener() {
-
-						@Override
-						public void onClick(View v) {
-							Intent intent = new Intent(
-									AccountRechargeActivity.this,
-									LoginActivity.class);
-							startActivity(intent);
-						}
-					});
-		}
-	}
-
 }

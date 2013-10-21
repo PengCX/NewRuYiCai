@@ -2,7 +2,6 @@ package com.ruyicai.android.controller.activity.home.buylotteryhall.arrange3;
 
 import com.ruyicai.android.R;
 import com.ruyicai.android.controller.activity.home.buylotteryhall.switchtabs.LotterySwitchTabsActivityGroup;
-import com.ruyicai.android.model.bean.lottery.LotteryType;
 
 /**
  * 排列三选号页面
@@ -12,11 +11,11 @@ import com.ruyicai.android.model.bean.lottery.LotteryType;
  */
 public class ArrangeThreeActivityGroup extends LotterySwitchTabsActivityGroup {
 
-	@Override
-	public void setTitleTextView() {
-		_fTitleBar._fLeftTextView.setText(LotteryType.ARRANGE_THREE
-				.get_fLotteryName());
-	}
+//	@Override
+//	public void setTitleTextView() {
+//		_fTitleBar._fLeftTextView.setText(LotteryType.ARRANGE_THREE
+//				.get_fLotteryName());
+//	}
 
 	@Override
 	protected void set_fSwithTabClasses() {

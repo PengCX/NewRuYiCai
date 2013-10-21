@@ -28,18 +28,4 @@ public class RegisterActivity extends BaseActivity {
 //		_fTitleBar.set_fTitleBarInterface(new RegisterTitleBarInterface());
 //		_fTitleBar.initTitleBarShow();
 	}
-
-	class RegisterTitleBarInterface implements TitleBarInterface {
-		@Override
-		public void setTitleTextView() {
-			_fTitleBar._fLeftTextView.setText(R.string.register_title_text);
-		}
-
-		@Override
-		public void setTitleButton() {
-			_fTitleBar._fRightButton.setVisibility(View.GONE);
-			_fTitleBar._fRightButton.setEnabled(false);
-		}
-	}
-
 }

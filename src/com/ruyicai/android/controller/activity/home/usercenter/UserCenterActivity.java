@@ -227,25 +227,4 @@ public class UserCenterActivity extends BaseActivity {
 		}
 
 	}
-
-	/**
-	 * 用户中心实现标题栏接口类
-	 *
-	 * @author xiang_000
-	 * @since RYC1.0 2013-4-9
-	 */
-	class UserCenterTitleBarInterface implements TitleBarInterface {
-		@Override
-		public void setTitleTextView() {
-			_fTitleBar._fLeftTextView
-					.setText(R.string.usercenter_titlebar_text);
-		}
-
-		@Override
-		public void setTitleButton() {
-			_fTitleBar._fRightButton.setVisibility(View.GONE);
-			_fTitleBar._fRightButton.setEnabled(false);
-		}
-	}
-
 }

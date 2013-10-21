@@ -1,18 +1,13 @@
 package com.ruyicai.android.controller.activity.home.more;
 
 import roboguice.inject.InjectView;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.ListView;
 
 import com.ruyicai.android.R;
 import com.ruyicai.android.controller.activity.BaseActivity;
-import com.ruyicai.android.controller.activity.loginorregister.LoginActivity;
 import com.ruyicai.android.controller.adapter.listview.SimpleListViewAdapter;
 import com.ruyicai.android.controller.compontent.bar.TitleBar;
-import com.ruyicai.android.controller.compontent.bar.TitleBarInterface;
 
 public class MoreActivity extends BaseActivity {
 
@@ -57,35 +52,4 @@ public class MoreActivity extends BaseActivity {
 
 		return itemsStringResourceIds;
 	}
-
-	/**
-	 * 更多页面实现标题栏显示接口类
-	 *
-	 * @author xiang_000
-	 * @since RYC1.0 2013-4-9
-	 */
-	class MoreTitleBarInterface implements TitleBarInterface {
-		@Override
-		public void setTitleTextView() {
-			_fTitleBar._fLeftTextView.setText(R.string.more_titlebar_text);
-		}
-
-		@Override
-		public void setTitleButton() {
-			_fTitleBar._fRightButton.setVisibility(View.VISIBLE);
-			_fTitleBar._fRightButton
-					.setText(R.string.more_titlebar_buttontext);
-			_fTitleBar._fRightButton
-					.setOnClickListener(new OnClickListener() {
-
-						@Override
-						public void onClick(View v) {
-							Intent intent = new Intent(MoreActivity.this,
-									LoginActivity.class);
-							startActivity(intent);
-						}
-					});
-		}
-	}
-
 }

@@ -9,19 +9,17 @@ import android.widget.TextView;
 
 import com.ruyicai.android.R;
 import com.ruyicai.android.controller.compontent.bar.TitleBar;
-import com.ruyicai.android.controller.compontent.bar.TitleBarInterface;
 
 import roboguice.activity.RoboActivityGroup;
 import roboguice.inject.InjectView;
 
 /**
  * 选项卡切换页面基类：包含标题栏、彩种开奖信息栏、选项卡切换导航栏和投注栏，使用选项卡导航栏切换页面；适用于彩种投注页面，彩种投注信息页面
- *
+ * 
  * @author xiang_000
  * @since RYC1.0 2013-4-8
  */
-public abstract class SwitchTabsActivityGroup extends RoboActivityGroup
-		implements TitleBarInterface {
+public abstract class SwitchTabsActivityGroup extends RoboActivityGroup {
 	/** 选项卡导航栏标签的跳转页面类数组 */
 	protected Class<?>[]	_fSwithTabClasses;
 	/** 选项卡导航栏标签的视图数组 */
@@ -55,10 +53,6 @@ public abstract class SwitchTabsActivityGroup extends RoboActivityGroup
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.switchtabs_activitygroup);
-
-//		// 设置标题栏接口，初始化显示
-//		_fTitleBar.set_fTitleBarInterface(this);
-//		_fTitleBar.initTitleBarShow();
 
 		// 初始化切换选项卡的显示
 		initSwitchTabsShow();

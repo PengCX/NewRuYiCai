@@ -12,16 +12,16 @@ import com.ruyicai.android.model.bean.lottery.LotteryType;
  */
 public class GuangDongHappyVeryActivityGroup extends SpinnersActivityGroup {
 
-	@Override
-	public void setTitleTextView() {
-		_fTitleBar._fLeftTextView.setText(LotteryType.GUANGDONG_HAPPYVERY
-				.get_fLotteryName());
-	}
-
-	@Override
-	public void setTitleButton() {
-
-	}
+//	@Override
+//	public void setTitleTextView() {
+//		_fTitleBar.set_fLeftTextString(LotteryType.GUANGDONG_HAPPYVERY
+//				.get_fLotteryName());
+//	}
+//
+//	@Override
+//	public void setTitleButton() {
+//
+//	}
 
 	@Override
 	protected void initLotteryInformationBarShow() {
