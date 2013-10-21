@@ -3,8 +3,9 @@
     <!-- 标题栏属性 -->
     <declare-styleable name="TitleBar">
         <attr name="_fLeftTextId" format="reference"/>
-        <attr name="_fRightButtonId" format="reference" />
+        <attr name="_fRightButtonTextId" format="reference" />
         <attr name="_fIsShowRightButton" format="boolean" />
+        <attr name="_fIsShowSpreadButton" format="boolean" />
     </declare-styleable>
 
 </resources>

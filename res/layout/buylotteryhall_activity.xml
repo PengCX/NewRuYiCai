@@ -15,7 +15,7 @@
         android:layout_alignParentTop="true"
         custom:_fIsShowRightButton="true"
         custom:_fLeftTextId="@string/buylotteryhall_titlebar_lefttext"
-        custom:_fRightButtonId="@string/buylotteryhall_titlebar_rightbuttontext" />
+        custom:_fRightButtonTextId="@string/buylotteryhall_titlebar_rightbuttontext" />
 
     <!-- 滑动通知栏 -->
 

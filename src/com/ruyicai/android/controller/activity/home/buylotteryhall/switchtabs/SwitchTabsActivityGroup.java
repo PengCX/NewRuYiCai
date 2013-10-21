@@ -15,7 +15,7 @@ import roboguice.inject.InjectView;
 
 /**
  * 选项卡切换页面基类：包含标题栏、彩种开奖信息栏、选项卡切换导航栏和投注栏，使用选项卡导航栏切换页面；适用于彩种投注页面，彩种投注信息页面
- * 
+ *
  * @author xiang_000
  * @since RYC1.0 2013-4-8
  */
@@ -52,8 +52,6 @@ public abstract class SwitchTabsActivityGroup extends RoboActivityGroup {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.switchtabs_activitygroup);
-
 		// 初始化切换选项卡的显示
 		initSwitchTabsShow();
 	}

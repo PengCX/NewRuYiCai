@@ -1,41 +1,37 @@
 package com.ruyicai.android.controller.activity.home.buylotteryhall.doubleball;
 
 import android.os.Bundle;
+import android.widget.TabHost;
 
 import com.ruyicai.android.R;
-import com.ruyicai.android.controller.activity.home.buylotteryhall.switchtabs.LotterySwitchTabsActivityGroup;
-import com.ruyicai.android.model.bean.lottery.LotteryType;
+import com.ruyicai.android.controller.activity.home.buylotteryhall.LotteryActivityGroup;
 
 /**
  * 双色球选号页面组
- * 
+ *
  * @author xiang_000
  * @since RYC1.0 2013-4-5
  */
-public class DoubleBallActivityGroup extends LotterySwitchTabsActivityGroup {
+public class DoubleBallActivityGroup extends LotteryActivityGroup {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		_fTitleBar.set_fLeftTextString(LotteryType.DOUBLE_BALL
-				.get_fLotteryName());
+		setContentView(R.layout.doubleball_switchtabs_activitygroup);
+		_fSwitchTabHost = (TabHost) findViewById(R.id.doubleball_switchtabs_activitygroup_tabhost);
 	}
 
 	@Override
-	protected void set_fSwithTabClasses() {
-		_fSwithTabClasses = new Class<?>[] {
+	protected void set_fSwithTabSpecClasses() {
+		_fSwithTabSpecClasses = new Class<?>[] {
 				DoubleBallSelfSelectActivity.class,
 				DoubleBallCourageSelectActivity.class };
 	}
 
 	@Override
-	protected void set_fSwitchTabTags() {
-		_fSwitchTabTagIds = new int[] { R.string.tabhost_textview_selfselect,
+	protected void set_fSwitchTabSpecTags() {
+		_fSwitchTabSpecTagIds = new int[] {
+				R.string.tabhost_textview_selfselect,
 				R.string.tabhost_textview_courageselect };
-	}
-
-	@Override
-	protected void setSwitchTabHostOnTabChangeListener() {
-
 	}
 }

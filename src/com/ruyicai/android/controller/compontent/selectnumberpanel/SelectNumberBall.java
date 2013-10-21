@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 /**
  * 选号小球类：实现了选号的点击图片更换，遗漏值的显示功能
- * 
+ *
  * @author xiang_000
  * @since RYC1.0 2013-4-9
  */
@@ -41,7 +41,7 @@ public class SelectNumberBall extends LinearLayout {
 
 	/**
 	 * 获取选号小球的编号
-	 * 
+	 *
 	 * @return 选号小球编号
 	 */
 	public String get_fNumber() {
@@ -70,7 +70,7 @@ public class SelectNumberBall extends LinearLayout {
 
 	/**
 	 * 设置选号球的数字
-	 * 
+	 *
 	 * @param aNumber
 	 *            选号球数字字符串
 	 */
@@ -81,7 +81,7 @@ public class SelectNumberBall extends LinearLayout {
 
 	/**
 	 * 设置选号球的遗漏值：如果遗漏值可见，则显示遗漏值；如果遗漏值不可见，则设置为不可见
-	 * 
+	 *
 	 * @param aLossValue
 	 *            遗漏值字符串
 	 * @param aIsShowLossValue
@@ -101,7 +101,7 @@ public class SelectNumberBall extends LinearLayout {
 
 	/**
 	 * 设置选号小球的种类：根据小球的种类，设置不同的图片选择器
-	 * 
+	 *
 	 * @param aSelectNumberBallType
 	 *            选号小球种类枚举
 	 */
@@ -124,7 +124,7 @@ public class SelectNumberBall extends LinearLayout {
 
 	/**
 	 * 检查该选号小球当前是否被选中
-	 * 
+	 *
 	 * @return 是否被选中标识
 	 */
 	public boolean isSelected() {
@@ -137,7 +137,7 @@ public class SelectNumberBall extends LinearLayout {
 
 	/**
 	 * 获取选球的号码
-	 * 
+	 *
 	 * @return 选球小球的号码
 	 */
 	public Integer getNumber() {
@@ -164,7 +164,7 @@ public class SelectNumberBall extends LinearLayout {
 
 	/**
 	 * 选号小球选择选择事件监听类：当按钮的选中状态发生变化的时候 ，选号小球号码的颜色进行变化：选中为变色，未选中为黑色。
-	 * 
+	 *
 	 * @author xiang_000
 	 * @since RYC1.0 2013-4-16
 	 */
@@ -183,8 +183,8 @@ public class SelectNumberBall extends LinearLayout {
 						R.color.black));
 			}
 
-			((LotterySwitchTabsActivityGroup) ((SelectNumberActivity) _fContext)
-					.getParent()).updateBetBarSelectedNumberShow();
+//			((LotterySwitchTabsActivityGroup) ((SelectNumberActivity) _fContext)
+//					.getParent()).updateBetBarSelectedNumberShow();
 		}
 	}
 }

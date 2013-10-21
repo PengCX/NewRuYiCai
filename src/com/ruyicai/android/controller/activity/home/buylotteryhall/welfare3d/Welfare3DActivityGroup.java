@@ -1,43 +1,37 @@
 package com.ruyicai.android.controller.activity.home.buylotteryhall.welfare3d;
 
 import android.os.Bundle;
+import android.widget.TabHost;
 
 import com.ruyicai.android.R;
-import com.ruyicai.android.controller.activity.home.buylotteryhall.switchtabs.LotterySwitchTabsActivityGroup;
-import com.ruyicai.android.model.bean.lottery.LotteryType;
+import com.ruyicai.android.controller.activity.home.buylotteryhall.LotteryActivityGroup;
 
 /**
  * 福彩3D选号页面组
- * 
+ *
  * @author xiang_000
  * @since RYC1.0 2013-4-5
  */
-public class Welfare3DActivityGroup extends LotterySwitchTabsActivityGroup {
+public class Welfare3DActivityGroup extends LotteryActivityGroup {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		_fTitleBar.set_fLeftTextString(LotteryType.WELFARE_3D
-				.get_fLotteryName());
+		setContentView(R.layout.welfare3d_switchtabs_activitygroup);
+		_fSwitchTabHost = (TabHost) findViewById(R.id.welfare3d_switchtabs_activitygroup_tabhost);
 	}
-	
+
 	@Override
-	protected void set_fSwithTabClasses() {
-		_fSwithTabClasses = new Class<?>[] { Welfare3DSelfSelectActivity.class,
+	protected void set_fSwithTabSpecClasses() {
+		_fSwithTabSpecClasses = new Class<?>[] { Welfare3DSelfSelectActivity.class,
 				Welfare3DGroupThreeActivity.class,
 				Welfare3DGroupSixActivity.class };
 	}
 
 	@Override
-	protected void set_fSwitchTabTags() {
-		_fSwitchTabTagIds = new int[] { R.string.tabhost_textview_selfselect,
+	protected void set_fSwitchTabSpecTags() {
+		_fSwitchTabSpecTagIds = new int[] { R.string.tabhost_textview_selfselect,
 				R.string.tabhost_textview_group3,
 				R.string.tabhost_textview_group6 };
 	}
-
-	@Override
-	protected void setSwitchTabHostOnTabChangeListener() {
-
-	}
-
 }

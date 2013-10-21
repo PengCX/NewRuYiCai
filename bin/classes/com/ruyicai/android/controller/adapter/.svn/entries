@@ -1,0 +1,37 @@
+10
+
+dir
+34
+https://pengcx/svn/MyRepositories/ruyicai/src/com/ruyicai/android/controller/adapter
+https://pengcx/svn/MyRepositories
+
+
+
+2013-04-14T08:57:50.299045Z
+17
+pengchengxiang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d3b2380c-9080-f14b-a556-ef95eda02dde
+
+gridview
+dir
+
+listview
+dir
+
+viewpager
+dir
+

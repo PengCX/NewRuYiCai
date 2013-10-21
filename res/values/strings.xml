@@ -199,6 +199,12 @@
     <string name="bettinginformation_title_union">发起合买</string>
     <string name="bettinginformation_title_present">赠送彩票</string>
 
+    <!-- 双色球 -->
+    <string name="doubleball">双色球</string>
+	<!-- 大乐透 -->
+	<string name="superlotto">大乐透</string>
+	<!-- 大乐透 -->
+	<string name="welfare3d">福彩3D</string>
     <!-- 江西11选5 -->
     <string name="jiangxi11xuan5_textview_selfselect_optionaltwopalymethod">至少选择2个号码投注，命中任意2位即中奖！奖金：6元</string>
     <string name="jiangxi11xuan5_textview_courageselect_optionaltwopalymethod">至少选择1个胆码和2个拖码投注，胆码加拖码≥3个，投注号码与开奖号码前两位一致，位置不限即中奖！奖金：6元</string>
@@ -216,6 +222,7 @@
     <string name="jiangxi11xuan5_textview_courageselect_optionaleightpalymethod">胆码可选1-7个，拖码至少选择2个，胆码加拖码≥9个，选号中任意5位与开奖号码一致即中奖！奖金：9元</string>
 
     <!-- 时时彩 -->
+    <string name="constantly">时时彩</string>
     <string name="constantly_textview_onestarplaymethod">至少选择1个号码球投注，命中开奖号码的个位即中奖！奖金：10元</string>
     <string name="constantly_textview_twostar_selfselectplaymethod">个、十位各选1个号码投注，按位置分别命中开奖号码的个、十位即中奖！奖金：100元</string>
     <string name="constantly_textview_twostar_groupselectplaymethod">选择2个或多个号码投注，命中开奖号码的个、十位号码即中奖（开出对子号不逢中奖）！奖金：50元</string>
@@ -258,4 +265,10 @@
 
     <!-- 竞彩足球 -->
     <string name="competefootball_playmethodchange_title">玩法切换</string>
+	<!-- 排列三 -->
+	<string name="arrangethree">排列三</string>
+	<!-- 排列五 -->
+	<string name="arrangefive">排列五</string>
+	<!-- 七星彩 -->
+	<string name="servenstar">七星彩</string>
 </resources>
