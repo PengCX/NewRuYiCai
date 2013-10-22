@@ -4,8 +4,7 @@ import android.app.ActivityGroup;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class JiangXiElevenSelectFiveBeforTwoGroupSelectActivity extends
-		ActivityGroup {
+public class JiangXiElevenSelectFiveBeforTwoGroupSelectActivity extends ActivityGroup {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

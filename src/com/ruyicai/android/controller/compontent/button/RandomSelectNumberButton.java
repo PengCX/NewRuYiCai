@@ -23,24 +23,24 @@ import android.widget.LinearLayout;
  */
 public class RandomSelectNumberButton extends LinearLayout {
 	/** 上下文对象 */
-	private Context							_fContext;
+	private Context _fContext;
 	/** 随机按钮自我对象 */
-	private RandomSelectNumberButton		_fSelf;
+	private RandomSelectNumberButton _fSelf;
 	/** 选择随机选号个数按钮 */
-	private Button							_fSelectRandomNumButton;
+	private Button _fSelectRandomNumButton;
 	/** 随机选号按钮 */
-	private Button							_fRandomSelectNumberButton;
+	private Button _fRandomSelectNumberButton;
 	/** 随机选号个数下拉列表 */
-	private RandomButtonDropDownMenu		_fRandomButtonDropDownMenu;
+	private RandomButtonDropDownMenu _fRandomButtonDropDownMenu;
 	/** 控制的选号小球表格表格 */
-	private SelectNumberBallsTableLayout	_fSelectNumberBallsTableLayout;
+	private SelectNumberBallsTableLayout _fSelectNumberBallsTableLayout;
 
 	/** 随机按钮选择的随机号码个数 */
-	private int								_fRandomNumberNum;
+	private int _fRandomNumberNum;
 	/** 随机按钮下拉菜单最小随机号码个数 */
-	private int								_fMinRandomNum;
+	private int _fMinRandomNum;
 	/** 随机按钮下拉菜单的选择按钮个数 */
-	private int								_fSelectButtonNum;
+	private int _fSelectButtonNum;
 
 	public RandomSelectNumberButton(Context aContext, int aRandomNumberNum) {
 		super(aContext);
@@ -55,11 +55,9 @@ public class RandomSelectNumberButton extends LinearLayout {
 		_fSelectRandomNumButton = (Button) findViewById(R.id.randombutton_button_selectnum);
 		_fSelectRandomNumButton.setText(_fRandomNumberNum
 				+ _fContext.getString(R.string.randombutton_button_unit));
-		_fSelectRandomNumButton
-				.setOnClickListener(new SelectNumButtonClickListener());
+		_fSelectRandomNumButton.setOnClickListener(new SelectNumButtonClickListener());
 		_fRandomSelectNumberButton = (Button) findViewById(R.id.randombutton_button_randomselect);
-		_fRandomSelectNumberButton
-				.setOnClickListener(new RandomSelectButtonClickListener());
+		_fRandomSelectNumberButton.setOnClickListener(new RandomSelectButtonClickListener());
 	}
 
 	public RandomSelectNumberButton(Context aContext, AttributeSet aAttrs) {
@@ -120,8 +118,8 @@ public class RandomSelectNumberButton extends LinearLayout {
 		@Override
 		public void onClick(View v) {
 			if (_fRandomButtonDropDownMenu == null) {
-				_fRandomButtonDropDownMenu = new RandomButtonDropDownMenu(
-						_fContext, _fMinRandomNum, _fSelectButtonNum);
+				_fRandomButtonDropDownMenu = new RandomButtonDropDownMenu(_fContext,
+						_fMinRandomNum, _fSelectButtonNum);
 			}
 			_fRandomButtonDropDownMenu.set_fRandomSelectNumberButton(_fSelf);
 			_fRandomButtonDropDownMenu.ShowAsRandomButtonDropDownMenu(v);
@@ -136,24 +134,21 @@ public class RandomSelectNumberButton extends LinearLayout {
 	 */
 	class RandomSelectButtonClickListener implements OnClickListener {
 
-		private static final String	TAG	= "RandomSelectButtonClickListener";
+		private static final String TAG = "RandomSelectButtonClickListener";
 
 		@Override
 		public void onClick(View v) {
 			// 获取小球表格的起始号码，和小球的个数
-			int startNumber = _fSelectNumberBallsTableLayout
-					.get_fSelectNumberBallStartNum();
+			int startNumber = _fSelectNumberBallsTableLayout.get_fSelectNumberBallStartNum();
 			int ballNum = _fSelectNumberBallsTableLayout.get_fSelectBallNum();
 			// 使用数学工具类获取随机数集合
 			List<Integer> specifyNumberList = MathTools
-					.getSpecifiedRangeRadomNumberWithoutRepetation(startNumber,
-							startNumber + ballNum, _fRandomNumberNum);
-			LogTools.showLog(TAG,
-					"产生的指定小球的编号集合为：" + specifyNumberList.toString() + "，大小为："
-							+ specifyNumberList.size(), LogTools.INFO);
+					.getSpecifiedRangeRadomNumberWithoutRepetation(startNumber, startNumber
+							+ ballNum, _fRandomNumberNum);
+			LogTools.showLog(TAG, "产生的指定小球的编号集合为：" + specifyNumberList.toString() + "，大小为："
+					+ specifyNumberList.size(), LogTools.INFO);
 			// 根据随机数集合指定小球表格当中的小球为选定状态
-			_fSelectNumberBallsTableLayout
-					.selectSpecifiedNumberBalls(specifyNumberList);
+			_fSelectNumberBallsTableLayout.selectSpecifiedNumberBalls(specifyNumberList);
 		}
 	}
 }

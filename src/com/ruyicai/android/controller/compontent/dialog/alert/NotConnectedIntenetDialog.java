@@ -16,10 +16,9 @@ import android.content.res.Resources;
  * @author xiang_000
  * @since RYC1.0 2013-3-30
  */
-public class NotConnectedIntenetDialog extends AlertDialog implements
-		AlertDialogInterface {
-	private Context		_fContext;
-	private Resources	_fResources;
+public class NotConnectedIntenetDialog extends AlertDialog implements AlertDialogInterface {
+	private Context _fContext;
+	private Resources _fResources;
 
 	public NotConnectedIntenetDialog(Context aContext) {
 		super(aContext);
@@ -38,14 +37,12 @@ public class NotConnectedIntenetDialog extends AlertDialog implements
 
 	@Override
 	public void setAlertMessage() {
-		setMessage(_fResources
-				.getString(R.string.nointenetdialog_message_intenetnotconnted));
+		setMessage(_fResources.getString(R.string.nointenetdialog_message_intenetnotconnted));
 	}
 
 	@Override
 	public void setAlertPositiveButton() {
-		setButton(BUTTON_POSITIVE,
-				_fResources.getString(R.string.nointenetdialog_button_set),
+		setButton(BUTTON_POSITIVE, _fResources.getString(R.string.nointenetdialog_button_set),
 				new OnClickListener() {
 
 					@Override
@@ -70,8 +67,7 @@ public class NotConnectedIntenetDialog extends AlertDialog implements
 
 	@Override
 	public void setAlertNegativeButton() {
-		setButton(BUTTON_NEGATIVE,
-				_fResources.getString(R.string.nointenetdialog_button_cancle),
+		setButton(BUTTON_NEGATIVE, _fResources.getString(R.string.nointenetdialog_button_cancle),
 				new OnClickListener() {
 
 					@Override
@@ -83,8 +79,7 @@ public class NotConnectedIntenetDialog extends AlertDialog implements
 
 	@Override
 	public void setAlertNeutralButton() {
-		setButton(BUTTON_NEUTRAL,
-				_fResources.getString(R.string.nointenetdialog_button_enter),
+		setButton(BUTTON_NEUTRAL, _fResources.getString(R.string.nointenetdialog_button_enter),
 				new OnClickListener() {
 
 					@Override

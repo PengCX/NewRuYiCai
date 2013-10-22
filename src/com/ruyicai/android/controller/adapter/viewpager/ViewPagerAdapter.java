@@ -14,7 +14,7 @@ import android.view.ViewGroup;
  */
 public class ViewPagerAdapter extends PagerAdapter {
 	/** 页面视图集合 */
-	private List<View>	_fViewList;
+	private List<View> _fViewList;
 
 	/**
 	 * 构造方法

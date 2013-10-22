@@ -17,17 +17,16 @@ import android.widget.TextView;
  */
 public class DescriptionListViewAdapter extends BaseAdapter {
 	/** 上下文对象 */
-	private Context	_fContext;
+	private Context _fContext;
 	/** 表项图标图片资源Id数组 */
-	private int[]	_fIconResourceIds;
+	private int[] _fIconResourceIds;
 	/** 表项标题字符串资源Id数组 */
-	private int[]	_fIitemStringResourceIds;
+	private int[] _fIitemStringResourceIds;
 	/** 表项描述字符串资源Id数组 */
-	private int[]	_fDescriptionResourceIds;
+	private int[] _fDescriptionResourceIds;
 
-	public DescriptionListViewAdapter(Context aContexts,
-			int[] aIconResourceIds, int[] aIitemStringResourceIds,
-			int[] aDescriptionResourceIds) {
+	public DescriptionListViewAdapter(Context aContexts, int[] aIconResourceIds,
+			int[] aIitemStringResourceIds, int[] aDescriptionResourceIds) {
 		super();
 		_fContext = aContexts;
 		_fIconResourceIds = aIconResourceIds;
@@ -58,8 +57,7 @@ public class DescriptionListViewAdapter extends BaseAdapter {
 			viewHoler = new ViewHoler();
 
 			LayoutInflater fInflater = LayoutInflater.from(_fContext);
-			aConvertView = fInflater.inflate(
-					R.layout.description_listview_item, null);
+			aConvertView = fInflater.inflate(R.layout.description_listview_item, null);
 
 			viewHoler._fIconImageView = (ImageView) aConvertView
 					.findViewById(R.id.descriptionlistviewitem_imageview_icon);
@@ -73,18 +71,16 @@ public class DescriptionListViewAdapter extends BaseAdapter {
 			viewHoler = (ViewHoler) aConvertView.getTag();
 		}
 
-		viewHoler._fIconImageView
-				.setImageResource(_fIconResourceIds[aPosition]);
+		viewHoler._fIconImageView.setImageResource(_fIconResourceIds[aPosition]);
 		viewHoler._fItemTextView.setText(_fIitemStringResourceIds[aPosition]);
-		viewHoler._fDescriptionTextView
-				.setText(_fDescriptionResourceIds[aPosition]);
+		viewHoler._fDescriptionTextView.setText(_fDescriptionResourceIds[aPosition]);
 
 		return aConvertView;
 	}
 
 	static class ViewHoler {
-		ImageView	_fIconImageView;
-		TextView	_fItemTextView;
-		TextView	_fDescriptionTextView;
+		ImageView _fIconImageView;
+		TextView _fItemTextView;
+		TextView _fDescriptionTextView;
 	}
 }

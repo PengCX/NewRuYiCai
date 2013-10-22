@@ -32,8 +32,7 @@ public class DataTools {
 
 		try {
 			byte[] tempByte = new byte[1024];
-			byteArrayOutputStream = new ByteArrayOutputStream(
-					aCompressedData.length);
+			byteArrayOutputStream = new ByteArrayOutputStream(aCompressedData.length);
 
 			// 如果数据还没有解压完毕，继续解压数据
 			while (!inflater.finished()) {

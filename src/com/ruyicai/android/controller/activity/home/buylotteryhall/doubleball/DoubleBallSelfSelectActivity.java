@@ -18,7 +18,7 @@ import com.ruyicai.android.controller.compontent.selectnumberpanel.SelectNumberB
  * @since RYC1.0 2013-4-21
  */
 public class DoubleBallSelfSelectActivity extends SelectNumberActivity {
-	private static final String	TAG	= "DoubleBallSelfSelectActivity";
+	private static final String TAG = "DoubleBallSelfSelectActivity";
 
 	@Override
 	protected boolean isAddPlayMethodTextView() {
@@ -39,16 +39,15 @@ public class DoubleBallSelfSelectActivity extends SelectNumberActivity {
 	protected void initSelectNumberPanelsWithPage(int aPage_i) {
 		for (int panel_i = 0; panel_i < _fNumOfSelectNumberPanel; panel_i++) {
 			// 获取当前初始化显示的选号面板对象
-			SelectNumberPanel selectNumberPanel = _fSelectNumberPanelList.get(
-					aPage_i).get(panel_i);
+			SelectNumberPanel selectNumberPanel = _fSelectNumberPanelList.get(aPage_i).get(panel_i);
 
 			switch (panel_i) {
-			case 0:
-				initRedSelectNumberPanel(aPage_i, selectNumberPanel);
-				break;
-			case 1:
-				initBlueSelectNumberPanel(aPage_i, selectNumberPanel);
-				break;
+				case 0:
+					initRedSelectNumberPanel(aPage_i, selectNumberPanel);
+					break;
+				case 1:
+					initBlueSelectNumberPanel(aPage_i, selectNumberPanel);
+					break;
 			}
 		}
 	}
@@ -61,14 +60,12 @@ public class DoubleBallSelfSelectActivity extends SelectNumberActivity {
 	 * @param selectNumberPanel
 	 *            选号面板对象
 	 */
-	private void initBlueSelectNumberPanel(int aPage_i,
-			SelectNumberPanel selectNumberPanel) {
+	private void initBlueSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
 			selectNumberPanel.initSelectNumberPanelShow("篮球区：", 1, 16, 1, 16,
 					SelectNumberBallType.BLUEBALL, null, false);
 		} else {
-			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
-					12, 13, 14, 15, 16 };
+			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 };
 			selectNumberPanel.initSelectNumberPanelShow("篮球区：", 1, 16, 1, 16,
 					SelectNumberBallType.BLUEBALL, lossValues, true);
 		}
@@ -82,49 +79,46 @@ public class DoubleBallSelfSelectActivity extends SelectNumberActivity {
 	 * @param selectNumberPanel
 	 *            选号面板对象
 	 */
-	private void initRedSelectNumberPanel(int aPage_i,
-			SelectNumberPanel selectNumberPanel) {
+	private void initRedSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
 			selectNumberPanel.initSelectNumberPanelShow("红球区：", 6, 10, 1, 33,
 					SelectNumberBallType.REDBALL, null, false);
 		} else {
-			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
-					12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
-					27, 28, 29, 30, 31, 32, 33 };
+			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
+					17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33 };
 			selectNumberPanel.initSelectNumberPanelShow("红球区：", 6, 10, 1, 33,
 					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 	}
-	
+
 	/**
 	 * 选号 页面投注栏按钮点击监听实现类
 	 * 
 	 * @author xiang_000
 	 * @since RYC1.0 2013-4-18
 	 */
-	public class DoubleBallSelfSelectBettingBarButtonOnClickListenter implements
-			OnClickListener {
+	public class DoubleBallSelfSelectBettingBarButtonOnClickListenter implements OnClickListener {
 
 		@Override
 		public void onClick(View v) {
 			switch (v.getId()) {
-			case R.id.bettingbar_button_numberbasket:
-				Toast.makeText(DoubleBallSelfSelectActivity.this,
-						"你点击了双色球自选号码篮按钮", Toast.LENGTH_LONG).show();
-				break;
-			case R.id.bettingbar_button_clearselectednumber:
-				Toast.makeText(DoubleBallSelfSelectActivity.this,
-						"你点击了双色球自选清除已选择号码按钮", Toast.LENGTH_LONG).show();
-				break;
-			case R.id.bettingbar_button_addtonumberbasket:
-				Toast.makeText(DoubleBallSelfSelectActivity.this,
-						"你点击了双色球自选加入号码篮按钮", Toast.LENGTH_LONG).show();
-				break;
-			case R.id.bettingbar_button_betting:
-				Intent intent = new Intent(DoubleBallSelfSelectActivity.this,
-						BetInformationActivityGroup.class);
-				startActivity(intent);
-				break;
+				case R.id.bettingbar_button_numberbasket:
+					Toast.makeText(DoubleBallSelfSelectActivity.this, "你点击了双色球自选号码篮按钮",
+							Toast.LENGTH_LONG).show();
+					break;
+				case R.id.bettingbar_button_clearselectednumber:
+					Toast.makeText(DoubleBallSelfSelectActivity.this, "你点击了双色球自选清除已选择号码按钮",
+							Toast.LENGTH_LONG).show();
+					break;
+				case R.id.bettingbar_button_addtonumberbasket:
+					Toast.makeText(DoubleBallSelfSelectActivity.this, "你点击了双色球自选加入号码篮按钮",
+							Toast.LENGTH_LONG).show();
+					break;
+				case R.id.bettingbar_button_betting:
+					Intent intent = new Intent(DoubleBallSelfSelectActivity.this,
+							BetInformationActivityGroup.class);
+					startActivity(intent);
+					break;
 			}
 		}
 

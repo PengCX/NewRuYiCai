@@ -13,7 +13,7 @@ import com.ruyicai.android.controller.compontent.panel.SelectNumberPanel;
  * @since RYC1.0 2013-4-4
  */
 public class LotteryInformationActivity extends RoboActivityGroup {
-	private SelectNumberPanel	selectNumberPanel;
+	private SelectNumberPanel selectNumberPanel;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

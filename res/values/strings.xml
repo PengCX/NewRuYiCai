@@ -206,6 +206,7 @@
 	<!-- 大乐透 -->
 	<string name="welfare3d">福彩3D</string>
     <!-- 江西11选5 -->
+    <string name="jiangxi11xuan5">江西11选5</string>
     <string name="jiangxi11xuan5_textview_selfselect_optionaltwopalymethod">至少选择2个号码投注，命中任意2位即中奖！奖金：6元</string>
     <string name="jiangxi11xuan5_textview_courageselect_optionaltwopalymethod">至少选择1个胆码和2个拖码投注，胆码加拖码≥3个，投注号码与开奖号码前两位一致，位置不限即中奖！奖金：6元</string>
     <string name="jiangxi11xuan5_textview_selfselect_optionalthreepalymethod">至少选择3个号码投注，命中任意3位即中奖！奖金：19元</string>
@@ -233,6 +234,7 @@
     <string name="constantly_textview_bigsmallplaymethod">各位各选中1个号码投注，所选选中的号码与开奖的个位号码性质按位置相符即中奖！奖金：4元</string>
 
     <!-- 广东快乐十分 -->
+    <string name="guangdonghappyvery">广东快乐十分</string>
     <string name="guangdonghappyvery_textview_selectonenumbettingplaymethod">至少选择1个号码投注，命中开奖在号码第一位即中奖！奖金：25元</string>
     <string name="guangdonghappyvery_textview_selectoneredbettingplaymethod">19，20为红号，从这两个号码任选一个投注，开奖号码第一位是红号即中奖！奖金：5元</string>
     <string name="guangdonghappyvery_textview_optionaltwo_selfselectplaymethod">至少选择2个号码投注，命中开奖号码的任意两位即中奖！奖金：8元</string>
@@ -261,14 +263,17 @@
     <string name="elevenluckgold_textview_optionalsix_courageslectplaymethod">胆码可选1-5个，拖码至少选择2个，胆码加拖码≥7个，选号中任意5位于开奖号码一致即中奖！奖金：90元</string>
     <string name="elevenluckgold_textview_optionalseven_selfselectplaymethod">至少选择7个号码投注，选号中任意5位于开奖号码一致即中奖！奖金：26元</string>
     <string name="elevenluckgold_textview_optionalseven_courageslectplaymethod">胆码可选1-6个，拖码至少选择2个，胆码加拖码≥8个，选号中任意5位于开奖号码一致即中奖！奖金：26元</string>
-    <string name="elevenluckgold_textview_optionaleightplaymethod">至少选择8个号码投注，选号中任意5位于开奖号码一致即中奖！奖金：9元</string>
-
-    <!-- 竞彩足球 -->
+    <string name="elevenluckgold_textview_optionaleightplaymethod">至少选择8个号码投注，选号中任意5位于开奖号码一致即中奖！奖金：9元</string><!-- 竞彩足球 -->
     <string name="competefootball_playmethodchange_title">玩法切换</string>
-	<!-- 排列三 -->
-	<string name="arrangethree">排列三</string>
-	<!-- 排列五 -->
-	<string name="arrangefive">排列五</string>
-	<!-- 七星彩 -->
-	<string name="servenstar">七星彩</string>
+    <!-- 排列三 -->
+    <string name="arrangethree">排列三</string>
+    <!-- 排列五 -->
+    <string name="arrangefive">排列五</string>
+    <!-- 七星彩 -->
+    <string name="servenstar">七星彩</string>
+    <!-- 七乐彩 -->
+    <string name="servenhappy">七乐彩</string>
+    <!-- 22选5 -->
+    <string name="twentytwoselectfive">22选5</string>
+
 </resources>

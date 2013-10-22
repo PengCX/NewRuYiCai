@@ -29,8 +29,7 @@ public class ConstantlyTwoStarActivity extends SelectNumberActivity implements
 	@Override
 	public void setPageChangeRadioButtonTextResouceIds() {
 		_fPageChangeRadioButtons.set_fRadioButtonTextResouceIds(new int[] {
-				R.string.radiogroup_text_selfselect,
-				R.string.radiogroup_text_groupselect,
+				R.string.radiogroup_text_selfselect, R.string.radiogroup_text_groupselect,
 				R.string.radiogroup_text_sum });
 	}
 
@@ -39,14 +38,12 @@ public class ConstantlyTwoStarActivity extends SelectNumberActivity implements
 		// FIXME 如何将各种玩法的标识改进，不适用文本字符串资源Id
 		int checkId = _fPageChangeRadioButtons.getCheckedRadioButtonId();
 		if (checkId == R.string.radiogroup_text_selfselect) {
-			_fPlayMethodTextView
-					.setText(R.string.constantly_textview_twostar_selfselectplaymethod);
+			_fPlayMethodTextView.setText(R.string.constantly_textview_twostar_selfselectplaymethod);
 		} else if (checkId == R.string.radiogroup_text_groupselect) {
 			_fPlayMethodTextView
 					.setText(R.string.constantly_textview_twostar_groupselectplaymethod);
 		} else {
-			_fPlayMethodTextView
-					.setText(R.string.constantly_textview_twostar_sumplaymethod);
+			_fPlayMethodTextView.setText(R.string.constantly_textview_twostar_sumplaymethod);
 		}
 
 	}
@@ -67,46 +64,41 @@ public class ConstantlyTwoStarActivity extends SelectNumberActivity implements
 	protected void initSelectNumberPanelsWithPage(int aPage_i) {
 		for (int panel_i = 0; panel_i < _fNumOfSelectNumberPanel; panel_i++) {
 			// 获取当前初始化显示的选号面板对象
-			SelectNumberPanel selectNumberPanel = _fSelectNumberPanelList.get(
-					aPage_i).get(panel_i);
+			SelectNumberPanel selectNumberPanel = _fSelectNumberPanelList.get(aPage_i).get(panel_i);
 
 			switch (panel_i) {
-			case 0:
-				int checkedId = _fPageChangeRadioButtons
-						.getCheckedRadioButtonId();
+				case 0:
+					int checkedId = _fPageChangeRadioButtons.getCheckedRadioButtonId();
 
-				if (checkedId == R.string.radiogroup_text_selfselect) {
-					initDecadeSelectNumberPanel(aPage_i, selectNumberPanel);
-				} else if (checkedId == R.string.radiogroup_text_groupselect) {
-					initBettingNumSelectNumberPanel(aPage_i, selectNumberPanel);
-				} else {
-					initSumBettingNumSelectNumberPanel(aPage_i,
-							selectNumberPanel);
-				}
-				break;
-			case 1:
-				initNumberSelectNumberPanel(aPage_i, selectNumberPanel);
-				break;
+					if (checkedId == R.string.radiogroup_text_selfselect) {
+						initDecadeSelectNumberPanel(aPage_i, selectNumberPanel);
+					} else if (checkedId == R.string.radiogroup_text_groupselect) {
+						initBettingNumSelectNumberPanel(aPage_i, selectNumberPanel);
+					} else {
+						initSumBettingNumSelectNumberPanel(aPage_i, selectNumberPanel);
+					}
+					break;
+				case 1:
+					initNumberSelectNumberPanel(aPage_i, selectNumberPanel);
+					break;
 			}
 		}
 	}
 
-	private void initSumBettingNumSelectNumberPanel(int aPage_i,
-			SelectNumberPanel selectNumberPanel) {
+	private void initSumBettingNumSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
-			selectNumberPanel.initSelectNumberPanelShow("请选择投注号码：", 1, 16, 0,
-					19, SelectNumberBallType.REDBALL, null, false);
+			selectNumberPanel.initSelectNumberPanelShow("请选择投注号码：", 1, 16, 0, 19,
+					SelectNumberBallType.REDBALL, null, false);
 		} else {
-			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
-					12, 13, 14, 15, 16, 17, 18, 19 };
-			selectNumberPanel.initSelectNumberPanelShow("请选择投注号码：", 1, 16, 0,
-					19, SelectNumberBallType.REDBALL, lossValues, true);
+			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
+					17, 18, 19 };
+			selectNumberPanel.initSelectNumberPanelShow("请选择投注号码：", 1, 16, 0, 19,
+					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}
 
-	private void initNumberSelectNumberPanel(int aPage_i,
-			SelectNumberPanel selectNumberPanel) {
+	private void initNumberSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
 			selectNumberPanel.initSelectNumberPanelShow("个位区：", 1, 16, 0, 10,
 					SelectNumberBallType.REDBALL, null, false);
@@ -118,21 +110,19 @@ public class ConstantlyTwoStarActivity extends SelectNumberActivity implements
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}
 
-	private void initBettingNumSelectNumberPanel(int aPage_i,
-			SelectNumberPanel selectNumberPanel) {
+	private void initBettingNumSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
-			selectNumberPanel.initSelectNumberPanelShow("请选择投注号码：", 1, 16, 0,
-					10, SelectNumberBallType.REDBALL, null, false);
+			selectNumberPanel.initSelectNumberPanelShow("请选择投注号码：", 1, 16, 0, 10,
+					SelectNumberBallType.REDBALL, null, false);
 		} else {
 			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-			selectNumberPanel.initSelectNumberPanelShow("请选择投注号码：", 1, 16, 0,
-					10, SelectNumberBallType.REDBALL, lossValues, true);
+			selectNumberPanel.initSelectNumberPanelShow("请选择投注号码：", 1, 16, 0, 10,
+					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}
 
-	private void initDecadeSelectNumberPanel(int aPage_i,
-			SelectNumberPanel selectNumberPanel) {
+	private void initDecadeSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
 			selectNumberPanel.initSelectNumberPanelShow("十位区：", 1, 16, 0, 10,
 					SelectNumberBallType.REDBALL, null, false);

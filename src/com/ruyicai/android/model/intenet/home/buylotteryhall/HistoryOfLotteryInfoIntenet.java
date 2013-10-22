@@ -13,11 +13,11 @@ import com.ruyicai.android.model.intenet.BaseIntenet;
  */
 public class HistoryOfLotteryInfoIntenet extends BaseIntenet {
 	// 彩种
-	private String	_fLotno;
+	private String _fLotno;
 	// 第几页
-	private String	_fPageIndex;
+	private String _fPageIndex;
 	// 每页显示的条数
-	private String	_fMaxResult;
+	private String _fMaxResult;
 
 	/**
 	 * 构造方法
@@ -29,8 +29,7 @@ public class HistoryOfLotteryInfoIntenet extends BaseIntenet {
 	 * @param _fMaxResult
 	 *            每页显示的条数
 	 */
-	public HistoryOfLotteryInfoIntenet(String _fLotno, String _fPageIndex,
-			String _fMaxResult) {
+	public HistoryOfLotteryInfoIntenet(String _fLotno, String _fPageIndex, String _fMaxResult) {
 		super();
 		this._fLotno = _fLotno;
 		this._fPageIndex = _fPageIndex;

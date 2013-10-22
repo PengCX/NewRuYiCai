@@ -13,33 +13,32 @@ public class AccountRechargeActivity extends BaseActivity {
 
 	/** 引用视图:账户充值标题栏 */
 	@InjectView(R.id.accountrecharge_title_bar)
-	private TitleBar	_fTitleBar;
+	private TitleBar _fTitleBar;
 	/** 引用视图：充值方式列表 */
 	@InjectView(R.id.accountrecharge_listview_rechargemethods)
-	private ListView	_fRechargeMethodListView;
+	private ListView _fRechargeMethodListView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.accountercharge_activity);
 
-//		_fTitleBar
-//				.set_fTitleBarInterface(new AccountRechargeTitleBarInterface());
-//		_fTitleBar.initTitleBarShow();
+		// _fTitleBar
+		// .set_fTitleBarInterface(new AccountRechargeTitleBarInterface());
+		// _fTitleBar.initTitleBarShow();
 
 		int[] iconResourceIds = getIconResourceIds();
 		int[] itemStringResourceIds = getItemStringResourceIds();
 		int[] descriptionResourceIds = getDescriptionResourceIds();
 
 		DescriptionListViewAdapter descriptionListViewAdapter = new DescriptionListViewAdapter(
-				this, iconResourceIds, itemStringResourceIds,
-				descriptionResourceIds);
+				this, iconResourceIds, itemStringResourceIds, descriptionResourceIds);
 		_fRechargeMethodListView.setAdapter(descriptionListViewAdapter);
 	}
 
 	/**
 	 * 获取选项描述字符串字段Id数组
-	 *
+	 * 
 	 * @return 字符串资源Id数组
 	 */
 	private int[] getDescriptionResourceIds() {
@@ -59,7 +58,7 @@ public class AccountRechargeActivity extends BaseActivity {
 
 	/**
 	 * 获取选项字符串资源Id数组
-	 *
+	 * 
 	 * @return 字符串资源Id数组
 	 */
 	private int[] getItemStringResourceIds() {
@@ -80,7 +79,7 @@ public class AccountRechargeActivity extends BaseActivity {
 
 	/**
 	 * 获取图标资源Id数组
-	 *
+	 * 
 	 * @return 图标资源Id数组
 	 */
 	private int[] getIconResourceIds() {

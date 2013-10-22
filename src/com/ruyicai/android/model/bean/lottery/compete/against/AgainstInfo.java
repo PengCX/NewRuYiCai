@@ -8,17 +8,17 @@ package com.ruyicai.android.model.bean.lottery.compete.against;
  */
 public class AgainstInfo {
 	/** 对阵序号 */
-	private String	_fTeamId;
+	private String _fTeamId;
 	/** 比赛时间 */
-	private String	_fDayFormat;
+	private String _fDayFormat;
 	/** 主队名称 */
-	private String	_fHomeTeam;
+	private String _fHomeTeam;
 	/** 客队名称 */
-	private String	_fGuestTeam;
+	private String _fGuestTeam;
 	/** 赛事名称 */
-	private String	_fLeague;
+	private String _fLeague;
 	/** 截止时间 */
-	private String	_fEndTime;
+	private String _fEndTime;
 
 	public String getfTeamId() {
 		return _fTeamId;

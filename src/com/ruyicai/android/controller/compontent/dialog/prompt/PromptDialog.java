@@ -22,30 +22,30 @@ import android.widget.TextView;
 public abstract class PromptDialog extends AlertDialog {
 
 	/** 上下文对象 */
-	protected Context							_fContext;
+	protected Context _fContext;
 	/** 资源对象 */
-	protected Resources							_fResources;
+	protected Resources _fResources;
 
 	/** 标题文本 */
-	protected String							_fTitleString;
+	protected String _fTitleString;
 	/** 内容视图 */
-	protected View								_fContentView;
+	protected View _fContentView;
 	/** 确定按钮文本 */
-	protected String							_fPositiveButtonString;
+	protected String _fPositiveButtonString;
 	/** 其它按钮文本 */
-	protected String							_fOtherButtonString;
+	protected String _fOtherButtonString;
 	/** 取消按钮文本 */
-	protected String							_fNegativeButtonString;
+	protected String _fNegativeButtonString;
 
 	/** 对话框视图 */
-	private View								_fDialogView;
+	private View _fDialogView;
 
 	/** 确定按钮事件监听器接口 */
-	protected DialogInterface.OnClickListener	_fPositiveButtonClickListener;
+	protected DialogInterface.OnClickListener _fPositiveButtonClickListener;
 	/** 其它按钮事件监听器 */
-	protected DialogInterface.OnClickListener	_fOtherButtonClickListener;
+	protected DialogInterface.OnClickListener _fOtherButtonClickListener;
 	/** 取消按钮事件监听器接口 */
-	protected DialogInterface.OnClickListener	_fNegativeButtOnClickListener;
+	protected DialogInterface.OnClickListener _fNegativeButtOnClickListener;
 
 	public PromptDialog(Context aContext) {
 		super(aContext);
@@ -142,8 +142,7 @@ public abstract class PromptDialog extends AlertDialog {
 		}
 
 		// 设置其它按钮
-		Button otherButton = ((Button) _fDialogView
-				.findViewById(R.id.promptdialog_button_other));
+		Button otherButton = ((Button) _fDialogView.findViewById(R.id.promptdialog_button_other));
 		if (_fOtherButtonString != null) {
 			otherButton.setText(_fOtherButtonString);
 
@@ -152,8 +151,7 @@ public abstract class PromptDialog extends AlertDialog {
 
 					@Override
 					public void onClick(View v) {
-						_fOtherButtonClickListener.onClick(aDialog,
-								DialogInterface.BUTTON_NEUTRAL);
+						_fOtherButtonClickListener.onClick(aDialog, DialogInterface.BUTTON_NEUTRAL);
 					}
 				});
 			}

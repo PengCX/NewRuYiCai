@@ -18,40 +18,40 @@ import android.widget.Toast;
  */
 public class CompeteFootballPlayMethodChangeDialog extends PromptDialog {
 	/** 胜平负单选按钮组 */
-	private RadioGroup	_fWinTieLossPassRadioGroup;
+	private RadioGroup _fWinTieLossPassRadioGroup;
 	/** 胜平负过关按钮 */
-	private RadioButton	_fWinTieLossPassRadioButton;
+	private RadioButton _fWinTieLossPassRadioButton;
 	/** 胜平负单关按钮 */
-	private RadioButton	_fWinTieLossSingleRadioButton;
+	private RadioButton _fWinTieLossSingleRadioButton;
 
 	/** 总进球单选按钮组 */
-	private RadioGroup	_fTotalGoalPassRadioGroup;
+	private RadioGroup _fTotalGoalPassRadioGroup;
 	/** 总进球过关按钮 */
-	private RadioButton	_fTotalGoalPassRadioButton;
+	private RadioButton _fTotalGoalPassRadioButton;
 	/** 总进球单关按钮 */
-	private RadioButton	_fTotalGoalSingleRadioButton;
+	private RadioButton _fTotalGoalSingleRadioButton;
 
 	/** 比分单选按钮组 */
-	private RadioGroup	_fScorePassRadioGroup;
+	private RadioGroup _fScorePassRadioGroup;
 	/** 比分过关按钮 */
-	private RadioButton	_fScorePassRadioButton;
+	private RadioButton _fScorePassRadioButton;
 	/** 比分单关按钮 */
-	private RadioButton	_fScoreSingleRadioButton;
+	private RadioButton _fScoreSingleRadioButton;
 
 	/** 半全场单选按钮组 */
-	private RadioGroup	_fHalfAudiencePassRadioGroup;
+	private RadioGroup _fHalfAudiencePassRadioGroup;
 	/** 半全场过关按钮 */
-	private RadioButton	_fHalfAudiencePassRadioButton;
+	private RadioButton _fHalfAudiencePassRadioButton;
 	/** 半全场单关按钮 */
-	private RadioButton	_fHalfAudienceSingleRadioButton;
+	private RadioButton _fHalfAudienceSingleRadioButton;
 
 	/** 混合投注单选按钮组 */
-	private RadioGroup	_fMixBetRadioGroup;
+	private RadioGroup _fMixBetRadioGroup;
 	/** 混合投注按钮 */
-	private RadioButton	_fMixBetRadioButton;
+	private RadioButton _fMixBetRadioButton;
 
 	/** 是否已经更新单选按钮的选中状态标识 */
-	private boolean		_fAlreadyChanged	= false;
+	private boolean _fAlreadyChanged = false;
 
 	public CompeteFootballPlayMethodChangeDialog(Context aContext) {
 		super(aContext);
@@ -59,16 +59,14 @@ public class CompeteFootballPlayMethodChangeDialog extends PromptDialog {
 
 	@Override
 	public void set_fTitleString() {
-		_fTitleString = _fResources
-				.getString(R.string.competefootball_playmethodchange_title);
+		_fTitleString = _fResources.getString(R.string.competefootball_playmethodchange_title);
 	}
 
 	@Override
 	public void set_fContentView() {
 		LayoutInflater layoutInflater = (LayoutInflater) _fContext
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		_fContentView = layoutInflater.inflate(
-				R.layout.compete_playmethodchange_content, null);
+		_fContentView = layoutInflater.inflate(R.layout.compete_playmethodchange_content, null);
 
 		_fWinTieLossPassRadioGroup = (RadioGroup) _fContentView
 				.findViewById(R.id.competefootball_radiogroup_wintielosspass);
@@ -150,8 +148,8 @@ public class CompeteFootballPlayMethodChangeDialog extends PromptDialog {
 	 * @author Administrator
 	 * @since RYC1.0 2013-7-4
 	 */
-	class CompeteFootballPlayMethodChangeRadioGroupOnCheckedChangeListener
-			implements OnCheckedChangeListener {
+	class CompeteFootballPlayMethodChangeRadioGroupOnCheckedChangeListener implements
+			OnCheckedChangeListener {
 
 		@Override
 		public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -190,40 +188,39 @@ public class CompeteFootballPlayMethodChangeDialog extends PromptDialog {
 		}
 	}
 
-	class CompeteFootballPlayMethodChangeRadioButtonOnCheckedChangeListener
-			implements android.widget.CompoundButton.OnCheckedChangeListener {
+	class CompeteFootballPlayMethodChangeRadioButtonOnCheckedChangeListener implements
+			android.widget.CompoundButton.OnCheckedChangeListener {
 
 		@Override
-		public void onCheckedChanged(CompoundButton buttonView,
-				boolean isChecked) {
+		public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 			switch (buttonView.getId()) {
-			case R.id.competefootball_radiobutton_wintielosspass:
-				Toast.makeText(_fContext, "1", 1).show();
-				break;
-			case R.id.competefootball_radiobutton_wintielosssingle:
-				Toast.makeText(_fContext, "2", 1).show();
-				break;
-			case R.id.competefootball_radiobutton_totalgoalpass:
-				Toast.makeText(_fContext, "3", 1).show();
-				break;
-			case R.id.competefootball_radiobutton_totalgoalsingle:
-				Toast.makeText(_fContext, "4", 1).show();
-				break;
-			case R.id.competefootball_radiobutton_scorepass:
-				Toast.makeText(_fContext, "5", 1).show();
-				break;
-			case R.id.competefootball_radiobutton_scoresingle:
-				Toast.makeText(_fContext, "6", 1).show();
-				break;
-			case R.id.competefootball_radiobutton_halfaudiencepass:
-				Toast.makeText(_fContext, "7", 1).show();
-				break;
-			case R.id.competefootball_radiobutton_halfaudiencesingle:
-				Toast.makeText(_fContext, "8", 1).show();
-				break;
-			case R.id.competefootball_radiobutton_mixbet:
-				Toast.makeText(_fContext, "9", 1).show();
-				break;
+				case R.id.competefootball_radiobutton_wintielosspass:
+					Toast.makeText(_fContext, "1", 1).show();
+					break;
+				case R.id.competefootball_radiobutton_wintielosssingle:
+					Toast.makeText(_fContext, "2", 1).show();
+					break;
+				case R.id.competefootball_radiobutton_totalgoalpass:
+					Toast.makeText(_fContext, "3", 1).show();
+					break;
+				case R.id.competefootball_radiobutton_totalgoalsingle:
+					Toast.makeText(_fContext, "4", 1).show();
+					break;
+				case R.id.competefootball_radiobutton_scorepass:
+					Toast.makeText(_fContext, "5", 1).show();
+					break;
+				case R.id.competefootball_radiobutton_scoresingle:
+					Toast.makeText(_fContext, "6", 1).show();
+					break;
+				case R.id.competefootball_radiobutton_halfaudiencepass:
+					Toast.makeText(_fContext, "7", 1).show();
+					break;
+				case R.id.competefootball_radiobutton_halfaudiencesingle:
+					Toast.makeText(_fContext, "8", 1).show();
+					break;
+				case R.id.competefootball_radiobutton_mixbet:
+					Toast.makeText(_fContext, "9", 1).show();
+					break;
 			}
 
 			dismiss();

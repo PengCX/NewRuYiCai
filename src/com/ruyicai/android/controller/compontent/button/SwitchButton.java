@@ -15,7 +15,7 @@ import android.widget.ImageButton;
  */
 public class SwitchButton extends ImageButton {
 	/** 开关状态 */
-	private boolean	_fIsOn	= false;
+	private boolean _fIsOn = false;
 
 	{
 		setBackgroundResource(R.drawable.switchbutton_off);

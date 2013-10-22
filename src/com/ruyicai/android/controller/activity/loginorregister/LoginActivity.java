@@ -2,7 +2,6 @@ package com.ruyicai.android.controller.activity.loginorregister;
 
 import roboguice.inject.InjectView;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ListView;
 
 import com.ruyicai.android.R;
@@ -10,27 +9,26 @@ import com.ruyicai.android.controller.activity.BaseActivity;
 import com.ruyicai.android.controller.adapter.listview.IconListViewAdapter;
 import com.ruyicai.android.controller.adapter.listview.SimpleListViewAdapter;
 import com.ruyicai.android.controller.compontent.bar.TitleBar;
-import com.ruyicai.android.controller.compontent.bar.TitleBarInterface;
 
 public class LoginActivity extends BaseActivity {
 
 	/** 视图引用用户登录标题栏 */
 	@InjectView(R.id.login_title_bar)
-	private TitleBar	_fTitleBar;
+	private TitleBar _fTitleBar;
 	/** 视图引用：引用注册新用户列表 */
 	@InjectView(R.id.login_listview_newuserregister)
-	private ListView	_fNewUserRegisterListView;
+	private ListView _fNewUserRegisterListView;
 	/** 视图引用：引用微博登陆列表 */
 	@InjectView(R.id.login_listview_microbloglogin)
-	private ListView	_fMicroBlogLoginListView;
+	private ListView _fMicroBlogLoginListView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login_activity);
 
-//		_fTitleBar.set_fTitleBarInterface(new LoginTitleBarInterface());
-//		_fTitleBar.initTitleBarShow();
+		// _fTitleBar.set_fTitleBarInterface(new LoginTitleBarInterface());
+		// _fTitleBar.initTitleBarShow();
 
 		// 初始化新用户注册等列表
 		initNewUserRegisterListViewShow();
@@ -46,8 +44,8 @@ public class LoginActivity extends BaseActivity {
 		// FIXME 当前列表的高度是写死的，是否能活动处理
 		int[] iconResourceIds = getMicroBlogLoginListIconIds();
 		int[] stringResourceIds2 = getMicroBlogLoginListStringIds();
-		IconListViewAdapter listViewIcomAdapter = new IconListViewAdapter(this,
-				iconResourceIds, stringResourceIds2);
+		IconListViewAdapter listViewIcomAdapter = new IconListViewAdapter(this, iconResourceIds,
+				stringResourceIds2);
 		_fMicroBlogLoginListView.setAdapter(listViewIcomAdapter);
 	}
 
@@ -57,14 +55,13 @@ public class LoginActivity extends BaseActivity {
 	private void initNewUserRegisterListViewShow() {
 		// FIXME 当前列表的高度是写死的，是否能活动处理
 		int[] stringResourceIds = getNewUserRegisterListStringIds();
-		SimpleListViewAdapter listViewAdapter = new SimpleListViewAdapter(this,
-				stringResourceIds);
+		SimpleListViewAdapter listViewAdapter = new SimpleListViewAdapter(this, stringResourceIds);
 		_fNewUserRegisterListView.setAdapter(listViewAdapter);
 	}
 
 	/**
 	 * 获取新用户注册列表字符串资源数组
-	 *
+	 * 
 	 * @return 字符串资源数组
 	 */
 	private int[] getNewUserRegisterListStringIds() {
@@ -79,7 +76,7 @@ public class LoginActivity extends BaseActivity {
 
 	/**
 	 * 获取微博登陆列表的字符串资源Id数组
-	 *
+	 * 
 	 * @return 字符串资源Id数组
 	 */
 	private int[] getMicroBlogLoginListStringIds() {
@@ -93,7 +90,7 @@ public class LoginActivity extends BaseActivity {
 
 	/**
 	 * 获取微博登陆列表的图标资源Id数组
-	 *
+	 * 
 	 * @return 图标资源Id数组
 	 */
 	private int[] getMicroBlogLoginListIconIds() {

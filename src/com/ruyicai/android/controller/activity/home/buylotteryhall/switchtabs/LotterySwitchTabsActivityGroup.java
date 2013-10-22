@@ -24,19 +24,19 @@ import com.ruyicai.android.model.bean.lottery.LotteryType;
  * @author xiang_000
  * @since RYC1.0 2013-4-21
  */
-public abstract class LotterySwitchTabsActivityGroup extends
-		SwitchTabsActivityGroup implements BetBarInterface {
+public abstract class LotterySwitchTabsActivityGroup extends SwitchTabsActivityGroup implements
+		BetBarInterface {
 	/** 引用视图：彩种信息栏占位 */
 	@InjectView(R.id.switchtabs_activitygroup_lotteryinfomationbar_viewstub)
-	private ViewStub				_fLotteryInformationBarViewStub;
+	private ViewStub _fLotteryInformationBarViewStub;
 	/** 引用视图：投注栏占位 */
 	@InjectView(R.id.switchtabs_activitygroup_betbar_viewstub)
-	private ViewStub				_fBetBarViewStub;
+	private ViewStub _fBetBarViewStub;
 
 	/** 投注栏 */
-	private BetBar					_fBetBar;
+	private BetBar _fBetBar;
 	/** 彩种信息栏 */
-	private LotteryInformationBar	_fLotteryInformationBar;
+	private LotteryInformationBar _fLotteryInformationBar;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +55,7 @@ public abstract class LotterySwitchTabsActivityGroup extends
 	private void initLotteryInformationBarShow() {
 		_fLotteryInformationBarViewStub.inflate();
 		_fLotteryInformationBar = (LotteryInformationBar) findViewById(R.id.switchtabs_activitygroup_lotteryinfomationbar);
-		_fLotteryInformationBar
-				.initLotteryInformationShow(LotteryType.DOUBLE_BALL);
+		_fLotteryInformationBar.initLotteryInformationShow(LotteryType.DOUBLE_BALL);
 	}
 
 	private void initBetBarShow() {
@@ -71,35 +70,32 @@ public abstract class LotterySwitchTabsActivityGroup extends
 	 */
 	private void reSetTabHostRelativeLayoutParams() {
 		RelativeLayout.LayoutParams relativeLayoutParams = new LayoutParams(
-				RelativeLayout.LayoutParams.MATCH_PARENT,
-				RelativeLayout.LayoutParams.MATCH_PARENT);
-		relativeLayoutParams
-				.addRule(
-						RelativeLayout.BELOW,
-						R.id.switchtabs_activitygroup_lotteryinfomationbar_linearlayout);
+				RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+		relativeLayoutParams.addRule(RelativeLayout.BELOW,
+				R.id.switchtabs_activitygroup_lotteryinfomationbar_linearlayout);
 		relativeLayoutParams.addRule(RelativeLayout.ABOVE,
 				R.id.switchtabs_activitygroup_betbar_linearlayout);
 		_fSwitchTabHost.setLayoutParams(relativeLayoutParams);
 	}
 
-//	@Override
-//	public void setTitleButton() {
-//		_fTitleBar._fSpreadButton.setVisibility(View.VISIBLE);
-//		_fTitleBar._fSpreadButton.setOnClickListener(new OnClickListener() {
-//
-//			@Override
-//			public void onClick(View v) {
-//				if (_fTitleBar._fDropDownMenu == null) {
-//					_fTitleBar._fDropDownMenu = new TitleDropDownMenu(
-//							LotterySwitchTabsActivityGroup.this);
-//					_fTitleBar._fDropDownMenu.ShowAsDropDownMenu(v);
-//				} else {
-//					_fTitleBar._fDropDownMenu.dismissDropDownMenu();
-//					_fTitleBar._fDropDownMenu = null;
-//				}
-//			}
-//		});
-//	}
+	// @Override
+	// public void setTitleButton() {
+	// _fTitleBar._fSpreadButton.setVisibility(View.VISIBLE);
+	// _fTitleBar._fSpreadButton.setOnClickListener(new OnClickListener() {
+	//
+	// @Override
+	// public void onClick(View v) {
+	// if (_fTitleBar._fDropDownMenu == null) {
+	// _fTitleBar._fDropDownMenu = new TitleDropDownMenu(
+	// LotterySwitchTabsActivityGroup.this);
+	// _fTitleBar._fDropDownMenu.ShowAsDropDownMenu(v);
+	// } else {
+	// _fTitleBar._fDropDownMenu.dismissDropDownMenu();
+	// _fTitleBar._fDropDownMenu = null;
+	// }
+	// }
+	// });
+	// }
 
 	@Override
 	public void setNumberBasketButton() {
@@ -108,8 +104,8 @@ public abstract class LotterySwitchTabsActivityGroup extends
 
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(LotterySwitchTabsActivityGroup.this, "号码篮按钮",
-						Toast.LENGTH_SHORT).show();
+				Toast.makeText(LotterySwitchTabsActivityGroup.this, "号码篮按钮", Toast.LENGTH_SHORT)
+						.show();
 			}
 		});
 	}
@@ -117,29 +113,27 @@ public abstract class LotterySwitchTabsActivityGroup extends
 	@Override
 	public void setClearSelectedNumberButton() {
 		// FIXME 暂时演示处理，具体后期实现
-		_fBetBar._fClearSelectNumberButton
-				.setOnClickListener(new OnClickListener() {
+		_fBetBar._fClearSelectNumberButton.setOnClickListener(new OnClickListener() {
 
-					@Override
-					public void onClick(View v) {
-						Toast.makeText(LotterySwitchTabsActivityGroup.this,
-								"清除已选号码按钮", Toast.LENGTH_SHORT).show();
-					}
-				});
+			@Override
+			public void onClick(View v) {
+				Toast.makeText(LotterySwitchTabsActivityGroup.this, "清除已选号码按钮", Toast.LENGTH_SHORT)
+						.show();
+			}
+		});
 	}
 
 	@Override
 	public void setAddToNumberBasketButton() {
 		// FIXME 暂时演示处理，具体后期实现
-		_fBetBar._fAddToNumberBasketButton
-				.setOnClickListener(new OnClickListener() {
+		_fBetBar._fAddToNumberBasketButton.setOnClickListener(new OnClickListener() {
 
-					@Override
-					public void onClick(View v) {
-						Toast.makeText(LotterySwitchTabsActivityGroup.this,
-								"添加到号码篮按钮", Toast.LENGTH_SHORT).show();
-					}
-				});
+			@Override
+			public void onClick(View v) {
+				Toast.makeText(LotterySwitchTabsActivityGroup.this, "添加到号码篮按钮", Toast.LENGTH_SHORT)
+						.show();
+			}
+		});
 	}
 
 	@Override
@@ -170,6 +164,7 @@ public abstract class LotterySwitchTabsActivityGroup extends
 	 * @return 当前选择的号码的字符串
 	 */
 	private String getNowPageSelectedNumberString() {
-		return ((SelectNumberActivity)getCurrentActivity()).getSelectNumberPanelsSelectedNumberString();
+		return ((SelectNumberActivity) getCurrentActivity())
+				.getSelectNumberPanelsSelectedNumberString();
 	}
 }

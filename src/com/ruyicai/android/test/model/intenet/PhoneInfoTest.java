@@ -6,7 +6,7 @@ import android.test.AndroidTestCase;
 import android.util.Log;
 
 public class PhoneInfoTest extends AndroidTestCase {
-	private static final String	TAG	= "PhoneInfoTest";
+	private static final String TAG = "PhoneInfoTest";
 
 	public void testgetPhoneInfo() throws Exception {
 		PhoneInfo phoneInfo = PhoneInfo.getInstance(getContext());

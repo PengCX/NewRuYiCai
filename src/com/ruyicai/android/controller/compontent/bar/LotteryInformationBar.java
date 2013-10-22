@@ -17,20 +17,19 @@ import android.widget.TextView;
  * @author xiang_000
  * @since RYC1.0 2013-4-6
  */
-public class LotteryInformationBar extends RelativeLayout implements
-		BaseIntenetCallBackInterface {
-	private static final String	TAG	= "LotteryInformationBar";
+public class LotteryInformationBar extends RelativeLayout implements BaseIntenetCallBackInterface {
+	private static final String TAG = "LotteryInformationBar";
 	/** 上下文对象 */
-	private Context				_fContext;
+	private Context _fContext;
 	/** 上期开奖号码 */
-	private TextView			_fLastIssueNumbersTextView;
+	private TextView _fLastIssueNumbersTextView;
 	/** 开奖期号 */
-	private TextView			_fIssueNumberTextView;
+	private TextView _fIssueNumberTextView;
 	/** 截止时间 */
-	private TextView			_fDeadTimeTextView;
+	private TextView _fDeadTimeTextView;
 
 	/** 彩种类型 */
-	private LotteryType			_fLotteryTypeEnum;
+	private LotteryType _fLotteryTypeEnum;
 
 	/**
 	 * 构造函数
@@ -64,8 +63,7 @@ public class LotteryInformationBar extends RelativeLayout implements
 		_fDeadTimeTextView = (TextView) findViewById(R.id.lotteryinformationbar_textview_deadtime);
 	}
 
-	public LotteryInformationBar(Context context, AttributeSet attrs,
-			int defStyle) {
+	public LotteryInformationBar(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 	}
 
@@ -85,8 +83,7 @@ public class LotteryInformationBar extends RelativeLayout implements
 
 	@Override
 	public void finishedBackgroundThreadAndGetResultString(String aResultString) {
-		LogTools.showLog(TAG, "彩种信息栏获取历史开奖信息字符串：" + aResultString,
-				LogTools.INFO);
+		LogTools.showLog(TAG, "彩种信息栏获取历史开奖信息字符串：" + aResultString, LogTools.INFO);
 	}
 
 }

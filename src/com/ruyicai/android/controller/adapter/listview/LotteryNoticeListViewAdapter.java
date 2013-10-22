@@ -18,15 +18,15 @@ import android.widget.TextView;
  */
 public class LotteryNoticeListViewAdapter extends BaseAdapter {
 	/** 上下文对象 */
-	private Context		_fContext;
+	private Context _fContext;
 	/** 彩种图标图片资源Id数组 */
-	private int[]		_fLotteryIconResourceIds;
+	private int[] _fLotteryIconResourceIds;
 	/** 彩种名称字符串资源Id数组 */
-	private String[]	_fLotteryNameStrings;
+	private String[] _fLotteryNameStrings;
 	/** 开奖日期数组 */
-	private String[]	_fNoticeDateStrings;
+	private String[] _fNoticeDateStrings;
 	/** 期号数组 */
-	private String[]	_fNoticeIssueStrings;
+	private String[] _fNoticeIssueStrings;
 
 	/**
 	 * 构造函数
@@ -42,9 +42,8 @@ public class LotteryNoticeListViewAdapter extends BaseAdapter {
 	 * @param aNoticeIssueStrings
 	 *            开奖期号字符串数组
 	 */
-	public LotteryNoticeListViewAdapter(Context aContext,
-			int[] aLotteryIconResourceIds, String[] aLotteryNameStrings,
-			String[] aNoticeDatesStrings, String[] aNoticeIssueStrings) {
+	public LotteryNoticeListViewAdapter(Context aContext, int[] aLotteryIconResourceIds,
+			String[] aLotteryNameStrings, String[] aNoticeDatesStrings, String[] aNoticeIssueStrings) {
 		super();
 		_fContext = aContext;
 		_fLotteryIconResourceIds = aLotteryIconResourceIds;
@@ -75,8 +74,7 @@ public class LotteryNoticeListViewAdapter extends BaseAdapter {
 			viewHoler = new ViewHoler();
 
 			LayoutInflater fInflater = LayoutInflater.from(_fContext);
-			aConvertView = fInflater.inflate(
-					R.layout.lotterynotice_listview_item, null);
+			aConvertView = fInflater.inflate(R.layout.lotterynotice_listview_item, null);
 
 			viewHoler._fLotteryIconImageView = (ImageView) aConvertView
 					.findViewById(R.id.lotterynoticelistviewitem_imageview_lotteyico);
@@ -92,25 +90,22 @@ public class LotteryNoticeListViewAdapter extends BaseAdapter {
 			viewHoler = (ViewHoler) aConvertView.getTag();
 		}
 
-		viewHoler._fLotteryIconImageView
-				.setImageResource(_fLotteryIconResourceIds[aPosition]);
-		viewHoler._fLotteryNameTextView
-				.setText(_fLotteryNameStrings[aPosition]);
+		viewHoler._fLotteryIconImageView.setImageResource(_fLotteryIconResourceIds[aPosition]);
+		viewHoler._fLotteryNameTextView.setText(_fLotteryNameStrings[aPosition]);
 		viewHoler._fNoticeDaTextView.setText(_fNoticeDateStrings[aPosition]);
-		viewHoler._fNoticeIssueTextView
-				.setText(_fNoticeIssueStrings[aPosition]);
+		viewHoler._fNoticeIssueTextView.setText(_fNoticeIssueStrings[aPosition]);
 
 		return aConvertView;
 	}
 
 	static class ViewHoler {
 		/** 彩种图标 */
-		private ImageView	_fLotteryIconImageView;
+		private ImageView _fLotteryIconImageView;
 		/** 彩种名称 */
-		private TextView	_fLotteryNameTextView;
+		private TextView _fLotteryNameTextView;
 		/** 开奖日期 */
-		private TextView	_fNoticeDaTextView;
+		private TextView _fNoticeDaTextView;
 		/** 开奖期号 */
-		private TextView	_fNoticeIssueTextView;
+		private TextView _fNoticeIssueTextView;
 	}
 }

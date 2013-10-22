@@ -15,11 +15,11 @@ import android.widget.LinearLayout;
  */
 public class BuyLotteryHallPageIndicator extends LinearLayout {
 	/** 上下文对象 */
-	private Context	_fContext;
+	private Context _fContext;
 	/** 页面的数量：默认显示三页 */
-	private int		_fPageNums		= 3;
+	private int _fPageNums = 3;
 	/** 当前显示的页面：默认显示第二页 */
-	private int		_fPagePresent	= 1;
+	private int _fPagePresent = 1;
 
 	public BuyLotteryHallPageIndicator(Context aContext) {
 		super(aContext);
@@ -80,13 +80,12 @@ public class BuyLotteryHallPageIndicator extends LinearLayout {
 				pageImageView
 						.setBackgroundResource(R.drawable.buylotteryhall_pageindicator_present);
 			} else {
-				pageImageView
-						.setBackgroundResource(R.drawable.buylotteryhall_pageindicator_other);
+				pageImageView.setBackgroundResource(R.drawable.buylotteryhall_pageindicator_other);
 			}
 
 			// 设置指示灯图片的长宽，边距和权重属性
-			LayoutParams layoutParams = new LayoutParams(
-					LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+			LayoutParams layoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT,
+					LayoutParams.WRAP_CONTENT);
 			layoutParams.weight = 1.0f;
 			layoutParams.leftMargin = 8;
 			layoutParams.rightMargin = 8;

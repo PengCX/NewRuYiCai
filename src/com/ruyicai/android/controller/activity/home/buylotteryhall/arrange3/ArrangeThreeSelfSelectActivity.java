@@ -8,8 +8,8 @@ import com.ruyicai.android.controller.compontent.button.PageChangeRadioButtonsIn
 import com.ruyicai.android.controller.compontent.panel.SelectNumberPanel;
 import com.ruyicai.android.controller.compontent.selectnumberpanel.SelectNumberBallType;
 
-public class ArrangeThreeSelfSelectActivity extends SelectNumberActivity
-		implements PageChangeRadioButtonsInterface {
+public class ArrangeThreeSelfSelectActivity extends SelectNumberActivity implements
+		PageChangeRadioButtonsInterface {
 	{
 		// set_fBettingBarInterface(this);
 		set_fPageChangeRadioButtonsInterface(this);
@@ -27,21 +27,22 @@ public class ArrangeThreeSelfSelectActivity extends SelectNumberActivity
 
 	@Override
 	public void setPageChangeRadioButtonTextResouceIds() {
-		_fPageChangeRadioButtons.set_fRadioButtonTextResouceIds(new int[] {
-				R.string.radiogroup_text_normalselfselect,
-				R.string.radiogroup_text_sumselfselect });
+		_fPageChangeRadioButtons
+				.set_fRadioButtonTextResouceIds(new int[] {
+						R.string.radiogroup_text_normalselfselect,
+						R.string.radiogroup_text_sumselfselect });
 	}
 
 	@Override
 	protected void setSelectNumberPanelNum() {
 		int checkedId = _fPageChangeRadioButtons.getCheckedRadioButtonId();
 		switch (checkedId) {
-		case R.string.radiogroup_text_normalselfselect:
-			_fNumOfSelectNumberPanel = 3;
-			break;
-		case R.string.radiogroup_text_sumselfselect:
-			_fNumOfSelectNumberPanel = 1;
-			break;
+			case R.string.radiogroup_text_normalselfselect:
+				_fNumOfSelectNumberPanel = 3;
+				break;
+			case R.string.radiogroup_text_sumselfselect:
+				_fNumOfSelectNumberPanel = 1;
+				break;
 		}
 	}
 
@@ -49,26 +50,24 @@ public class ArrangeThreeSelfSelectActivity extends SelectNumberActivity
 	protected void initSelectNumberPanelsWithPage(int aPage_i) {
 		for (int panel_i = 0; panel_i < _fNumOfSelectNumberPanel; panel_i++) {
 			// 获取当前初始化显示的选号面板对象
-			SelectNumberPanel selectNumberPanel = _fSelectNumberPanelList.get(
-					aPage_i).get(panel_i);
+			SelectNumberPanel selectNumberPanel = _fSelectNumberPanelList.get(aPage_i).get(panel_i);
 
 			switch (panel_i) {
-			case 0:
-				int checkedId = _fPageChangeRadioButtons
-						.getCheckedRadioButtonId();
+				case 0:
+					int checkedId = _fPageChangeRadioButtons.getCheckedRadioButtonId();
 
-				if (checkedId == R.string.radiogroup_text_normalselfselect) {
-					initHundredSelectNumberPanel(aPage_i, selectNumberPanel);
-				} else {
-					initCodeNumSelectNumberPanel(aPage_i, selectNumberPanel);
-				}
-				break;
-			case 1:
-				initDecadeSelectNumberPanel(aPage_i, selectNumberPanel);
-				break;
-			case 2:
-				initNumberSelectNumberPanel(aPage_i, selectNumberPanel);
-				break;
+					if (checkedId == R.string.radiogroup_text_normalselfselect) {
+						initHundredSelectNumberPanel(aPage_i, selectNumberPanel);
+					} else {
+						initCodeNumSelectNumberPanel(aPage_i, selectNumberPanel);
+					}
+					break;
+				case 1:
+					initDecadeSelectNumberPanel(aPage_i, selectNumberPanel);
+					break;
+				case 2:
+					initNumberSelectNumberPanel(aPage_i, selectNumberPanel);
+					break;
 			}
 		}
 	}
@@ -81,15 +80,13 @@ public class ArrangeThreeSelfSelectActivity extends SelectNumberActivity
 	 * @param selectNumberPanel
 	 *            选号面板对象
 	 */
-	private void initCodeNumSelectNumberPanel(int aPage_i,
-			SelectNumberPanel selectNumberPanel) {
+	private void initCodeNumSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
 			selectNumberPanel.initSelectNumberPanelShow("注码：", 1, 16, 0, 28,
 					SelectNumberBallType.REDBALL, null, false);
 		} else {
-			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
-					12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
-					27, 28 };
+			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
+					17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28 };
 			selectNumberPanel.initSelectNumberPanelShow("注码：", 1, 16, 0, 28,
 					SelectNumberBallType.REDBALL, lossValues, true);
 		}
@@ -104,8 +101,7 @@ public class ArrangeThreeSelfSelectActivity extends SelectNumberActivity
 	 * @param selectNumberPanel
 	 *            选号面板对象
 	 */
-	private void initNumberSelectNumberPanel(int aPage_i,
-			SelectNumberPanel selectNumberPanel) {
+	private void initNumberSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
 			selectNumberPanel.initSelectNumberPanelShow("个位区：", 1, 16, 0, 10,
 					SelectNumberBallType.REDBALL, null, false);
@@ -125,8 +121,7 @@ public class ArrangeThreeSelfSelectActivity extends SelectNumberActivity
 	 * @param selectNumberPanel
 	 *            选号面板对象
 	 */
-	private void initDecadeSelectNumberPanel(int aPage_i,
-			SelectNumberPanel selectNumberPanel) {
+	private void initDecadeSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
 			selectNumberPanel.initSelectNumberPanelShow("十位区：", 1, 16, 0, 10,
 					SelectNumberBallType.REDBALL, null, false);
@@ -146,8 +141,7 @@ public class ArrangeThreeSelfSelectActivity extends SelectNumberActivity
 	 * @param selectNumberPanel
 	 *            选号面板对象
 	 */
-	private void initHundredSelectNumberPanel(int aPage_i,
-			SelectNumberPanel selectNumberPanel) {
+	private void initHundredSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
 			selectNumberPanel.initSelectNumberPanelShow("百位区：", 1, 16, 0, 10,
 					SelectNumberBallType.BLUEBALL, null, false);

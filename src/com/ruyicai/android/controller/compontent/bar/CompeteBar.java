@@ -16,23 +16,22 @@ import android.widget.LinearLayout;
  */
 public class CompeteBar extends LinearLayout {
 	/** 上下文对象 */
-	private Context				_fContext;
+	private Context _fContext;
 	/** 玩法切换按钮 */
-	public Button				_fPlayMehodChangeButton;
+	public Button _fPlayMehodChangeButton;
 	/** 赛事选择按钮 */
-	public Button				_fEventSelectButton;
+	public Button _fEventSelectButton;
 	/** 即时比分按钮 */
-	public Button				_fRunTimeScoreButton;
+	public Button _fRunTimeScoreButton;
 
 	/** 竞彩栏接口 */
-	private CompeteBarInterface	_fCompeteBarInterface;
+	private CompeteBarInterface _fCompeteBarInterface;
 
 	public CompeteBarInterface get_fCompeteBarInterface() {
 		return _fCompeteBarInterface;
 	}
 
-	public void set_fCompeteBarInterface(
-			CompeteBarInterface _fCompeteBarInterface) {
+	public void set_fCompeteBarInterface(CompeteBarInterface _fCompeteBarInterface) {
 		this._fCompeteBarInterface = _fCompeteBarInterface;
 	}
 

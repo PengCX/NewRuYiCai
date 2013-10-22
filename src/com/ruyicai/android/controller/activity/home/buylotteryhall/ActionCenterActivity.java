@@ -7,7 +7,7 @@ import com.ruyicai.android.controller.activity.BaseActivity;
 
 /**
  * 活动中心页面
- *
+ * 
  * @author PengCX
  * @since RYC1.0 2013-3-20
  */

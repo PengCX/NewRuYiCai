@@ -8,13 +8,13 @@ package com.ruyicai.android.model.bean.lottery;
  */
 public class Lottery {
 	/** 彩种类型 */
-	private LotteryType	_fLotteryType;
+	private LotteryType _fLotteryType;
 	/** 是否今日开奖，默认今日不开奖 */
-	private Boolean		_fIsNowLottery	= false;
+	private Boolean _fIsNowLottery = false;
 	/** 是否暂停销售，默认不暂停销售 */
-	private Boolean		_fIsSaleStop	= false;
+	private Boolean _fIsSaleStop = false;
 	/** 是否加奖，默认不加奖 */
-	private Boolean		_fIsReward		= false;
+	private Boolean _fIsReward = false;
 
 	/**
 	 * 构造方法
@@ -28,8 +28,8 @@ public class Lottery {
 	 * @param _fIsReward
 	 *            是否加奖
 	 */
-	public Lottery(LotteryType _fLotteryType, Boolean _fIsNowLottery,
-			Boolean _fIsSaleStop, Boolean _fIsReward) {
+	public Lottery(LotteryType _fLotteryType, Boolean _fIsNowLottery, Boolean _fIsSaleStop,
+			Boolean _fIsReward) {
 		super();
 		this._fLotteryType = _fLotteryType;
 		this._fIsNowLottery = _fIsNowLottery;

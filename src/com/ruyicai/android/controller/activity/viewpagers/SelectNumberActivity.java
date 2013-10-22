@@ -23,19 +23,19 @@ import com.ruyicai.android.controller.compontent.textview.PlayMethodTextView;
  */
 public abstract class SelectNumberActivity extends ViewPagesActivity {
 	/** 选号面板集合-当前页面可以左右侧滑，一个页面的选号面板保存在一个集合，故使用集合的集合类型 */
-	protected List<ArrayList<SelectNumberPanel>>	_fSelectNumberPanelList;
+	protected List<ArrayList<SelectNumberPanel>> _fSelectNumberPanelList;
 	/** 页面中选号面板的个数 */
-	protected int									_fNumOfSelectNumberPanel;
+	protected int _fNumOfSelectNumberPanel;
 
 	/** 页面切换单选按钮组 */
-	protected PageChangeRadioButtons				_fPageChangeRadioButtons;
+	protected PageChangeRadioButtons _fPageChangeRadioButtons;
 	/** 玩法说明文本框 */
-	protected PlayMethodTextView					_fPlayMethodTextView;
+	protected PlayMethodTextView _fPlayMethodTextView;
 
 	/** 页面切换单选按钮接口 */
-	private PageChangeRadioButtonsInterface			_fPageChangeRadioButtonsInterface;
+	private PageChangeRadioButtonsInterface _fPageChangeRadioButtonsInterface;
 	/** 玩法文本框接口 */
-	private PlayMethodTextViewInterface				_fPlayMethodTextViewInterface;
+	private PlayMethodTextViewInterface _fPlayMethodTextViewInterface;
 
 	public PageChangeRadioButtonsInterface get_fPageChangeRadioButtonsInterface() {
 		return _fPageChangeRadioButtonsInterface;
@@ -73,15 +73,12 @@ public abstract class SelectNumberActivity extends ViewPagesActivity {
 				android.widget.RelativeLayout.LayoutParams.WRAP_CONTENT);
 		relativeLayoutParams.addRule(RelativeLayout.ALIGN_TOP);
 		relativeLayoutParams.setMargins(5, 0, 0, 0);
-		_fContainerRelativeLayout.addView(_fPageChangeRadioButtons,
-				relativeLayoutParams);
+		_fContainerRelativeLayout.addView(_fPageChangeRadioButtons, relativeLayoutParams);
 
-		((android.widget.RelativeLayout.LayoutParams) _fSlideAreaViewPager
-				.getLayoutParams()).addRule(RelativeLayout.BELOW,
-				_fPageChangeRadioButtons.getId());
+		((android.widget.RelativeLayout.LayoutParams) _fSlideAreaViewPager.getLayoutParams())
+				.addRule(RelativeLayout.BELOW, _fPageChangeRadioButtons.getId());
 
-		_fPageChangeRadioButtonsInterface
-				.setPageChangeRadioButtonTextResouceIds();
+		_fPageChangeRadioButtonsInterface.setPageChangeRadioButtonTextResouceIds();
 		_fPageChangeRadioButtons.initPageChangeButtonsShow();
 
 		_fPageChangeRadioButtons
@@ -98,18 +95,15 @@ public abstract class SelectNumberActivity extends ViewPagesActivity {
 		relativeLayoutParams.setMargins(5, 0, 0, 0);
 
 		if (isAddPageChangeRadioButtons()) {
-			relativeLayoutParams.addRule(RelativeLayout.BELOW,
-					_fPageChangeRadioButtons.getId());
+			relativeLayoutParams.addRule(RelativeLayout.BELOW, _fPageChangeRadioButtons.getId());
 		} else {
 			relativeLayoutParams.addRule(RelativeLayout.ALIGN_TOP);
 		}
 
-		_fContainerRelativeLayout.addView(_fPlayMethodTextView,
-				relativeLayoutParams);
+		_fContainerRelativeLayout.addView(_fPlayMethodTextView, relativeLayoutParams);
 
-		((android.widget.RelativeLayout.LayoutParams) _fSlideAreaViewPager
-				.getLayoutParams()).addRule(RelativeLayout.BELOW,
-				_fPlayMethodTextView.getId());
+		((android.widget.RelativeLayout.LayoutParams) _fSlideAreaViewPager.getLayoutParams())
+				.addRule(RelativeLayout.BELOW, _fPlayMethodTextView.getId());
 
 		_fPlayMethodTextViewInterface.setPlayMethodTextViewContent();
 	}
@@ -152,8 +146,7 @@ public abstract class SelectNumberActivity extends ViewPagesActivity {
 	 * @param containerLinearLayout
 	 *            容器布局
 	 */
-	protected void createAndAddSelectNumberPanelsToSlideArea(
-			LinearLayout containerLinearLayout) {
+	protected void createAndAddSelectNumberPanelsToSlideArea(LinearLayout containerLinearLayout) {
 		// 创建当前页面的选号面板集合
 		ArrayList<SelectNumberPanel> pageSelectNumberPanelList = new ArrayList<SelectNumberPanel>();
 
@@ -162,8 +155,7 @@ public abstract class SelectNumberActivity extends ViewPagesActivity {
 			SelectNumberPanel selectNumberPanel = new SelectNumberPanel(this);
 
 			// 将选号面板添加到滑动区域中
-			addSelectNumberPanelToSlideArea(containerLinearLayout,
-					selectNumberPanel);
+			addSelectNumberPanelToSlideArea(containerLinearLayout, selectNumberPanel);
 
 			// 将选号面板添加到当前页面的选号面板集合中
 			pageSelectNumberPanelList.add(selectNumberPanel);
@@ -181,8 +173,7 @@ public abstract class SelectNumberActivity extends ViewPagesActivity {
 	 * @param selectNumberPanel
 	 *            选号面板对象
 	 */
-	protected void addSelectNumberPanelToSlideArea(
-			LinearLayout containerLinearLayout,
+	protected void addSelectNumberPanelToSlideArea(LinearLayout containerLinearLayout,
 			SelectNumberPanel selectNumberPanel) {
 		// 设置选号面板布局属性，并添加到容器中
 		LayoutParams layoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT,
@@ -199,8 +190,7 @@ public abstract class SelectNumberActivity extends ViewPagesActivity {
 	 * @author xiang_000
 	 * @since RYC1.0 2013-4-30
 	 */
-	class PageChangeRadioButtonsOnCheckedChangedListener implements
-			OnCheckedChangeListener {
+	class PageChangeRadioButtonsOnCheckedChangedListener implements OnCheckedChangeListener {
 
 		@Override
 		public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -220,7 +210,8 @@ public abstract class SelectNumberActivity extends ViewPagesActivity {
 		int panelNum = nowShowPageSelectNumberPanels.size();
 		for (int panel_i = 0; panel_i < panelNum; panel_i++) {
 			SelectNumberPanel selectNumberPanel = nowShowPageSelectNumberPanels.get(panel_i);
-//			List<Integer> selectedNumbers = selectNumberPanel.getSelectedBallNumbers();
+			// List<Integer> selectedNumbers =
+			// selectNumberPanel.getSelectedBallNumbers();
 		}
 		return "";
 	}

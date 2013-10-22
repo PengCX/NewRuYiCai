@@ -61,9 +61,9 @@
             android:name=".controller.activity.home.buylotteryhall.selfselect.SelfSelectActivity"
             android:screenOrientation="portrait" >
         </activity>
-        <!-- 双色球选号页面 -->
+        <!-- 双色球选号页面组 -->
         <activity
-            android:name=".controller.activity.home.buylotteryhall.doubleball.DoubleBallActivityGroup"
+            android:name=".controller.activity.home.buylotteryhall.doubleball.DoubleBallSwitchTabsActivityGroup"
             android:screenOrientation="portrait" >
         </activity>
         <!-- 双色球自选页面 -->
@@ -76,9 +76,9 @@
             android:name=".controller.activity.home.buylotteryhall.doubleball.DoubleBallCourageSelectActivity"
             android:screenOrientation="portrait" >
         </activity>
-        <!-- 大乐透选号页面 -->
+        <!-- 大乐透选号页面组 -->
         <activity
-            android:name=".controller.activity.home.buylotteryhall.superlotto.SuperLottoActivityGroup"
+            android:name=".controller.activity.home.buylotteryhall.superlotto.SuperLottoSwitchTabsActivityGroup"
             android:screenOrientation="portrait" >
         </activity>
         <!-- 大乐透自选页面 -->
@@ -96,9 +96,9 @@
             android:name=".controller.activity.home.buylotteryhall.superlotto.SuperLottoTwelveSelectTwoActivity"
             android:screenOrientation="portrait" >
         </activity>
-        <!-- 福彩3D选号页面 -->
+        <!-- 福彩3D选号页面组 -->
         <activity
-            android:name=".controller.activity.home.buylotteryhall.welfare3d.Welfare3DActivityGroup"
+            android:name=".controller.activity.home.buylotteryhall.welfare3d.Welfare3DSwitchTabsActivityGroup"
             android:screenOrientation="portrait" >
         </activity>
         <!-- 福彩3D自选选号页面 -->
@@ -116,12 +116,13 @@
             android:name=".controller.activity.home.buylotteryhall.welfare3d.Welfare3DGroupSixActivity"
             android:screenOrientation="portrait" >
         </activity>
-        <!-- 江西11选5选号页面 -->
+        <!-- 江西11选5选号页面组-->
         <activity
-            android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveActivityGroup"
+            android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveSpinnersActivityGroup"
             android:screenOrientation="portrait" >
         </activity>
         <!-- 江西11选5任选二选号页面 -->
+
         <activity
             android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalTwoActivity"
             android:screenOrientation="portrait" >
@@ -188,10 +189,11 @@
         </activity>
         <!-- 时时彩选号页面组 -->
         <activity
-            android:name=".controller.activity.home.buylotteryhall.constantly.ConstantlyActivityGroup"
+            android:name=".controller.activity.home.buylotteryhall.constantly.ConstantlySwitchTabsActivityGroup"
             android:screenOrientation="portrait" >
         </activity>
         <!-- 时时彩一星选号页面 -->
+
         <activity
             android:name=".controller.activity.home.buylotteryhall.constantly.ConstantlyOneStarActivity"
             android:screenOrientation="portrait" >
@@ -222,9 +224,9 @@
             android:name="com.ruyicai.android.controller.activity.home.buylotteryhall.compete.football.CompeteFootballActivity"
             android:screenOrientation="portrait" >
         </activity>
-        <!-- 广东快乐十分选号页面 -->
+        <!-- 广东快乐十分选号页面组-->
         <activity
-            android:name=".controller.activity.home.buylotteryhall.happyevery.GuangDongHappyVeryActivityGroup"
+            android:name=".controller.activity.home.buylotteryhall.happyevery.GuangDongHappyVerySpinnersActivityGroup"
             android:screenOrientation="portrait" >
         </activity>
         <!-- 广东快乐十分选一数投选号页面 -->
@@ -443,9 +445,9 @@
             android:name=".controller.activity.home.buylotteryhall.sevenhappy.SevenHappyCourageSelectActivity"
             android:screenOrientation="portrait" >
         </activity>
-        <!-- 22选5选号页面 -->
+        <!-- 22选5选号页面组 -->
         <activity
-            android:name=".controller.activity.home.buylotteryhall.twentytwoselectfive.TwentyTwoSelectFiveActivityGroup"
+            android:name=".controller.activity.home.buylotteryhall.twentytwoselectfive.TwentyTwoSelectFiveSwitchTabsActivityGroup"
             android:screenOrientation="portrait" >
         </activity>
         <!-- 22选5自选选号页面 -->

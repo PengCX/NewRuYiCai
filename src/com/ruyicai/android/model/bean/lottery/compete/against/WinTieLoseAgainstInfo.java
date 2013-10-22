@@ -7,10 +7,10 @@ package com.ruyicai.android.model.bean.lottery.compete.against;
  * @since RYC1.0 2013-7-11
  */
 public class WinTieLoseAgainstInfo extends AgainstInfo {
-	private String	_fV0;
-	private String	_fV1;
-	private String	_fV3;
-	private String	_fLetPoint;
+	private String _fV0;
+	private String _fV1;
+	private String _fV3;
+	private String _fLetPoint;
 
 	public String getfV0() {
 		return _fV0;

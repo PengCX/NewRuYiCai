@@ -34,8 +34,7 @@ public class Welfare3DGroupThreeActivity extends SelectNumberActivity implements
 	@Override
 	public void setPageChangeRadioButtonTextResouceIds() {
 		_fPageChangeRadioButtons.set_fRadioButtonTextResouceIds(new int[] {
-				R.string.radiogroup_text_singleselect,
-				R.string.radiogroup_text_mutileselect,
+				R.string.radiogroup_text_singleselect, R.string.radiogroup_text_mutileselect,
 				R.string.radiogroup_text_sum });
 	}
 
@@ -43,15 +42,15 @@ public class Welfare3DGroupThreeActivity extends SelectNumberActivity implements
 	protected void setSelectNumberPanelNum() {
 		int checkedId = _fPageChangeRadioButtons.getCheckedRadioButtonId();
 		switch (checkedId) {
-		case R.string.radiogroup_text_singleselect:
-			_fNumOfSelectNumberPanel = 2;
-			break;
-		case R.string.radiogroup_text_mutileselect:
-			_fNumOfSelectNumberPanel = 1;
-			break;
-		case R.string.radiogroup_text_sum:
-			_fNumOfSelectNumberPanel = 1;
-			break;
+			case R.string.radiogroup_text_singleselect:
+				_fNumOfSelectNumberPanel = 2;
+				break;
+			case R.string.radiogroup_text_mutileselect:
+				_fNumOfSelectNumberPanel = 1;
+				break;
+			case R.string.radiogroup_text_sum:
+				_fNumOfSelectNumberPanel = 1;
+				break;
 		}
 	}
 
@@ -59,27 +58,23 @@ public class Welfare3DGroupThreeActivity extends SelectNumberActivity implements
 	protected void initSelectNumberPanelsWithPage(int aPage_i) {
 		for (int panel_i = 0; panel_i < _fNumOfSelectNumberPanel; panel_i++) {
 			// 获取当前初始化显示的选号面板对象
-			SelectNumberPanel selectNumberPanel = _fSelectNumberPanelList.get(
-					aPage_i).get(panel_i);
+			SelectNumberPanel selectNumberPanel = _fSelectNumberPanelList.get(aPage_i).get(panel_i);
 
 			switch (panel_i) {
-			case 0:
-				int checkedId = _fPageChangeRadioButtons
-						.getCheckedRadioButtonId();
+				case 0:
+					int checkedId = _fPageChangeRadioButtons.getCheckedRadioButtonId();
 
-				if (checkedId == R.string.radiogroup_text_singleselect) {
-					initTwiceSelectNumberPanel(aPage_i, selectNumberPanel);
-				} else if (checkedId == R.string.radiogroup_text_mutileselect) {
-					initSelectCodeNumSelectNumberPanel(aPage_i,
-							selectNumberPanel);
-				} else {
-					initSelectCodeNumSelectNumberPanel(aPage_i,
-							selectNumberPanel);
-				}
-				break;
-			case 1:
-				initOnceSelectNumberPanel(aPage_i, selectNumberPanel);
-				break;
+					if (checkedId == R.string.radiogroup_text_singleselect) {
+						initTwiceSelectNumberPanel(aPage_i, selectNumberPanel);
+					} else if (checkedId == R.string.radiogroup_text_mutileselect) {
+						initSelectCodeNumSelectNumberPanel(aPage_i, selectNumberPanel);
+					} else {
+						initSelectCodeNumSelectNumberPanel(aPage_i, selectNumberPanel);
+					}
+					break;
+				case 1:
+					initOnceSelectNumberPanel(aPage_i, selectNumberPanel);
+					break;
 			}
 		}
 	}
@@ -92,8 +87,7 @@ public class Welfare3DGroupThreeActivity extends SelectNumberActivity implements
 	 * @param selectNumberPanel
 	 *            选号面板对象
 	 */
-	private void initSelectCodeNumSelectNumberPanel(int aPage_i,
-			SelectNumberPanel selectNumberPanel) {
+	private void initSelectCodeNumSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
 			selectNumberPanel.initSelectNumberPanelShow("注码：", 1, 16, 0, 10,
 					SelectNumberBallType.REDBALL, null, false);
@@ -113,15 +107,14 @@ public class Welfare3DGroupThreeActivity extends SelectNumberActivity implements
 	 * @param selectNumberPanel
 	 *            选号面板对象
 	 */
-	private void initOnceSelectNumberPanel(int aPage_i,
-			SelectNumberPanel selectNumberPanel) {
+	private void initOnceSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
-			selectNumberPanel.initSelectNumberPanelShow("出现一次的号码：", 1, 16, 0,
-					10, SelectNumberBallType.REDBALL, null, false);
+			selectNumberPanel.initSelectNumberPanelShow("出现一次的号码：", 1, 16, 0, 10,
+					SelectNumberBallType.REDBALL, null, false);
 		} else {
 			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-			selectNumberPanel.initSelectNumberPanelShow("出现一次的号码：", 1, 16, 0,
-					10, SelectNumberBallType.REDBALL, lossValues, true);
+			selectNumberPanel.initSelectNumberPanelShow("出现一次的号码：", 1, 16, 0, 10,
+					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}
@@ -134,15 +127,14 @@ public class Welfare3DGroupThreeActivity extends SelectNumberActivity implements
 	 * @param selectNumberPanel
 	 *            选号面板对象
 	 */
-	private void initTwiceSelectNumberPanel(int aPage_i,
-			SelectNumberPanel selectNumberPanel) {
+	private void initTwiceSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
-			selectNumberPanel.initSelectNumberPanelShow("出现两次的号码：", 1, 16, 0,
-					10, SelectNumberBallType.REDBALL, null, false);
+			selectNumberPanel.initSelectNumberPanelShow("出现两次的号码：", 1, 16, 0, 10,
+					SelectNumberBallType.REDBALL, null, false);
 		} else {
 			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-			selectNumberPanel.initSelectNumberPanelShow("出现两次的号码：", 1, 16, 0,
-					10, SelectNumberBallType.REDBALL, lossValues, true);
+			selectNumberPanel.initSelectNumberPanelShow("出现两次的号码：", 1, 16, 0, 10,
+					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}

@@ -13,8 +13,7 @@ public class CompeteFootballActivity extends CompeteActivity {
 
 	@Override
 	public void setTitleTextView() {
-		_fTitleBar.set_fLeftTextString(LotteryType.COMPETE_FOOTBALL
-				.get_fLotteryName());
+		_fTitleBar.set_fLeftTextString(LotteryType.COMPETE_FOOTBALL.get_fLotteryName());
 	}
 
 }

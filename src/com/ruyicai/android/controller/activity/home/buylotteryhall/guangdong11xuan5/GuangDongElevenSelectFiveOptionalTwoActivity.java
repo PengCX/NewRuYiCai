@@ -2,8 +2,7 @@ package com.ruyicai.android.controller.activity.home.buylotteryhall.guangdong11x
 
 import com.ruyicai.android.controller.activity.viewpagers.SelectNumberActivity;
 
-public class GuangDongElevenSelectFiveOptionalTwoActivity extends
-		SelectNumberActivity {
+public class GuangDongElevenSelectFiveOptionalTwoActivity extends SelectNumberActivity {
 
 	@Override
 	protected void setSelectNumberPanelNum() {

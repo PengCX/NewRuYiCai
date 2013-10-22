@@ -25,11 +25,10 @@ public class ImageTools {
 	 *            目标高度
 	 * @return 缩放后Bitmap对象
 	 */
-	public static Bitmap scaleBitmapFromResourceBaseDestinationSize(
-			Resources aResources, int aResId, int aDstWidth, int aDstHeight) {
+	public static Bitmap scaleBitmapFromResourceBaseDestinationSize(Resources aResources,
+			int aResId, int aDstWidth, int aDstHeight) {
 		Bitmap rawBitmap = BitmapFactory.decodeResource(aResources, aResId);
-		Bitmap desBitmap = Bitmap.createScaledBitmap(rawBitmap, aDstWidth,
-				aDstHeight, false);
+		Bitmap desBitmap = Bitmap.createScaledBitmap(rawBitmap, aDstWidth, aDstHeight, false);
 
 		return desBitmap;
 	}
@@ -48,14 +47,14 @@ public class ImageTools {
 	 *            显示图片的高度
 	 * @return 编码后的位图对象
 	 */
-	public static Bitmap decodeBitmapFromResourceBaseRequireSize(
-			Resources aRes, int aResId, int aReqWidth, int aReqHeight) {
+	public static Bitmap decodeBitmapFromResourceBaseRequireSize(Resources aRes, int aResId,
+			int aReqWidth, int aReqHeight) {
 		final BitmapFactory.Options options = new BitmapFactory.Options();
 		options.inJustDecodeBounds = true;
 		BitmapFactory.decodeResource(aRes, aResId, options);
 
-		options.inSampleSize = caculateBitmapInSampleSizeBaseRequireSize(
-				options, aReqWidth, aReqHeight);
+		options.inSampleSize = caculateBitmapInSampleSizeBaseRequireSize(options, aReqWidth,
+				aReqHeight);
 
 		options.inJustDecodeBounds = false;
 
@@ -73,17 +72,15 @@ public class ImageTools {
 	 *            显示图片高
 	 * @return inSampleSize计算结果
 	 */
-	public static int caculateBitmapInSampleSizeBaseRequireSize(
-			BitmapFactory.Options aOptions, int aReqWidth, int aReqHeight) {
+	public static int caculateBitmapInSampleSizeBaseRequireSize(BitmapFactory.Options aOptions,
+			int aReqWidth, int aReqHeight) {
 		final int height = aOptions.outHeight;
 		final int width = aOptions.outWidth;
 		int inSampleSize = 1;
 
 		if (height > aReqHeight || width > aReqWidth) {
-			final int heightRatio = Math.round((float) height
-					/ (float) aReqHeight);
-			final int widthRatio = Math
-					.round((float) width / (float) aReqWidth);
+			final int heightRatio = Math.round((float) height / (float) aReqHeight);
+			final int widthRatio = Math.round((float) width / (float) aReqWidth);
 
 			inSampleSize = heightRatio <= widthRatio ? heightRatio : widthRatio;
 		}

@@ -12,7 +12,7 @@ import android.graphics.drawable.Drawable;
  */
 public class ResourceTools {
 	/** 上下文对象 */
-	private Resources	_fResources;
+	private Resources _fResources;
 
 	public ResourceTools(Context aContext) {
 		super();

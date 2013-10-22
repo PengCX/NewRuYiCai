@@ -2,8 +2,7 @@ package com.ruyicai.android.controller.activity.home.buylotteryhall.happyevery;
 
 import com.ruyicai.android.controller.activity.viewpagers.SelectNumberActivity;
 
-public class GuangDongHappyVerySelectTwoLinkDirectlyActivity extends
-		SelectNumberActivity {
+public class GuangDongHappyVerySelectTwoLinkDirectlyActivity extends SelectNumberActivity {
 
 	@Override
 	protected void setSelectNumberPanelNum() {

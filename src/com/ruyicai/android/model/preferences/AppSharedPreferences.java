@@ -12,15 +12,15 @@ import android.content.SharedPreferences.Editor;
  */
 public class AppSharedPreferences {
 	/** 如意彩应用共享参数关键字 */
-	private static final String	APPLICATION_SHAREDPREFERENCE_KEY	= "com.ruyicai";
+	private static final String APPLICATION_SHAREDPREFERENCE_KEY = "com.ruyicai";
 
 	/** 首次启动保存共享参数键 */
-	public static final String	FIRST_LAUNCHER_KEY					= "ryc_first_launcer";
+	public static final String FIRST_LAUNCHER_KEY = "ryc_first_launcer";
 
 	/** SharedPreferences对象 */
-	private SharedPreferences	_fSharedPreferences;
+	private SharedPreferences _fSharedPreferences;
 	/** Editor对象 */
-	private Editor				_fEditor;
+	private Editor _fEditor;
 
 	/**
 	 * 构造方法
@@ -30,8 +30,8 @@ public class AppSharedPreferences {
 	 */
 	public AppSharedPreferences(Context aContext) {
 		super();
-		_fSharedPreferences = aContext.getSharedPreferences(
-				APPLICATION_SHAREDPREFERENCE_KEY, Context.MODE_PRIVATE);
+		_fSharedPreferences = aContext.getSharedPreferences(APPLICATION_SHAREDPREFERENCE_KEY,
+				Context.MODE_PRIVATE);
 		_fEditor = _fSharedPreferences.edit();
 	}
 

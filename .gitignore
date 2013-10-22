@@ -1,4 +1,4 @@
-*.classpath #忽略.classpath结尾的文件
-*.gitignore #忽略.gitignore结尾的文件
-bin\        #忽略bin\目录下的文件
-gen\        #忽略gen\目录下的文件
+*.classpath
+*.gitignore  
+/bin/        
+/gen/        

@@ -1,30 +1,30 @@
 package com.ruyicai.android.model.bean.lottery.compete.against;
 
 public class TotalScoreAgainstInfo extends AgainstInfo {
-	private String	_fScore_v10;
-	private String	_fScore_v20;
-	private String	_fScore_v21;
-	private String	_fScore_v30;
-	private String	_fScore_v31;
-	private String	_fScore_v32;
-	private String	_fScore_v40;
-	private String	_fScore_v41;
-	private String	_fScore_v42;
-	private String	_fScore_v00;
-	private String	_fScore_v11;
-	private String	_fScore_v22;
-	private String	_fScore_v33;
-	private String	_fScore_v01;
-	private String	_fScore_v02;
-	private String	_fScore_v12;
-	private String	_fScore_v13;
-	private String	_fScore_v23;
-	private String	_fScore_v04;
-	private String	_fScore_v14;
-	private String	_fScore_v24;
-	private String	_fScore_v90;
-	private String	_fScore_v99;
-	private String	_fScore_v09;
+	private String _fScore_v10;
+	private String _fScore_v20;
+	private String _fScore_v21;
+	private String _fScore_v30;
+	private String _fScore_v31;
+	private String _fScore_v32;
+	private String _fScore_v40;
+	private String _fScore_v41;
+	private String _fScore_v42;
+	private String _fScore_v00;
+	private String _fScore_v11;
+	private String _fScore_v22;
+	private String _fScore_v33;
+	private String _fScore_v01;
+	private String _fScore_v02;
+	private String _fScore_v12;
+	private String _fScore_v13;
+	private String _fScore_v23;
+	private String _fScore_v04;
+	private String _fScore_v14;
+	private String _fScore_v24;
+	private String _fScore_v90;
+	private String _fScore_v99;
+	private String _fScore_v09;
 
 	public String getfScore_v10() {
 		return _fScore_v10;

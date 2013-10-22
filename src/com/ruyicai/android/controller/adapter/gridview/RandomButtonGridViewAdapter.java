@@ -17,11 +17,11 @@ import android.widget.GridView;
  */
 public class RandomButtonGridViewAdapter extends BaseAdapter {
 	/** 上下文对象 */
-	private Context	_fContext;
+	private Context _fContext;
 	/** 最小的随机数的个数 */
-	private int		_fMinRandomNum;
+	private int _fMinRandomNum;
 	/** 选择随机个数按钮的个数 */
-	private int		_fSelectButtonNum;
+	private int _fSelectButtonNum;
 
 	/**
 	 * 构造函数
@@ -31,8 +31,7 @@ public class RandomButtonGridViewAdapter extends BaseAdapter {
 	 * @param _fSelectButtonNum
 	 *            随机按钮个数
 	 */
-	public RandomButtonGridViewAdapter(Context aContext, int aMinRandomNum,
-			int aSelectButtonNum) {
+	public RandomButtonGridViewAdapter(Context aContext, int aMinRandomNum, int aSelectButtonNum) {
 		super();
 		_fContext = aContext;
 		_fMinRandomNum = aMinRandomNum;

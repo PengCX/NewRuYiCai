@@ -10,8 +10,7 @@ import com.ruyicai.android.controller.activity.viewpagers.PlayMethodTextViewInte
  * @since RYC1.0 2013-5-2
  */
 public class JiangXiElevenSelectFiveOptionalTwoActivity extends
-		JiangXiElevenSelectFiveOptionalSelectActivity implements
-		PlayMethodTextViewInterface {
+		JiangXiElevenSelectFiveOptionalSelectActivity implements PlayMethodTextViewInterface {
 
 	@Override
 	public void setPlayMethodTextViewContent() {

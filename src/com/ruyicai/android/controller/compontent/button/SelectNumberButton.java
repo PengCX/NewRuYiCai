@@ -16,9 +16,9 @@ import android.widget.Button;
  */
 public class SelectNumberButton extends Button {
 	/** 选号小球的类型：默认是红球类型 */
-	private SelectNumberBallType	_fSelectNumberBallType	= SelectNumberBallType.BLUEBALL;
+	private SelectNumberBallType _fSelectNumberBallType = SelectNumberBallType.BLUEBALL;
 	/** 选号小球是否选中标识：默认未选中 */
-	private boolean					_fIsSelected			= false;
+	private boolean _fIsSelected = false;
 
 	public SelectNumberButton(Context context) {
 		// FIXME 目前该类没有使用
@@ -46,20 +46,20 @@ public class SelectNumberButton extends Button {
 		@Override
 		public void onClick(View v) {
 			switch (_fSelectNumberBallType) {
-			case REDBALL:
-				if (_fIsSelected) {
-					setBackgroundResource(R.drawable.selectnumberball_red_background);
-				} else {
-					setBackgroundResource(R.drawable.selectnumberball_grey_background);
-				}
-				break;
-			case BLUEBALL:
-				if (_fIsSelected) {
-					setBackgroundResource(R.drawable.selectnumberball_blue_background);
-				} else {
-					setBackgroundResource(R.drawable.selectnumberball_grey_background);
-				}
-				break;
+				case REDBALL:
+					if (_fIsSelected) {
+						setBackgroundResource(R.drawable.selectnumberball_red_background);
+					} else {
+						setBackgroundResource(R.drawable.selectnumberball_grey_background);
+					}
+					break;
+				case BLUEBALL:
+					if (_fIsSelected) {
+						setBackgroundResource(R.drawable.selectnumberball_blue_background);
+					} else {
+						setBackgroundResource(R.drawable.selectnumberball_grey_background);
+					}
+					break;
 			}
 			_fIsSelected = !_fIsSelected;
 		}

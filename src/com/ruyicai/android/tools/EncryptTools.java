@@ -19,26 +19,23 @@ import javax.crypto.spec.SecretKeySpec;
  */
 public class EncryptTools {
 	/** Base64编码字符数组 */
-	private static char[]		fBase64EncodeChars	= new char[] { 'A', 'B',
-			'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O',
-			'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b',
-			'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o',
-			'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1',
-			'2', '3', '4', '5', '6', '7', '8', '9', '+', '/' };
+	private static char[] fBase64EncodeChars = new char[] { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
+			'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y',
+			'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
+			'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6',
+			'7', '8', '9', '+', '/' };
 
 	/** Base64解码数组 */
-	private static byte[]		fBase64DecodeChars	= new byte[] { -1, -1, -1,
-			-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
-			-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
-			-1, -1, -1, -1, -1, -1, 62, -1, -1, -1, 63, 52, 53, 54, 55, 56, 57,
-			58, 59, 60, 61, -1, -1, -1, -1, -1, -1, -1, 0, 1, 2, 3, 4, 5, 6, 7,
-			8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,
-			25, -1, -1, -1, -1, -1, -1, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35,
-			36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, -1,
-			-1, -1, -1, -1							};
+	private static byte[] fBase64DecodeChars = new byte[] { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+			-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+			-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 62, -1, -1, -1, 63, 52, 53, 54, 55, 56, 57,
+			58, 59, 60, 61, -1, -1, -1, -1, -1, -1, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
+			13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, -1, -1, -1, -1, -1, -1, 26, 27, 28,
+			29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50,
+			51, -1, -1, -1, -1, -1 };
 
 	/** DES加密密钥 */
-	public static final String	DES_ENCRYPT_KEY		= "<>hj12@#$$%^~~ff";
+	public static final String DES_ENCRYPT_KEY = "<>hj12@#$$%^~~ff";
 
 	/**
 	 * DES加密方法
@@ -204,8 +201,7 @@ public class EncryptTools {
 			b2 = aSrcByte[data_i++] & 0xff;
 			if (data_i == dataLength) {
 				stringBuffer.append(fBase64EncodeChars[b1 >>> 2]);
-				stringBuffer.append(fBase64EncodeChars[((b1 & 0x03) << 4)
-						| ((b2 & 0xf0) >>> 4)]);
+				stringBuffer.append(fBase64EncodeChars[((b1 & 0x03) << 4) | ((b2 & 0xf0) >>> 4)]);
 				stringBuffer.append(fBase64EncodeChars[(b2 & 0x0f) << 2]);
 				stringBuffer.append("=");
 				break;
@@ -213,10 +209,8 @@ public class EncryptTools {
 
 			b3 = aSrcByte[data_i++] & 0xff;
 			stringBuffer.append(fBase64EncodeChars[b1 >>> 2]);
-			stringBuffer.append(fBase64EncodeChars[((b1 & 0x03) << 4)
-					| ((b2 & 0xf0) >>> 4)]);
-			stringBuffer.append(fBase64EncodeChars[((b2 & 0x0f) << 2)
-					| ((b3 & 0xc0) >>> 6)]);
+			stringBuffer.append(fBase64EncodeChars[((b1 & 0x03) << 4) | ((b2 & 0xf0) >>> 4)]);
+			stringBuffer.append(fBase64EncodeChars[((b2 & 0x0f) << 2) | ((b3 & 0xc0) >>> 6)]);
 			stringBuffer.append(fBase64EncodeChars[b3 & 0x3f]);
 		}
 
@@ -234,8 +228,7 @@ public class EncryptTools {
 		// XXX 寻找封装的Base64加密算法，不必自己实现
 		byte[] encodeByte = aBase64String.getBytes();
 		int byteLength = encodeByte.length;
-		ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(
-				byteLength);
+		ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(byteLength);
 		int b1, b2, b3, b4;
 
 		int byte_i = 0;
@@ -253,8 +246,7 @@ public class EncryptTools {
 			if (b2 == -1) {
 				break;
 			}
-			byteArrayOutputStream
-					.write((int) ((b1 << 2) | ((b2 & 0x30) >>> 4)));
+			byteArrayOutputStream.write((int) ((b1 << 2) | ((b2 & 0x30) >>> 4)));
 
 			do {
 				b3 = encodeByte[byte_i++];
@@ -266,8 +258,7 @@ public class EncryptTools {
 			if (b3 == -1) {
 				break;
 			}
-			byteArrayOutputStream
-					.write((int) (((b2 & 0x0f) << 4) | ((b3 & 0x3c) >>> 2)));
+			byteArrayOutputStream.write((int) (((b2 & 0x0f) << 4) | ((b3 & 0x3c) >>> 2)));
 
 			do {
 				b4 = encodeByte[byte_i++];

@@ -13,35 +13,34 @@ import com.ruyicai.android.controller.activity.loginorregister.LoginActivity;
 import com.ruyicai.android.controller.activity.loginorregister.RegisterActivity;
 import com.ruyicai.android.controller.adapter.listview.IconListViewAdapter;
 import com.ruyicai.android.controller.compontent.bar.TitleBar;
-import com.ruyicai.android.controller.compontent.bar.TitleBarInterface;
 
 public class UserCenterActivity extends BaseActivity {
 	/** 视图引用：用户中心标题栏 */
 	@InjectView(R.id.usercenter_titile_bar)
-	private TitleBar	_fTitleBar;
+	private TitleBar _fTitleBar;
 	/** 视图引用：账户资金列表 */
 	@InjectView(R.id.usercenter_listview_accountcapital)
-	private ListView	_fAccountCapitaListView;
+	private ListView _fAccountCapitaListView;
 	/** 视图引用：我的彩票列表 */
 	@InjectView(R.id.usercenter_listview_mylottery)
-	private ListView	_fMyLotteryListView;
+	private ListView _fMyLotteryListView;
 	/** 视图引用：账户设置列表 */
 	@InjectView(R.id.usercenter_listview_accountset)
-	private ListView	_fAccountSetListView;
+	private ListView _fAccountSetListView;
 	/** 视图引用：登录按钮 */
 	@InjectView(R.id.usercenter_button_login)
-	private Button		_fLoginButton;
+	private Button _fLoginButton;
 	/** 视图引用：注册按钮 */
 	@InjectView(R.id.usercenter_button_register)
-	private Button		_fRegisterButton;
+	private Button _fRegisterButton;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.usercenter_activity);
 
-//		_fTitleBar.set_fTitleBarInterface(new UserCenterTitleBarInterface());
-//		_fTitleBar.initTitleBarShow();
+		// _fTitleBar.set_fTitleBarInterface(new UserCenterTitleBarInterface());
+		// _fTitleBar.initTitleBarShow();
 
 		// 初始化登录区域的显示
 		initLoginAreaShow();
@@ -71,8 +70,8 @@ public class UserCenterActivity extends BaseActivity {
 	private void initAccountCapitalListViewShow() {
 		int[] accountCapitalStringIds = getAccountCapitalStringIds();
 		int[] accountCapitalIconIds = getAccountCapitalIconIds();
-		IconListViewAdapter accountCapticalAdapter = new IconListViewAdapter(
-				this, accountCapitalIconIds, accountCapitalStringIds);
+		IconListViewAdapter accountCapticalAdapter = new IconListViewAdapter(this,
+				accountCapitalIconIds, accountCapitalStringIds);
 		_fAccountCapitaListView.setAdapter(accountCapticalAdapter);
 	}
 
@@ -82,8 +81,8 @@ public class UserCenterActivity extends BaseActivity {
 	private void initMyLotteryListViewShow() {
 		int[] myLotteryStringIds = getMyLotteryStringIds();
 		int[] myLotteryIconIds = getMyLotteryIconIds();
-		IconListViewAdapter myLotteryAdapter = new IconListViewAdapter(this,
-				myLotteryIconIds, myLotteryStringIds);
+		IconListViewAdapter myLotteryAdapter = new IconListViewAdapter(this, myLotteryIconIds,
+				myLotteryStringIds);
 		_fMyLotteryListView.setAdapter(myLotteryAdapter);
 	}
 
@@ -93,14 +92,14 @@ public class UserCenterActivity extends BaseActivity {
 	private void initAccountSetListViewShow() {
 		int[] accountSetStringIds = getAccountSetStringIds();
 		int[] accountSetIconIds = getAccountSetIconIds();
-		IconListViewAdapter accountSetAdapter = new IconListViewAdapter(this,
-				accountSetIconIds, accountSetStringIds);
+		IconListViewAdapter accountSetAdapter = new IconListViewAdapter(this, accountSetIconIds,
+				accountSetStringIds);
 		_fAccountSetListView.setAdapter(accountSetAdapter);
 	}
 
 	/**
 	 * 获取账户资金列表的字符串资源Id数组
-	 *
+	 * 
 	 * @return 字符串资源Id数组
 	 */
 	private int[] getAccountCapitalStringIds() {
@@ -117,7 +116,7 @@ public class UserCenterActivity extends BaseActivity {
 
 	/**
 	 * 获取账户资金列表图片资源Id数组
-	 *
+	 * 
 	 * @return 图片资源Id数组
 	 */
 	private int[] getAccountCapitalIconIds() {
@@ -134,7 +133,7 @@ public class UserCenterActivity extends BaseActivity {
 
 	/**
 	 * 获取我的彩票的字符串资源Id数组
-	 *
+	 * 
 	 * @return 字符串资源Id数组
 	 */
 	private int[] getMyLotteryStringIds() {
@@ -151,7 +150,7 @@ public class UserCenterActivity extends BaseActivity {
 
 	/**
 	 * 获取我的彩票列表的图片资源Id数组
-	 *
+	 * 
 	 * @return 图片资源Id数组
 	 */
 	private int[] getMyLotteryIconIds() {
@@ -168,7 +167,7 @@ public class UserCenterActivity extends BaseActivity {
 
 	/**
 	 * 获取账户设置列表的图片资源Id数组
-	 *
+	 * 
 	 * @return 图片资源Id数组
 	 */
 	private int[] getAccountSetIconIds() {
@@ -184,7 +183,7 @@ public class UserCenterActivity extends BaseActivity {
 
 	/**
 	 * 获取账户设置列表的字符串资源Id数组
-	 *
+	 * 
 	 * @return 字符串资源Id数组
 	 */
 	private int[] getAccountSetStringIds() {
@@ -200,7 +199,7 @@ public class UserCenterActivity extends BaseActivity {
 
 	/**
 	 * 按钮事件监听类：实现对注册登录页面的按钮事件处理
-	 *
+	 * 
 	 * @author Administrator
 	 * @since RYC1.0 2013-4-3
 	 */
@@ -212,15 +211,13 @@ public class UserCenterActivity extends BaseActivity {
 
 			switch (v.getId()) {
 
-			case R.id.usercenter_button_login:
-				intent = new Intent(UserCenterActivity.this,
-						LoginActivity.class);
+				case R.id.usercenter_button_login:
+					intent = new Intent(UserCenterActivity.this, LoginActivity.class);
 
-				break;
-			case R.id.usercenter_button_register:
-				intent = new Intent(UserCenterActivity.this,
-						RegisterActivity.class);
-				break;
+					break;
+				case R.id.usercenter_button_register:
+					intent = new Intent(UserCenterActivity.this, RegisterActivity.class);
+					break;
 			}
 
 			startActivity(intent);

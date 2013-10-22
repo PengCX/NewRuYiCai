@@ -17,20 +17,20 @@ import android.widget.TextView;
  */
 public class CompeteBetBar extends RelativeLayout {
 	/** 上下文对象 */
-	private Context					_fContext;
+	private Context _fContext;
 	/** 重选按钮 */
-	private Button					_fReSelectButton;
+	private Button _fReSelectButton;
 	/** 选择场次文本框 */
-	private TextView				_fSelectedNumberTextView;
+	private TextView _fSelectedNumberTextView;
 	/** 立即投注按钮 */
-	private Button					_fRecentlyBetButton;
+	private Button _fRecentlyBetButton;
 	/** 竞彩投注栏接口 */
-	private CompeteBetBarInterface	_fCompeteBetBarInterface;
+	private CompeteBetBarInterface _fCompeteBetBarInterface;
 
 	{
 		// 初始化代码块
-		LayoutInflater layoutInflater = (LayoutInflater) getContext()
-				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		LayoutInflater layoutInflater = (LayoutInflater) getContext().getSystemService(
+				Context.LAYOUT_INFLATER_SERVICE);
 		layoutInflater.inflate(R.layout.competebetbar, this);
 
 		_fReSelectButton = (Button) findViewById(R.id.competebetbar_reselect_button);

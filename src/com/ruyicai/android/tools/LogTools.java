@@ -10,30 +10,30 @@ import android.util.Log;
  */
 public class LogTools {
 	/** 错误输出标识 */
-	public static String	TAG				= "ruyicai";
+	public static String TAG = "ruyicai";
 	/** 错误日志 */
-	public static final int	ERROR			= 0;
+	public static final int ERROR = 0;
 	/** 警告调试日志 */
-	public static final int	WARN			= 1;
+	public static final int WARN = 1;
 	/** 信息日志 */
-	public static final int	INFO			= 2;
+	public static final int INFO = 2;
 	/** 调试日志 */
-	public static final int	DEBUG			= 3;
+	public static final int DEBUG = 3;
 	/** 详细日志 */
-	public static final int	VERBOSE			= 4;
+	public static final int VERBOSE = 4;
 
 	/** 是否关闭日志信息 */
-	public static boolean	isLogOff		= true;
+	public static boolean isLogOff = true;
 	/** 是否关闭错误日志 */
-	public static boolean	isErrorLogOff	= true;
+	public static boolean isErrorLogOff = true;
 	/** 是否关闭警告调制日志 */
-	public static boolean	isWarnLogOff	= true;
+	public static boolean isWarnLogOff = true;
 	/** 是否关闭信息日志 */
-	public static boolean	isInfoLogOff	= true;
+	public static boolean isInfoLogOff = true;
 	/** 是否关闭调试日志 */
-	public static boolean	isDebugLogOff	= true;
+	public static boolean isDebugLogOff = true;
 	/** 是否关闭详细日志 */
-	public static boolean	isVerboseLogOff	= true;
+	public static boolean isVerboseLogOff = true;
 
 	/**
 	 * 输出日志信息
@@ -48,31 +48,31 @@ public class LogTools {
 	public static void showLog(String aTag, String aLogMessage, int aLogStyle) {
 		if (isLogOff) {
 			switch (aLogStyle) {
-			case ERROR:
-				if (isErrorLogOff) {
-					Log.e(aTag, aLogMessage);
-				}
-				break;
-			case WARN:
-				if (isWarnLogOff) {
-					Log.w(aTag, aLogMessage);
-				}
-				break;
-			case INFO:
-				if (isInfoLogOff) {
-					Log.i(aTag, aLogMessage);
-				}
-				break;
-			case DEBUG:
-				if (isDebugLogOff) {
-					Log.d(aTag, aLogMessage);
-				}
-				break;
-			case VERBOSE:
-				if (isVerboseLogOff) {
-					Log.v(aTag, aLogMessage);
-				}
-				break;
+				case ERROR:
+					if (isErrorLogOff) {
+						Log.e(aTag, aLogMessage);
+					}
+					break;
+				case WARN:
+					if (isWarnLogOff) {
+						Log.w(aTag, aLogMessage);
+					}
+					break;
+				case INFO:
+					if (isInfoLogOff) {
+						Log.i(aTag, aLogMessage);
+					}
+					break;
+				case DEBUG:
+					if (isDebugLogOff) {
+						Log.d(aTag, aLogMessage);
+					}
+					break;
+				case VERBOSE:
+					if (isVerboseLogOff) {
+						Log.v(aTag, aLogMessage);
+					}
+					break;
 			}
 		}
 	}

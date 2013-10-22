@@ -24,21 +24,21 @@ import com.ruyicai.android.tools.LogTools;
  */
 public abstract class ViewPagesActivity extends BaseActivity {
 	/** 滑动页面的页数 */
-	private static final int	VIEWPAGE_PAGE_NUM	= 2;
+	private static final int VIEWPAGE_PAGE_NUM = 2;
 
 	/** 滑动ViewPager适配器对象 */
-	public ViewPagerAdapter		_fSelectNumberAdapter;
+	public ViewPagerAdapter _fSelectNumberAdapter;
 
 	/** 引用对象：布局对象 */
 	@Inject
-	protected LayoutInflater	_fLayoutInflater;
+	protected LayoutInflater _fLayoutInflater;
 
 	/** 视图引用：相对布局容器对象 */
 	@InjectView(R.id.viewpagers_relativelayout_container)
-	protected RelativeLayout	_fContainerRelativeLayout;
+	protected RelativeLayout _fContainerRelativeLayout;
 	/** 视图引用：滑动ViewPager对象 */
 	@InjectView(R.id.viewpagers_viewpager_slidearea)
-	protected ViewPager			_fSlideAreaViewPager;
+	protected ViewPager _fSlideAreaViewPager;
 
 	/**
 	 * 是否添加投注栏
@@ -84,8 +84,7 @@ public abstract class ViewPagesActivity extends BaseActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		LogTools.showLog(LogTools.TAG, getClass().getSimpleName()
-				+ ":onCreate()", LogTools.INFO);
+		LogTools.showLog(LogTools.TAG, getClass().getSimpleName() + ":onCreate()", LogTools.INFO);
 
 		setContentView(R.layout.viewpagers_activity);
 
@@ -135,8 +134,7 @@ public abstract class ViewPagesActivity extends BaseActivity {
 	 * @return 视图对象
 	 */
 	protected View getSlideAreaViewWithLayoutResourceId(int aLayoutResourceId) {
-		View selectNumberAreaView = _fLayoutInflater.inflate(aLayoutResourceId,
-				null);
+		View selectNumberAreaView = _fLayoutInflater.inflate(aLayoutResourceId, null);
 		return selectNumberAreaView;
 	}
 

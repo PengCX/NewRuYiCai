@@ -15,24 +15,24 @@ import roboguice.inject.InjectView;
 
 /**
  * 选项卡切换页面基类：包含标题栏、彩种开奖信息栏、选项卡切换导航栏和投注栏，使用选项卡导航栏切换页面；适用于彩种投注页面，彩种投注信息页面
- *
+ * 
  * @author xiang_000
  * @since RYC1.0 2013-4-8
  */
 public abstract class SwitchTabsActivityGroup extends RoboActivityGroup {
 	/** 选项卡导航栏标签的跳转页面类数组 */
-	protected Class<?>[]	_fSwithTabClasses;
+	protected Class<?>[] _fSwithTabClasses;
 	/** 选项卡导航栏标签的视图数组 */
-	protected View[]		_fSwtichTabViews;
+	protected View[] _fSwtichTabViews;
 	/** 选项卡导航栏标签标记字符串数组 */
-	protected int[]			_fSwitchTabTagIds;
+	protected int[] _fSwitchTabTagIds;
 
 	/** 引用视图：标题栏 */
 	@InjectView(R.id.switchtabs_activitygroup_titlebar)
-	protected TitleBar		_fTitleBar;
+	protected TitleBar _fTitleBar;
 	/** 引用视图：tabHost导航栏 */
 	@InjectView(R.id.switchtabs_activitygroup_tabhost)
-	protected TabHost		_fSwitchTabHost;
+	protected TabHost _fSwitchTabHost;
 
 	/**
 	 * 设置切换选项卡类集合

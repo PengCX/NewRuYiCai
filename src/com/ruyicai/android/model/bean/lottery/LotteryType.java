@@ -8,19 +8,17 @@ package com.ruyicai.android.model.bean.lottery;
  */
 public enum LotteryType {
 	// FIXME 如何将彩种的名称和字符串资源关联
-	DOUBLE_BALL("F47104", "双色球"), SUPER_LOTTO("T01001", "大乐透"), WELFARE_3D(
-			"F47103", "福彩3D"), JIANGXI_ELEVEN_SELECT_FIVE("T01010", "江西11选5"), CONSTANTLY(
-			"T01007", "时时彩"), COMPETE_FOOTBALL("J00001", "竞彩足球"), GUANGDONG_HAPPYVERY(
+	DOUBLE_BALL("F47104", "双色球"), SUPER_LOTTO("T01001", "大乐透"), WELFARE_3D("F47103", "福彩3D"), JIANGXI_ELEVEN_SELECT_FIVE(
+			"T01010", "江西11选5"), CONSTANTLY("T01007", "时时彩"), COMPETE_FOOTBALL("J00001", "竞彩足球"), GUANGDONG_HAPPYVERY(
 			"T01015", "快乐十分"), ELEVEN_LUCKGOLD("T01012", "11运夺金"), GUANGDONG_ELEVENE_SELECT_FIVE(
-			"T01014", "广东11选5"), ARRANGE_THREE("T01002", "排列三"), SERVEN_HAPPY(
-			"F47102", "七乐彩"), TWENTYTWO_SELECT_FIVE("T01013", "22选5"), ARRANGE_FIVE(
-			"T01011", "排列五"), SEVEN_STAR("T01009", "七星彩"), FOOTBALL("T01005",
-			"足彩"), COMPETE_BASKETBALL("J00001", "竞彩篮球");
+			"T01014", "广东11选5"), ARRANGE_THREE("T01002", "排列三"), SERVEN_HAPPY("F47102", "七乐彩"), TWENTYTWO_SELECT_FIVE(
+			"T01013", "22选5"), ARRANGE_FIVE("T01011", "排列五"), SEVEN_STAR("T01009", "七星彩"), FOOTBALL(
+			"T01005", "足彩"), COMPETE_BASKETBALL("J00001", "竞彩篮球");
 
 	/** 彩种编号 */
-	private String	_fLotteryNumber;
+	private String _fLotteryNumber;
 	/** 彩种名称 */
-	private String	_fLotteryName;
+	private String _fLotteryName;
 
 	/**
 	 * 彩种类型构造方法
@@ -70,8 +68,7 @@ public enum LotteryType {
 		LotteryType[] lotteryTypes = LotteryType.values();
 
 		for (int lottery_i = 0; lottery_i < lotteryNums; lottery_i++) {
-			lotteryNamesStrings[lottery_i] = lotteryTypes[lottery_i]
-					.get_fLotteryName();
+			lotteryNamesStrings[lottery_i] = lotteryTypes[lottery_i].get_fLotteryName();
 		}
 
 		return lotteryNamesStrings;

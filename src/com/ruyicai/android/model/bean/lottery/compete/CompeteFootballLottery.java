@@ -11,8 +11,8 @@ import com.ruyicai.android.model.bean.lottery.LotteryType;
  */
 public class CompeteFootballLottery extends Lottery {
 
-	public CompeteFootballLottery(LotteryType _fLotteryType,
-			Boolean _fIsNowLottery, Boolean _fIsSaleStop, Boolean _fIsReward) {
+	public CompeteFootballLottery(LotteryType _fLotteryType, Boolean _fIsNowLottery,
+			Boolean _fIsSaleStop, Boolean _fIsReward) {
 		super(_fLotteryType, _fIsNowLottery, _fIsSaleStop, _fIsReward);
 		// TODO Auto-generated constructor stub
 	}

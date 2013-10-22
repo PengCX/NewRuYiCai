@@ -16,14 +16,14 @@ import android.telephony.TelephonyManager;
  */
 public class PhoneInfo {
 	/** 连接管理对象 */
-	private ConnectivityManager	_fConnectivityManager;
+	private ConnectivityManager _fConnectivityManager;
 	/** 手机管理对象 */
-	private TelephonyManager	_fTelephonyManager;
+	private TelephonyManager _fTelephonyManager;
 	/** WIFI管理对象 */
-	private WifiManager			_fWifiManager;
+	private WifiManager _fWifiManager;
 
 	/** 单例对象 */
-	private static PhoneInfo	fInstance;
+	private static PhoneInfo fInstance;
 
 	private PhoneInfo(Context aContext) {
 		super();
@@ -31,8 +31,7 @@ public class PhoneInfo {
 				.getSystemService(Context.CONNECTIVITY_SERVICE);
 		_fTelephonyManager = (TelephonyManager) aContext
 				.getSystemService(Context.TELEPHONY_SERVICE);
-		_fWifiManager = (WifiManager) aContext
-				.getSystemService(Context.WIFI_SERVICE);
+		_fWifiManager = (WifiManager) aContext.getSystemService(Context.WIFI_SERVICE);
 	}
 
 	public static PhoneInfo getInstance(Context aContext) {

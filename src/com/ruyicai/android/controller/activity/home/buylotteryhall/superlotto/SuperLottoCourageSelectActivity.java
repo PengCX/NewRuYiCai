@@ -31,24 +31,21 @@ public class SuperLottoCourageSelectActivity extends SelectNumberActivity {
 	protected void initSelectNumberPanelsWithPage(int aPage_i) {
 		for (int panel_i = 0; panel_i < _fNumOfSelectNumberPanel; panel_i++) {
 			// 获取当前初始化显示的选号面板对象
-			SelectNumberPanel selectNumberPanel = _fSelectNumberPanelList.get(
-					aPage_i).get(panel_i);
+			SelectNumberPanel selectNumberPanel = _fSelectNumberPanelList.get(aPage_i).get(panel_i);
 
 			switch (panel_i) {
-			case 0:
-				initFrontAreaCourageSelectNumberPanel(aPage_i,
-						selectNumberPanel);
-				break;
-			case 1:
-				initFrontAreaDragSelectNumberPanel(aPage_i, selectNumberPanel);
-				break;
-			case 2:
-				initAfterAreaCourageSelectNumberPanel(aPage_i,
-						selectNumberPanel);
-				break;
-			case 3:
-				initAfterAreaDragSelectNumberPanel(aPage_i, selectNumberPanel);
-				break;
+				case 0:
+					initFrontAreaCourageSelectNumberPanel(aPage_i, selectNumberPanel);
+					break;
+				case 1:
+					initFrontAreaDragSelectNumberPanel(aPage_i, selectNumberPanel);
+					break;
+				case 2:
+					initAfterAreaCourageSelectNumberPanel(aPage_i, selectNumberPanel);
+					break;
+				case 3:
+					initAfterAreaDragSelectNumberPanel(aPage_i, selectNumberPanel);
+					break;
 			}
 		}
 	}
@@ -61,14 +58,12 @@ public class SuperLottoCourageSelectActivity extends SelectNumberActivity {
 	 * @param selectNumberPanel
 	 *            选号面板对象
 	 */
-	private void initAfterAreaDragSelectNumberPanel(int aPage_i,
-			SelectNumberPanel selectNumberPanel) {
+	private void initAfterAreaDragSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
 			selectNumberPanel.initSelectNumberPanelShow("后区拖码：", 2, 12, 1, 12,
 					SelectNumberBallType.BLUEBALL, null, false);
 		} else {
-			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
-					12 };
+			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
 			selectNumberPanel.initSelectNumberPanelShow("后区拖码：", 2, 12, 1, 12,
 					SelectNumberBallType.BLUEBALL, lossValues, true);
 		}
@@ -88,8 +83,7 @@ public class SuperLottoCourageSelectActivity extends SelectNumberActivity {
 			selectNumberPanel.initSelectNumberPanelShow("后区胆码：", 1, 1, 1, 12,
 					SelectNumberBallType.BLUEBALL, null, false);
 		} else {
-			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
-					12 };
+			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
 			selectNumberPanel.initSelectNumberPanelShow("后区胆码：", 1, 1, 1, 12,
 					SelectNumberBallType.BLUEBALL, lossValues, true);
 		}
@@ -103,15 +97,13 @@ public class SuperLottoCourageSelectActivity extends SelectNumberActivity {
 	 * @param selectNumberPanel
 	 *            选号面板对象
 	 */
-	private void initFrontAreaDragSelectNumberPanel(int aPage_i,
-			SelectNumberPanel selectNumberPanel) {
+	private void initFrontAreaDragSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
 			selectNumberPanel.initSelectNumberPanelShow("前区拖码：", 2, 22, 1, 35,
 					SelectNumberBallType.REDBALL, null, false);
 		} else {
-			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
-					12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
-					27, 28, 29, 30, 31, 32, 33, 34, 35 };
+			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
+					17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35 };
 			selectNumberPanel.initSelectNumberPanelShow("前区拖码：", 2, 22, 1, 35,
 					SelectNumberBallType.REDBALL, lossValues, true);
 		}
@@ -131,9 +123,8 @@ public class SuperLottoCourageSelectActivity extends SelectNumberActivity {
 			selectNumberPanel.initSelectNumberPanelShow("前区胆码：", 1, 4, 1, 35,
 					SelectNumberBallType.REDBALL, null, false);
 		} else {
-			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
-					12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
-					27, 28, 29, 30, 31, 32, 33, 34, 35 };
+			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
+					17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35 };
 			selectNumberPanel.initSelectNumberPanelShow("前区胆码：", 1, 4, 1, 35,
 					SelectNumberBallType.REDBALL, lossValues, true);
 		}

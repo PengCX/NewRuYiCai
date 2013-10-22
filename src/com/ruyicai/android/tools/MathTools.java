@@ -27,8 +27,8 @@ public class MathTools {
 	 *            随机数的个数
 	 * @return 随机数集合
 	 */
-	public static List<Integer> getSpecifiedRangeRadomNumberWithoutRepetation(
-			int aBegainNumber, int aEndNumber, int aNumberNum) {
+	public static List<Integer> getSpecifiedRangeRadomNumberWithoutRepetation(int aBegainNumber,
+			int aEndNumber, int aNumberNum) {
 		List<Integer> randomIntegers = new ArrayList<Integer>();
 		Random random = new Random();
 
@@ -60,8 +60,7 @@ public class MathTools {
 	 *            已经产生的随机数集合
 	 * @return 是否重复标识
 	 */
-	private static boolean isNotRepeation(int aRandomInt,
-			List<Integer> aRandomNumbers) {
+	private static boolean isNotRepeation(int aRandomInt, List<Integer> aRandomNumbers) {
 		int randomNum = aRandomNumbers.size();
 
 		for (int random_i = 0; random_i < randomNum; random_i++) {
@@ -84,8 +83,7 @@ public class MathTools {
 	 *            范围接受数组
 	 * @return 是否在范围内标识
 	 */
-	private static boolean isInRange(int random, int aBegainNumber,
-			int aEndNumber) {
+	private static boolean isInRange(int random, int aBegainNumber, int aEndNumber) {
 		if (random >= aBegainNumber && random <= aEndNumber) {
 			return true;
 		} else {

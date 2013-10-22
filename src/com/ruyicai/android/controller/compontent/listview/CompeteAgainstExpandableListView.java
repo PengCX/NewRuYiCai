@@ -14,8 +14,8 @@ import android.widget.ExpandableListView;
  * @author Administrator
  * @since RYC1.0 2013-8-6
  */
-public class CompeteAgainstExpandableListView extends ExpandableListView
-		implements OnScrollListener {
+public class CompeteAgainstExpandableListView extends ExpandableListView implements
+		OnScrollListener {
 
 	public CompeteAgainstExpandableListView(Context context) {
 		super(context);
@@ -27,8 +27,7 @@ public class CompeteAgainstExpandableListView extends ExpandableListView
 		super.setOnScrollListener(this);
 	}
 
-	public CompeteAgainstExpandableListView(Context context,
-			AttributeSet attrs, int defStyle) {
+	public CompeteAgainstExpandableListView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 		super.setOnScrollListener(this);
 	}
@@ -39,13 +38,12 @@ public class CompeteAgainstExpandableListView extends ExpandableListView
 	}
 
 	@Override
-	public void onScroll(AbsListView view, int firstVisibleItem,
-			int visibleItemCount, int totalItemCount) {
+	public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount,
+			int totalItemCount) {
 		int position = view.pointToPosition(0, 0);
 		if (position != AdapterView.INVALID_POSITION) {
 			CompeteAgainstExpandableListView competeAgainstExpandableListView = (CompeteAgainstExpandableListView) view;
-			long pos = competeAgainstExpandableListView
-					.getExpandableListPosition(position);
+			long pos = competeAgainstExpandableListView.getExpandableListPosition(position);
 			int groupPosition = ExpandableListView.getPackedPositionChild(pos);
 			int childPosition = ExpandableListView.getPackedPositionChild(pos);
 

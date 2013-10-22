@@ -18,9 +18,9 @@ import android.widget.TextView;
 public class CompeteSelectButton extends FrameLayout {
 
 	/** 球队按钮 */
-	public CheckBox	_fTeamButton;
+	public CheckBox _fTeamButton;
 	/** 赔率文本框 */
-	public TextView	_fSPTextView;
+	public TextView _fSPTextView;
 
 	public CompeteSelectButton(Context aContext) {
 		super(aContext);

@@ -40,8 +40,7 @@ public class ConstantlyFiveStarActivity extends SelectNumberActivity implements
 			_fPlayMethodTextView
 					.setText(R.string.constantly_textview_fivestar_selfselectplaymethod);
 		} else {
-			_fPlayMethodTextView
-					.setText(R.string.constantly_textview_fivestar_allselectplaymethod);
+			_fPlayMethodTextView.setText(R.string.constantly_textview_fivestar_allselectplaymethod);
 		}
 	}
 
@@ -54,31 +53,29 @@ public class ConstantlyFiveStarActivity extends SelectNumberActivity implements
 	protected void initSelectNumberPanelsWithPage(int aPage_i) {
 		for (int panel_i = 0; panel_i < _fNumOfSelectNumberPanel; panel_i++) {
 			// 获取当前初始化显示的选号面板对象
-			SelectNumberPanel selectNumberPanel = _fSelectNumberPanelList.get(
-					aPage_i).get(panel_i);
+			SelectNumberPanel selectNumberPanel = _fSelectNumberPanelList.get(aPage_i).get(panel_i);
 
 			switch (panel_i) {
-			case 0:
-				initYriadSelectNumberPanel(aPage_i, selectNumberPanel);
-				break;
-			case 1:
-				initThousandSelectNumberPanel(aPage_i, selectNumberPanel);
-				break;
-			case 2:
-				initHundredSelectNumberPanel(aPage_i, selectNumberPanel);
-				break;
-			case 3:
-				initDecadeSelectNumberPanel(aPage_i, selectNumberPanel);
-				break;
-			case 4:
-				initNumberSelectNumberPanel(aPage_i, selectNumberPanel);
-				break;
+				case 0:
+					initYriadSelectNumberPanel(aPage_i, selectNumberPanel);
+					break;
+				case 1:
+					initThousandSelectNumberPanel(aPage_i, selectNumberPanel);
+					break;
+				case 2:
+					initHundredSelectNumberPanel(aPage_i, selectNumberPanel);
+					break;
+				case 3:
+					initDecadeSelectNumberPanel(aPage_i, selectNumberPanel);
+					break;
+				case 4:
+					initNumberSelectNumberPanel(aPage_i, selectNumberPanel);
+					break;
 			}
 		}
 	}
 
-	private void initNumberSelectNumberPanel(int aPage_i,
-			SelectNumberPanel selectNumberPanel) {
+	private void initNumberSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
 			selectNumberPanel.initSelectNumberPanelShow("个位区：", 1, 16, 0, 10,
 					SelectNumberBallType.REDBALL, null, false);
@@ -90,8 +87,7 @@ public class ConstantlyFiveStarActivity extends SelectNumberActivity implements
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}
 
-	private void initDecadeSelectNumberPanel(int aPage_i,
-			SelectNumberPanel selectNumberPanel) {
+	private void initDecadeSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
 			selectNumberPanel.initSelectNumberPanelShow("十位区：", 1, 16, 0, 10,
 					SelectNumberBallType.REDBALL, null, false);
@@ -103,8 +99,7 @@ public class ConstantlyFiveStarActivity extends SelectNumberActivity implements
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}
 
-	private void initHundredSelectNumberPanel(int aPage_i,
-			SelectNumberPanel selectNumberPanel) {
+	private void initHundredSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
 			selectNumberPanel.initSelectNumberPanelShow("百位区：", 1, 16, 0, 10,
 					SelectNumberBallType.REDBALL, null, false);
@@ -116,8 +111,7 @@ public class ConstantlyFiveStarActivity extends SelectNumberActivity implements
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}
 
-	private void initThousandSelectNumberPanel(int aPage_i,
-			SelectNumberPanel selectNumberPanel) {
+	private void initThousandSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
 			selectNumberPanel.initSelectNumberPanelShow("千位区：", 1, 16, 0, 10,
 					SelectNumberBallType.REDBALL, null, false);
@@ -129,8 +123,7 @@ public class ConstantlyFiveStarActivity extends SelectNumberActivity implements
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}
 
-	private void initYriadSelectNumberPanel(int aPage_i,
-			SelectNumberPanel selectNumberPanel) {
+	private void initYriadSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
 			selectNumberPanel.initSelectNumberPanelShow("万位区：", 1, 16, 0, 10,
 					SelectNumberBallType.REDBALL, null, false);

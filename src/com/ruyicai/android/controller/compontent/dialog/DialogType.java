@@ -17,7 +17,7 @@ public enum DialogType {
 	COMPETEFOOTBALL_PLAYMETHODCHANGE_DIALOG(4);
 
 	/** 对话框编号 */
-	public int	_fDialogNumber;
+	public int _fDialogNumber;
 
 	/**
 	 * 对话框类型构造方法

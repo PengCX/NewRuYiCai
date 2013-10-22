@@ -21,8 +21,7 @@ public class ApplicationExitDialog extends PromptDialog {
 
 	@Override
 	public void set_fTitleString() {
-		_fTitleString = _fResources
-				.getString(R.string.exitapplicationdialog_title_prompt);
+		_fTitleString = _fResources.getString(R.string.exitapplicationdialog_title_prompt);
 	}
 
 	@Override
@@ -31,8 +30,7 @@ public class ApplicationExitDialog extends PromptDialog {
 		// FIXME 如果设置字体的样式
 		((TextView) _fContentView).setTextColor(Color.BLACK);
 		((TextView) _fContentView).setTextSize(18);
-		((TextView) _fContentView)
-				.setText(R.string.exitapplicationdialog_message_exit);
+		((TextView) _fContentView).setText(R.string.exitapplicationdialog_message_exit);
 	}
 
 	@Override

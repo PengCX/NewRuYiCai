@@ -3,8 +3,7 @@ package com.ruyicai.android.controller.activity.home.buylotteryhall.jiangxi11xua
 import android.app.Activity;
 import android.os.Bundle;
 
-public class JiangXiElevenSelectFiveBeforThreeGroupSelectActivity extends
-		Activity {
+public class JiangXiElevenSelectFiveBeforThreeGroupSelectActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

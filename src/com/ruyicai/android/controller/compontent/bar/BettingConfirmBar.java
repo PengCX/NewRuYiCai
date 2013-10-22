@@ -17,13 +17,13 @@ import android.widget.RelativeLayout;
 public class BettingConfirmBar extends RelativeLayout {
 
 	/** 上下文对象 */
-	private Context						_fContext;
+	private Context _fContext;
 	/** 投注确认按钮 */
-	private Button						_fBettingConfirmButton;
+	private Button _fBettingConfirmButton;
 	/** 投注取消按钮 */
-	private Button						_fBettingCancelButton;
+	private Button _fBettingCancelButton;
 	/** 投注确认栏接口 */
-	private BettingConfirmBarInterface	_fBettingConfirmBarInterface;
+	private BettingConfirmBarInterface _fBettingConfirmBarInterface;
 
 	public void set_fBettingConfirmBarInterface(
 			BettingConfirmBarInterface aBettingConfirmBarInterface) {
@@ -46,8 +46,7 @@ public class BettingConfirmBar extends RelativeLayout {
 		_fBettingCancelButton = (Button) findViewById(R.id.bettingconfirmbar_btton_cancle);
 	}
 
-	public BettingConfirmBar(Context aContext, AttributeSet aAttrs,
-			int aDefStyle) {
+	public BettingConfirmBar(Context aContext, AttributeSet aAttrs, int aDefStyle) {
 		super(aContext, aAttrs, aDefStyle);
 		_fContext = aContext;
 	}

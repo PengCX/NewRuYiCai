@@ -30,13 +30,12 @@ public class SevenHappySelfSelectActivity extends SelectNumberActivity {
 	protected void initSelectNumberPanelsWithPage(int aPage_i) {
 		for (int panel_i = 0; panel_i < _fNumOfSelectNumberPanel; panel_i++) {
 			// 获取当前初始化显示的选号面板对象
-			SelectNumberPanel selectNumberPanel = _fSelectNumberPanelList.get(
-					aPage_i).get(panel_i);
+			SelectNumberPanel selectNumberPanel = _fSelectNumberPanelList.get(aPage_i).get(panel_i);
 
 			switch (panel_i) {
-			case 0:
-				initSelectNumberPanel(aPage_i, selectNumberPanel);
-				break;
+				case 0:
+					initSelectNumberPanel(aPage_i, selectNumberPanel);
+					break;
 			}
 		}
 	}
@@ -49,15 +48,13 @@ public class SevenHappySelfSelectActivity extends SelectNumberActivity {
 	 * @param selectNumberPanel
 	 *            选号面板索引
 	 */
-	private void initSelectNumberPanel(int aPage_i,
-			SelectNumberPanel selectNumberPanel) {
+	private void initSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
 			selectNumberPanel.initSelectNumberPanelShow("选号区：", 7, 9, 1, 30,
 					SelectNumberBallType.REDBALL, null, false);
 		} else {
-			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
-					12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
-					27, 28, 29, 30 };
+			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
+					17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30 };
 			selectNumberPanel.initSelectNumberPanelShow("选号区：", 7, 9, 1, 30,
 					SelectNumberBallType.REDBALL, lossValues, true);
 		}

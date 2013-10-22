@@ -2,8 +2,7 @@ package com.ruyicai.android.controller.activity.home.buylotteryhall.twentytwosel
 
 import com.ruyicai.android.controller.activity.viewpagers.SelectNumberActivity;
 
-public class TwentyTwoSelectFiveCourageSelectActivity extends
-		SelectNumberActivity {
+public class TwentyTwoSelectFiveCourageSelectActivity extends SelectNumberActivity {
 
 	@Override
 	protected void setSelectNumberPanelNum() {

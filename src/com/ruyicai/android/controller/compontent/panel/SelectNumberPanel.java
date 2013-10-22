@@ -22,16 +22,16 @@ import android.widget.TextView;
  */
 public class SelectNumberPanel extends LinearLayout {
 	/** 上下文对象 */
-	private Context							_fContext;
+	private Context _fContext;
 
 	/** 选号面板标题栏相对布局 */
-	private RelativeLayout					_fTitleRelativeLayout;
+	private RelativeLayout _fTitleRelativeLayout;
 	/** 选号面板标题文本框 */
-	private TextView						_fTitleTextView;
+	private TextView _fTitleTextView;
 	/** 选号面板随机选号按钮 */
-	private RandomSelectNumberButton		_fRandomSelectNumberButton;
+	private RandomSelectNumberButton _fRandomSelectNumberButton;
 	/** 选号面板选号小球表格布局 */
-	private SelectNumberBallsTableLayout	_fSelectNumberBallsTableLayout;
+	private SelectNumberBallsTableLayout _fSelectNumberBallsTableLayout;
 
 	/**
 	 * 构造函数
@@ -90,8 +90,7 @@ public class SelectNumberPanel extends LinearLayout {
 				android.widget.RelativeLayout.LayoutParams.WRAP_CONTENT,
 				android.widget.RelativeLayout.LayoutParams.WRAP_CONTENT);
 		layoutParams.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
-		layoutParams.addRule(RelativeLayout.CENTER_VERTICAL,
-				RelativeLayout.TRUE);
+		layoutParams.addRule(RelativeLayout.CENTER_VERTICAL, RelativeLayout.TRUE);
 		_fTitleRelativeLayout.addView(_fTitleTextView, layoutParams);
 	}
 
@@ -103,14 +102,12 @@ public class SelectNumberPanel extends LinearLayout {
 	 * @param aRandomButtonDropDownMenuButtonNum
 	 *            选择按钮的个数
 	 */
-	public void initSelectNumberPanelRandomButtonShow(
-			int aRandomButtonMinRandomNum,
+	public void initSelectNumberPanelRandomButtonShow(int aRandomButtonMinRandomNum,
 			int aRandomButtonDropDownMenuButtonNum) {
 		_fRandomSelectNumberButton = new RandomSelectNumberButton(_fContext,
 				aRandomButtonMinRandomNum);
 
-		_fRandomSelectNumberButton
-				.setDropDownMenuMinRandomNum(aRandomButtonMinRandomNum);
+		_fRandomSelectNumberButton.setDropDownMenuMinRandomNum(aRandomButtonMinRandomNum);
 		_fRandomSelectNumberButton
 				.setDropDownMenuSelectButtonNum(aRandomButtonDropDownMenuButtonNum);
 		android.widget.RelativeLayout.LayoutParams layoutParams = new android.widget.RelativeLayout.LayoutParams(
@@ -134,15 +131,14 @@ public class SelectNumberPanel extends LinearLayout {
 	 * @param aIsShowLossValue
 	 *            是否显示遗漏值
 	 */
-	public void initSelectNumberPanelSelectNumberBallsShow(
-			int aSelectNumberBallStartNum, int aSelectBallNum,
-			SelectNumberBallType aSelectNumberBallType, int[] aLossValues,
+	public void initSelectNumberPanelSelectNumberBallsShow(int aSelectNumberBallStartNum,
+			int aSelectBallNum, SelectNumberBallType aSelectNumberBallType, int[] aLossValues,
 			boolean aIsShowLossValue) {
 
 		// FIXME 在没有输入任何参数的情况下的处理
-		_fSelectNumberBallsTableLayout = new SelectNumberBallsTableLayout(
-				_fContext, aSelectNumberBallStartNum, aSelectBallNum,
-				aSelectNumberBallType, aLossValues, aIsShowLossValue);
+		_fSelectNumberBallsTableLayout = new SelectNumberBallsTableLayout(_fContext,
+				aSelectNumberBallStartNum, aSelectBallNum, aSelectNumberBallType, aLossValues,
+				aIsShowLossValue);
 		LayoutParams layoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT,
 				LayoutParams.WRAP_CONTENT);
 		layoutParams.topMargin = 5;
@@ -173,18 +169,15 @@ public class SelectNumberPanel extends LinearLayout {
 	 * @param aIsShowLossValue
 	 *            是否显示遗漏值标识
 	 */
-	public void initSelectNumberPanelShow(String aTitleString,
-			int aRandomButtonMinRandomNum,
-			int aRandomButtonDropDownMenuButtonNum,
-			int aSelectNumberBallStartNum, int aSelectBallNum,
-			SelectNumberBallType aSelectNumberBallType, int[] aLossValues,
+	public void initSelectNumberPanelShow(String aTitleString, int aRandomButtonMinRandomNum,
+			int aRandomButtonDropDownMenuButtonNum, int aSelectNumberBallStartNum,
+			int aSelectBallNum, SelectNumberBallType aSelectNumberBallType, int[] aLossValues,
 			boolean aIsShowLossValue) {
 		initSelectNumberPanelTitleShow(aTitleString);
 		initSelectNumberPanelRandomButtonShow(aRandomButtonMinRandomNum,
 				aRandomButtonDropDownMenuButtonNum);
-		initSelectNumberPanelSelectNumberBallsShow(aSelectNumberBallStartNum,
-				aSelectBallNum, aSelectNumberBallType, aLossValues,
-				aIsShowLossValue);
+		initSelectNumberPanelSelectNumberBallsShow(aSelectNumberBallStartNum, aSelectBallNum,
+				aSelectNumberBallType, aLossValues, aIsShowLossValue);
 	}
 
 	/**
@@ -214,16 +207,14 @@ public class SelectNumberPanel extends LinearLayout {
 	 *            下拉菜单选择随机数个数按钮的个数
 	 */
 	public void setSelectButtonNum(int aSelectButtonNum) {
-		_fRandomSelectNumberButton
-				.setDropDownMenuSelectButtonNum(aSelectButtonNum);
+		_fRandomSelectNumberButton.setDropDownMenuSelectButtonNum(aSelectButtonNum);
 	}
 
 	/**
 	 * 设置选号小球的起始号码
 	 */
 	public void setSelectBallsStartNum(int aSelectNumberBallStartNum) {
-		_fSelectNumberBallsTableLayout
-				.set_fSelectNumberBallStartNum(aSelectNumberBallStartNum);
+		_fSelectNumberBallsTableLayout.set_fSelectNumberBallStartNum(aSelectNumberBallStartNum);
 	}
 
 	/**

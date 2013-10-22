@@ -25,26 +25,23 @@ import com.ruyicai.android.controller.activity.home.usercenter.UserCenterActivit
 public class HomeActivity extends RoboActivityGroup {
 
 	/** 导航栏标签标记数组 */
-	private String[]	tabsTagStrings			= { "buylotteryhall",
-			"lotterynotice", "accountrecharge", "usercenter", "more" };
+	private String[] tabsTagStrings = { "buylotteryhall", "lotterynotice", "accountrecharge",
+			"usercenter", "more" };
 	/** 导航栏标签图片资源数组 */
-	private int[]		tabsIconImages			= {
-			R.drawable.home_tabbar_buylotteryhall,
-			R.drawable.home_tabbar_lotterynotice,
-			R.drawable.home_tabbar_accountrecharge,
+	private int[] tabsIconImages = { R.drawable.home_tabbar_buylotteryhall,
+			R.drawable.home_tabbar_lotterynotice, R.drawable.home_tabbar_accountrecharge,
 			R.drawable.home_tabbar_usercenter, R.drawable.home_tabbar_more };
 	/** 导航栏标签的跳转页面类数组 */
-	private Class<?>[]	tabsDestinationClasses	= {
-			BuyLotteryHallActivity.class, LotteryNoticeActivity.class,
-			AccountRechargeActivity.class, UserCenterActivity.class,
-			MoreActivity.class					};
+	private Class<?>[] tabsDestinationClasses = { BuyLotteryHallActivity.class,
+			LotteryNoticeActivity.class, AccountRechargeActivity.class, UserCenterActivity.class,
+			MoreActivity.class };
 
 	/** 引用视图：tabHost导航栏 */
 	@InjectView(R.id.home_tabhost_navigationbar)
-	TabHost				_fNavigationBarTabHost;
+	TabHost _fNavigationBarTabHost;
 
-	String				_fBuyLotteryHallString;
-	String				_fMoreString;
+	String _fBuyLotteryHallString;
+	String _fMoreString;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -87,17 +84,13 @@ public class HomeActivity extends RoboActivityGroup {
 		View tabView = layoutInflater.inflate(R.layout.home_tabhost_item, null);
 
 		// 设置背景图片选择器
-		ImageView iconImageView = (ImageView) tabView
-				.findViewById(R.id.home_tabbar_item_icon);
+		ImageView iconImageView = (ImageView) tabView.findViewById(R.id.home_tabbar_item_icon);
 		iconImageView.setBackgroundResource(tabsIconImages[aTab_i]);
 
 		// 设置标识、内容和跳转意图
-		TabHost.TabSpec tabSpec = _fNavigationBarTabHost
-				.newTabSpec(tabsTagStrings[aTab_i])
+		TabHost.TabSpec tabSpec = _fNavigationBarTabHost.newTabSpec(tabsTagStrings[aTab_i])
 				.setIndicator(tabView)
-				.setContent(
-						new Intent(HomeActivity.this,
-								tabsDestinationClasses[aTab_i]));
+				.setContent(new Intent(HomeActivity.this, tabsDestinationClasses[aTab_i]));
 
 		// 向tabHost添加tabSpec
 		_fNavigationBarTabHost.addTab(tabSpec);

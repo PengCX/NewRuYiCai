@@ -22,8 +22,7 @@ public class SoftUpdateDialog extends PromptDialog {
 
 	@Override
 	public void set_fTitleString() {
-		_fTitleString = _fResources
-				.getString(R.string.updatedialog_title_prompt);
+		_fTitleString = _fResources.getString(R.string.updatedialog_title_prompt);
 	}
 
 	@Override
@@ -31,14 +30,12 @@ public class SoftUpdateDialog extends PromptDialog {
 		_fContentView = new TextView(_fContext);
 		((TextView) _fContentView).setTextColor(R.color.black);
 		((TextView) _fContentView).setTextSize(18);
-		((TextView) _fContentView)
-				.setText(R.string.updatedialog_message_softwareupdate);
+		((TextView) _fContentView).setText(R.string.updatedialog_message_softwareupdate);
 	}
 
 	@Override
 	public void set_fPositiveButton() {
-		_fPositiveButtonString = _fResources
-				.getString(R.string.updatedialog_button_positive);
+		_fPositiveButtonString = _fResources.getString(R.string.updatedialog_button_positive);
 		_fPositiveButtonClickListener = new OnClickListener() {
 
 			@Override
@@ -50,8 +47,7 @@ public class SoftUpdateDialog extends PromptDialog {
 
 	@Override
 	public void set_fNegativeButton() {
-		_fNegativeButtonString = _fResources
-				.getString(R.string.updatedialog_button_negative);
+		_fNegativeButtonString = _fResources.getString(R.string.updatedialog_button_negative);
 		_fNegativeButtOnClickListener = new OnClickListener() {
 
 			@Override

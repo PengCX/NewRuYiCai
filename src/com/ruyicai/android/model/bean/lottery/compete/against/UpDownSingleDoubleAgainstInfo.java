@@ -7,10 +7,10 @@ package com.ruyicai.android.model.bean.lottery.compete.against;
  * @since RYC1.0 2013-7-11
  */
 public class UpDownSingleDoubleAgainstInfo extends AgainstInfo {
-	private String	_fSxds_v1;
-	private String	_fSxds_v2;
-	private String	_fSxds_v3;
-	private String	_fSxds_v4;
+	private String _fSxds_v1;
+	private String _fSxds_v2;
+	private String _fSxds_v3;
+	private String _fSxds_v4;
 
 	public String getfSxds_v1() {
 		return _fSxds_v1;

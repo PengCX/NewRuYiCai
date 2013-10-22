@@ -4,8 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class JiangXiElevenSelectFiveBeforThreeSelfSelectActivity extends
-		Activity {
+public class JiangXiElevenSelectFiveBeforThreeSelfSelectActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

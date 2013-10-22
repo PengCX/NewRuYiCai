@@ -30,26 +30,23 @@ import com.ruyicai.android.tools.ImageTools;
  */
 public class FunctionsActivity extends BaseActivity implements OnClickListener {
 	/** 功能展示页面数目 */
-	private static final int	FUNCTIONS_PAGE_NUM	= 5;
+	private static final int FUNCTIONS_PAGE_NUM = 5;
 
 	/** 图片资源id数组 */
-	private int[]				functionImages		= {
-			R.drawable.functions_iamgeview_function1,
-			R.drawable.functions_iamgeview_function2,
-			R.drawable.functions_iamgeview_function3,
-			R.drawable.functions_iamgeview_function4,
-			R.drawable.functions_iamgeview_function5 };
+	private int[] functionImages = { R.drawable.functions_iamgeview_function1,
+			R.drawable.functions_iamgeview_function2, R.drawable.functions_iamgeview_function3,
+			R.drawable.functions_iamgeview_function4, R.drawable.functions_iamgeview_function5 };
 
 	/** 显示新功能介绍 */
 	@InjectView(R.id.functions_viewpager_introduce)
-	private ViewPager			_fFunctionsViewPager;
+	private ViewPager _fFunctionsViewPager;
 
 	/** 引用对象：WindowManager */
 	@Inject
-	WindowManager				_fWindowManager;
+	WindowManager _fWindowManager;
 	/** 引用对象：LayoutInflater */
 	@Inject
-	LayoutInflater				_fLayoutInflater;
+	LayoutInflater _fLayoutInflater;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -74,8 +71,7 @@ public class FunctionsActivity extends BaseActivity implements OnClickListener {
 		// 设置功能页面视图图片和按钮属性
 		for (int function_i = 0; function_i < FUNCTIONS_PAGE_NUM; function_i++) {
 			// 获取功能页面视图独享
-			View functionView = _fLayoutInflater.inflate(
-					R.layout.functions_viewpager_item, null);
+			View functionView = _fLayoutInflater.inflate(R.layout.functions_viewpager_item, null);
 
 			// 设置功能图片
 			setFunctionImage(functionView, function_i);
@@ -93,8 +89,7 @@ public class FunctionsActivity extends BaseActivity implements OnClickListener {
 
 	private void setViewPageAdapter(List<View> functionsaList) {
 		// 设置viewPager适配器
-		ViewPagerAdapter functionPageAdapter = new ViewPagerAdapter(
-				functionsaList);
+		ViewPagerAdapter functionPageAdapter = new ViewPagerAdapter(functionsaList);
 		_fFunctionsViewPager.setAdapter(functionPageAdapter);
 
 		// 设置默认显示页面
@@ -143,9 +138,8 @@ public class FunctionsActivity extends BaseActivity implements OnClickListener {
 		int screenWidth = _fWindowManager.getDefaultDisplay().getWidth();
 		int screenHeight = _fWindowManager.getDefaultDisplay().getHeight();
 
-		Bitmap functionBitmap = ImageTools
-				.scaleBitmapFromResourceBaseDestinationSize(getResources(),
-						functionImages[function_i], screenWidth, screenHeight);
+		Bitmap functionBitmap = ImageTools.scaleBitmapFromResourceBaseDestinationSize(
+				getResources(), functionImages[function_i], screenWidth, screenHeight);
 
 		_fFunctionItemImageView.setImageBitmap(functionBitmap);
 	}

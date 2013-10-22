@@ -7,14 +7,14 @@ package com.ruyicai.android.model.bean.lottery.compete.against;
  * @since RYC1.0 2013-7-11
  */
 public class TotalGoalAgainstInfo extends AgainstInfo {
-	private String	_fGoal_v0;
-	private String	_fGoal_v1;
-	private String	_fGoal_v2;
-	private String	_fGoal_v3;
-	private String	_fGoal_v4;
-	private String	_fGoal_v5;
-	private String	_fGoal_v6;
-	private String	_fGoal_v7;
+	private String _fGoal_v0;
+	private String _fGoal_v1;
+	private String _fGoal_v2;
+	private String _fGoal_v3;
+	private String _fGoal_v4;
+	private String _fGoal_v5;
+	private String _fGoal_v6;
+	private String _fGoal_v7;
 
 	public String getfGoal_v0() {
 		return _fGoal_v0;

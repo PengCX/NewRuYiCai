@@ -8,8 +8,8 @@ package com.ruyicai.android.model.bean.lottery;
  */
 public class GuangDongHappyVeryLottery extends Lottery {
 
-	public GuangDongHappyVeryLottery(LotteryType _fLotteryType,
-			Boolean _fIsNowLottery, Boolean _fIsSaleStop, Boolean _fIsReward) {
+	public GuangDongHappyVeryLottery(LotteryType _fLotteryType, Boolean _fIsNowLottery,
+			Boolean _fIsSaleStop, Boolean _fIsReward) {
 		super(_fLotteryType, _fIsNowLottery, _fIsSaleStop, _fIsReward);
 		// TODO Auto-generated constructor stub
 	}

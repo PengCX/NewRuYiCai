@@ -17,7 +17,7 @@ import android.content.Context;
  */
 public class DialogFactory {
 	/** 上下文对象 */
-	private Context	_fContext;
+	private Context _fContext;
 
 	/**
 	 * 构造方法
@@ -60,17 +60,17 @@ public class DialogFactory {
 		PromptDialog promptDialog = null;
 
 		switch (aDialogType) {
-		case SOFTWARE_UPDATE_DIALOG:
-			promptDialog = new SoftUpdateDialog(_fContext);
-			break;
+			case SOFTWARE_UPDATE_DIALOG:
+				promptDialog = new SoftUpdateDialog(_fContext);
+				break;
 
-		case APPLICATION_EXIT_DIALOG:
-			promptDialog = new ApplicationExitDialog(_fContext);
-			break;
+			case APPLICATION_EXIT_DIALOG:
+				promptDialog = new ApplicationExitDialog(_fContext);
+				break;
 
-		case COMPETEFOOTBALL_PLAYMETHODCHANGE_DIALOG:
-			promptDialog = new CompeteFootballPlayMethodChangeDialog(_fContext);
-			break;
+			case COMPETEFOOTBALL_PLAYMETHODCHANGE_DIALOG:
+				promptDialog = new CompeteFootballPlayMethodChangeDialog(_fContext);
+				break;
 		}
 		return promptDialog;
 	}
@@ -82,8 +82,7 @@ public class DialogFactory {
 	 *            对话框类型
 	 * @return 警告对话框对象
 	 */
-	public AlertDialogInterface assembleAlertDialogWithType(
-			DialogType aDialogType) {
+	public AlertDialogInterface assembleAlertDialogWithType(DialogType aDialogType) {
 		AlertDialogInterface alertDialog = newAlertDialogWithType(aDialogType);
 
 		alertDialog.setAlertIcon();
@@ -107,9 +106,9 @@ public class DialogFactory {
 		AlertDialogInterface alertDialog = null;
 
 		switch (aDialogType) {
-		case NOTCONNECTED_INTENET_DIALOG:
-			alertDialog = new NotConnectedIntenetDialog(_fContext);
-			break;
+			case NOTCONNECTED_INTENET_DIALOG:
+				alertDialog = new NotConnectedIntenetDialog(_fContext);
+				break;
 		}
 		return alertDialog;
 	}

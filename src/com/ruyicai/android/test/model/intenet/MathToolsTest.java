@@ -14,12 +14,12 @@ import com.ruyicai.android.tools.MathTools;
  * @since RYC1.0 2013-4-12
  */
 public class MathToolsTest extends AndroidTestCase {
-	public static final String	TAG	= "MathToolsTest";
+	public static final String TAG = "MathToolsTest";
 
 	public void testGetSpecifiedRangeRadomNumberWithoutRepetation() {
 		for (int i = 0; i < 1000; i++) {
-			List<Integer> randoms = MathTools
-					.getSpecifiedRangeRadomNumberWithoutRepetation(0, 10, 2);
+			List<Integer> randoms = MathTools.getSpecifiedRangeRadomNumberWithoutRepetation(0, 10,
+					2);
 			Log.i(TAG, randoms.toString() + " " + randoms.size());
 		}
 	}

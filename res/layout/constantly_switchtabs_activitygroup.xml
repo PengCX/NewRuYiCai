@@ -8,7 +8,7 @@
     <!-- 标题栏 -->
 
     <com.ruyicai.android.controller.compontent.bar.TitleBar
-        android:id="@+id/arrangethree_switchtabs_activitygroup_titlebar"
+        android:id="@+id/constantly_switchtabs_activitygroup_titlebar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -17,15 +17,15 @@
     <!-- 开奖信息栏 -->
 
     <com.ruyicai.android.controller.compontent.bar.LotteryInformationBar
-        android:id="@+id/arrangethree_switchtabs_activitygroup_lotteryinfomationbar"
+        android:id="@+id/constantly_switchtabs_activitygroup_lotteryinfomationbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/arrangethree_switchtabs_activitygroup_titlebar" />
+        android:layout_below="@id/constantly_switchtabs_activitygroup_titlebar" />
 
     <!-- 投注栏占位 -->
 
     <com.ruyicai.android.controller.compontent.bar.BetBar
-        android:id="@+id/arrangethree_switchtabs_activitygroup_betbar"
+        android:id="@+id/constantly_switchtabs_activitygroup_betbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true" />
@@ -33,11 +33,11 @@
     <!-- 自选和胆拖选项卡 -->
 
     <TabHost
-        android:id="@+id/arrangethree_switchtabs_activitygroup_tabhost"
+        android:id="@+id/constantly_switchtabs_activitygroup_tabhost"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/arrangethree_switchtabs_activitygroup_betbar"
-        android:layout_below="@id/arrangethree_switchtabs_activitygroup_lotteryinfomationbar"
+        android:layout_above="@id/constantly_switchtabs_activitygroup_betbar"
+        android:layout_below="@id/constantly_switchtabs_activitygroup_lotteryinfomationbar"
         android:background="@color/white" >
 
         <RelativeLayout

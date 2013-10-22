@@ -2,34 +2,31 @@ package com.ruyicai.android.controller.activity.home.lotterynotice;
 
 import roboguice.inject.InjectView;
 import android.os.Bundle;
-import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.ruyicai.android.R;
 import com.ruyicai.android.controller.activity.BaseActivity;
 import com.ruyicai.android.controller.adapter.listview.LotteryNoticeListViewAdapter;
 import com.ruyicai.android.controller.compontent.bar.TitleBar;
-import com.ruyicai.android.controller.compontent.bar.TitleBarInterface;
 import com.ruyicai.android.model.bean.lottery.LotteryType;
 
 public class LotteryNoticeActivity extends BaseActivity {
 
 	/** 引用视图：开奖公告标题栏 */
 	@InjectView(R.id.lotteynotice_title_bar)
-	private TitleBar	_fTitleBar;
+	private TitleBar _fTitleBar;
 	/** 引用视图：开奖公告列表 */
 	@InjectView(R.id.lotterynotice_listview_notice)
-	private ListView	_fNoticeListView;
+	private ListView _fNoticeListView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.lotterynotice_activity);
 
-//		_fTitleBar.set_fTitleBarInterface(new LotteryNoticeTitltBarInterface());
-//		_fTitleBar.initTitleBarShow();
+		// _fTitleBar.set_fTitleBarInterface(new
+		// LotteryNoticeTitltBarInterface());
+		// _fTitleBar.initTitleBarShow();
 
 		int[] lotteryIconResourceIds = getNoticeListViewIconResoruceIds();
 		String[] lotteryNameStrings = LotteryType.getAllLotteryNames();
@@ -37,14 +34,14 @@ public class LotteryNoticeActivity extends BaseActivity {
 		String[] noticeIssuesStrings = getNoticeListViewNoticeIssueStrings();
 
 		LotteryNoticeListViewAdapter lotteryNoticeListViewAdapter = new LotteryNoticeListViewAdapter(
-				this, lotteryIconResourceIds, lotteryNameStrings,
-				noticeDateStrings, noticeIssuesStrings);
+				this, lotteryIconResourceIds, lotteryNameStrings, noticeDateStrings,
+				noticeIssuesStrings);
 		_fNoticeListView.setAdapter(lotteryNoticeListViewAdapter);
 	}
 
 	/**
 	 * 获取开奖公告列表开奖期号字符串数组
-	 *
+	 * 
 	 * @return 开奖公告期号字符串数组
 	 */
 	private String[] getNoticeListViewNoticeIssueStrings() {
@@ -72,7 +69,7 @@ public class LotteryNoticeActivity extends BaseActivity {
 
 	/**
 	 * 获取开奖公告列表开奖日期字符串数组
-	 *
+	 * 
 	 * @return 开奖日期字符串数组
 	 */
 	private String[] getNoticeListViewNoticeDataStrings() {
@@ -100,7 +97,7 @@ public class LotteryNoticeActivity extends BaseActivity {
 
 	/**
 	 * 获取开奖列表图标图片资源Id数组
-	 *
+	 * 
 	 * @return 图标图片资源Id数组
 	 */
 	private int[] getNoticeListViewIconResoruceIds() {

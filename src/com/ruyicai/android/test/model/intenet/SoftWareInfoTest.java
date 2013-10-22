@@ -6,7 +6,7 @@ import android.test.AndroidTestCase;
 import android.util.Log;
 
 public class SoftWareInfoTest extends AndroidTestCase {
-	private static final String	TAG	= "SoftWareInfoTest";
+	private static final String TAG = "SoftWareInfoTest";
 
 	public void testgetSoftWareInfo() throws Exception {
 		SoftWareInfo softWareInfo = SoftWareInfo.getInstance(getContext());

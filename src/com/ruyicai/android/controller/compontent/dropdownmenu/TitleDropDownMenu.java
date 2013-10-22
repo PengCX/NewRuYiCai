@@ -19,21 +19,21 @@ import android.widget.Toast;
  */
 public class TitleDropDownMenu {
 	/** 上下文对象 */
-	private Context		_fContext;
+	private Context _fContext;
 	/** popupwindow对象 */
-	private PopupWindow	_fPopupWindow;
+	private PopupWindow _fPopupWindow;
 	/** 玩法介绍按钮 */
-	private Button		_fPlayMethodIntroduceButton;
+	private Button _fPlayMethodIntroduceButton;
 	/** 历史开奖按钮 */
-	private Button		_fHistoryRunLotteryButton;
+	private Button _fHistoryRunLotteryButton;
 	/** 开奖走势按钮 */
-	private Button		_fRunLotteryTreadButton;
+	private Button _fRunLotteryTreadButton;
 	/** 投注查询按钮 */
-	private Button		_fBetQueryButton;
+	private Button _fBetQueryButton;
 	/** 幸运选号按钮 */
-	private Button		_fLuckSelectNumberButton;
+	private Button _fLuckSelectNumberButton;
 	/** 模拟选号按钮 */
-	private Button		_fSimulateSelectNumberButton;
+	private Button _fSimulateSelectNumberButton;
 
 	/**
 	 * 构造函数
@@ -50,11 +50,10 @@ public class TitleDropDownMenu {
 
 		LayoutInflater layoutInflater = (LayoutInflater) _fContext
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		View contentView = layoutInflater.inflate(R.layout.title_dropdownmenu,
-				null);
+		View contentView = layoutInflater.inflate(R.layout.title_dropdownmenu, null);
 		if (_fPopupWindow == null) {
-			_fPopupWindow = new PopupWindow(contentView,
-					LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+			_fPopupWindow = new PopupWindow(contentView, LayoutParams.WRAP_CONTENT,
+					LayoutParams.WRAP_CONTENT);
 		}
 
 		_fPlayMethodIntroduceButton = (Button) contentView
@@ -63,8 +62,7 @@ public class TitleDropDownMenu {
 				.findViewById(R.id.popupwindow_button_historyrunlotter);
 		_fRunLotteryTreadButton = (Button) contentView
 				.findViewById(R.id.popupwindow_button_historyrunlotter);
-		_fBetQueryButton = (Button) contentView
-				.findViewById(R.id.popupwindow_button_betquery);
+		_fBetQueryButton = (Button) contentView.findViewById(R.id.popupwindow_button_betquery);
 		_fLuckSelectNumberButton = (Button) contentView
 				.findViewById(R.id.popupwindow_button_luckselectnumber);
 		_fSimulateSelectNumberButton = (Button) contentView
@@ -110,8 +108,7 @@ public class TitleDropDownMenu {
 
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(_fContext, "你点击的玩法介绍按钮", Toast.LENGTH_LONG)
-						.show();
+				Toast.makeText(_fContext, "你点击的玩法介绍按钮", Toast.LENGTH_LONG).show();
 				dismissDropDownMenu();
 
 			}
@@ -121,8 +118,7 @@ public class TitleDropDownMenu {
 
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(_fContext, "你点击了历史开奖按钮", Toast.LENGTH_LONG)
-						.show();
+				Toast.makeText(_fContext, "你点击了历史开奖按钮", Toast.LENGTH_LONG).show();
 				dismissDropDownMenu();
 			}
 		});
@@ -131,8 +127,7 @@ public class TitleDropDownMenu {
 
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(_fContext, "你点击了开奖走势按钮", Toast.LENGTH_LONG)
-						.show();
+				Toast.makeText(_fContext, "你点击了开奖走势按钮", Toast.LENGTH_LONG).show();
 				dismissDropDownMenu();
 			}
 		});
@@ -141,8 +136,7 @@ public class TitleDropDownMenu {
 
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(_fContext, "你点击了投注查询按钮", Toast.LENGTH_LONG)
-						.show();
+				Toast.makeText(_fContext, "你点击了投注查询按钮", Toast.LENGTH_LONG).show();
 				dismissDropDownMenu();
 			}
 		});
@@ -151,8 +145,7 @@ public class TitleDropDownMenu {
 
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(_fContext, "你点击了幸运选号按钮", Toast.LENGTH_LONG)
-						.show();
+				Toast.makeText(_fContext, "你点击了幸运选号按钮", Toast.LENGTH_LONG).show();
 				dismissDropDownMenu();
 			}
 		});
@@ -161,8 +154,7 @@ public class TitleDropDownMenu {
 
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(_fContext, "你点击了模拟选号按钮", Toast.LENGTH_LONG)
-						.show();
+				Toast.makeText(_fContext, "你点击了模拟选号按钮", Toast.LENGTH_LONG).show();
 				dismissDropDownMenu();
 			}
 		});

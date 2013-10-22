@@ -22,18 +22,18 @@ import android.widget.PopupWindow;
  */
 public class RandomButtonDropDownMenu {
 	/** 上下文对象 */
-	private Context						_fContext;
+	private Context _fContext;
 	/** 产生下拉菜单的按钮 */
-	private RandomSelectNumberButton	_fRandomSelectNumberButton;
+	private RandomSelectNumberButton _fRandomSelectNumberButton;
 	/** popupwindow对象 */
-	private PopupWindow					_fPopupWindow;
+	private PopupWindow _fPopupWindow;
 	/** 选号按钮网格布局 */
-	private GridView					_fSelectButtonGridView;
+	private GridView _fSelectButtonGridView;
 
 	/** 下拉菜单选择随机号码的最小个数：默认为6个 */
-	private int							_fMinRandomNum		= 6;
+	private int _fMinRandomNum = 6;
 	/** 下拉菜单选择按钮的个数：默认为9个 */
-	private int							_fSelectButtonNum	= 9;
+	private int _fSelectButtonNum = 9;
 
 	/**
 	 * 设置产生下拉菜单的按钮
@@ -41,13 +41,11 @@ public class RandomButtonDropDownMenu {
 	 * @param _fRandomSelectNumberButton
 	 *            产生下拉菜单的按钮
 	 */
-	public void set_fRandomSelectNumberButton(
-			RandomSelectNumberButton _fRandomSelectNumberButton) {
+	public void set_fRandomSelectNumberButton(RandomSelectNumberButton _fRandomSelectNumberButton) {
 		this._fRandomSelectNumberButton = _fRandomSelectNumberButton;
 	}
 
-	public RandomButtonDropDownMenu(Context aContext, int aMinRandomNum,
-			int aSelectBallNum) {
+	public RandomButtonDropDownMenu(Context aContext, int aMinRandomNum, int aSelectBallNum) {
 		setAttributes(aContext, aMinRandomNum, aSelectBallNum);
 
 		View contentView = setDropDownMenuLayout();
@@ -63,18 +61,17 @@ public class RandomButtonDropDownMenu {
 	 */
 	private void initSelectButtonsShow(View contentView) {
 		if (_fPopupWindow == null) {
-			_fPopupWindow = new PopupWindow(contentView,
-					LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+			_fPopupWindow = new PopupWindow(contentView, LayoutParams.WRAP_CONTENT,
+					LayoutParams.WRAP_CONTENT);
 			// 不设置该属性，无法响应onItemClickListener事件
 			_fPopupWindow.setFocusable(true);
 		}
 
 		_fSelectButtonGridView = (GridView) contentView
 				.findViewById(R.id.randomdropdownmenu_gridview);
-		_fSelectButtonGridView.setAdapter(new RandomButtonGridViewAdapter(
-				_fContext, _fMinRandomNum, _fSelectButtonNum));
-		_fSelectButtonGridView
-				.setOnItemClickListener(new GridViewOnItemClickListener());
+		_fSelectButtonGridView.setAdapter(new RandomButtonGridViewAdapter(_fContext,
+				_fMinRandomNum, _fSelectButtonNum));
+		_fSelectButtonGridView.setOnItemClickListener(new GridViewOnItemClickListener());
 	}
 
 	/**
@@ -85,8 +82,7 @@ public class RandomButtonDropDownMenu {
 	private View setDropDownMenuLayout() {
 		LayoutInflater layoutInflater = (LayoutInflater) _fContext
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		View contentView = layoutInflater.inflate(R.layout.random_dropdownmenu,
-				null);
+		View contentView = layoutInflater.inflate(R.layout.random_dropdownmenu, null);
 		return contentView;
 	}
 
@@ -96,8 +92,7 @@ public class RandomButtonDropDownMenu {
 	 * @param aContext
 	 *            上下文对象
 	 */
-	private void setAttributes(Context aContext, int aMinRandomNum,
-			int aSelectButtonNum) {
+	private void setAttributes(Context aContext, int aMinRandomNum, int aSelectButtonNum) {
 		_fContext = aContext;
 		_fMinRandomNum = aMinRandomNum;
 		_fSelectButtonNum = aSelectButtonNum;
@@ -154,11 +149,9 @@ public class RandomButtonDropDownMenu {
 	class GridViewOnItemClickListener implements OnItemClickListener {
 
 		@Override
-		public void onItemClick(AdapterView<?> parent, View view, int position,
-				long id) {
+		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 			String randomNum = (String) ((Button) view).getText();
-			_fRandomSelectNumberButton.set_fRandomSelectNum(Integer
-					.valueOf(randomNum));
+			_fRandomSelectNumberButton.set_fRandomSelectNum(Integer.valueOf(randomNum));
 			dismissRandomButtonDropDownMenu();
 		}
 	}

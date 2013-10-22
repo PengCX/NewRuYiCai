@@ -19,13 +19,13 @@ import android.widget.RadioGroup.OnCheckedChangeListener;
  */
 public class PageChangeRadioButtons extends LinearLayout {
 	/** 上下文对象 */
-	private Context							_fContext;
+	private Context _fContext;
 	/** 单选按钮组 */
-	private RadioGroup						_fRadioGroup;
+	private RadioGroup _fRadioGroup;
 	/** 单选按钮文本字符串资源数组 */
-	private int[]							_fRadioButtonTextResouceIds;
+	private int[] _fRadioButtonTextResouceIds;
 	/** 页面切换按钮接口对象 */
-	private PageChangeRadioButtonsInterface	_fChangeRadioButtonsInterface;
+	private PageChangeRadioButtonsInterface _fChangeRadioButtonsInterface;
 
 	public void set_fRadioButtonTextResouceIds(int[] _fRadioButtonTextResouceIds) {
 		this._fRadioButtonTextResouceIds = _fRadioButtonTextResouceIds;
@@ -90,8 +90,7 @@ public class PageChangeRadioButtons extends LinearLayout {
 	/**
 	 * 设置单选按钮组的选中变化监听器
 	 */
-	public void setOnCheckedChangedListener(
-			OnCheckedChangeListener aOnCheckedChangeListener) {
+	public void setOnCheckedChangedListener(OnCheckedChangeListener aOnCheckedChangeListener) {
 		_fRadioGroup.setOnCheckedChangeListener(aOnCheckedChangeListener);
 	}
 

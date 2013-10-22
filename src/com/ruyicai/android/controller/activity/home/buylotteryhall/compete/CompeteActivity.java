@@ -31,32 +31,32 @@ import com.ruyicai.android.model.bean.lottery.compete.against.AgainstInfo;
 
 /**
  * 竞彩选号页面父类
- *
+ * 
  * @author Administrator
  * @since RYC1.0 2013-7-4
  */
-public abstract class CompeteActivity extends BaseActivity implements
-		TitleBarInterface, CompeteBarInterface {
+public abstract class CompeteActivity extends BaseActivity implements TitleBarInterface,
+		CompeteBarInterface {
 	/** 标题栏 */
 	@InjectView(R.id.compete_titlebar)
-	protected TitleBar				_fTitleBar;
+	protected TitleBar _fTitleBar;
 	/** 竞彩栏 */
 	@InjectView(R.id.compete_competebar)
-	private CompeteBar				_fCompeteBar;
+	private CompeteBar _fCompeteBar;
 	/** 竞彩对阵列表 */
 	@InjectView(R.id.compete_againstlist)
-	private ExpandableListView		_fAgainstListExpandableListView;
+	private ExpandableListView _fAgainstListExpandableListView;
 	/** 竞彩对阵适配器 */
-	private ExpandableListAdapter	_fAgainstExpandableListAdapter;
+	private ExpandableListAdapter _fAgainstExpandableListAdapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.compete_activity);
 
-//		// 设置标题栏接口
-//		_fTitleBar.set_fTitleBarInterface(this);
-//		_fTitleBar.initTitleBarShow();
+		// // 设置标题栏接口
+		// _fTitleBar.set_fTitleBarInterface(this);
+		// _fTitleBar.initTitleBarShow();
 
 		// 设置竞彩栏
 		_fCompeteBar.set_fCompeteBarInterface(this);
@@ -82,10 +82,9 @@ public abstract class CompeteActivity extends BaseActivity implements
 			againstLists.add(againsts);
 		}
 
-		_fAgainstExpandableListAdapter = new CompeteExpandableListAdapter(this,
-				groups, againstLists);
-		_fAgainstListExpandableListView
-				.setAdapter(_fAgainstExpandableListAdapter);
+		_fAgainstExpandableListAdapter = new CompeteExpandableListAdapter(this, groups,
+				againstLists);
+		_fAgainstListExpandableListView.setAdapter(_fAgainstExpandableListAdapter);
 	}
 
 	@Override
@@ -113,7 +112,7 @@ public abstract class CompeteActivity extends BaseActivity implements
 
 	/**
 	 * 竞彩栏点击事件监听实现类
-	 *
+	 * 
 	 * @author xiang_000
 	 * @since RYC1.0 2013-5-4
 	 */
@@ -122,21 +121,18 @@ public abstract class CompeteActivity extends BaseActivity implements
 		@Override
 		public void onClick(View v) {
 			switch (v.getId()) {
-			case R.id.competebar_button_playmethodchange:
-				DialogFactory dialogFactory = new DialogFactory(
-						CompeteActivity.this);
-				Dialog dialog = (Dialog) dialogFactory
-						.assemblePromptDialogWithType(DialogType.COMPETEFOOTBALL_PLAYMETHODCHANGE_DIALOG);
-				dialog.show();
-				break;
-			case R.id.competebar_button_eventchange:
-				Toast.makeText(CompeteActivity.this, "赛事选择按钮",
-						Toast.LENGTH_SHORT).show();
-				break;
-			case R.id.competebar_button_realtimescore:
-				Toast.makeText(CompeteActivity.this, "即时比分按钮",
-						Toast.LENGTH_SHORT).show();
-				break;
+				case R.id.competebar_button_playmethodchange:
+					DialogFactory dialogFactory = new DialogFactory(CompeteActivity.this);
+					Dialog dialog = (Dialog) dialogFactory
+							.assemblePromptDialogWithType(DialogType.COMPETEFOOTBALL_PLAYMETHODCHANGE_DIALOG);
+					dialog.show();
+					break;
+				case R.id.competebar_button_eventchange:
+					Toast.makeText(CompeteActivity.this, "赛事选择按钮", Toast.LENGTH_SHORT).show();
+					break;
+				case R.id.competebar_button_realtimescore:
+					Toast.makeText(CompeteActivity.this, "即时比分按钮", Toast.LENGTH_SHORT).show();
+					break;
 			}
 		}
 
@@ -144,28 +140,28 @@ public abstract class CompeteActivity extends BaseActivity implements
 
 	/**
 	 * 对阵列表适配器
-	 *
+	 * 
 	 * @author Administrator
 	 * @since RYC1.0 2013-7-11
 	 */
 	class CompeteExpandableListAdapter extends BaseExpandableListAdapter {
 		/** 上下文对象 */
-		private Context					_fcontext;
+		private Context _fcontext;
 		/** 显示分组信息集合 */
-		private List<String>			_fgroups;
+		private List<String> _fgroups;
 		/** 显示对阵信息结合 */
-		private List<List<AgainstInfo>>	_fagainstLists;
+		private List<List<AgainstInfo>> _fagainstLists;
 
 		/**
 		 * 構造方法
-		 *
+		 * 
 		 * @param groups
 		 *            分組的名称集合
 		 * @param againstLists
 		 *            对阵列表集合
 		 */
-		public CompeteExpandableListAdapter(Context context,
-				List<String> groups, List<List<AgainstInfo>> againstLists) {
+		public CompeteExpandableListAdapter(Context context, List<String> groups,
+				List<List<AgainstInfo>> againstLists) {
 			super();
 			this._fcontext = context;
 			this._fgroups = groups;
@@ -183,21 +179,20 @@ public abstract class CompeteActivity extends BaseActivity implements
 		}
 
 		@Override
-		public View getChildView(int groupPosition, int childPosition,
-				boolean isLastChild, View convertView, ViewGroup parent) {
+		public View getChildView(int groupPosition, int childPosition, boolean isLastChild,
+				View convertView, ViewGroup parent) {
 			LayoutInflater layoutInflater = (LayoutInflater) _fcontext
 					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			View chileView = null;
 			if (childPosition == 0) {
-				chileView = layoutInflater.inflate(
-						R.layout.compete_againstlist_wintielossitem, null);
+				chileView = layoutInflater.inflate(R.layout.compete_againstlist_wintielossitem,
+						null);
 			} else if (childPosition == 1) {
-				chileView = layoutInflater.inflate(
-						R.layout.compete_againstlist_totalgoalsitem, null);
+				chileView = layoutInflater.inflate(R.layout.compete_againstlist_totalgoalsitem,
+						null);
 			} else if (childPosition == 2) {
 				chileView = layoutInflater.inflate(
-						R.layout.compete_againstlist_updownsingledoubleitem,
-						null);
+						R.layout.compete_againstlist_updownsingledoubleitem, null);
 			}
 
 			return chileView;
@@ -224,19 +219,17 @@ public abstract class CompeteActivity extends BaseActivity implements
 		}
 
 		@Override
-		public View getGroupView(int groupPosition, boolean isExpanded,
-				View convertView, ViewGroup parent) {
+		public View getGroupView(int groupPosition, boolean isExpanded, View convertView,
+				ViewGroup parent) {
 			TextView groupTitle = new TextView(_fcontext);
 			groupTitle.setGravity(Gravity.CENTER_VERTICAL);
 			groupTitle.setTextColor(Color.BLACK);
 			groupTitle.setTextSize(15.0f);
 			groupTitle.setPadding(10, 0, 0, 0);
 			if (isExpanded) {
-				groupTitle
-						.setBackgroundResource(R.drawable.compete_grouptitle_down);
+				groupTitle.setBackgroundResource(R.drawable.compete_grouptitle_down);
 			} else {
-				groupTitle
-						.setBackgroundResource(R.drawable.compete_grouptitle_up);
+				groupTitle.setBackgroundResource(R.drawable.compete_grouptitle_up);
 			}
 			groupTitle.setText((CharSequence) getGroup(groupPosition));
 			return groupTitle;

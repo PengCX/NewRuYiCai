@@ -9,14 +9,14 @@ public class GuangDongHappyVeryOptionalThreeActivity extends
 	public void setPlayMethodTextViewContent() {
 		int checkedId = _fPageChangeRadioButtons.getCheckedRadioButtonId();
 		switch (checkedId) {
-		case R.string.radiogroup_text_selfselect:
-			_fPlayMethodTextView
-					.setText(R.string.guangdonghappyvery_textview_optionalthree_selfselectplaymethod);
-			break;
-		case R.string.radiogroup_text_courageselect:
-			_fPlayMethodTextView
-					.setText(R.string.guangdonghappyvery_textview_optionalthree_courageselectplaymethod);
-			break;
+			case R.string.radiogroup_text_selfselect:
+				_fPlayMethodTextView
+						.setText(R.string.guangdonghappyvery_textview_optionalthree_selfselectplaymethod);
+				break;
+			case R.string.radiogroup_text_courageselect:
+				_fPlayMethodTextView
+						.setText(R.string.guangdonghappyvery_textview_optionalthree_courageselectplaymethod);
+				break;
 		}
 	}
 }

@@ -27,25 +27,24 @@ public class ArrangeFiveSelfSelectActivity extends SelectNumberActivity {
 	protected void initSelectNumberPanelsWithPage(int aPage_i) {
 		for (int panel_i = 0; panel_i < _fNumOfSelectNumberPanel; panel_i++) {
 			// 获取当前初始化显示的选号面板对象
-			SelectNumberPanel selectNumberPanel = _fSelectNumberPanelList.get(
-					aPage_i).get(panel_i);
+			SelectNumberPanel selectNumberPanel = _fSelectNumberPanelList.get(aPage_i).get(panel_i);
 
 			switch (panel_i) {
-			case 0:
-				initTenThounsandSelectNumberPanel(aPage_i, selectNumberPanel);
-				break;
-			case 1:
-				initThounsandSelectNumberPanel(aPage_i, selectNumberPanel);
-				break;
-			case 2:
-				initHundredSelectNumberPanel(aPage_i, selectNumberPanel);
-				break;
-			case 3:
-				initDecadeSelectNumberPanel(aPage_i, selectNumberPanel);
-				break;
-			case 4:
-				initNumberSelectNumberPanel(aPage_i, selectNumberPanel);
-				break;
+				case 0:
+					initTenThounsandSelectNumberPanel(aPage_i, selectNumberPanel);
+					break;
+				case 1:
+					initThounsandSelectNumberPanel(aPage_i, selectNumberPanel);
+					break;
+				case 2:
+					initHundredSelectNumberPanel(aPage_i, selectNumberPanel);
+					break;
+				case 3:
+					initDecadeSelectNumberPanel(aPage_i, selectNumberPanel);
+					break;
+				case 4:
+					initNumberSelectNumberPanel(aPage_i, selectNumberPanel);
+					break;
 			}
 		}
 	}
@@ -58,8 +57,7 @@ public class ArrangeFiveSelfSelectActivity extends SelectNumberActivity {
 	 * @param selectNumberPanel
 	 *            选号面板对象
 	 */
-	private void initNumberSelectNumberPanel(int aPage_i,
-			SelectNumberPanel selectNumberPanel) {
+	private void initNumberSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
 			selectNumberPanel.initSelectNumberPanelShow("个位：", 1, 16, 0, 10,
 					SelectNumberBallType.REDBALL, null, false);
@@ -79,8 +77,7 @@ public class ArrangeFiveSelfSelectActivity extends SelectNumberActivity {
 	 * @param selectNumberPanel
 	 *            选号面板对象
 	 */
-	private void initDecadeSelectNumberPanel(int aPage_i,
-			SelectNumberPanel selectNumberPanel) {
+	private void initDecadeSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
 			selectNumberPanel.initSelectNumberPanelShow("十位：", 1, 16, 0, 10,
 					SelectNumberBallType.REDBALL, null, false);
@@ -100,8 +97,7 @@ public class ArrangeFiveSelfSelectActivity extends SelectNumberActivity {
 	 * @param selectNumberPanel
 	 *            选号面板对象
 	 */
-	private void initHundredSelectNumberPanel(int aPage_i,
-			SelectNumberPanel selectNumberPanel) {
+	private void initHundredSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
 			selectNumberPanel.initSelectNumberPanelShow("百位：", 1, 16, 0, 10,
 					SelectNumberBallType.REDBALL, null, false);
@@ -121,8 +117,7 @@ public class ArrangeFiveSelfSelectActivity extends SelectNumberActivity {
 	 * @param selectNumberPanel
 	 *            选号面板对象
 	 */
-	private void initThounsandSelectNumberPanel(int aPage_i,
-			SelectNumberPanel selectNumberPanel) {
+	private void initThounsandSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
 			selectNumberPanel.initSelectNumberPanelShow("千位：", 1, 16, 0, 10,
 					SelectNumberBallType.REDBALL, null, false);
@@ -142,8 +137,7 @@ public class ArrangeFiveSelfSelectActivity extends SelectNumberActivity {
 	 * @param selectNumberPanel
 	 *            选号面板对象
 	 */
-	private void initTenThounsandSelectNumberPanel(int aPage_i,
-			SelectNumberPanel selectNumberPanel) {
+	private void initTenThounsandSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
 			selectNumberPanel.initSelectNumberPanelShow("万位：", 1, 16, 0, 10,
 					SelectNumberBallType.REDBALL, null, false);

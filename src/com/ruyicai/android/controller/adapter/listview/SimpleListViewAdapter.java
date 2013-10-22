@@ -18,9 +18,9 @@ import android.widget.TextView;
  */
 public class SimpleListViewAdapter extends BaseAdapter {
 	/** 上下文对象 */
-	private Context	_fContext;
+	private Context _fContext;
 	/** 选项字符串资源Id数组 */
-	private int[]	_fStringResourceIds;
+	private int[] _fStringResourceIds;
 
 	/**
 	 * 构造方法
@@ -59,8 +59,7 @@ public class SimpleListViewAdapter extends BaseAdapter {
 			viewHoler = new ViewHoler();
 
 			LayoutInflater fInflater = LayoutInflater.from(_fContext);
-			aConvertView = fInflater.inflate(R.layout.simple_listview_item,
-					null);
+			aConvertView = fInflater.inflate(R.layout.simple_listview_item, null);
 
 			viewHoler._fTextView = (TextView) aConvertView
 					.findViewById(R.id.simplelistviewitem_textview_text);
@@ -72,9 +71,8 @@ public class SimpleListViewAdapter extends BaseAdapter {
 		// 如果是登录页面的客服热线选项，则为了标红客服电话，处理Html格式字符串加颜色处理
 		if (_fStringResourceIds[aPosition] == R.string.login_listviewitem_customerhotline
 				|| _fStringResourceIds[aPosition] == R.string.more_listitem_customerhotline) {
-			viewHoler._fTextView
-					.setText(Html
-							.fromHtml("客服热线&#160;&#160;<font color=\"#F33333\">400-665-1000</font>"));
+			viewHoler._fTextView.setText(Html
+					.fromHtml("客服热线&#160;&#160;<font color=\"#F33333\">400-665-1000</font>"));
 		} else {
 			viewHoler._fTextView.setText(_fStringResourceIds[aPosition]);
 		}
@@ -83,7 +81,7 @@ public class SimpleListViewAdapter extends BaseAdapter {
 	}
 
 	static class ViewHoler {
-		TextView	_fTextView;
+		TextView _fTextView;
 	}
 
 }

@@ -7,15 +7,15 @@ package com.ruyicai.android.model.bean.lottery.compete.against;
  * @since RYC1.0 2013-7-11
  */
 public class HalfAudienceAgainstInfo extends AgainstInfo {
-	private String	_fHalf_v00;
-	private String	_fHalf_v01;
-	private String	_fHalf_v03;
-	private String	_fHalf_v11;
-	private String	_fHalf_v10;
-	private String	_fHalf_v13;
-	private String	_fHalf_v33;
-	private String	_fHalf_v31;
-	private String	_fHalf_v30;
+	private String _fHalf_v00;
+	private String _fHalf_v01;
+	private String _fHalf_v03;
+	private String _fHalf_v11;
+	private String _fHalf_v10;
+	private String _fHalf_v13;
+	private String _fHalf_v33;
+	private String _fHalf_v31;
+	private String _fHalf_v30;
 
 	public String getfHalf_v00() {
 		return _fHalf_v00;

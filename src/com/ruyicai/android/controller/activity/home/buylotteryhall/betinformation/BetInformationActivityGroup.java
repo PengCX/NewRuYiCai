@@ -17,23 +17,20 @@ public class BetInformationActivityGroup extends SwitchTabsActivityGroup {
 	@Override
 	protected void set_fSwithTabClasses() {
 		_fSwithTabClasses = new Class<?>[] { BetInformationActivity.class,
-				AppendInformationActivity.class,
-				UnionInformationActivity.class,
+				AppendInformationActivity.class, UnionInformationActivity.class,
 				PresentInformationActivity.class };
 	}
 
 	@Override
 	protected void set_fSwitchTabTags() {
 		_fSwitchTabTagIds = new int[] { R.string.tabhost_textview_betting,
-				R.string.tabhost_textview_append,
-				R.string.tabhost_textview_union,
+				R.string.tabhost_textview_append, R.string.tabhost_textview_union,
 				R.string.tabhost_textview_present };
 	}
 
 	@Override
 	protected void setSwitchTabHostOnTabChangeListener() {
-		_fSwitchTabHost
-				.setOnTabChangedListener(new BettingInformationOnTabChangeListener());
+		_fSwitchTabHost.setOnTabChangedListener(new BettingInformationOnTabChangeListener());
 	}
 
 	class BettingInformationOnTabChangeListener implements OnTabChangeListener {
@@ -42,19 +39,13 @@ public class BetInformationActivityGroup extends SwitchTabsActivityGroup {
 		public void onTabChanged(String tabId) {
 			// 根据不同的选项卡改变标题
 			if (tabId.equals(getString(R.string.tabhost_textview_betting))) {
-				_fTitleBar
-						.set_fLeftTextString(R.string.bettinginformation_title_betting);
-			} else if (tabId
-					.equals(getString(R.string.tabhost_textview_append))) {
-				_fTitleBar
-						.set_fLeftTextString(R.string.bettinginformation_title_append);
+				_fTitleBar.set_fLeftTextString(R.string.bettinginformation_title_betting);
+			} else if (tabId.equals(getString(R.string.tabhost_textview_append))) {
+				_fTitleBar.set_fLeftTextString(R.string.bettinginformation_title_append);
 			} else if (tabId.equals(getString(R.string.tabhost_textview_union))) {
-				_fTitleBar
-						.set_fLeftTextString(R.string.bettinginformation_title_union);
-			} else if (tabId
-					.equals(getString(R.string.tabhost_textview_present))) {
-				_fTitleBar
-						.set_fLeftTextString(R.string.bettinginformation_title_present);
+				_fTitleBar.set_fLeftTextString(R.string.bettinginformation_title_union);
+			} else if (tabId.equals(getString(R.string.tabhost_textview_present))) {
+				_fTitleBar.set_fLeftTextString(R.string.bettinginformation_title_present);
 			}
 		}
 	}

@@ -17,25 +17,25 @@ import android.widget.TextView;
  */
 public class BetBar extends LinearLayout {
 	/** 上下文对象 */
-	private Context			_fContext;
+	private Context _fContext;
 
 	/** 已选号码 */
-	private TextView		_fSelectedNumberTextView;
+	private TextView _fSelectedNumberTextView;
 	/** 号码篮按钮 */
-	public Button			_fNumberBasketButton;
+	public Button _fNumberBasketButton;
 	/** 清除选择号码按钮 */
-	public Button			_fClearSelectNumberButton;
+	public Button _fClearSelectNumberButton;
 	/** 加入号码篮按钮 */
-	public Button			_fAddToNumberBasketButton;
+	public Button _fAddToNumberBasketButton;
 	/** 投注按钮 */
-	public Button			_fBettingButton;
+	public Button _fBettingButton;
 	/** 投注栏接口对象 */
-	private BetBarInterface	_fBetBarInterface;
+	private BetBarInterface _fBetBarInterface;
 
 	{
 		// 初始化代码块
-		LayoutInflater layoutInflater = (LayoutInflater) getContext()
-				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		LayoutInflater layoutInflater = (LayoutInflater) getContext().getSystemService(
+				Context.LAYOUT_INFLATER_SERVICE);
 		layoutInflater.inflate(R.layout.bettingbar, this);
 
 		_fSelectedNumberTextView = (TextView) findViewById(R.id.bettingbar_textview_selectednumber);

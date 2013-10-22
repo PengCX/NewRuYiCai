@@ -29,36 +29,35 @@ import com.ruyicai.android.tools.ImageTools;
  */
 public class SplashActivity extends BaseActivity {
 	/** 页面自动跳转前，Logo显示时间（毫秒) */
-	private static final int	LOGO_SHOW_TIME			= 3000;
+	private static final int LOGO_SHOW_TIME = 3000;
 
 	/** 软件更新消息ID */
-	private static final int	SOFTWARE_UPDATE_MESSAGE	= 5;
+	private static final int SOFTWARE_UPDATE_MESSAGE = 5;
 
 	/** 手机信息对象 */
-	private PhoneInfo			_fPhoneInfo;
+	private PhoneInfo _fPhoneInfo;
 	/** 应用程序共享参数对象 */
-	AppSharedPreferences		_fAppSharedPreferences;
+	AppSharedPreferences _fAppSharedPreferences;
 
 	/** 引用视图：显示企业Logo */
 	@InjectView(R.id.splash_imageview_logo)
-	private ImageView			_fLogoImageView;
+	private ImageView _fLogoImageView;
 
 	/** 引用对象：WindowManager */
 	@Inject
-	WindowManager				_fWindowManager;
+	WindowManager _fWindowManager;
 
-	private Handler				_fHandler				= new Handler() {
+	private Handler _fHandler = new Handler() {
 
-															public void handleMessage(
-																	Message msg) {
-																switch (msg.what) {
-																case SOFTWARE_UPDATE_MESSAGE:
-																	// 软件更新，显示软件更新提示对话框
-																	showDialog(SOFTWARE_UPDATE_DIALOG._fDialogNumber);
-																	break;
-																}
-															};
-														};
+		public void handleMessage(Message msg) {
+			switch (msg.what) {
+				case SOFTWARE_UPDATE_MESSAGE:
+					// 软件更新，显示软件更新提示对话框
+					showDialog(SOFTWARE_UPDATE_DIALOG._fDialogNumber);
+					break;
+			}
+		};
+	};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -108,10 +107,8 @@ public class SplashActivity extends BaseActivity {
 		int screenWidth = _fWindowManager.getDefaultDisplay().getWidth();
 		int screenHeight = _fWindowManager.getDefaultDisplay().getHeight();
 
-		Bitmap logoBitmap = ImageTools
-				.scaleBitmapFromResourceBaseDestinationSize(getResources(),
-						R.drawable.splash_imageview_logo, screenWidth,
-						screenHeight);
+		Bitmap logoBitmap = ImageTools.scaleBitmapFromResourceBaseDestinationSize(getResources(),
+				R.drawable.splash_imageview_logo, screenWidth, screenHeight);
 
 		_fLogoImageView.setImageBitmap(logoBitmap);
 	}
@@ -148,8 +145,7 @@ public class SplashActivity extends BaseActivity {
 	 * 设置已经第一启动过标识
 	 */
 	private void setFirstLaunchedFlag() {
-		_fAppSharedPreferences.putBoolean(
-				AppSharedPreferences.FIRST_LAUNCHER_KEY, false);
+		_fAppSharedPreferences.putBoolean(AppSharedPreferences.FIRST_LAUNCHER_KEY, false);
 	}
 
 	/**

@@ -17,16 +17,16 @@ import android.widget.TableRow;
  */
 public class BuyLotteryHallSlidePanel extends TableLayout {
 	/** 上下文对象 */
-	private Context	_fContext;
+	private Context _fContext;
 
 	/** 每行面板项目的个数，默认为3个选项 */
-	private int		_fPreRowItemNum	= 3;
+	private int _fPreRowItemNum = 3;
 	/** 面板选项的行数 */
-	private int		_fRowNum;
+	private int _fRowNum;
 	/** 面板选项的最后一行列数 */
-	private int		_fColumOfLastRow;
+	private int _fColumOfLastRow;
 	/** 面板选项的个数 */
-	private int		_fItemNum;
+	private int _fItemNum;
 
 	public BuyLotteryHallSlidePanel(Context aContext) {
 		super(aContext);
@@ -56,8 +56,8 @@ public class BuyLotteryHallSlidePanel extends TableLayout {
 			for (int colum_j = 0; colum_j < _fPreRowItemNum; colum_j++) {
 				if (!isLastItem(_fItemNum, row_i, colum_j)) {
 					// 创建每列面板选项
-					BuyLotteryHallSlidePanelItem buyLotteryHallPanelItem = initPanelItem(
-							aItemList, row_i, colum_j);
+					BuyLotteryHallSlidePanelItem buyLotteryHallPanelItem = initPanelItem(aItemList,
+							row_i, colum_j);
 					android.widget.TableRow.LayoutParams layoutParams = new android.widget.TableRow.LayoutParams();
 					layoutParams.weight = 1.0f;
 					tableRow.addView(buyLotteryHallPanelItem, layoutParams);
@@ -66,8 +66,8 @@ public class BuyLotteryHallSlidePanel extends TableLayout {
 				}
 			}
 			// 将行添加到列表中
-			LayoutParams layoutParams = new LayoutParams(
-					LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
+			LayoutParams layoutParams = new LayoutParams(LayoutParams.FILL_PARENT,
+					LayoutParams.FILL_PARENT);
 			layoutParams.weight = 1.0f;
 			addView(tableRow, layoutParams);
 		}
@@ -92,8 +92,8 @@ public class BuyLotteryHallSlidePanel extends TableLayout {
 		}
 	}
 
-	private BuyLotteryHallSlidePanelItem initPanelItem(List<Object> aItemList,
-			int row_i, int colum_j) {
+	private BuyLotteryHallSlidePanelItem initPanelItem(List<Object> aItemList, int row_i,
+			int colum_j) {
 		// 创建面板选项对象
 		BuyLotteryHallSlidePanelItem buyLotteryHallPanelItem = new BuyLotteryHallSlidePanelItem(
 				_fContext);
@@ -131,8 +131,7 @@ public class BuyLotteryHallSlidePanel extends TableLayout {
 	 *            列数
 	 * @return 选项对象
 	 */
-	private Object getItemWithRowAndColum(List<Object> aItemList, int row_i,
-			int colum_j) {
+	private Object getItemWithRowAndColum(List<Object> aItemList, int row_i, int colum_j) {
 		return aItemList.get(row_i * _fPreRowItemNum + colum_j);
 	}
 

@@ -2,8 +2,7 @@ package com.ruyicai.android.controller.activity.home.buylotteryhall.elevenluckgo
 
 import com.ruyicai.android.R;
 
-public class ElvenLuckGoldOptionalTwoActivity extends
-		ElevenLuckGoldOptionalSelectActivity {
+public class ElvenLuckGoldOptionalTwoActivity extends ElevenLuckGoldOptionalSelectActivity {
 
 	@Override
 	public void setPlayMethodTextViewContent() {

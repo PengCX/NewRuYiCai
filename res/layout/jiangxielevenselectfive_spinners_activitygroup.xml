@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 江西11选5选号页面组 -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.ruyicai.android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <!-- 标题栏 -->
+
+    <com.ruyicai.android.controller.compontent.bar.TitleBar
+        android:id="@+id/jiangxielevenselectfive_spinners_activitygroup_titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        custom:_fIsShowSpreadButton="true"
+        custom:_fLeftTextId="@string/jiangxi11xuan5" />
+    <!-- 开奖信息栏 -->
+
+    <com.ruyicai.android.controller.compontent.bar.LotteryInformationBar
+        android:id="@+id/jiangxielevenselectfive_spinners_activitygroup_lotteryinfomationbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/jiangxielevenselectfive_spinners_activitygroup_titlebar" />
+
+    <!-- 下拉列表 -->
+
+    <Spinner
+        android:id="@+id/jiangxielevenselectfive_spinners_activitygroup_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/jiangxielevenselectfive_spinners_activitygroup_lotteryinfomationbar"
+        android:entries="@array/jiangxi11select5_spinners_items" />
+
+    <!-- 投注栏 -->
+
+    <com.ruyicai.android.controller.compontent.bar.BetBar
+        android:id="@+id/jiangxielevenselectfive_spinners_activitygroup_betbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+    <!-- Activity容器 -->
+
+    <LinearLayout
+        android:id="@+id/jiangxielevenselectfive_spinners_activitygroup_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/jiangxielevenselectfive_spinners_activitygroup_betbar"
+        android:layout_below="@id/jiangxielevenselectfive_spinners_activitygroup_spinner" >
+    </LinearLayout>
+
+</RelativeLayout>

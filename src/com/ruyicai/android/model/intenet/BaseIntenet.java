@@ -27,58 +27,52 @@ import com.ruyicai.android.tools.LogTools;
  * @since RYC1.0 2013-2-26
  */
 public abstract class BaseIntenet {
-	private static final String				TAG					= "BaseInterface";
+	private static final String TAG = "BaseInterface";
 
 	/** 线程池核心线程数 */
-	private static final int				CORE_THREAD_SIZE	= 5;
+	private static final int CORE_THREAD_SIZE = 5;
 	/** 线程池最大线程数 */
-	private static final int				MAX_THREAD_SIZE		= 10;
+	private static final int MAX_THREAD_SIZE = 10;
 	/** 额外线程空状态生存时间 */
-	private static final int				KEEP_ALIVE_TIME		= 20;
+	private static final int KEEP_ALIVE_TIME = 20;
 	/** 线程池中线程运行结束标识 */
-	private static final int				THREAD_RUN_FINISH	= 0;
+	private static final int THREAD_RUN_FINISH = 0;
 
 	/** 使用基本联网接口执行联网操作的上下文对象 */
-	private Context							_fContext;
+	private Context _fContext;
 	/** 线程池 */
-	private static ThreadPoolExecutor		_fThreadPoolExecutor;
+	private static ThreadPoolExecutor _fThreadPoolExecutor;
 	/** 阻塞队列-当核心线程都被占用，且阻塞队列已满的情况下，才会开启额外线程池 */
-	private static BlockingQueue<Runnable>	_fWorkQueue			= new ArrayBlockingQueue<Runnable>(
-																		10);
+	private static BlockingQueue<Runnable> _fWorkQueue = new ArrayBlockingQueue<Runnable>(10);
 	/** 线程工厂 */
-	private static ThreadFactory			_fThreadFactory		= new ThreadFactory() {
-																	/** 提供线程安全的自增操作对象 */
-																	private final AtomicInteger	atomicInteger	= new AtomicInteger();
+	private static ThreadFactory _fThreadFactory = new ThreadFactory() {
+		/** 提供线程安全的自增操作对象 */
+		private final AtomicInteger atomicInteger = new AtomicInteger();
 
-																	@Override
-																	public Thread newThread(
-																			Runnable r) {
-																		return new Thread(
-																				r,
-																				"RuYiCai BaseInterface ThreadPool Thread:"
-																						+ atomicInteger
-																								.getAndIncrement());
-																	}
-																};
+		@Override
+		public Thread newThread(Runnable r) {
+			return new Thread(r, "RuYiCai BaseInterface ThreadPool Thread:"
+					+ atomicInteger.getAndIncrement());
+		}
+	};
 	/** 基本网络接口Handler对象-负责在联网后台线程完成后，将后台线程中获取的结果字符串返回 */
-	private BaseIntenetHandler				_fBaseIntenetHandler;
+	private BaseIntenetHandler _fBaseIntenetHandler;
 	/** 基本网络请求结束回调接口 -当联网后台线程完成后，调用该接口中的方法，返回结果字符串 */
-	private BaseIntenetCallBackInterface	_fBaseIntenetCallBackInterface;
+	private BaseIntenetCallBackInterface _fBaseIntenetCallBackInterface;
 	/** 联网参数Json对象-它使用键值对存储这联网各个参数 */
-	private JSONObject						_fParamtersJsonObject;
+	private JSONObject _fParamtersJsonObject;
 
 	/** 是否连接正式线标识 */
-	private boolean							_fIsFormalLine;
+	private boolean _fIsFormalLine;
 
 	/** 手否添加SIM卡的手机号 */
-	private boolean							_fAddPhoneSIM;
+	private boolean _fAddPhoneSIM;
 	/** 是否添加网卡地址 */
-	private boolean							_fAddMac;
+	private boolean _fAddMac;
 
 	static {
-		_fThreadPoolExecutor = new ThreadPoolExecutor(CORE_THREAD_SIZE,
-				MAX_THREAD_SIZE, KEEP_ALIVE_TIME, TimeUnit.SECONDS,
-				_fWorkQueue, _fThreadFactory);
+		_fThreadPoolExecutor = new ThreadPoolExecutor(CORE_THREAD_SIZE, MAX_THREAD_SIZE,
+				KEEP_ALIVE_TIME, TimeUnit.SECONDS, _fWorkQueue, _fThreadFactory);
 
 	}
 
@@ -102,8 +96,7 @@ public abstract class BaseIntenet {
 	 *            将要保存特有参数的Json对象
 	 * @return 保存了特有参数的Json对象
 	 */
-	public abstract JSONObject setParticularParamerters(
-			JSONObject aParamtersJsonObject);
+	public abstract JSONObject setParticularParamerters(JSONObject aParamtersJsonObject);
 
 	/**
 	 * 获取接口中的JSON字符串数据
@@ -114,8 +107,7 @@ public abstract class BaseIntenet {
 		_fParamtersJsonObject = setCommonParameters(_fParamtersJsonObject);
 		// 设置接口特有参数
 		_fParamtersJsonObject = setParticularParamerters(_fParamtersJsonObject);
-		LogTools.showLog(TAG, "发送的联网请求字符串：" + _fParamtersJsonObject.toString(),
-				LogTools.INFO);
+		LogTools.showLog(TAG, "发送的联网请求字符串：" + _fParamtersJsonObject.toString(), LogTools.INFO);
 
 		// 将联网Runnalbe对象提高给线程池执行
 		_fThreadPoolExecutor.execute(new BaseIntenetRunnable());
@@ -188,13 +180,11 @@ public abstract class BaseIntenet {
 			if (_fIsFormalLine) {
 				resultJsonString = HttpTools.connectingIntenetForResult(
 						"http://www.ruyicai.com/lotserver/RuyicaiServlet",
-						HttpTools.POST_METHOD_ID,
-						_fParamtersJsonObject.toString());
+						HttpTools.POST_METHOD_ID, _fParamtersJsonObject.toString());
 			} else {
 				resultJsonString = HttpTools.connectingIntenetForResult(
 						"http://202.43.152.170:8080/lotserver/RuyicaiServlet",
-						HttpTools.POST_METHOD_ID,
-						_fParamtersJsonObject.toString());
+						HttpTools.POST_METHOD_ID, _fParamtersJsonObject.toString());
 			}
 
 			// 获取结果后，使用Handler返回结果数据
@@ -217,11 +207,10 @@ public abstract class BaseIntenet {
 		public void dispatchMessage(Message msg) {
 			super.dispatchMessage(msg);
 			switch (msg.what) {
-			case THREAD_RUN_FINISH:
-				_fBaseIntenetCallBackInterface
-						.finishedBackgroundThreadAndGetResultString(msg.obj
-								.toString());
-				break;
+				case THREAD_RUN_FINISH:
+					_fBaseIntenetCallBackInterface
+							.finishedBackgroundThreadAndGetResultString(msg.obj.toString());
+					break;
 			}
 		}
 	}

@@ -27,25 +27,24 @@ public class ServenStarSelfSelectActivity extends SelectNumberActivity {
 	protected void initSelectNumberPanelsWithPage(int aPage_i) {
 		for (int panel_i = 0; panel_i < _fNumOfSelectNumberPanel; panel_i++) {
 			// 获取当前初始化显示的选号面板对象
-			SelectNumberPanel selectNumberPanel = _fSelectNumberPanelList.get(
-					aPage_i).get(panel_i);
+			SelectNumberPanel selectNumberPanel = _fSelectNumberPanelList.get(aPage_i).get(panel_i);
 
 			switch (panel_i) {
-			case 0:
-				initFirstSelectNumberPanel(aPage_i, selectNumberPanel);
-				break;
-			case 1:
-				initSecondSelectNumberPanel(aPage_i, selectNumberPanel);
-				break;
-			case 2:
-				initThirdSelectNumberPanel(aPage_i, selectNumberPanel);
-				break;
-			case 3:
-				initForthSelectNumberPanel(aPage_i, selectNumberPanel);
-				break;
-			case 4:
-				initFifthSelectNumberPanel(aPage_i, selectNumberPanel);
-				break;
+				case 0:
+					initFirstSelectNumberPanel(aPage_i, selectNumberPanel);
+					break;
+				case 1:
+					initSecondSelectNumberPanel(aPage_i, selectNumberPanel);
+					break;
+				case 2:
+					initThirdSelectNumberPanel(aPage_i, selectNumberPanel);
+					break;
+				case 3:
+					initForthSelectNumberPanel(aPage_i, selectNumberPanel);
+					break;
+				case 4:
+					initFifthSelectNumberPanel(aPage_i, selectNumberPanel);
+					break;
 			}
 		}
 	}
@@ -58,8 +57,7 @@ public class ServenStarSelfSelectActivity extends SelectNumberActivity {
 	 * @param selectNumberPanel
 	 *            选号面板对象
 	 */
-	private void initFifthSelectNumberPanel(int aPage_i,
-			SelectNumberPanel selectNumberPanel) {
+	private void initFifthSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
 			selectNumberPanel.initSelectNumberPanelShow("第五位：", 1, 16, 0, 10,
 					SelectNumberBallType.REDBALL, null, false);
@@ -79,8 +77,7 @@ public class ServenStarSelfSelectActivity extends SelectNumberActivity {
 	 * @param selectNumberPanel
 	 *            选号面板对象
 	 */
-	private void initForthSelectNumberPanel(int aPage_i,
-			SelectNumberPanel selectNumberPanel) {
+	private void initForthSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
 			selectNumberPanel.initSelectNumberPanelShow("第四位：", 1, 16, 0, 10,
 					SelectNumberBallType.REDBALL, null, false);
@@ -100,8 +97,7 @@ public class ServenStarSelfSelectActivity extends SelectNumberActivity {
 	 * @param selectNumberPanel
 	 *            选号面板对象
 	 */
-	private void initThirdSelectNumberPanel(int aPage_i,
-			SelectNumberPanel selectNumberPanel) {
+	private void initThirdSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
 			selectNumberPanel.initSelectNumberPanelShow("第三位：", 1, 16, 0, 10,
 					SelectNumberBallType.REDBALL, null, false);
@@ -121,8 +117,7 @@ public class ServenStarSelfSelectActivity extends SelectNumberActivity {
 	 * @param selectNumberPanel
 	 *            选号面板对象
 	 */
-	private void initSecondSelectNumberPanel(int aPage_i,
-			SelectNumberPanel selectNumberPanel) {
+	private void initSecondSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
 			selectNumberPanel.initSelectNumberPanelShow("第二位：", 1, 16, 0, 10,
 					SelectNumberBallType.REDBALL, null, false);
@@ -142,8 +137,7 @@ public class ServenStarSelfSelectActivity extends SelectNumberActivity {
 	 * @param selectNumberPanel
 	 *            选号面板对象
 	 */
-	private void initFirstSelectNumberPanel(int aPage_i,
-			SelectNumberPanel selectNumberPanel) {
+	private void initFirstSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
 			selectNumberPanel.initSelectNumberPanelShow("第一位：", 1, 16, 0, 10,
 					SelectNumberBallType.REDBALL, null, false);

@@ -12,22 +12,22 @@ import android.content.pm.PackageManager.NameNotFoundException;
  * @since RYC1.0 2013-2-26
  */
 public class SoftWareInfo {
-	private Context				_fContext;
+	private Context _fContext;
 
 	/** 单例对象 */
-	private static SoftWareInfo	fInstance;
+	private static SoftWareInfo fInstance;
 
 	/** 软件渠道号 */
-	public static final String	CHANNEL_ID			= "944";
+	public static final String CHANNEL_ID = "944";
 	/** 传输是否压缩标识 */
-	public static final String	ISCOMPRESS			= "1";
+	public static final String ISCOMPRESS = "1";
 
 	/** 软件是否有更新标识 */
-	private boolean				hasSoftWareUpdate	= false;
+	private boolean hasSoftWareUpdate = false;
 	/** 软件升级提示信息 */
-	private String				softWareUpdateMessage;
+	private String softWareUpdateMessage;
 	/** 软件升级url */
-	private String				softWareUpdateUrl;
+	private String softWareUpdateUrl;
 
 	public boolean isHasSoftWareUpdate() {
 		return hasSoftWareUpdate;
@@ -76,8 +76,7 @@ public class SoftWareInfo {
 
 		try {
 			String packageNameString = _fContext.getPackageName();
-			versionName = _fContext.getPackageManager().getPackageInfo(
-					packageNameString, 0).versionName;
+			versionName = _fContext.getPackageManager().getPackageInfo(packageNameString, 0).versionName;
 		} catch (NameNotFoundException e) {
 			// 为方便开发人员和维护人员而设置的异常信息
 			e.printStackTrace();

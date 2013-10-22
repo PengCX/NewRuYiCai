@@ -17,11 +17,11 @@ import android.widget.TextView;
  */
 public class IconListViewAdapter extends BaseAdapter {
 	/** 上下文对象 */
-	private Context	_fContext;
+	private Context _fContext;
 	/** 图标资源Id数组 */
-	private int[]	_fIconResourceIds;
+	private int[] _fIconResourceIds;
 	/** 字符串资源Id数组 */
-	private int[]	_fStringResourceIds;
+	private int[] _fStringResourceIds;
 
 	/**
 	 * 构造函数
@@ -33,8 +33,7 @@ public class IconListViewAdapter extends BaseAdapter {
 	 * @param aStringResourceIds
 	 *            字符串资源Id数组
 	 */
-	public IconListViewAdapter(Context aContext, int[] aIconResourceIds,
-			int[] aStringResourceIds) {
+	public IconListViewAdapter(Context aContext, int[] aIconResourceIds, int[] aStringResourceIds) {
 		super();
 		_fContext = aContext;
 		_fIconResourceIds = aIconResourceIds;
@@ -75,16 +74,15 @@ public class IconListViewAdapter extends BaseAdapter {
 			viewHoler = (ViewHoler) aConvertView.getTag();
 		}
 
-		viewHoler._fIconImageView
-				.setImageResource(_fIconResourceIds[aPosition]);
+		viewHoler._fIconImageView.setImageResource(_fIconResourceIds[aPosition]);
 		viewHoler._fTextView.setText(_fStringResourceIds[aPosition]);
 
 		return aConvertView;
 	}
 
 	static class ViewHoler {
-		ImageView	_fIconImageView;
-		TextView	_fTextView;
+		ImageView _fIconImageView;
+		TextView _fTextView;
 	}
 
 }

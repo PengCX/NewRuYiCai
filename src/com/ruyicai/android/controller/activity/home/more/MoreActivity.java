@@ -13,28 +13,28 @@ public class MoreActivity extends BaseActivity {
 
 	/** 视图引用：更多标题栏 */
 	@InjectView(R.id.more_title_bar)
-	private TitleBar	_fTitleBar;
+	private TitleBar _fTitleBar;
 	/** 视图引用：更多列表 */
 	@InjectView(R.id.more_listview_items)
-	private ListView	_fMoreListView;
+	private ListView _fMoreListView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.more_activity);
 
-//		_fTitleBar.set_fTitleBarInterface(new MoreTitleBarInterface());
-//		_fTitleBar.initTitleBarShow();
+		// _fTitleBar.set_fTitleBarInterface(new MoreTitleBarInterface());
+		// _fTitleBar.initTitleBarShow();
 
 		int[] itemsStringResourceIds = getItemsStringResourceIds();
-		SimpleListViewAdapter simpleListViewAdapter = new SimpleListViewAdapter(
-				this, itemsStringResourceIds);
+		SimpleListViewAdapter simpleListViewAdapter = new SimpleListViewAdapter(this,
+				itemsStringResourceIds);
 		_fMoreListView.setAdapter(simpleListViewAdapter);
 	}
 
 	/**
 	 * 获取更多列表的字符串资源Id数组
-	 *
+	 * 
 	 * @return 字符串资源Id数组
 	 */
 	private int[] getItemsStringResourceIds() {
