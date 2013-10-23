@@ -1,9 +1,5 @@
 package com.ruyicai.android.controller.activity.home.buylotteryhall.compete;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import roboguice.inject.InjectView;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
@@ -28,6 +24,11 @@ import com.ruyicai.android.controller.compontent.bar.TitleBarInterface;
 import com.ruyicai.android.controller.compontent.dialog.DialogFactory;
 import com.ruyicai.android.controller.compontent.dialog.DialogType;
 import com.ruyicai.android.model.bean.lottery.compete.against.AgainstInfo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import roboguice.inject.InjectView;
 
 /**
  * 竞彩选号页面父类

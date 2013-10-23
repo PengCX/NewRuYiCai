@@ -1,118 +1,0 @@
-10
-
-dir
-34
-https://pengcx/svn/MyRepositories/ruyicai/src/com/ruyicai/android/controller/compontent
-https://pengcx/svn/MyRepositories
-
-
-
-2013-05-04T12:31:28.903867Z
-34
-pengchengxiang
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-d3b2380c-9080-f14b-a556-ef95eda02dde
-
-betbar
-dir
-
-
-
-add
-
-
-
-
-
-
-
-
-
-
-
-
-
-copied
-https://pengcx/svn/MyRepositories/ruyicai/src/com/ruyicai/android/controller/compontent/bettingbar
-34
-
-bettingbar
-dir
-
-
-
-delete
-
-bettingcomfirmbar
-dir
-
-
-
-add
-
-
-
-
-
-
-
-
-
-
-
-
-
-copied
-https://pengcx/svn/MyRepositories/ruyicai/src/com/ruyicai/android/controller/compontent/bettingconfirmbar
-34
-
-bettingconfirmbar
-dir
-
-
-
-delete
-
-button
-dir
-
-dialog
-dir
-
-dropdownmenu
-dir
-
-lotteryinformationbar
-dir
-
-pagerindicator
-dir
-
-selectnumberpanel
-dir
-
-slidepanel
-dir
-
-slideseekbar
-dir
-
-textview
-dir
-
-titlebar
-dir
-
