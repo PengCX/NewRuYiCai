@@ -1,7 +1,7 @@
 package com.ruyicai.android.controller.activity.home.buylotteryhall.betinformation;
 
 import com.ruyicai.android.R;
-import com.ruyicai.android.controller.activity.home.buylotteryhall.switchtabs.SwitchTabsActivityGroup;
+import com.ruyicai.android.controller.activity.home.buylotteryhall.SwitchTabsActivityGroup;
 
 import android.os.Bundle;
 import android.widget.TabHost.OnTabChangeListener;

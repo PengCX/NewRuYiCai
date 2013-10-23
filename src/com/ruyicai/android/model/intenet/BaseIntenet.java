@@ -211,6 +211,8 @@ public abstract class BaseIntenet {
 					_fBaseIntenetCallBackInterface
 							.finishedBackgroundThreadAndGetResultString(msg.obj.toString());
 					break;
+				default:
+					throw new AssertionError("switch语句中，没有新增的分支");
 			}
 		}
 	}

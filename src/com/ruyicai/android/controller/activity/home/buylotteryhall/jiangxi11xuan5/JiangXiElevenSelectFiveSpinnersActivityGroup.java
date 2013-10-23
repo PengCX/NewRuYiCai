@@ -5,8 +5,8 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 
 import com.ruyicai.android.R;
-import com.ruyicai.android.controller.activity.home.buylotteryhall.activitygroups.SpinnersActivityGroup;
-import com.ruyicai.android.controller.activity.viewpagers.SelectNumberActivity;
+import com.ruyicai.android.controller.activity.home.buylotteryhall.SelectNumberActivity;
+import com.ruyicai.android.controller.activity.home.buylotteryhall.SpinnersActivityGroup;
 
 /**
  * 江西11选5选号页面组

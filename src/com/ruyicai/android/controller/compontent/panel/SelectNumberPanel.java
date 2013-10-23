@@ -1,14 +1,14 @@
 package com.ruyicai.android.controller.compontent.panel;
 
-import java.util.List;
-
 import com.ruyicai.android.R;
 import com.ruyicai.android.controller.compontent.button.RandomSelectNumberButton;
 import com.ruyicai.android.controller.compontent.selectnumberpanel.SelectNumberBallType;
 import com.ruyicai.android.controller.compontent.selectnumberpanel.SelectNumberBallsTableLayout;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -33,6 +33,15 @@ public class SelectNumberPanel extends LinearLayout {
 	/** 选号面板选号小球表格布局 */
 	private SelectNumberBallsTableLayout _fSelectNumberBallsTableLayout;
 
+	/** 选号面板标题文本字符串资源id */
+	private int _fTitleStringId;
+
+//	{
+//		// 设置整体线性布局的方向
+//		setOrientation(VERTICAL);
+//		addSelectNumberPanelTitleRelateLayout();
+//	}
+	
 	/**
 	 * 构造函数
 	 * 
@@ -42,11 +51,6 @@ public class SelectNumberPanel extends LinearLayout {
 	public SelectNumberPanel(Context aContext) {
 		super(aContext);
 		_fContext = aContext;
-
-		// 设置整体线性布局的方向
-		setOrientation(VERTICAL);
-
-		addSelectNumberPanelTitleRelateLayout();
 	}
 
 	/**
@@ -57,13 +61,23 @@ public class SelectNumberPanel extends LinearLayout {
 	 * @param aAttrs
 	 *            属性对象
 	 */
-	public SelectNumberPanel(Context aContext, AttributeSet aAttrs) {
-		super(aContext, aAttrs);
+	public SelectNumberPanel(Context aContext, AttributeSet aAttributeSet) {
+		super(aContext, aAttributeSet);
 		_fContext = aContext;
 
-		// 设置整体线性布局的方向
-		setOrientation(VERTICAL);
-		addSelectNumberPanelTitleRelateLayout();
+		// 获取标题栏布局
+		LayoutInflater layoutInflater = (LayoutInflater) aContext
+				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		layoutInflater.inflate(R.layout.selectnumber_panel, this);
+
+		// 获取自定义属性
+		TypedArray typedArray = _fContext.getTheme().obtainStyledAttributes(aAttributeSet,
+				R.styleable.TitleBar, 0, 0);
+		try {
+			
+		} finally {
+			typedArray.recycle();
+		}
 	}
 
 	/**

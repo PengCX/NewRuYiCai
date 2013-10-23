@@ -62,14 +62,14 @@ public class BuyLotteryHallActivity extends BaseActivity implements OnClickListe
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.buylotteryhall_activity);
-
-		_fTitleBar.set_fOnRightButtonClickListener(new OnRightButtonClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				Toast.makeText(BuyLotteryHallActivity.this, "登陆注册", Toast.LENGTH_SHORT).show();
-			}
-		});
+//
+//		_fTitleBar.set_fOnRightButtonClickListener(new OnRightButtonClickListener() {
+//
+//			@Override
+//			public void onClick(View v) {
+//				Toast.makeText(BuyLotteryHallActivity.this, "登陆注册", Toast.LENGTH_SHORT).show();
+//			}
+//		});
 		// 初始化中部滑动面板显示
 		initMiddleSlidePanelShow();
 
@@ -217,6 +217,8 @@ public class BuyLotteryHallActivity extends BaseActivity implements OnClickListe
 			case BOTTOMBAR_BUTTON_LUCKLYPICK_ID:
 				goToDestinationScreen(LucklyPickActivity.class);
 				break;
+			default:
+				throw new AssertionError("switch语句中，没有新增的分支");
 		}
 	}
 

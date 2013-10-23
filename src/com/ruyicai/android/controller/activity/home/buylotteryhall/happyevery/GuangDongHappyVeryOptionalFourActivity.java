@@ -17,6 +17,8 @@ public class GuangDongHappyVeryOptionalFourActivity extends
 				_fPlayMethodTextView
 						.setText(R.string.guagndonghappyvery_textview_optionalfour_courageplaymethod);
 				break;
+			default:
+				throw new AssertionError("switch语句中，没有新增的分支");
 		}
 	}
 

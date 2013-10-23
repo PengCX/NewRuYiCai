@@ -1,4 +1,4 @@
-package com.ruyicai.android.controller.activity.viewpagers;
+package com.ruyicai.android.controller.activity.home.buylotteryhall;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,13 +18,11 @@ import com.ruyicai.android.tools.LogTools;
 
 /**
  * 滑动页面：实现了页面的左右滑动切换功能，该页面包含页面切换按钮（可选）、玩法展示文本框（可选）、滑动区域、投注栏（可选）等组件。
- *
+ * 
  * @author xiang_000
  * @since RYC1.0 2013-4-15
  */
 public abstract class ViewPagesActivity extends BaseActivity {
-	private static final String TAG = "ViewPagesActivity";
-
 	/** 滑动页面的页数 */
 	private static final int VIEWPAGE_PAGE_NUM = 2;
 
@@ -39,26 +37,26 @@ public abstract class ViewPagesActivity extends BaseActivity {
 	@InjectView(R.id.viewpagers_relativelayout_container)
 	protected RelativeLayout _fContainerRelativeLayout;
 	/** 视图引用：滑动ViewPager对象 */
-	@InjectView(R.id.viewpagers_viewpager_slidearea)
+	@InjectView(R.id.lottery_viewpagers_slidearea)
 	protected ViewPager _fSlideAreaViewPager;
 
 	/**
 	 * 是否添加投注栏
-	 *
+	 * 
 	 * @return 是否添加标识
 	 */
 	protected abstract boolean IsAddBettingBar();
 
 	/**
 	 * 是否添加玩法介绍文本框
-	 *
+	 * 
 	 * @return 是否添加标识
 	 */
 	protected abstract boolean isAddPlayMethodTextView();
 
 	/**
 	 * 是否添加页面改变单选按钮组
-	 *
+	 * 
 	 * @return 是否添加标识
 	 */
 	protected abstract boolean isAddPageChangeRadioButtons();
@@ -74,13 +72,8 @@ public abstract class ViewPagesActivity extends BaseActivity {
 	protected abstract void addPlayMethodTextView();
 
 	/**
-	 * 添加并初始化投注栏
-	 */
-	protected abstract void addBettingBar();
-
-	/**
 	 * 根据页面索引获取并初始化滑动区域视图
-	 *
+	 * 
 	 * @param aSlideAreaView
 	 *            滑动区域页面视图
 	 * @param aPage_i
@@ -93,7 +86,7 @@ public abstract class ViewPagesActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		LogTools.showLog(LogTools.TAG, getClass().getSimpleName() + ":onCreate()", LogTools.INFO);
 
-		setContentView(R.layout.viewpagers_activity);
+		setContentView(R.layout.lottery_viewpager_activity);
 
 		if (isAddPageChangeRadioButtons()) {
 			// 添加顶部页面切换单选按钮组
@@ -107,11 +100,6 @@ public abstract class ViewPagesActivity extends BaseActivity {
 
 		// 初始化选号区域显示
 		initSlideAreaShow();
-
-		if (IsAddBettingBar()) {
-			// 添加底部投注栏
-			addBettingBar();
-		}
 	}
 
 	/**
@@ -124,7 +112,7 @@ public abstract class ViewPagesActivity extends BaseActivity {
 
 	/**
 	 * 获取滑动区域的视图集合
-	 *
+	 * 
 	 * @return 滑动区域视图对象
 	 */
 	protected List<View> getSlideAreaViewList() {
@@ -142,7 +130,7 @@ public abstract class ViewPagesActivity extends BaseActivity {
 
 	/**
 	 * 根据布局资源Id获取滑动区域布局对象
-	 *
+	 * 
 	 * @return 视图对象
 	 */
 	protected View getSlideAreaViewWithLayoutResourceId(int aLayoutResourceId) {
@@ -152,7 +140,7 @@ public abstract class ViewPagesActivity extends BaseActivity {
 
 	/**
 	 * 设置滑动ViewPager适配器
-	 *
+	 * 
 	 * @param selectNumberAreaViews
 	 *            滑动区域视图集合
 	 */

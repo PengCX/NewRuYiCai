@@ -16,6 +16,8 @@ public class GuangDongHappyVeryOptionalTwoActivity extends GuangDongHappyVeryOpt
 				_fPlayMethodTextView
 						.setText(R.string.guangdonghappyvery_textview_optionaltwo_courageselectplaymethod);
 				break;
+			default:
+				throw new AssertionError("switch语句中，没有新增的分支");
 		}
 	}
 

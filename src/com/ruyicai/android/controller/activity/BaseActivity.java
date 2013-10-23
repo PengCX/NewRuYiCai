@@ -33,6 +33,8 @@ public abstract class BaseActivity extends RoboActivity {
 					showDialog(APPLICATION_EXIT_DIALOG._fDialogNumber);
 				}
 				break;
+			default:
+				throw new AssertionError("switch语句中，没有新增的分支");
 		}
 
 		return super.onKeyDown(keyCode, event);

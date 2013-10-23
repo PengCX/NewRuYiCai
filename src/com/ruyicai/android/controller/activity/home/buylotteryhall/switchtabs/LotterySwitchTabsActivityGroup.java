@@ -11,8 +11,9 @@ import android.widget.RelativeLayout.LayoutParams;
 import android.widget.Toast;
 
 import com.ruyicai.android.R;
+import com.ruyicai.android.controller.activity.home.buylotteryhall.SelectNumberActivity;
+import com.ruyicai.android.controller.activity.home.buylotteryhall.SwitchTabsActivityGroup;
 import com.ruyicai.android.controller.activity.home.buylotteryhall.betinformation.BetInformationActivityGroup;
-import com.ruyicai.android.controller.activity.viewpagers.SelectNumberActivity;
 import com.ruyicai.android.controller.compontent.bar.BetBar;
 import com.ruyicai.android.controller.compontent.bar.BetBarInterface;
 import com.ruyicai.android.controller.compontent.bar.LotteryInformationBar;

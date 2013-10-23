@@ -1,6 +1,6 @@
 package com.ruyicai.android.controller.activity.home.buylotteryhall.superlotto;
 
-import com.ruyicai.android.controller.activity.viewpagers.SelectNumberActivity;
+import com.ruyicai.android.controller.activity.home.buylotteryhall.SelectNumberActivity;
 import com.ruyicai.android.controller.compontent.panel.SelectNumberPanel;
 import com.ruyicai.android.controller.compontent.selectnumberpanel.SelectNumberBallType;
 
@@ -46,6 +46,8 @@ public class SuperLottoCourageSelectActivity extends SelectNumberActivity {
 				case 3:
 					initAfterAreaDragSelectNumberPanel(aPage_i, selectNumberPanel);
 					break;
+				default:
+					throw new AssertionError("switch语句中，没有新增的分支");
 			}
 		}
 	}

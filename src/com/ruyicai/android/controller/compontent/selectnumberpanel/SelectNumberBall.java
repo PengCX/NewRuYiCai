@@ -104,17 +104,22 @@ public class SelectNumberBall extends LinearLayout {
 	 */
 	public void setSelectNumberBallType(SelectNumberBallType aSelectNumberBallType) {
 		_fSelectNumberBallType = aSelectNumberBallType;
-		switch (aSelectNumberBallType) {
-			case REDBALL:
-				// FIXME 图片的大小不合适，应该处理一下
-				_fSelectBallCheckBox
-						.setBackgroundResource(R.drawable.selectnumberball_red_selector);
-				break;
-			case BLUEBALL:
-				_fSelectBallCheckBox
-						.setBackgroundResource(R.drawable.selectnumberball_blue_selector);
-				break;
+		// 枚举在switch语句中判断时，是调用original()方法获取枚举声明位置来进行比较的。为了避免调用方法时的NullPointerException，故做此判断
+		if (aSelectNumberBallType != null) {
+			switch (aSelectNumberBallType) {
+				case REDBALL:
+					// FIXME 图片的大小不合适，应该处理一下
+					_fSelectBallCheckBox
+							.setBackgroundResource(R.drawable.selectnumberball_red_selector);
+					break;
+				case BLUEBALL:
+					_fSelectBallCheckBox
+							.setBackgroundResource(R.drawable.selectnumberball_blue_selector);
+					break;
+				default:
+					throw new AssertionError("switch语句中，没有新增的分支");
 
+			}
 		}
 	}
 

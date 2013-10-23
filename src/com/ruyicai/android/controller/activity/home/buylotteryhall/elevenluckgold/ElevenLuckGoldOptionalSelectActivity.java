@@ -3,8 +3,8 @@ package com.ruyicai.android.controller.activity.home.buylotteryhall.elevenluckgo
 import android.view.View;
 
 import com.ruyicai.android.R;
-import com.ruyicai.android.controller.activity.viewpagers.PlayMethodTextViewInterface;
-import com.ruyicai.android.controller.activity.viewpagers.SelectNumberActivity;
+import com.ruyicai.android.controller.activity.home.buylotteryhall.PlayMethodTextViewInterface;
+import com.ruyicai.android.controller.activity.home.buylotteryhall.SelectNumberActivity;
 import com.ruyicai.android.controller.compontent.button.PageChangeRadioButtonsInterface;
 import com.ruyicai.android.controller.compontent.panel.SelectNumberPanel;
 import com.ruyicai.android.controller.compontent.selectnumberpanel.SelectNumberBallType;
@@ -43,6 +43,8 @@ public abstract class ElevenLuckGoldOptionalSelectActivity extends SelectNumberA
 			case R.string.radiogroup_text_courageselect:
 				_fNumOfSelectNumberPanel = 2;
 				break;
+			default:
+				throw new AssertionError("switch语句中，没有新增的分支");
 		}
 	}
 
@@ -65,6 +67,8 @@ public abstract class ElevenLuckGoldOptionalSelectActivity extends SelectNumberA
 				case 1:
 					initDragNumSelectNumberPanel(aPage_i, selectNumberPanel);
 					break;
+				default:
+					throw new AssertionError("switch语句中，没有新增的分支");
 			}
 		}
 	}

@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <!-- 标题栏属性 -->
     <declare-styleable name="TitleBar">
-        <attr name="_fLeftTextId" format="reference"/>
+
+        <!-- 左边标题字符串资源id -->
+        <attr name="_fLeftTextId" format="reference" />
+        <!-- 右边按钮字符串资源id -->
         <attr name="_fRightButtonTextId" format="reference" />
+        <!-- 是否显示右边按钮 -->
         <attr name="_fIsShowRightButton" format="boolean" />
+        <!-- 是否显示下拉按钮 -->
         <attr name="_fIsShowSpreadButton" format="boolean" />
+    </declare-styleable>
+    <!-- 选号面板属性 -->
+    <declare-styleable name="SelectNumberPanel">
+        <!-- 标题字符串资源id -->
+        <attr name="_fTitleTextId" format="reference" />
     </declare-styleable>
 
 </resources>

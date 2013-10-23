@@ -1,4 +1,4 @@
-package com.ruyicai.android.controller.activity.home.buylotteryhall.switchtabs;
+package com.ruyicai.android.controller.activity.home.buylotteryhall;
 
 import android.content.Intent;
 import android.os.Bundle;

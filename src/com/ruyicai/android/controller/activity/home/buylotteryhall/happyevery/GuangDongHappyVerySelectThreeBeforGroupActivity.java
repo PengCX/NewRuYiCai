@@ -1,6 +1,6 @@
 package com.ruyicai.android.controller.activity.home.buylotteryhall.happyevery;
 
-import com.ruyicai.android.controller.activity.viewpagers.SelectNumberActivity;
+import com.ruyicai.android.controller.activity.home.buylotteryhall.SelectNumberActivity;
 
 public class GuangDongHappyVerySelectThreeBeforGroupActivity extends SelectNumberActivity {
 

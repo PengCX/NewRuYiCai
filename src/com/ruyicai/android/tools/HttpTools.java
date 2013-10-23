@@ -65,6 +65,8 @@ public class HttpTools {
 				// Post方式获取数据
 				resultString = postMethodGetData(aUrl, aData);
 				break;
+			default:
+				throw new AssertionError("switch语句中，没有新增的分支");
 		}
 
 		LogTools.showLog(TAG, "网络返回数据：" + resultString, LogTools.INFO);

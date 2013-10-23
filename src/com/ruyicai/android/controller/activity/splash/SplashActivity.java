@@ -55,6 +55,8 @@ public class SplashActivity extends BaseActivity {
 					// 软件更新，显示软件更新提示对话框
 					showDialog(SOFTWARE_UPDATE_DIALOG._fDialogNumber);
 					break;
+				default:
+					throw new AssertionError("switch语句中，没有新增的分支");
 			}
 		};
 	};

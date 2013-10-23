@@ -75,13 +75,22 @@ public class TitleDropDownMenu {
 	public void setMenueItemVisibility() {
 
 	}
+	
+	/**
+	 * 标题下拉菜单当前是否被显示
+	 * 
+	 * @return 当前是否被显示布尔标识
+	 */
+	public boolean isTitleDropDownMenuShow() {
+		return _fPopupWindow.isShowing();
+	}
 
 	/**
 	 * 显示下拉菜单
 	 * 
 	 * @param view
 	 */
-	public void ShowAsDropDownMenu(View aView) {
+	public void showTitleDropDownMenu(View aView) {
 		setMenueItemVisibility();
 		setMenueButtonEvents();
 
@@ -94,7 +103,7 @@ public class TitleDropDownMenu {
 	/**
 	 * 关闭下拉菜单
 	 */
-	public void dismissDropDownMenu() {
+	public void dismissTitleDropDownMenu() {
 		if (_fPopupWindow.isShowing() && _fPopupWindow != null) {
 			_fPopupWindow.dismiss();
 		}
@@ -109,7 +118,7 @@ public class TitleDropDownMenu {
 			@Override
 			public void onClick(View v) {
 				Toast.makeText(_fContext, "你点击的玩法介绍按钮", Toast.LENGTH_LONG).show();
-				dismissDropDownMenu();
+				dismissTitleDropDownMenu();
 
 			}
 		});
@@ -119,7 +128,7 @@ public class TitleDropDownMenu {
 			@Override
 			public void onClick(View v) {
 				Toast.makeText(_fContext, "你点击了历史开奖按钮", Toast.LENGTH_LONG).show();
-				dismissDropDownMenu();
+				dismissTitleDropDownMenu();
 			}
 		});
 
@@ -128,7 +137,7 @@ public class TitleDropDownMenu {
 			@Override
 			public void onClick(View v) {
 				Toast.makeText(_fContext, "你点击了开奖走势按钮", Toast.LENGTH_LONG).show();
-				dismissDropDownMenu();
+				dismissTitleDropDownMenu();
 			}
 		});
 
@@ -137,7 +146,7 @@ public class TitleDropDownMenu {
 			@Override
 			public void onClick(View v) {
 				Toast.makeText(_fContext, "你点击了投注查询按钮", Toast.LENGTH_LONG).show();
-				dismissDropDownMenu();
+				dismissTitleDropDownMenu();
 			}
 		});
 
@@ -146,7 +155,7 @@ public class TitleDropDownMenu {
 			@Override
 			public void onClick(View v) {
 				Toast.makeText(_fContext, "你点击了幸运选号按钮", Toast.LENGTH_LONG).show();
-				dismissDropDownMenu();
+				dismissTitleDropDownMenu();
 			}
 		});
 
@@ -155,7 +164,7 @@ public class TitleDropDownMenu {
 			@Override
 			public void onClick(View v) {
 				Toast.makeText(_fContext, "你点击了模拟选号按钮", Toast.LENGTH_LONG).show();
-				dismissDropDownMenu();
+				dismissTitleDropDownMenu();
 			}
 		});
 	}

@@ -1,7 +1,7 @@
 package com.ruyicai.android.controller.activity.home.buylotteryhall.jiangxi11xuan5;
 
 import com.ruyicai.android.R;
-import com.ruyicai.android.controller.activity.viewpagers.PlayMethodTextViewInterface;
+import com.ruyicai.android.controller.activity.home.buylotteryhall.PlayMethodTextViewInterface;
 
 /**
  * 江西11选5任选二选号页面： 1.实现玩法介绍的设置

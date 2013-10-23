@@ -1,6 +1,6 @@
 package com.ruyicai.android.controller.activity.home.buylotteryhall.sevenhappy;
 
-import com.ruyicai.android.controller.activity.viewpagers.SelectNumberActivity;
+import com.ruyicai.android.controller.activity.home.buylotteryhall.SelectNumberActivity;
 import com.ruyicai.android.controller.compontent.panel.SelectNumberPanel;
 import com.ruyicai.android.controller.compontent.selectnumberpanel.SelectNumberBallType;
 
@@ -36,6 +36,8 @@ public class SevenHappySelfSelectActivity extends SelectNumberActivity {
 				case 0:
 					initSelectNumberPanel(aPage_i, selectNumberPanel);
 					break;
+				default:
+					throw new AssertionError("switch语句中，没有新增的分支");
 			}
 		}
 	}

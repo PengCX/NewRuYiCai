@@ -23,7 +23,7 @@ public class DoubleBallSwitchTabsActivityGroup extends LotterySwitchTabsActivity
 
 	@Override
 	protected void set_fSwithTabSpecClasses() {
-		_fSwithTabSpecClasses = new Class<?>[] { DoubleBallSelfSelectActivity.class,
+		_fSwithTabSpecClasses = new Class<?>[] { DoubleBallSelfSelectViewPagerSelectNumberActivity.class,
 				DoubleBallCourageSelectActivity.class };
 	}
 

@@ -45,23 +45,28 @@ public class SelectNumberButton extends Button {
 
 		@Override
 		public void onClick(View v) {
-			switch (_fSelectNumberBallType) {
-				case REDBALL:
-					if (_fIsSelected) {
-						setBackgroundResource(R.drawable.selectnumberball_red_background);
-					} else {
-						setBackgroundResource(R.drawable.selectnumberball_grey_background);
-					}
-					break;
-				case BLUEBALL:
-					if (_fIsSelected) {
-						setBackgroundResource(R.drawable.selectnumberball_blue_background);
-					} else {
-						setBackgroundResource(R.drawable.selectnumberball_grey_background);
-					}
-					break;
+			// 枚举在switch语句中判断时，是调用original()方法获取枚举声明位置来进行比较的。为了避免调用方法时的NullPointerException，故做此判断
+			if (_fSelectNumberBallType != null) {
+				switch (_fSelectNumberBallType) {
+					case REDBALL:
+						if (_fIsSelected) {
+							setBackgroundResource(R.drawable.selectnumberball_red_background);
+						} else {
+							setBackgroundResource(R.drawable.selectnumberball_grey_background);
+						}
+						break;
+					case BLUEBALL:
+						if (_fIsSelected) {
+							setBackgroundResource(R.drawable.selectnumberball_blue_background);
+						} else {
+							setBackgroundResource(R.drawable.selectnumberball_grey_background);
+						}
+						break;
+					default:
+						throw new AssertionError("switch语句中，没有新增的分支");
+				}
+				_fIsSelected = !_fIsSelected;
 			}
-			_fIsSelected = !_fIsSelected;
 		}
 
 	}

@@ -221,6 +221,8 @@ public class CompeteFootballPlayMethodChangeDialog extends PromptDialog {
 				case R.id.competefootball_radiobutton_mixbet:
 					Toast.makeText(_fContext, "9", 1).show();
 					break;
+				default:
+					throw new AssertionError("switch语句中，没有新增的分支");
 			}
 
 			dismiss();

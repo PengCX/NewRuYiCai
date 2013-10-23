@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 滑动切换页面布局：拥有滑动区，并可以根据需要自动添加其它控件 -->
+<!-- 彩种滑动切换投注页面布局：拥有滑动区，并可以根据需要自动添加其它控件 -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/viewpagers_relativelayout_container"
     android:layout_width="match_parent"
@@ -9,7 +9,7 @@
     <!-- 滑动区域 -->
 
     <android.support.v4.view.ViewPager
-        android:id="@+id/viewpagers_viewpager_slidearea"
+        android:id="@+id/lottery_viewpagers_slidearea"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center" />

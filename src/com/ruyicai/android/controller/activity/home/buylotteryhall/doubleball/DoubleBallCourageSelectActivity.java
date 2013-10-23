@@ -1,6 +1,6 @@
 package com.ruyicai.android.controller.activity.home.buylotteryhall.doubleball;
 
-import com.ruyicai.android.controller.activity.viewpagers.SelectNumberActivity;
+import com.ruyicai.android.controller.activity.home.buylotteryhall.SelectNumberActivity;
 import com.ruyicai.android.controller.compontent.panel.SelectNumberPanel;
 import com.ruyicai.android.controller.compontent.selectnumberpanel.SelectNumberBallType;
 
@@ -43,6 +43,8 @@ public class DoubleBallCourageSelectActivity extends SelectNumberActivity {
 				case 2:
 					initBlueSelectNumberPanel(aPage_i, selectNumberPanel);
 					break;
+				default:
+					throw new AssertionError("switch语句中，没有新增的分支");
 			}
 		}
 	}

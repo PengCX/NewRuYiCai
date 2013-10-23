@@ -1,4 +1,4 @@
-package com.ruyicai.android.controller.activity.viewpagers;
+package com.ruyicai.android.controller.activity.home.buylotteryhall;
 
 /**
  * 玩法说明文本接口：规定了使用玩法说明文本框需要实现的方法，设置玩法说明文本框的内容

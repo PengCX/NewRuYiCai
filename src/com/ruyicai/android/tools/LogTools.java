@@ -73,6 +73,8 @@ public class LogTools {
 						Log.v(aTag, aLogMessage);
 					}
 					break;
+				default:
+					throw new AssertionError("switch语句中，没有新增的分支");
 			}
 		}
 	}

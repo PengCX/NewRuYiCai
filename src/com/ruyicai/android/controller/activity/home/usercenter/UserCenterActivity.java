@@ -208,7 +208,7 @@ public class UserCenterActivity extends BaseActivity {
 		@Override
 		public void onClick(View v) {
 			Intent intent = null;
-
+			
 			switch (v.getId()) {
 
 				case R.id.usercenter_button_login:
@@ -218,6 +218,8 @@ public class UserCenterActivity extends BaseActivity {
 				case R.id.usercenter_button_register:
 					intent = new Intent(UserCenterActivity.this, RegisterActivity.class);
 					break;
+				default:
+					throw new AssertionError("switch语句中，没有新增的分支");
 			}
 
 			startActivity(intent);

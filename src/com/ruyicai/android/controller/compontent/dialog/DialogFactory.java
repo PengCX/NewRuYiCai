@@ -58,20 +58,28 @@ public class DialogFactory {
 	 */
 	public PromptDialog newPromptDialogWithType(DialogType aDialogType) {
 		PromptDialog promptDialog = null;
+		// 枚举在switch语句中判断时，是调用original()方法获取枚举声明位置来进行比较的。为了避免调用方法时的NullPointerException，故做此判断
+		if (aDialogType != null) {
+			switch (aDialogType) {
+				case SOFTWARE_UPDATE_DIALOG:
+					promptDialog = new SoftUpdateDialog(_fContext);
+					break;
 
-		switch (aDialogType) {
-			case SOFTWARE_UPDATE_DIALOG:
-				promptDialog = new SoftUpdateDialog(_fContext);
-				break;
+				case APPLICATION_EXIT_DIALOG:
+					promptDialog = new ApplicationExitDialog(_fContext);
+					break;
 
-			case APPLICATION_EXIT_DIALOG:
-				promptDialog = new ApplicationExitDialog(_fContext);
-				break;
-
-			case COMPETEFOOTBALL_PLAYMETHODCHANGE_DIALOG:
-				promptDialog = new CompeteFootballPlayMethodChangeDialog(_fContext);
-				break;
+				case COMPETEFOOTBALL_PLAYMETHODCHANGE_DIALOG:
+					promptDialog = new CompeteFootballPlayMethodChangeDialog(_fContext);
+					break;
+				default:
+					//避免出现没有对话框的类型分支时，抛出错误，易于查找问题
+					throw new AssertionError(
+							"提示对话框工厂DialogFactory类，根据对话框类型枚举创建对话框实例对象时，没有你需要创建的对话框类型："
+									+ aDialogType.name());
+			}
 		}
+
 		return promptDialog;
 	}
 
@@ -104,12 +112,17 @@ public class DialogFactory {
 	 */
 	private AlertDialogInterface newAlertDialogWithType(DialogType aDialogType) {
 		AlertDialogInterface alertDialog = null;
-
-		switch (aDialogType) {
-			case NOTCONNECTED_INTENET_DIALOG:
-				alertDialog = new NotConnectedIntenetDialog(_fContext);
-				break;
+		if (aDialogType != null) {
+			switch (aDialogType) {
+				case NOTCONNECTED_INTENET_DIALOG:
+					alertDialog = new NotConnectedIntenetDialog(_fContext);
+					break;
+				default:
+					throw new AssertionError("对话框工厂DialogFactory类，根据对话框类型创建警告类型对话框时，没有新增的对话框类型："
+							+ aDialogType.name());
+			}
 		}
+
 		return alertDialog;
 	}
 }

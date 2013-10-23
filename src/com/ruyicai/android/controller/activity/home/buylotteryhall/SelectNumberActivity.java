@@ -1,4 +1,4 @@
-package com.ruyicai.android.controller.activity.viewpagers;
+package com.ruyicai.android.controller.activity.home.buylotteryhall;
 
 import java.util.ArrayList;
 import java.util.List;

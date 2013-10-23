@@ -175,72 +175,77 @@ public class BuyLotteryHallSlidePanelItem extends RelativeLayout {
 	 */
 	private void initLotteryIcoShow(Lottery aLottrey) {
 		LotteryType lotteryType = aLottrey.get_fLotteryType();
-
-		switch (lotteryType) {
-			case DOUBLE_BALL:
-				_fLotteryIcoImageView
-						.setBackgroundResource(R.drawable.buylotteryhall_pannelitem_doubleball);
-				break;
-			case SUPER_LOTTO:
-				_fLotteryIcoImageView
-						.setBackgroundResource(R.drawable.buylotteryhall_pannelitem_superlotto);
-				break;
-			case WELFARE_3D:
-				_fLotteryIcoImageView
-						.setBackgroundResource(R.drawable.buylotteryhall_pannelitem_welfare3d);
-				break;
-			case JIANGXI_ELEVEN_SELECT_FIVE:
-				_fLotteryIcoImageView
-						.setBackgroundResource(R.drawable.buylotteryhall_pannelitem_jiangxielevenselectfive);
-				break;
-			case CONSTANTLY:
-				_fLotteryIcoImageView
-						.setBackgroundResource(R.drawable.buylotteryhall_pannelitem_constantly);
-				break;
-			case COMPETE_FOOTBALL:
-				_fLotteryIcoImageView
-						.setBackgroundResource(R.drawable.buylotteryhall_pannelitem_bettingfootball);
-				break;
-			case GUANGDONG_HAPPYVERY:
-				_fLotteryIcoImageView
-						.setBackgroundResource(R.drawable.buylotteryhall_pannelitem_guangdonghappyevery);
-				break;
-			case ELEVEN_LUCKGOLD:
-				_fLotteryIcoImageView
-						.setBackgroundResource(R.drawable.buylotteryhall_pannelitem_elevenlucklygold);
-				break;
-			case GUANGDONG_ELEVENE_SELECT_FIVE:
-				_fLotteryIcoImageView
-						.setBackgroundResource(R.drawable.buylotteryhall_pannelitem_guangdongelevenselectfive);
-				break;
-			case ARRANGE_THREE:
-				_fLotteryIcoImageView
-						.setBackgroundResource(R.drawable.buylotteryhall_pannelitem_arrangethree);
-				break;
-			case SERVEN_HAPPY:
-				_fLotteryIcoImageView
-						.setBackgroundResource(R.drawable.buylotteryhall_pannelitem_sevenhappy);
-				break;
-			case TWENTYTWO_SELECT_FIVE:
-				_fLotteryIcoImageView
-						.setBackgroundResource(R.drawable.buylotteryhall_pannelitem_twentytowselectfive);
-				break;
-			case ARRANGE_FIVE:
-				_fLotteryIcoImageView
-						.setBackgroundResource(R.drawable.buylotteryhall_pannelitem_arrangefive);
-				break;
-			case SEVEN_STAR:
-				_fLotteryIcoImageView
-						.setBackgroundResource(R.drawable.buylotteryhall_pannelitem_sevenstart);
-				break;
-			case FOOTBALL:
-				_fLotteryIcoImageView
-						.setBackgroundResource(R.drawable.buylotteryhall_pannelitem_football);
-				break;
-			case COMPETE_BASKETBALL:
-				_fLotteryIcoImageView
-						.setBackgroundResource(R.drawable.buylotteryhall_pannelitem_bettingbasketball);
-				break;
+		// 枚举在switch语句中判断时，是调用original()方法获取枚举声明位置来进行比较的。为了避免调用方法时的NullPointerException，故做此判断
+		if (lotteryType != null) {
+			switch (lotteryType) {
+				case DOUBLE_BALL:
+					_fLotteryIcoImageView
+							.setBackgroundResource(R.drawable.buylotteryhall_pannelitem_doubleball);
+					break;
+				case SUPER_LOTTO:
+					_fLotteryIcoImageView
+							.setBackgroundResource(R.drawable.buylotteryhall_pannelitem_superlotto);
+					break;
+				case WELFARE_3D:
+					_fLotteryIcoImageView
+							.setBackgroundResource(R.drawable.buylotteryhall_pannelitem_welfare3d);
+					break;
+				case JIANGXI_ELEVEN_SELECT_FIVE:
+					_fLotteryIcoImageView
+							.setBackgroundResource(R.drawable.buylotteryhall_pannelitem_jiangxielevenselectfive);
+					break;
+				case CONSTANTLY:
+					_fLotteryIcoImageView
+							.setBackgroundResource(R.drawable.buylotteryhall_pannelitem_constantly);
+					break;
+				case COMPETE_FOOTBALL:
+					_fLotteryIcoImageView
+							.setBackgroundResource(R.drawable.buylotteryhall_pannelitem_bettingfootball);
+					break;
+				case GUANGDONG_HAPPYVERY:
+					_fLotteryIcoImageView
+							.setBackgroundResource(R.drawable.buylotteryhall_pannelitem_guangdonghappyevery);
+					break;
+				case ELEVEN_LUCKGOLD:
+					_fLotteryIcoImageView
+							.setBackgroundResource(R.drawable.buylotteryhall_pannelitem_elevenlucklygold);
+					break;
+				case GUANGDONG_ELEVENE_SELECT_FIVE:
+					_fLotteryIcoImageView
+							.setBackgroundResource(R.drawable.buylotteryhall_pannelitem_guangdongelevenselectfive);
+					break;
+				case ARRANGE_THREE:
+					_fLotteryIcoImageView
+							.setBackgroundResource(R.drawable.buylotteryhall_pannelitem_arrangethree);
+					break;
+				case SERVEN_HAPPY:
+					_fLotteryIcoImageView
+							.setBackgroundResource(R.drawable.buylotteryhall_pannelitem_sevenhappy);
+					break;
+				case TWENTYTWO_SELECT_FIVE:
+					_fLotteryIcoImageView
+							.setBackgroundResource(R.drawable.buylotteryhall_pannelitem_twentytowselectfive);
+					break;
+				case ARRANGE_FIVE:
+					_fLotteryIcoImageView
+							.setBackgroundResource(R.drawable.buylotteryhall_pannelitem_arrangefive);
+					break;
+				case SEVEN_STAR:
+					_fLotteryIcoImageView
+							.setBackgroundResource(R.drawable.buylotteryhall_pannelitem_sevenstart);
+					break;
+				case FOOTBALL:
+					_fLotteryIcoImageView
+							.setBackgroundResource(R.drawable.buylotteryhall_pannelitem_football);
+					break;
+				case COMPETE_BASKETBALL:
+					_fLotteryIcoImageView
+							.setBackgroundResource(R.drawable.buylotteryhall_pannelitem_bettingbasketball);
+					break;
+				default:
+					throw new AssertionError("初始化购彩大厅彩种图标的时候，没有新添加的彩种类型："
+							+ lotteryType.get_fLotteryName());
+			}
 		}
 	}
 
@@ -257,56 +262,64 @@ public class BuyLotteryHallSlidePanelItem extends RelativeLayout {
 		public void onClick(View v) {
 			Intent intent = null;
 			LotteryType lotteryType = _fLottery.get_fLotteryType();
-
-			switch (lotteryType) {
-				case DOUBLE_BALL:
-					intent = new Intent(_fContext, DoubleBallSwitchTabsActivityGroup.class);
-					break;
-				case SUPER_LOTTO:
-					intent = new Intent(_fContext, SuperLottoSwitchTabsActivityGroup.class);
-					break;
-				case WELFARE_3D:
-					intent = new Intent(_fContext, Welfare3DSwitchTabsActivityGroup.class);
-					break;
-				case JIANGXI_ELEVEN_SELECT_FIVE:
-					intent = new Intent(_fContext, JiangXiElevenSelectFiveSpinnersActivityGroup.class);
-					break;
-				case CONSTANTLY:
-					intent = new Intent(_fContext, ConstantlySwitchTabsActivityGroup.class);
-					break;
-				case COMPETE_FOOTBALL:
-					intent = new Intent(_fContext, CompeteFootballActivity.class);
-					break;
-				case GUANGDONG_HAPPYVERY:
-					intent = new Intent(_fContext, GuangDongHappyVerySpinnersActivityGroup.class);
-					break;
-				case ELEVEN_LUCKGOLD:
-					intent = new Intent(_fContext, ElevenLuckGoldSpinnersActivityGroup.class);
-					break;
-				case GUANGDONG_ELEVENE_SELECT_FIVE:
-					intent = new Intent(_fContext, GuangDongElevenSelectFiveActivityGroup.class);
-					break;
-				case ARRANGE_THREE:
-					intent = new Intent(_fContext, ArrangeThreeActivityGroup.class);
-					break;
-				case SERVEN_HAPPY:
-					intent = new Intent(_fContext, ServenHappyActivityGroup.class);
-					break;
-				case TWENTYTWO_SELECT_FIVE:
-					intent = new Intent(_fContext, TwentyTwoSelectFiveSwitchTabsActivityGroup.class);
-					break;
-				case ARRANGE_FIVE:
-					intent = new Intent(_fContext, ArrangeFiveActivityGroup.class);
-					break;
-				case SEVEN_STAR:
-					intent = new Intent(_fContext, ServenStarActivityGroup.class);
-					break;
-				case FOOTBALL:
-					intent = new Intent(_fContext, FootBallActivity.class);
-					break;
-				case COMPETE_BASKETBALL:
-					intent = new Intent(_fContext, CompeteBasketBallActivity.class);
-					break;
+			// 枚举在switch语句中判断时，是调用original()方法获取枚举声明位置来进行比较的。为了避免调用方法时的NullPointerException，故做此判断
+			if (lotteryType != null) {
+				switch (lotteryType) {
+					case DOUBLE_BALL:
+						intent = new Intent(_fContext, DoubleBallSwitchTabsActivityGroup.class);
+						break;
+					case SUPER_LOTTO:
+						intent = new Intent(_fContext, SuperLottoSwitchTabsActivityGroup.class);
+						break;
+					case WELFARE_3D:
+						intent = new Intent(_fContext, Welfare3DSwitchTabsActivityGroup.class);
+						break;
+					case JIANGXI_ELEVEN_SELECT_FIVE:
+						intent = new Intent(_fContext,
+								JiangXiElevenSelectFiveSpinnersActivityGroup.class);
+						break;
+					case CONSTANTLY:
+						intent = new Intent(_fContext, ConstantlySwitchTabsActivityGroup.class);
+						break;
+					case COMPETE_FOOTBALL:
+						intent = new Intent(_fContext, CompeteFootballActivity.class);
+						break;
+					case GUANGDONG_HAPPYVERY:
+						intent = new Intent(_fContext,
+								GuangDongHappyVerySpinnersActivityGroup.class);
+						break;
+					case ELEVEN_LUCKGOLD:
+						intent = new Intent(_fContext, ElevenLuckGoldSpinnersActivityGroup.class);
+						break;
+					case GUANGDONG_ELEVENE_SELECT_FIVE:
+						intent = new Intent(_fContext, GuangDongElevenSelectFiveActivityGroup.class);
+						break;
+					case ARRANGE_THREE:
+						intent = new Intent(_fContext, ArrangeThreeActivityGroup.class);
+						break;
+					case SERVEN_HAPPY:
+						intent = new Intent(_fContext, ServenHappyActivityGroup.class);
+						break;
+					case TWENTYTWO_SELECT_FIVE:
+						intent = new Intent(_fContext,
+								TwentyTwoSelectFiveSwitchTabsActivityGroup.class);
+						break;
+					case ARRANGE_FIVE:
+						intent = new Intent(_fContext, ArrangeFiveActivityGroup.class);
+						break;
+					case SEVEN_STAR:
+						intent = new Intent(_fContext, ServenStarActivityGroup.class);
+						break;
+					case FOOTBALL:
+						intent = new Intent(_fContext, FootBallActivity.class);
+						break;
+					case COMPETE_BASKETBALL:
+						intent = new Intent(_fContext, CompeteBasketBallActivity.class);
+						break;
+					default:
+						throw new AssertionError("处理购彩大厅彩种图标的点击事件时候，没有新添加的彩种类型："
+								+ lotteryType.get_fLotteryName());
+				}
 			}
 
 			_fContext.startActivity(intent);

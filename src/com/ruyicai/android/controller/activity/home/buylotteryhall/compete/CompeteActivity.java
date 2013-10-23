@@ -134,6 +134,8 @@ public abstract class CompeteActivity extends BaseActivity implements TitleBarIn
 				case R.id.competebar_button_realtimescore:
 					Toast.makeText(CompeteActivity.this, "即时比分按钮", Toast.LENGTH_SHORT).show();
 					break;
+				default:
+					throw new AssertionError("switch语句中，没有新增的分支");
 			}
 		}
 

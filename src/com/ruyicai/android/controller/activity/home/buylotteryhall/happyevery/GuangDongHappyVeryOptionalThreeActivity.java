@@ -17,6 +17,8 @@ public class GuangDongHappyVeryOptionalThreeActivity extends
 				_fPlayMethodTextView
 						.setText(R.string.guangdonghappyvery_textview_optionalthree_courageselectplaymethod);
 				break;
+			default:
+				throw new AssertionError("switch语句中，没有新增的分支");
 		}
 	}
 }

@@ -73,6 +73,8 @@ public class SlideSeekBar extends LinearLayout {
 						progress--;
 					}
 					break;
+				default:
+					throw new AssertionError("switch语句中，没有新增的分支");
 			}
 
 			_fSlideSeekBar.setProgress(progress);

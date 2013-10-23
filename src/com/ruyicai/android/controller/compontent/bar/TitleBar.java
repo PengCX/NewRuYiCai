@@ -22,48 +22,28 @@ import android.widget.TextView;
  * @since RYC1.0 2013-3-18
  */
 public class TitleBar extends RelativeLayout {
-	/**
-	 * 上下文对象
-	 */
+	/** 上下文对象 */
 	protected Context _fContext;
 
-	/**
-	 * 左侧标签
-	 */
+	/** 左侧标签 */
 	private TextView _fLeftTextView;
-	/**
-	 * 右侧按钮
-	 */
+	/** 右侧按钮 */
 	private Button _fRightButton;
-	/**
-	 * 下拉按钮
-	 */
+	/** 下拉按钮 */
 	private Button _fSpreadButton;
-	/**
-	 * 下拉菜单对象
-	 */
-	public TitleDropDownMenu _fDropDownMenu;
+	/** 下拉菜单对象 */
+	public TitleDropDownMenu _fTitleDropDownMenu;
 
-	/**
-	 * 左侧标签文本资源id
-	 */
+	/** 左侧标签文本资源id */
 	private int _fLeftTextId;
-	/**
-	 * 右按钮文本资源id
-	 */
+	/** 右按钮文本资源id */
 	private int _fRightButtonTextId;
-	/**
-	 * 右按钮是否显示
-	 */
+	/** 右按钮是否显示 */
 	private boolean _fIsShowRightButton;
-	/**
-	 * 下拉按钮是否显示
-	 */
+	/** 下拉按钮是否显示 */
 	private boolean _fIsShowSpreadButton;
 
-	/**
-	 * 右按钮点击监听接口
-	 */
+	/** 右按钮点击监听接口 */
 	private OnRightButtonClickListener _fOnRightButtonClickListener;
 
 	/**
@@ -181,11 +161,44 @@ public class TitleBar extends RelativeLayout {
 		_fSpreadButton = (Button) findViewById(R.id.titlebar_button_dropdown);
 		if (_fIsShowSpreadButton) {
 			_fSpreadButton.setVisibility(View.VISIBLE);
+			_fSpreadButton.setOnClickListener(new TitleBarButtonOnClickListener());
 		}
 	}
 
 	public TitleBar(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
+	}
+
+	/**
+	 * 标题栏按钮点击事件监听器
+	 * 
+	 * @author Administrator
+	 * @since RYC1.0 2013-10-23
+	 */
+	class TitleBarButtonOnClickListener implements OnClickListener {
+
+		@Override
+		public void onClick(View v) {
+			switch (v.getId()) {
+				case R.id.titlebar_button_dropdown:
+					if (_fTitleDropDownMenu == null) {
+						_fTitleDropDownMenu = new TitleDropDownMenu(_fContext);
+					}
+
+					if (!_fTitleDropDownMenu.isTitleDropDownMenuShow()) {
+						_fTitleDropDownMenu.showTitleDropDownMenu(_fSpreadButton);
+					} else {
+						_fTitleDropDownMenu.dismissTitleDropDownMenu();
+					}
+
+					break;
+
+				default:
+					// 抛出AssertionError错误，当新的按钮添加事件监听时候，忘记处理该按钮，switch语句跳到default语句排除错误提示，易于寻找代码错误。
+					throw new AssertionError("标题栏按钮点击事件监听时，没有处理id为：" + v.getId() + "按钮的事件。");
+			}
+		}
+
 	}
 
 	/**

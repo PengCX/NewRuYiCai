@@ -5,7 +5,7 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 
 import com.ruyicai.android.R;
-import com.ruyicai.android.controller.activity.home.buylotteryhall.activitygroups.SpinnersActivityGroup;
+import com.ruyicai.android.controller.activity.home.buylotteryhall.SpinnersActivityGroup;
 
 /**
  * 广东快乐十分选号页面组
