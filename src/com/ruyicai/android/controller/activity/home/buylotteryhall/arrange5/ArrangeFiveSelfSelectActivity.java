@@ -53,7 +53,7 @@ public class ArrangeFiveSelfSelectActivity extends SelectNumberActivity {
 
 	/**
 	 * 初始化个位选号面板
-	 * 
+	 *
 	 * @param aPage_i
 	 *            页面索引
 	 * @param selectNumberPanel
@@ -61,19 +61,19 @@ public class ArrangeFiveSelfSelectActivity extends SelectNumberActivity {
 	 */
 	private void initNumberSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
-			selectNumberPanel.initSelectNumberPanelShow("个位：", 1, 16, 0, 10,
-					SelectNumberBallType.REDBALL, null, false);
+//			selectNumberPanel.initSelectNumberPanelShow("个位：", 1, 16, 0, 10,
+//					SelectNumberBallType.REDBALL, null, false);
 		} else {
 			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-			selectNumberPanel.initSelectNumberPanelShow("个位：", 1, 16, 0, 10,
-					SelectNumberBallType.REDBALL, lossValues, true);
+//			selectNumberPanel.initSelectNumberPanelShow("个位：", 1, 16, 0, 10,
+//					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}
 
 	/**
 	 * 初始化十位选号面板
-	 * 
+	 *
 	 * @param aPage_i
 	 *            页面索引
 	 * @param selectNumberPanel
@@ -81,19 +81,19 @@ public class ArrangeFiveSelfSelectActivity extends SelectNumberActivity {
 	 */
 	private void initDecadeSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
-			selectNumberPanel.initSelectNumberPanelShow("十位：", 1, 16, 0, 10,
-					SelectNumberBallType.REDBALL, null, false);
+//			selectNumberPanel.initSelectNumberPanelShow("十位：", 1, 16, 0, 10,
+//					SelectNumberBallType.REDBALL, null, false);
 		} else {
 			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-			selectNumberPanel.initSelectNumberPanelShow("十位：", 1, 16, 0, 10,
-					SelectNumberBallType.REDBALL, lossValues, true);
+//			selectNumberPanel.initSelectNumberPanelShow("十位：", 1, 16, 0, 10,
+//					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}
 
 	/**
 	 * 初始化百位选号面板
-	 * 
+	 *
 	 * @param aPage_i
 	 *            页面索引
 	 * @param selectNumberPanel
@@ -101,19 +101,19 @@ public class ArrangeFiveSelfSelectActivity extends SelectNumberActivity {
 	 */
 	private void initHundredSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
-			selectNumberPanel.initSelectNumberPanelShow("百位：", 1, 16, 0, 10,
-					SelectNumberBallType.REDBALL, null, false);
+//			selectNumberPanel.initSelectNumberPanelShow("百位：", 1, 16, 0, 10,
+//					SelectNumberBallType.REDBALL, null, false);
 		} else {
 			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-			selectNumberPanel.initSelectNumberPanelShow("百位：", 1, 16, 0, 10,
-					SelectNumberBallType.REDBALL, lossValues, true);
+//			selectNumberPanel.initSelectNumberPanelShow("百位：", 1, 16, 0, 10,
+//					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}
 
 	/**
 	 * 初始化千位选号面板
-	 * 
+	 *
 	 * @param aPage_i
 	 *            页面索引
 	 * @param selectNumberPanel
@@ -121,19 +121,19 @@ public class ArrangeFiveSelfSelectActivity extends SelectNumberActivity {
 	 */
 	private void initThounsandSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
-			selectNumberPanel.initSelectNumberPanelShow("千位：", 1, 16, 0, 10,
-					SelectNumberBallType.REDBALL, null, false);
+//			selectNumberPanel.initSelectNumberPanelShow("千位：", 1, 16, 0, 10,
+//					SelectNumberBallType.REDBALL, null, false);
 		} else {
 			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-			selectNumberPanel.initSelectNumberPanelShow("千位：", 1, 16, 0, 10,
-					SelectNumberBallType.REDBALL, lossValues, true);
+//			selectNumberPanel.initSelectNumberPanelShow("千位：", 1, 16, 0, 10,
+//					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}
 
 	/**
 	 * 初始化万位选号面板
-	 * 
+	 *
 	 * @param aPage_i
 	 *            页面索引
 	 * @param selectNumberPanel
@@ -141,12 +141,12 @@ public class ArrangeFiveSelfSelectActivity extends SelectNumberActivity {
 	 */
 	private void initTenThounsandSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
-			selectNumberPanel.initSelectNumberPanelShow("万位：", 1, 16, 0, 10,
-					SelectNumberBallType.REDBALL, null, false);
+//			selectNumberPanel.initSelectNumberPanelShow("万位：", 1, 16, 0, 10,
+//					SelectNumberBallType.REDBALL, null, false);
 		} else {
 			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-			selectNumberPanel.initSelectNumberPanelShow("万位：", 1, 16, 0, 10,
-					SelectNumberBallType.REDBALL, lossValues, true);
+//			selectNumberPanel.initSelectNumberPanelShow("万位：", 1, 16, 0, 10,
+//					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}

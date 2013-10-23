@@ -14,7 +14,7 @@ import com.ruyicai.android.controller.compontent.selectnumberpanel.SelectNumberB
 
 /**
  * 福彩3D自选选号页面
- * 
+ *
  * @author xiang_000
  * @since RYC1.0 2013-4-29
  */
@@ -88,7 +88,7 @@ public class Welfare3DSelfSelectActivity extends SelectNumberActivity implements
 
 	/**
 	 * 初始化注码选号面板
-	 * 
+	 *
 	 * @param aPage_i
 	 *            页面索引
 	 * @param selectNumberPanel
@@ -96,20 +96,20 @@ public class Welfare3DSelfSelectActivity extends SelectNumberActivity implements
 	 */
 	private void initCodeNumSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
-			selectNumberPanel.initSelectNumberPanelShow("注码：", 1, 16, 0, 28,
-					SelectNumberBallType.REDBALL, null, false);
+//			selectNumberPanel.initSelectNumberPanelShow("注码：", 1, 16, 0, 28,
+//					SelectNumberBallType.REDBALL, null, false);
 		} else {
 			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
 					17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28 };
-			selectNumberPanel.initSelectNumberPanelShow("注码：", 1, 16, 0, 28,
-					SelectNumberBallType.REDBALL, lossValues, true);
+//			selectNumberPanel.initSelectNumberPanelShow("注码：", 1, 16, 0, 28,
+//					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}
 
 	/**
 	 * 初始化个位选号区域
-	 * 
+	 *
 	 * @param aPage_i
 	 *            页面索引
 	 * @param selectNumberPanel
@@ -117,19 +117,19 @@ public class Welfare3DSelfSelectActivity extends SelectNumberActivity implements
 	 */
 	private void initNumberSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
-			selectNumberPanel.initSelectNumberPanelShow("个位区：", 1, 16, 0, 10,
-					SelectNumberBallType.REDBALL, null, false);
+//			selectNumberPanel.initSelectNumberPanelShow("个位区：", 1, 16, 0, 10,
+//					SelectNumberBallType.REDBALL, null, false);
 		} else {
 			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-			selectNumberPanel.initSelectNumberPanelShow("个位区：", 1, 16, 0, 10,
-					SelectNumberBallType.REDBALL, lossValues, true);
+//			selectNumberPanel.initSelectNumberPanelShow("个位区：", 1, 16, 0, 10,
+//					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}
 
 	/**
 	 * 初始化十位选号区域
-	 * 
+	 *
 	 * @param aPage_i
 	 *            页面索引
 	 * @param selectNumberPanel
@@ -137,19 +137,19 @@ public class Welfare3DSelfSelectActivity extends SelectNumberActivity implements
 	 */
 	private void initDecadeSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
-			selectNumberPanel.initSelectNumberPanelShow("十位区：", 1, 16, 0, 10,
-					SelectNumberBallType.REDBALL, null, false);
+//			selectNumberPanel.initSelectNumberPanelShow("十位区：", 1, 16, 0, 10,
+//					SelectNumberBallType.REDBALL, null, false);
 		} else {
 			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-			selectNumberPanel.initSelectNumberPanelShow("十位区：", 1, 16, 0, 10,
-					SelectNumberBallType.REDBALL, lossValues, true);
+//			selectNumberPanel.initSelectNumberPanelShow("十位区：", 1, 16, 0, 10,
+//					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}
 
 	/**
 	 * 初始化百位选号区域
-	 * 
+	 *
 	 * @param aPage_i
 	 *            页面索引
 	 * @param selectNumberPanel
@@ -157,12 +157,12 @@ public class Welfare3DSelfSelectActivity extends SelectNumberActivity implements
 	 */
 	private void initHundredSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
-			selectNumberPanel.initSelectNumberPanelShow("百位区：", 1, 16, 0, 10,
-					SelectNumberBallType.REDBALL, null, false);
+//			selectNumberPanel.initSelectNumberPanelShow("百位区：", 1, 16, 0, 10,
+//					SelectNumberBallType.REDBALL, null, false);
 		} else {
 			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-			selectNumberPanel.initSelectNumberPanelShow("百位区：", 1, 16, 0, 10,
-					SelectNumberBallType.REDBALL, lossValues, true);
+//			selectNumberPanel.initSelectNumberPanelShow("百位区：", 1, 16, 0, 10,
+//					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}
@@ -197,7 +197,7 @@ public class Welfare3DSelfSelectActivity extends SelectNumberActivity implements
 
 	/**
 	 * 选号 页面投注栏按钮点击监听实现类
-	 * 
+	 *
 	 * @author xiang_000
 	 * @since RYC1.0 2013-4-18
 	 */

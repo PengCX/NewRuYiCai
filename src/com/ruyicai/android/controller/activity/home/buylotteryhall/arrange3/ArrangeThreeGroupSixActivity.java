@@ -71,7 +71,7 @@ public class ArrangeThreeGroupSixActivity extends SelectNumberActivity implement
 
 	/**
 	 * 初始化组六和值注码选号面板
-	 * 
+	 *
 	 * @param aPage_i
 	 *            页面索引
 	 * @param selectNumberPanel
@@ -79,20 +79,20 @@ public class ArrangeThreeGroupSixActivity extends SelectNumberActivity implement
 	 */
 	private void initSumCodeNumSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
-			selectNumberPanel.initSelectNumberPanelShow("注码：", 1, 16, 3, 21,
-					SelectNumberBallType.REDBALL, null, false);
+//			selectNumberPanel.initSelectNumberPanelShow("注码：", 1, 16, 3, 21,
+//					SelectNumberBallType.REDBALL, null, false);
 		} else {
 			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
 					17, 18, 19, 20, 21, 22 };
-			selectNumberPanel.initSelectNumberPanelShow("注码：", 1, 16, 3, 21,
-					SelectNumberBallType.REDBALL, lossValues, true);
+//			selectNumberPanel.initSelectNumberPanelShow("注码：", 1, 16, 3, 21,
+//					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}
 
 	/**
 	 * 初始化组六注码选号面板
-	 * 
+	 *
 	 * @param aPage_i
 	 *            页面索引
 	 * @param selectNumberPanel
@@ -100,12 +100,12 @@ public class ArrangeThreeGroupSixActivity extends SelectNumberActivity implement
 	 */
 	private void initCodeNumSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
-			selectNumberPanel.initSelectNumberPanelShow("注码：", 1, 16, 0, 10,
-					SelectNumberBallType.REDBALL, null, false);
+//			selectNumberPanel.initSelectNumberPanelShow("注码：", 1, 16, 0, 10,
+//					SelectNumberBallType.REDBALL, null, false);
 		} else {
 			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-			selectNumberPanel.initSelectNumberPanelShow("注码：", 1, 16, 0, 10,
-					SelectNumberBallType.REDBALL, lossValues, true);
+//			selectNumberPanel.initSelectNumberPanelShow("注码：", 1, 16, 0, 10,
+//					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}

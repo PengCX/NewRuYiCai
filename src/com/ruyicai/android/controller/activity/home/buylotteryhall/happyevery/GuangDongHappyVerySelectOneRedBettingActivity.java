@@ -53,12 +53,12 @@ public class GuangDongHappyVerySelectOneRedBettingActivity extends SelectNumberA
 
 	private void initBettingNumSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
-			selectNumberPanel.initSelectNumberPanelShow("请选择投注号码：", 1, 16, 19, 2,
-					SelectNumberBallType.REDBALL, null, false);
+//			selectNumberPanel.initSelectNumberPanelShow("请选择投注号码：", 1, 16, 19, 2,
+//					SelectNumberBallType.REDBALL, null, false);
 		} else {
 			int[] lossValues = new int[] { 1, 2 };
-			selectNumberPanel.initSelectNumberPanelShow("请选择投注号码：", 1, 16, 19, 2,
-					SelectNumberBallType.REDBALL, lossValues, true);
+//			selectNumberPanel.initSelectNumberPanelShow("请选择投注号码：", 1, 16, 19, 2,
+//					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}

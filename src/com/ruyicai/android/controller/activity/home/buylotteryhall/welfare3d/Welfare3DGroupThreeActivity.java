@@ -10,7 +10,7 @@ import com.ruyicai.android.controller.compontent.selectnumberpanel.SelectNumberB
 
 /**
  * 福彩3D组三选号页面
- * 
+ *
  * @author xiang_000
  * @since RYC1.0 2013-4-29
  */
@@ -85,7 +85,7 @@ public class Welfare3DGroupThreeActivity extends SelectNumberActivity implements
 
 	/**
 	 * 初始化复式注码选号面板
-	 * 
+	 *
 	 * @param aPage_i
 	 *            页面索引
 	 * @param selectNumberPanel
@@ -93,19 +93,19 @@ public class Welfare3DGroupThreeActivity extends SelectNumberActivity implements
 	 */
 	private void initSelectCodeNumSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
-			selectNumberPanel.initSelectNumberPanelShow("注码：", 1, 16, 0, 10,
-					SelectNumberBallType.REDBALL, null, false);
+//			selectNumberPanel.initSelectNumberPanelShow("注码：", 1, 16, 0, 10,
+//					SelectNumberBallType.REDBALL, null, false);
 		} else {
 			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-			selectNumberPanel.initSelectNumberPanelShow("注码：", 1, 16, 0, 10,
-					SelectNumberBallType.REDBALL, lossValues, true);
+//			selectNumberPanel.initSelectNumberPanelShow("注码：", 1, 16, 0, 10,
+//					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}
 
 	/**
 	 * 初始化出现一次的选号面板
-	 * 
+	 *
 	 * @param aPage_i
 	 *            页面索引
 	 * @param selectNumberPanel
@@ -113,19 +113,19 @@ public class Welfare3DGroupThreeActivity extends SelectNumberActivity implements
 	 */
 	private void initOnceSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
-			selectNumberPanel.initSelectNumberPanelShow("出现一次的号码：", 1, 16, 0, 10,
-					SelectNumberBallType.REDBALL, null, false);
+//			selectNumberPanel.initSelectNumberPanelShow("出现一次的号码：", 1, 16, 0, 10,
+//					SelectNumberBallType.REDBALL, null, false);
 		} else {
 			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-			selectNumberPanel.initSelectNumberPanelShow("出现一次的号码：", 1, 16, 0, 10,
-					SelectNumberBallType.REDBALL, lossValues, true);
+//			selectNumberPanel.initSelectNumberPanelShow("出现一次的号码：", 1, 16, 0, 10,
+//					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}
 
 	/**
 	 * 初始化出现两次的选号面板
-	 * 
+	 *
 	 * @param aPage_i
 	 *            页面索引
 	 * @param selectNumberPanel
@@ -133,12 +133,12 @@ public class Welfare3DGroupThreeActivity extends SelectNumberActivity implements
 	 */
 	private void initTwiceSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
-			selectNumberPanel.initSelectNumberPanelShow("出现两次的号码：", 1, 16, 0, 10,
-					SelectNumberBallType.REDBALL, null, false);
+//			selectNumberPanel.initSelectNumberPanelShow("出现两次的号码：", 1, 16, 0, 10,
+//					SelectNumberBallType.REDBALL, null, false);
 		} else {
 			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-			selectNumberPanel.initSelectNumberPanelShow("出现两次的号码：", 1, 16, 0, 10,
-					SelectNumberBallType.REDBALL, lossValues, true);
+//			selectNumberPanel.initSelectNumberPanelShow("出现两次的号码：", 1, 16, 0, 10,
+//					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}

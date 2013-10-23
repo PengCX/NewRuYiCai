@@ -52,7 +52,7 @@ public class ConstantlyOneStarActivity extends SelectNumberActivity implements
 
 	/**
 	 * 初始化投注号码选号面板
-	 * 
+	 *
 	 * @param aPage_i
 	 *            页面索引
 	 * @param selectNumberPanel
@@ -60,12 +60,12 @@ public class ConstantlyOneStarActivity extends SelectNumberActivity implements
 	 */
 	private void initBettingNumSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
-			selectNumberPanel.initSelectNumberPanelShow("请选择投注号码：", 1, 16, 0, 10,
-					SelectNumberBallType.REDBALL, null, false);
+//			selectNumberPanel.initSelectNumberPanelShow("请选择投注号码：", 1, 16, 0, 10,
+//					SelectNumberBallType.REDBALL, null, false);
 		} else {
 			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-			selectNumberPanel.initSelectNumberPanelShow("请选择投注号码：", 1, 16, 0, 10,
-					SelectNumberBallType.REDBALL, lossValues, true);
+//			selectNumberPanel.initSelectNumberPanelShow("请选择投注号码：", 1, 16, 0, 10,
+//					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}

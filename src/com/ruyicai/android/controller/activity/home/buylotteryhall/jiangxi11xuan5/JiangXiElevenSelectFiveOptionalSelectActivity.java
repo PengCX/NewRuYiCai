@@ -12,7 +12,7 @@ import com.ruyicai.android.controller.compontent.selectnumberpanel.SelectNumberB
 /**
  * 江西11选5任选*选号页面基类：包含了页面切换单选按钮组，玩法说明，滑动选号区域，投注栏。适用于江西11选5的任选二、任选三、任选四、任选五、任选六、
  * 任选七、任选八页面。作用： 1.覆盖父类空实现实现了玩法说明栏的添加。 2.实现了选号面板的添加
- * 
+ *
  * @author xiang_000
  * @since RYC1.0 2013-5-2
  */
@@ -81,7 +81,7 @@ public abstract class JiangXiElevenSelectFiveOptionalSelectActivity extends Sele
 
 	/**
 	 * 初始化拖码选号面板
-	 * 
+	 *
 	 * @param aPage_i
 	 *            页面索引
 	 * @param selectNumberPanel
@@ -89,19 +89,19 @@ public abstract class JiangXiElevenSelectFiveOptionalSelectActivity extends Sele
 	 */
 	private void initDragNumSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
-			selectNumberPanel.initSelectNumberPanelShow("拖码：", 1, 16, 0, 11,
-					SelectNumberBallType.REDBALL, null, false);
+//			selectNumberPanel.initSelectNumberPanelShow("拖码：", 1, 16, 0, 11,
+//					SelectNumberBallType.REDBALL, null, false);
 		} else {
 			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
-			selectNumberPanel.initSelectNumberPanelShow("拖码：", 1, 16, 0, 11,
-					SelectNumberBallType.REDBALL, lossValues, true);
+//			selectNumberPanel.initSelectNumberPanelShow("拖码：", 1, 16, 0, 11,
+//					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}
 
 	/**
 	 * 初始化胆码选号对象
-	 * 
+	 *
 	 * @param aPage_i
 	 *            页面索引
 	 * @param selectNumberPanel
@@ -109,19 +109,19 @@ public abstract class JiangXiElevenSelectFiveOptionalSelectActivity extends Sele
 	 */
 	private void initCourageNumSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
-			selectNumberPanel.initSelectNumberPanelShow("胆码：", 1, 16, 0, 11,
-					SelectNumberBallType.REDBALL, null, false);
+//			selectNumberPanel.initSelectNumberPanelShow("胆码：", 1, 16, 0, 11,
+//					SelectNumberBallType.REDBALL, null, false);
 		} else {
 			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
-			selectNumberPanel.initSelectNumberPanelShow("胆码：", 1, 16, 0, 11,
-					SelectNumberBallType.REDBALL, lossValues, true);
+//			selectNumberPanel.initSelectNumberPanelShow("胆码：", 1, 16, 0, 11,
+//					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}
 
 	/**
 	 * 初始化投注号码选号面板
-	 * 
+	 *
 	 * @param aPage_i
 	 *            页面索引
 	 * @param selectNumberPanel
@@ -129,12 +129,12 @@ public abstract class JiangXiElevenSelectFiveOptionalSelectActivity extends Sele
 	 */
 	private void initBettingNumSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
-			selectNumberPanel.initSelectNumberPanelShow("请选择投注号码：", 1, 16, 0, 11,
-					SelectNumberBallType.REDBALL, null, false);
+//			selectNumberPanel.initSelectNumberPanelShow("请选择投注号码：", 1, 16, 0, 11,
+//					SelectNumberBallType.REDBALL, null, false);
 		} else {
 			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
-			selectNumberPanel.initSelectNumberPanelShow("请选择投注号码：", 1, 16, 0, 11,
-					SelectNumberBallType.REDBALL, lossValues, true);
+//			selectNumberPanel.initSelectNumberPanelShow("请选择投注号码：", 1, 16, 0, 11,
+//					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}

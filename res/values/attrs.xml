@@ -13,10 +13,28 @@
         <!-- 是否显示下拉按钮 -->
         <attr name="_fIsShowSpreadButton" format="boolean" />
     </declare-styleable>
+
     <!-- 选号面板属性 -->
     <declare-styleable name="SelectNumberPanel">
-        <!-- 标题字符串资源id -->
+ 		<!-- 标题字符串资源id -->
         <attr name="_fTitleTextId" format="reference" />
+        <!-- 随机按钮随机号码个数 -->
+        <attr name="_fRandomNumberNum" format="integer" />
+        <!-- 随机按钮最小的随机个数 -->
+        <attr name="_fRandomButtonMinRandomNum" format="integer" />
+        <!-- 随机按钮下拉菜单按钮的个数 -->
+        <attr name="_fRandomButtonDropDownMenuButtonNum" format="integer" />
+        <!-- 选号小球的起始号码  -->
+        <attr name="_fSelectNumberBallStartNum" format="integer" />
+        <!-- 选号小球的个数  -->
+        <attr name="_fSelectNumberBallNum" format="integer" />
+         <!-- 选号小球的类型：0代表红球，1代表篮球  -->
+        <attr name="_fSelectNumberBallType" format="enum" >
+           <enum name="red" value="0"/>
+           <enum name="blue" value="1"/>
+        </attr>
+        <!-- 是否显示遗漏值 -->
+        <attr name="_fIsShowLossValue" format="boolean" />
     </declare-styleable>
 
 </resources>

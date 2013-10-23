@@ -72,7 +72,7 @@ public abstract class GuangDongHappyVeryOptionalSelectActivity extends SelectNum
 
 	/**
 	 * 初始化拖码选号面板
-	 * 
+	 *
 	 * @param aPage_i
 	 *            页面索引
 	 * @param selectNumberPanel
@@ -80,19 +80,19 @@ public abstract class GuangDongHappyVeryOptionalSelectActivity extends SelectNum
 	 */
 	private void initDragNumSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
-			selectNumberPanel.initSelectNumberPanelShow("拖码：", 1, 16, 0, 11,
-					SelectNumberBallType.REDBALL, null, false);
+//			selectNumberPanel.initSelectNumberPanelShow("拖码：", 1, 16, 0, 11,
+//					SelectNumberBallType.REDBALL, null, false);
 		} else {
 			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
-			selectNumberPanel.initSelectNumberPanelShow("拖码：", 1, 16, 0, 11,
-					SelectNumberBallType.REDBALL, lossValues, true);
+//			selectNumberPanel.initSelectNumberPanelShow("拖码：", 1, 16, 0, 11,
+//					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}
 
 	/**
 	 * 初始化胆码选号对象
-	 * 
+	 *
 	 * @param aPage_i
 	 *            页面索引
 	 * @param selectNumberPanel
@@ -100,19 +100,19 @@ public abstract class GuangDongHappyVeryOptionalSelectActivity extends SelectNum
 	 */
 	private void initCourageNumSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
-			selectNumberPanel.initSelectNumberPanelShow("胆码：", 1, 16, 0, 11,
-					SelectNumberBallType.REDBALL, null, false);
+//			selectNumberPanel.initSelectNumberPanelShow("胆码：", 1, 16, 0, 11,
+//					SelectNumberBallType.REDBALL, null, false);
 		} else {
 			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
-			selectNumberPanel.initSelectNumberPanelShow("胆码：", 1, 16, 0, 11,
-					SelectNumberBallType.REDBALL, lossValues, true);
+//			selectNumberPanel.initSelectNumberPanelShow("胆码：", 1, 16, 0, 11,
+//					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}
 
 	/**
 	 * 初始化投注号码选号面板
-	 * 
+	 *
 	 * @param aPage_i
 	 *            页面索引
 	 * @param selectNumberPanel
@@ -120,12 +120,12 @@ public abstract class GuangDongHappyVeryOptionalSelectActivity extends SelectNum
 	 */
 	private void initBettingNumSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
-			selectNumberPanel.initSelectNumberPanelShow("请选择投注号码：", 1, 16, 0, 11,
-					SelectNumberBallType.REDBALL, null, false);
+//			selectNumberPanel.initSelectNumberPanelShow("请选择投注号码：", 1, 16, 0, 11,
+//					SelectNumberBallType.REDBALL, null, false);
 		} else {
 			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
-			selectNumberPanel.initSelectNumberPanelShow("请选择投注号码：", 1, 16, 0, 11,
-					SelectNumberBallType.REDBALL, lossValues, true);
+//			selectNumberPanel.initSelectNumberPanelShow("请选择投注号码：", 1, 16, 0, 11,
+//					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}

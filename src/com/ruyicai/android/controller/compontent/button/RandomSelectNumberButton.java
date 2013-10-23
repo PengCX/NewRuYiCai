@@ -17,7 +17,7 @@ import android.widget.LinearLayout;
 
 /**
  * 随机选号按钮：实现了对随机号码个数的选择，和随即号码的选择功能。用户双色球等选号界面。
- * 
+ *
  * @author xiang_000
  * @since RYC1.0 2013-4-12
  */
@@ -42,31 +42,28 @@ public class RandomSelectNumberButton extends LinearLayout {
 	/** 随机按钮下拉菜单的选择按钮个数 */
 	private int _fSelectButtonNum;
 
-	public RandomSelectNumberButton(Context aContext, int aRandomNumberNum) {
-		super(aContext);
+	private RandomSelectNumberButton(Context context) {
+		super(context);
+	}
 
+	public RandomSelectNumberButton(Context aContext, AttributeSet aAttrs) {
+		super(aContext, aAttrs);
 		_fContext = aContext;
-		_fRandomNumberNum = aRandomNumberNum;
 		_fSelf = this;
-		LayoutInflater inflater = (LayoutInflater) aContext
+		LayoutInflater layoutInflater = (LayoutInflater) aContext
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		inflater.inflate(R.layout.randombutton, this);
+		layoutInflater.inflate(R.layout.randombutton, this);
 
 		_fSelectRandomNumButton = (Button) findViewById(R.id.randombutton_button_selectnum);
-		_fSelectRandomNumButton.setText(_fRandomNumberNum
-				+ _fContext.getString(R.string.randombutton_button_unit));
 		_fSelectRandomNumButton.setOnClickListener(new SelectNumButtonClickListener());
 		_fRandomSelectNumberButton = (Button) findViewById(R.id.randombutton_button_randomselect);
 		_fRandomSelectNumberButton.setOnClickListener(new RandomSelectButtonClickListener());
 	}
 
-	public RandomSelectNumberButton(Context aContext, AttributeSet aAttrs) {
-		super(aContext, aAttrs);
-	}
 
 	/**
 	 * 设置随机按钮控制的选号小球表格
-	 * 
+	 *
 	 * @param _fSelectNumberBallsTableLayout
 	 *            选号小球表格
 	 */
@@ -77,7 +74,7 @@ public class RandomSelectNumberButton extends LinearLayout {
 
 	/**
 	 * 设置随机按钮下拉菜单中选择的最小的随机数个数
-	 * 
+	 *
 	 * @param aMinRandomNum
 	 *            最小的随机数个数
 	 */
@@ -87,7 +84,7 @@ public class RandomSelectNumberButton extends LinearLayout {
 
 	/**
 	 * 设置随机按钮随机选择号码的个数
-	 * 
+	 *
 	 * @param _fRandomNumberNum
 	 *            随机选择号码的个数
 	 */
@@ -99,7 +96,7 @@ public class RandomSelectNumberButton extends LinearLayout {
 
 	/**
 	 * 设置随机按钮下拉菜单中随机数个数选择按钮的个数
-	 * 
+	 *
 	 * @param _fSelectButtonNum
 	 *            随机数个数选择按钮的个数
 	 */
@@ -109,7 +106,7 @@ public class RandomSelectNumberButton extends LinearLayout {
 
 	/**
 	 * 选择随机号码个数按钮事件监听实现类
-	 * 
+	 *
 	 * @author xiang_000
 	 * @since RYC1.0 2013-4-12
 	 */
@@ -128,7 +125,7 @@ public class RandomSelectNumberButton extends LinearLayout {
 
 	/**
 	 * 随机选号按钮事件监听器实现类
-	 * 
+	 *
 	 * @author xiang_000
 	 * @since RYC1.0 2013-4-12
 	 */

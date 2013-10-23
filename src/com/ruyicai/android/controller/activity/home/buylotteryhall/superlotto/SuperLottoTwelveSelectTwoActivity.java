@@ -8,7 +8,7 @@ import android.view.View;
 
 /**
  * 大乐透12选5页面
- * 
+ *
  * @author xiang_000
  * @since RYC1.0 2013-4-21
  */
@@ -47,7 +47,7 @@ public class SuperLottoTwelveSelectTwoActivity extends SelectNumberActivity {
 
 	/**
 	 * 初始化注码选号面板
-	 * 
+	 *
 	 * @param aPage_i
 	 *            页面索引
 	 * @param selectNumberPanel
@@ -56,12 +56,12 @@ public class SuperLottoTwelveSelectTwoActivity extends SelectNumberActivity {
 	private void initCodeNumberAreaSelectNumberPanel(int aPage_i,
 			SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
-			selectNumberPanel.initSelectNumberPanelShow("注码：", 2, 10, 1, 12,
-					SelectNumberBallType.BLUEBALL, null, false);
+//			selectNumberPanel.initSelectNumberPanelShow("注码：", 2, 10, 1, 12,
+//					SelectNumberBallType.BLUEBALL, null, false);
 		} else {
 			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
-			selectNumberPanel.initSelectNumberPanelShow("注码：", 2, 10, 1, 12,
-					SelectNumberBallType.BLUEBALL, lossValues, true);
+//			selectNumberPanel.initSelectNumberPanelShow("注码：", 2, 10, 1, 12,
+//					SelectNumberBallType.BLUEBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}

@@ -6,7 +6,7 @@ import com.ruyicai.android.controller.compontent.selectnumberpanel.SelectNumberB
 
 /**
  * 七乐彩胆拖投注页面
- * 
+ *
  * @author xiang_000
  * @since RYC1.0 2013-4-29
  */
@@ -48,7 +48,7 @@ public class SevenHappyCourageSelectActivity extends SelectNumberActivity {
 
 	/**
 	 * 初始化拖码选号面板
-	 * 
+	 *
 	 * @param aPage_i
 	 *            页面索引
 	 * @param selectNumberPanel
@@ -56,19 +56,19 @@ public class SevenHappyCourageSelectActivity extends SelectNumberActivity {
 	 */
 	private void initDragSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
-			selectNumberPanel.initSelectNumberPanelShow("拖码区：", 1, 16, 1, 30,
-					SelectNumberBallType.REDBALL, null, false);
+//			selectNumberPanel.initSelectNumberPanelShow("拖码区：", 1, 16, 1, 30,
+//					SelectNumberBallType.REDBALL, null, false);
 		} else {
 			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
 					17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30 };
-			selectNumberPanel.initSelectNumberPanelShow("拖码区：", 1, 16, 1, 30,
-					SelectNumberBallType.REDBALL, lossValues, true);
+//			selectNumberPanel.initSelectNumberPanelShow("拖码区：", 1, 16, 1, 30,
+//					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 	}
 
 	/**
 	 * 初始化胆码选号面板
-	 * 
+	 *
 	 * @param aPage_i
 	 *            页面索引
 	 * @param selectNumberPanel
@@ -76,13 +76,13 @@ public class SevenHappyCourageSelectActivity extends SelectNumberActivity {
 	 */
 	private void initCourageSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
-			selectNumberPanel.initSelectNumberPanelShow("胆码区：", 6, 10, 1, 33,
-					SelectNumberBallType.REDBALL, null, false);
+//			selectNumberPanel.initSelectNumberPanelShow("胆码区：", 6, 10, 1, 33,
+//					SelectNumberBallType.REDBALL, null, false);
 		} else {
 			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
 					17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33 };
-			selectNumberPanel.initSelectNumberPanelShow("胆码区：", 6, 10, 1, 33,
-					SelectNumberBallType.REDBALL, lossValues, true);
+//			selectNumberPanel.initSelectNumberPanelShow("胆码区：", 6, 10, 1, 33,
+//					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 	}
 }

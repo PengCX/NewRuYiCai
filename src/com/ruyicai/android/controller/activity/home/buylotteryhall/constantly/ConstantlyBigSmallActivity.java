@@ -56,24 +56,24 @@ public class ConstantlyBigSmallActivity extends SelectNumberActivity implements
 	private void initNumberSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
 			// FIXME 不要在小球中显示数字，显示指定的文字
-			selectNumberPanel.initSelectNumberPanelShow("个位区：", 1, 16, 0, 4,
-					SelectNumberBallType.REDBALL, null, false);
+//			selectNumberPanel.initSelectNumberPanelShow("个位区：", 1, 16, 0, 4,
+//					SelectNumberBallType.REDBALL, null, false);
 		} else {
 			int[] lossValues = new int[] { 1, 2, 3, 4 };
-			selectNumberPanel.initSelectNumberPanelShow("个位区：", 1, 16, 0, 4,
-					SelectNumberBallType.REDBALL, lossValues, true);
+//			selectNumberPanel.initSelectNumberPanelShow("个位区：", 1, 16, 0, 4,
+//					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}
 
 	private void initDecadeSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
-			selectNumberPanel.initSelectNumberPanelShow("十位区：", 1, 16, 0, 4,
-					SelectNumberBallType.REDBALL, null, false);
+//			selectNumberPanel.initSelectNumberPanelShow("十位区：", 1, 16, 0, 4,
+//					SelectNumberBallType.REDBALL, null, false);
 		} else {
 			int[] lossValues = new int[] { 1, 2, 3, 4 };
-			selectNumberPanel.initSelectNumberPanelShow("十位区：", 1, 16, 0, 4,
-					SelectNumberBallType.REDBALL, lossValues, true);
+//			selectNumberPanel.initSelectNumberPanelShow("十位区：", 1, 16, 0, 4,
+//					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}

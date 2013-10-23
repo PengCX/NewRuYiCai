@@ -68,12 +68,12 @@
         </activity>
         <!-- 双色球自选页面 -->
         <activity
-            android:name=".controller.activity.home.buylotteryhall.doubleball.DoubleBallSelfSelectActivity"
+            android:name=".controller.activity.home.buylotteryhall.doubleball.DoubleBallSelfSelectViewPagerSelectNumberActivity"
             android:screenOrientation="portrait" >
         </activity>
         <!-- 双色球胆拖页面 -->
         <activity
-            android:name=".controller.activity.home.buylotteryhall.doubleball.DoubleBallCourageSelectActivity"
+            android:name=".controller.activity.home.buylotteryhall.doubleball.DoubleBallCourageSelectViewPagerSelectNumberActivity"
             android:screenOrientation="portrait" >
         </activity>
         <!-- 大乐透选号页面组 -->

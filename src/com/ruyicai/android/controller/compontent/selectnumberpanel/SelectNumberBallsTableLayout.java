@@ -1,6 +1,7 @@
 package com.ruyicai.android.controller.compontent.selectnumberpanel;
 
 import android.content.Context;
+import android.util.AttributeSet;
 import android.view.Gravity;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -10,7 +11,7 @@ import java.util.List;
 
 /**
  * 选号小球表格：容纳选号小球的表格
- * 
+ *
  * @author xiang_000
  * @since RYC1.0 2013-4-14
  */
@@ -22,15 +23,13 @@ public class SelectNumberBallsTableLayout extends TableLayout {
 	private int _fSelectBallTableLayoutRowNum = 1;
 	/** 选号面板每行的列数:默认为9列 */
 	private int _fSelectBallTableLayoutColumOfPreRow = 9;
-	/** 选号面板最后一行的列数 */
-	private int _fSelectBallTableLayoutColumOfLastRow;
 
 	/** 选号面板中选号小球数组 */
 	private SelectNumberBall[] _fSelectNumberBalls;
 	/** 选号小球起始的数字：默认起始值数字为1 */
 	private int _fSelectNumberBallStartNum = 1;
 	/** 选号小球的总个数：默认为9个 */
-	private int _fSelectBallNum = 9;
+	private int _fSelectNumberBallNum = 9;
 	/** 选号小球的类型：默认为红球 */
 	private SelectNumberBallType _fSelectNumberBallType = SelectNumberBallType.REDBALL;
 	/** 选号小球是否显示遗漏值：默认显示遗漏值 */
@@ -40,7 +39,7 @@ public class SelectNumberBallsTableLayout extends TableLayout {
 
 	/**
 	 * 获取选号小球的起始号码
-	 * 
+	 *
 	 * @return 选号小球的起始号码
 	 */
 	public int get_fSelectNumberBallStartNum() {
@@ -49,16 +48,16 @@ public class SelectNumberBallsTableLayout extends TableLayout {
 
 	/**
 	 * 获取选号小球的个数
-	 * 
+	 *
 	 * @return 选号小球的个数
 	 */
 	public int get_fSelectBallNum() {
-		return _fSelectBallNum;
+		return _fSelectNumberBallNum;
 	}
 
 	/**
 	 * 设置选号小球的类型
-	 * 
+	 *
 	 * @param _fSelectNumberBallType
 	 *            选号小球的类型
 	 */
@@ -68,7 +67,7 @@ public class SelectNumberBallsTableLayout extends TableLayout {
 
 	/**
 	 * 设置是否显示遗漏值标识
-	 * 
+	 *
 	 * @param _fIsShowLossValue
 	 *            显示遗漏值标识
 	 */
@@ -78,7 +77,7 @@ public class SelectNumberBallsTableLayout extends TableLayout {
 
 	/**
 	 * 设置选号小球起始号码
-	 * 
+	 *
 	 * @param _fSelectNumberBallStartNum
 	 *            选号小球起始号码
 	 */
@@ -88,86 +87,55 @@ public class SelectNumberBallsTableLayout extends TableLayout {
 
 	/**
 	 * 设置选号小球的个数
-	 * 
+	 *
 	 * @param _fSelectBallNum
 	 *            设置选号小球的个数
 	 */
-	public void set_fSelectBallNum(int _fSelectBallNum) {
-		this._fSelectBallNum = _fSelectBallNum;
+	public void set_fSelectNumberBallNum(int _fSelectBallNum) {
+		this._fSelectNumberBallNum = _fSelectBallNum;
 	}
 
 	/**
-	 * 构造函数
-	 * 
-	 * @param aContext
-	 *            上下文对象
-	 * @param aSelectNumberBallStartNum
-	 *            选号小球起始号码
-	 * @param aSelectBallNum
-	 *            选号小球个数
-	 * @param aSelectNumberBallType
-	 *            选号小球类型
-	 * @param aLossValues
-	 *            遗漏值数组
-	 * @param aIsShowLossValue
-	 *            是否显示遗漏值
+	 * 构造方法
+	 * @param aContext 上下文对象
 	 */
-	public SelectNumberBallsTableLayout(Context aContext, int aSelectNumberBallStartNum,
-			int aSelectBallNum, SelectNumberBallType aSelectNumberBallType, int[] aLossValues,
-			boolean aIsShowLossValue) {
+	private SelectNumberBallsTableLayout(Context aContext) {
 		super(aContext);
+	}
 
-		setAttributes(aContext, aSelectNumberBallStartNum, aSelectBallNum, aSelectNumberBallType,
-				aLossValues, aIsShowLossValue);
+	/**
+	 * 构造方法
+	 * @param context 上下文对象
+	 * @param attrs
+	 */
+	private SelectNumberBallsTableLayout(Context aContext, AttributeSet aAttrs) {
+		super(aContext, aAttrs);
+	}
 
-		caculateRowAndLastColum();
 
+	/**
+	 * 初始化选号小球表格的显示
+	 */
+	public void initSelectNumberBallsTableLayoutShow(){
+		caculateTableLayoutRowNum();
 		createSelectNumberBalls();
-
 		addSelectNumberBalls();
 	}
 
 	/**
-	 * 设置相关的属性
-	 * 
-	 * @param aContext
-	 *            上下文对象
-	 * @param aSelectNumberBallStartNum
-	 *            选号小球起始的号码
-	 * @param aSelectBallNum
-	 *            选号小球的个数
-	 * @param aSelectNumberBallType
-	 *            选号小球的类型
-	 * @param aLossValues
-	 *            遗漏值数组
-	 * @param aIsShowLossValue
-	 *            是否显示遗漏值
+	 * 计算选号面板的行数
 	 */
-	private void setAttributes(Context aContext, int aSelectNumberBallStartNum, int aSelectBallNum,
-			SelectNumberBallType aSelectNumberBallType, int[] aLossValues, boolean aIsShowLossValue) {
-		_fContext = aContext;
-		_fSelectNumberBallStartNum = aSelectNumberBallStartNum;
-		_fSelectBallNum = aSelectBallNum;
-		_fSelectNumberBallType = aSelectNumberBallType;
-		_fLossValues = aLossValues;
-		_fIsShowLossValue = aIsShowLossValue;
+	private void caculateTableLayoutRowNum() {
+		_fSelectBallTableLayoutRowNum = caculateRowOfPannel(_fSelectNumberBallNum);
 	}
 
 	/**
-	 * 计算选号面板的行列
-	 */
-	private void caculateRowAndLastColum() {
-		_fSelectBallTableLayoutRowNum = caculateRowOfPannel(_fSelectBallNum);
-		_fSelectBallTableLayoutColumOfLastRow = caculateColumOfLastRow(_fSelectBallNum);
-	}
-
-	/**
-	 * 创建选号小球的集合
+	 * 创建选号小球对象的集合
 	 */
 	private void createSelectNumberBalls() {
-		_fSelectNumberBalls = new SelectNumberBall[_fSelectBallNum];
+		_fSelectNumberBalls = new SelectNumberBall[_fSelectNumberBallNum];
 
-		for (int ball_i = 0; ball_i < _fSelectBallNum; ball_i++) {
+		for (int ball_i = 0; ball_i < _fSelectNumberBallNum; ball_i++) {
 			SelectNumberBall selectNumberBall = new SelectNumberBall(_fContext);
 
 			selectNumberBall.setNumber(String.valueOf(_fSelectNumberBallStartNum + ball_i));
@@ -179,27 +147,7 @@ public class SelectNumberBallsTableLayout extends TableLayout {
 	}
 
 	/**
-	 * 根据小球位置，为小球设置遗漏值
-	 * 
-	 * @param aSelectNumberBall
-	 *            选号小球
-	 * @param aBall_i
-	 *            小球的位置
-	 * @param aIsShowLossValue
-	 *            是否显示遗漏值
-	 */
-	private void setSelectNumberBallLossValueWithPosition(SelectNumberBall aSelectNumberBall,
-			int aBall_i, boolean aIsShowLossValue) {
-		// 如果没有遗漏值，默认为0，并不显示
-		if (_fLossValues == null) {
-			aSelectNumberBall.setLossValue("0", false);
-		} else {
-			aSelectNumberBall.setLossValue(String.valueOf(_fLossValues[aBall_i]), aIsShowLossValue);
-		}
-	}
-
-	/**
-	 * 添加选号小球
+	 * 将创建好的选号小球对象集合添加到表格布局中
 	 */
 	private void addSelectNumberBalls() {
 		for (int row_i = 0; row_i < _fSelectBallTableLayoutRowNum; row_i++) {
@@ -207,7 +155,7 @@ public class SelectNumberBallsTableLayout extends TableLayout {
 			TableRow tableRow = new TableRow(_fContext);
 
 			for (int colum_j = 0; colum_j < _fSelectBallTableLayoutColumOfPreRow; colum_j++) {
-				if (!isLastItem(_fSelectBallNum, row_i, colum_j)) {
+				if (!isLastItem(_fSelectNumberBallNum, row_i, colum_j)) {
 					// 创建每列选号小球
 					SelectNumberBall selectNumberBall = getSelectNumberBallWithRowAndColum(row_i,
 							colum_j);
@@ -228,8 +176,58 @@ public class SelectNumberBallsTableLayout extends TableLayout {
 	}
 
 	/**
+	 * 根据选号小球的序号计算在面板中的行数
+	 *
+	 * @param aBallNum
+	 *            选号小球的序号
+	 * @return 计算的小球所在行数结果
+	 */
+	private int caculateRowOfPannel(int aBallNum) {
+		if (isFullRow(aBallNum)) {
+			return aBallNum / _fSelectBallTableLayoutColumOfPreRow;
+		} else {
+			return aBallNum / _fSelectBallTableLayoutColumOfPreRow + 1;
+		}
+	}
+
+	/**
+	 * 根据选号小球的序号计算在选号面板中的列数
+	 *
+	 * @param aBallNum
+	 * @return
+	 */
+	private int caculateColumOfLastRow(int aBallNum) {
+
+		if (isFullRow(aBallNum)) {
+			return _fSelectBallTableLayoutColumOfPreRow;
+		} else {
+			return aBallNum % _fSelectBallTableLayoutColumOfPreRow;
+		}
+	}
+
+	/**
+	 * 根据小球位置，为小球设置遗漏值
+	 *
+	 * @param aSelectNumberBall
+	 *            选号小球
+	 * @param aBall_i
+	 *            小球的位置
+	 * @param aIsShowLossValue
+	 *            是否显示遗漏值
+	 */
+	private void setSelectNumberBallLossValueWithPosition(SelectNumberBall aSelectNumberBall,
+			int aBall_i, boolean aIsShowLossValue) {
+		// 如果没有遗漏值，默认为0，并不显示
+		if (_fLossValues == null) {
+			aSelectNumberBall.setLossValue("0", false);
+		} else {
+			aSelectNumberBall.setLossValue(String.valueOf(_fLossValues[aBall_i]), aIsShowLossValue);
+		}
+	}
+
+	/**
 	 * 判断第aBallNum选号小球是否是最后一个选项
-	 * 
+	 *
 	 * @param aBallNum
 	 *            判断的选号小球的序号
 	 * @param aRow
@@ -250,7 +248,7 @@ public class SelectNumberBallsTableLayout extends TableLayout {
 
 	/**
 	 * 根据行和列获取相应的小球对象
-	 * 
+	 *
 	 * @param aRow
 	 *            小球的行数
 	 * @param aColum
@@ -262,23 +260,8 @@ public class SelectNumberBallsTableLayout extends TableLayout {
 	}
 
 	/**
-	 * 根据选号小球的序号计算在面板中的行数
-	 * 
-	 * @param aBallNum
-	 *            选号小球的序号
-	 * @return 计算的小球所在行数结果
-	 */
-	private int caculateRowOfPannel(int aBallNum) {
-		if (isFullRow(aBallNum)) {
-			return aBallNum / _fSelectBallTableLayoutColumOfPreRow;
-		} else {
-			return aBallNum / _fSelectBallTableLayoutColumOfPreRow + 1;
-		}
-	}
-
-	/**
 	 * 是否是满行
-	 * 
+	 *
 	 * @param _aBallNum
 	 *            选号小球的个数
 	 * @return 是否是满行标识
@@ -287,30 +270,18 @@ public class SelectNumberBallsTableLayout extends TableLayout {
 		return _aBallNum % _fSelectBallTableLayoutColumOfPreRow == 0;
 	}
 
-	/**
-	 * 根据选号小球的序号计算在选号面板中的列数
-	 * 
-	 * @param aBallNum
-	 * @return
-	 */
-	private int caculateColumOfLastRow(int aBallNum) {
 
-		if (isFullRow(aBallNum)) {
-			return _fSelectBallTableLayoutColumOfPreRow;
-		} else {
-			return aBallNum % _fSelectBallTableLayoutColumOfPreRow;
-		}
-	}
+
 
 	/**
 	 * 获取选中小球的号码
-	 * 
+	 *
 	 * @return 选中小球号码集合
 	 */
 	public List<Integer> getSelectedBallNumbers() {
 		List<Integer> selectedNumberList = new ArrayList<Integer>();
 
-		for (int ball_i = 0; ball_i < _fSelectBallNum; ball_i++) {
+		for (int ball_i = 0; ball_i < _fSelectNumberBallNum; ball_i++) {
 			SelectNumberBall selectNumberBall = _fSelectNumberBalls[ball_i];
 
 			if (selectNumberBall.isSelected()) {
@@ -325,7 +296,7 @@ public class SelectNumberBallsTableLayout extends TableLayout {
 	 * 清空选中的号码小球
 	 */
 	public void clearSelectedNumberBalls() {
-		for (int ball_i = 0; ball_i < _fSelectBallNum; ball_i++) {
+		for (int ball_i = 0; ball_i < _fSelectNumberBallNum; ball_i++) {
 			SelectNumberBall selectNumberBall = _fSelectNumberBalls[ball_i];
 
 			if (selectNumberBall.isSelected()) {
@@ -336,7 +307,7 @@ public class SelectNumberBallsTableLayout extends TableLayout {
 
 	/**
 	 * 选定指定的小球，小组数组中是指定的小球的位置，如{0,3,4}指定第0,3和4个小球选中（注意，小球的个数从0个开始）
-	 * 
+	 *
 	 * @param aSpecifiedNumber
 	 *            指定小球的号码
 	 */
@@ -354,7 +325,7 @@ public class SelectNumberBallsTableLayout extends TableLayout {
 
 	/**
 	 * 获取已选择的小球号码字符串
-	 * 
+	 *
 	 * @return 已选择的小球号码字符串
 	 */
 	public String getSelectedNumbersString() {

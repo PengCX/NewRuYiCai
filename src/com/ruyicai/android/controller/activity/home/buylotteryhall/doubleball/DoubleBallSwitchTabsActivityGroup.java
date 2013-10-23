@@ -8,7 +8,7 @@ import com.ruyicai.android.controller.activity.home.buylotteryhall.LotterySwitch
 
 /**
  * 双色球选号页面组
- * 
+ *
  * @author xiang_000
  * @since RYC1.0 2013-4-5
  */
@@ -24,7 +24,7 @@ public class DoubleBallSwitchTabsActivityGroup extends LotterySwitchTabsActivity
 	@Override
 	protected void set_fSwithTabSpecClasses() {
 		_fSwithTabSpecClasses = new Class<?>[] { DoubleBallSelfSelectViewPagerSelectNumberActivity.class,
-				DoubleBallCourageSelectActivity.class };
+				DoubleBallCourageSelectViewPagerSelectNumberActivity.class };
 	}
 
 	@Override

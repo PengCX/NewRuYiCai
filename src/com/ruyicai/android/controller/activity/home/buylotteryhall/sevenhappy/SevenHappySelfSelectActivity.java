@@ -6,7 +6,7 @@ import com.ruyicai.android.controller.compontent.selectnumberpanel.SelectNumberB
 
 /**
  * 七乐彩自选页面
- * 
+ *
  * @author xiang_000
  * @since RYC1.0 2013-4-29
  */
@@ -44,7 +44,7 @@ public class SevenHappySelfSelectActivity extends SelectNumberActivity {
 
 	/**
 	 * 初始化选号区选号面板
-	 * 
+	 *
 	 * @param aPage_i
 	 *            页面索引
 	 * @param selectNumberPanel
@@ -52,13 +52,13 @@ public class SevenHappySelfSelectActivity extends SelectNumberActivity {
 	 */
 	private void initSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
-			selectNumberPanel.initSelectNumberPanelShow("选号区：", 7, 9, 1, 30,
-					SelectNumberBallType.REDBALL, null, false);
+//			selectNumberPanel.initSelectNumberPanelShow("选号区：", 7, 9, 1, 30,
+//					SelectNumberBallType.REDBALL, null, false);
 		} else {
 			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
 					17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30 };
-			selectNumberPanel.initSelectNumberPanelShow("选号区：", 7, 9, 1, 30,
-					SelectNumberBallType.REDBALL, lossValues, true);
+//			selectNumberPanel.initSelectNumberPanelShow("选号区：", 7, 9, 1, 30,
+//					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 	}
 }

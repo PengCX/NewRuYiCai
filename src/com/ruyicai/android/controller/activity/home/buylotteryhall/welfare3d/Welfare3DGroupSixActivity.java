@@ -10,7 +10,7 @@ import com.ruyicai.android.controller.compontent.selectnumberpanel.SelectNumberB
 
 /**
  * 福彩3D组六选号页面
- * 
+ *
  * @author xiang_000
  * @since RYC1.0 2013-4-29
  */
@@ -76,7 +76,7 @@ public class Welfare3DGroupSixActivity extends SelectNumberActivity implements
 
 	/**
 	 * 初始化组六和值注码选号面板
-	 * 
+	 *
 	 * @param aPage_i
 	 *            页面索引
 	 * @param selectNumberPanel
@@ -84,20 +84,20 @@ public class Welfare3DGroupSixActivity extends SelectNumberActivity implements
 	 */
 	private void initSumCodeNumSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
-			selectNumberPanel.initSelectNumberPanelShow("注码：", 1, 16, 3, 21,
-					SelectNumberBallType.REDBALL, null, false);
+//			selectNumberPanel.initSelectNumberPanelShow("注码：", 1, 16, 3, 21,
+//					SelectNumberBallType.REDBALL, null, false);
 		} else {
 			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
 					17, 18, 19, 20, 21, 22 };
-			selectNumberPanel.initSelectNumberPanelShow("注码：", 1, 16, 3, 21,
-					SelectNumberBallType.REDBALL, lossValues, true);
+//			selectNumberPanel.initSelectNumberPanelShow("注码：", 1, 16, 3, 21,
+//					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}
 
 	/**
 	 * 初始化组六注码选号面板
-	 * 
+	 *
 	 * @param aPage_i
 	 *            页面索引
 	 * @param selectNumberPanel
@@ -105,12 +105,12 @@ public class Welfare3DGroupSixActivity extends SelectNumberActivity implements
 	 */
 	private void initCodeNumSelectNumberPanel(int aPage_i, SelectNumberPanel selectNumberPanel) {
 		if (aPage_i == 0) {
-			selectNumberPanel.initSelectNumberPanelShow("注码：", 1, 16, 0, 10,
-					SelectNumberBallType.REDBALL, null, false);
+//			selectNumberPanel.initSelectNumberPanelShow("注码：", 1, 16, 0, 10,
+//					SelectNumberBallType.REDBALL, null, false);
 		} else {
 			int[] lossValues = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-			selectNumberPanel.initSelectNumberPanelShow("注码：", 1, 16, 0, 10,
-					SelectNumberBallType.REDBALL, lossValues, true);
+//			selectNumberPanel.initSelectNumberPanelShow("注码：", 1, 16, 0, 10,
+//					SelectNumberBallType.REDBALL, lossValues, true);
 		}
 		selectNumberPanel.setRandomButtonVisibiity(View.GONE);
 	}
