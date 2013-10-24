@@ -4,6 +4,7 @@
     <!-- 应用名称 -->
     <string name="app_name">RuYiCai</string>
 
+    <!-- 以下自定义控件，系统控件，和对话框等字符串资源id，按控件分类 -->
     <!-- 软件更新对话框 -->
     <string name="updatedialog_title_prompt">温馨提示</string>
     <string name="updatedialog_message_softwareupdate">现在存在新的版本，是否更新？</string>
@@ -90,6 +91,8 @@
     <string name="randombutton_button_randomselectnumber">机选号码</string>
     <string name="randombutton_button_unit">个</string>
 
+    
+    <!-- 以下是除了彩种投注页面之外其他页面的字符串资源，按着页面区分 -->
     <!-- 启动页面 -->
     <string name="splash_imageview_logodes">如意彩欢迎您！</string>
 
@@ -199,12 +202,18 @@
     <string name="bettinginformation_title_union">发起合买</string>
     <string name="bettinginformation_title_present">赠送彩票</string>
 
+    <!-- ！！！以下字符串资源为彩种投注部分的字符串资源，并按着购彩大厅中的排列顺序对各个彩种进行排序！！！ -->
     <!-- 双色球 -->
     <string name="doubleball">双色球</string>
+    <string name="doubleball_selfselect_redselectnumberpanel_title">红球区：</string>
+    <string name="doubleball_selfselect_blueselectnumberpanel_title">蓝球区：</string>
+    
 	<!-- 大乐透 -->
 	<string name="superlotto">大乐透</string>
-	<!-- 大乐透 -->
+	
+	<!-- 福彩3D -->
 	<string name="welfare3d">福彩3D</string>
+	
     <!-- 江西11选5 -->
     <string name="jiangxi11xuan5">江西11选5</string>
     <string name="jiangxi11xuan5_textview_selfselect_optionaltwopalymethod">至少选择2个号码投注，命中任意2位即中奖！奖金：6元</string>
@@ -233,6 +242,8 @@
     <string name="constantly_textview_fivestar_allselectplaymethod">每位选中1个或多个号码，按顺序全部猜中，猜中后前三或后三、前二或后二都可中奖！奖金：2000/200/20元</string>
     <string name="constantly_textview_bigsmallplaymethod">各位各选中1个号码投注，所选选中的号码与开奖的个位号码性质按位置相符即中奖！奖金：4元</string>
 
+    <!-- 竞彩足球 -->
+    
     <!-- 广东快乐十分 -->
     <string name="guangdonghappyvery">广东快乐十分</string>
     <string name="guangdonghappyvery_textview_selectonenumbettingplaymethod">至少选择1个号码投注，命中开奖在号码第一位即中奖！奖金：25元</string>
@@ -265,15 +276,26 @@
     <string name="elevenluckgold_textview_optionalseven_courageslectplaymethod">胆码可选1-6个，拖码至少选择2个，胆码加拖码≥8个，选号中任意5位于开奖号码一致即中奖！奖金：26元</string>
     <string name="elevenluckgold_textview_optionaleightplaymethod">至少选择8个号码投注，选号中任意5位于开奖号码一致即中奖！奖金：9元</string><!-- 竞彩足球 -->
     <string name="competefootball_playmethodchange_title">玩法切换</string>
+    
+    <!-- 广东11选5 -->
+    
     <!-- 排列三 -->
     <string name="arrangethree">排列三</string>
-    <!-- 排列五 -->
-    <string name="arrangefive">排列五</string>
-    <!-- 七星彩 -->
-    <string name="servenstar">七星彩</string>
+    
     <!-- 七乐彩 -->
     <string name="servenhappy">七乐彩</string>
+
     <!-- 22选5 -->
     <string name="twentytwoselectfive">22选5</string>
+    
+    <!-- 排列五 -->
+    <string name="arrangefive">排列五</string>
+    
+    <!-- 七星彩 -->
+    <string name="servenstar">七星彩</string>
+
+    <!-- 足彩 -->
+
+    <!-- 竞彩篮球 -->
 
 </resources>

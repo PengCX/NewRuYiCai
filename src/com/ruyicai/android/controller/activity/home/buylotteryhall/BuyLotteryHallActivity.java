@@ -62,14 +62,7 @@ public class BuyLotteryHallActivity extends BaseActivity implements OnClickListe
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.buylotteryhall_activity);
-//
-//		_fTitleBar.set_fOnRightButtonClickListener(new OnRightButtonClickListener() {
-//
-//			@Override
-//			public void onClick(View v) {
-//				Toast.makeText(BuyLotteryHallActivity.this, "登陆注册", Toast.LENGTH_SHORT).show();
-//			}
-//		});
+
 		// 初始化中部滑动面板显示
 		initMiddleSlidePanelShow();
 

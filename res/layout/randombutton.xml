@@ -8,7 +8,7 @@
     <!-- 选择号码个数按钮 -->
 
     <Button
-        android:id="@+id/randombutton_button_selectnum"
+        android:id="@+id/randombutton_button_selectrandomnum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/randombutton_selectnum_selector"/>

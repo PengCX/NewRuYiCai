@@ -11,136 +11,163 @@ import java.util.List;
 
 /**
  * 选号小球表格：容纳选号小球的表格
- *
+ * 
  * @author xiang_000
  * @since RYC1.0 2013-4-14
  */
-public class SelectNumberBallsTableLayout extends TableLayout {
+public class SelectNumberBallsTable extends TableLayout {
 	/** 上下文对象 */
 	private Context _fContext;
 
 	/** 选号面板选号小球的行数：默认为1行 */
-	private int _fSelectBallTableLayoutRowNum = 1;
+	private int _fRowNum = 1;
 	/** 选号面板每行的列数:默认为9列 */
-	private int _fSelectBallTableLayoutColumOfPreRow = 9;
+	private int _fColumOfPreRow = 9;
 
-	/** 选号面板中选号小球数组 */
+	/** 选号小球数组 */
 	private SelectNumberBall[] _fSelectNumberBalls;
 	/** 选号小球起始的数字：默认起始值数字为1 */
-	private int _fSelectNumberBallStartNum = 1;
+	private int _fStartNum;
 	/** 选号小球的总个数：默认为9个 */
-	private int _fSelectNumberBallNum = 9;
+	private int _fBallNum;
 	/** 选号小球的类型：默认为红球 */
-	private SelectNumberBallType _fSelectNumberBallType = SelectNumberBallType.REDBALL;
+	private SelectNumberBallType _fBallType;
 	/** 选号小球是否显示遗漏值：默认显示遗漏值 */
-	private boolean _fIsShowLossValue = true;
+	private boolean _fIsShowLossValue;
 	/** 选号小球遗漏值数组：默认全为0 */
 	private int[] _fLossValues;
+	
+	//初始化块，初始化选号小球表格的一些属性
+	{
+		_fStartNum = 1;
+		_fBallNum = 33;
+		_fBallType = SelectNumberBallType.REDBALL;
+		_fIsShowLossValue = false;
+	}
 
 	/**
 	 * 获取选号小球的起始号码
-	 *
+	 * 
 	 * @return 选号小球的起始号码
 	 */
 	public int get_fSelectNumberBallStartNum() {
-		return _fSelectNumberBallStartNum;
+		return _fStartNum;
 	}
 
 	/**
 	 * 获取选号小球的个数
-	 *
+	 * 
 	 * @return 选号小球的个数
 	 */
 	public int get_fSelectBallNum() {
-		return _fSelectNumberBallNum;
+		return _fBallNum;
 	}
-
-	/**
-	 * 设置选号小球的类型
-	 *
-	 * @param _fSelectNumberBallType
-	 *            选号小球的类型
-	 */
-	public void set_fSelectNumberBallType(SelectNumberBallType _fSelectNumberBallType) {
-		this._fSelectNumberBallType = _fSelectNumberBallType;
-	}
-
+	
 	/**
 	 * 设置是否显示遗漏值标识
-	 *
+	 * 
 	 * @param _fIsShowLossValue
 	 *            显示遗漏值标识
 	 */
-	public void set_fIsShowLossValue(boolean _fIsShowLossValue) {
-		this._fIsShowLossValue = _fIsShowLossValue;
+	public void set_fIsShowLossValue(boolean aIsShowLossValue) {
+		_fIsShowLossValue = aIsShowLossValue;
 	}
 
 	/**
 	 * 设置选号小球起始号码
-	 *
+	 * 
 	 * @param _fSelectNumberBallStartNum
 	 *            选号小球起始号码
 	 */
 	public void set_fSelectNumberBallStartNum(int _fSelectNumberBallStartNum) {
-		this._fSelectNumberBallStartNum = _fSelectNumberBallStartNum;
+		this._fStartNum = _fSelectNumberBallStartNum;
 	}
 
 	/**
 	 * 设置选号小球的个数
-	 *
+	 * 
 	 * @param _fSelectBallNum
 	 *            设置选号小球的个数
 	 */
-	public void set_fSelectNumberBallNum(int _fSelectBallNum) {
-		this._fSelectNumberBallNum = _fSelectBallNum;
+	public void set_fBallNum(int _fSelectBallNum) {
+		this._fBallNum = _fSelectBallNum;
 	}
-
+	
 	/**
-	 * 构造方法
-	 * @param aContext 上下文对象
+	 * 设置选号小球起始的数字
+	 * 
+	 * @param _fStartNum
+	 *            起始数字
 	 */
-	private SelectNumberBallsTableLayout(Context aContext) {
-		super(aContext);
+	public void set_fStartNum(int _fStartNum) {
+		this._fStartNum = _fStartNum;
+	}
+	
+	/**
+	 * 设置选号小球类型
+	 * 
+	 * @param aBallType
+	 *            选号小球类型
+	 */
+	public void set_fBallType(SelectNumberBallType aBallType) {
+		_fBallType = aBallType;
 	}
 
 	/**
 	 * 构造方法
-	 * @param context 上下文对象
+	 * 
+	 * @param aContext
+	 *            上下文对象
+	 */
+	public SelectNumberBallsTable(Context aContext) {
+		super(aContext);
+		_fContext = aContext;
+	}
+
+	/**
+	 * 构造方法
+	 * 
+	 * @param context
+	 *            上下文对象
 	 * @param attrs
 	 */
-	private SelectNumberBallsTableLayout(Context aContext, AttributeSet aAttrs) {
-		super(aContext, aAttrs);
+	private SelectNumberBallsTable(Context aContext, AttributeSet aAttributeSet) {
+		super(aContext, aAttributeSet);
+		_fContext = aContext;
 	}
-
 
 	/**
 	 * 初始化选号小球表格的显示
+	 * 
+	 * @return
 	 */
-	public void initSelectNumberBallsTableLayoutShow(){
-		caculateTableLayoutRowNum();
+	public void initSelectNumberBallsTableLayout() {
+		caculateRow();
+
 		createSelectNumberBalls();
+
 		addSelectNumberBalls();
 	}
 
 	/**
-	 * 计算选号面板的行数
+	 * 计算选号面板的行
 	 */
-	private void caculateTableLayoutRowNum() {
-		_fSelectBallTableLayoutRowNum = caculateRowOfPannel(_fSelectNumberBallNum);
+	private void caculateRow() {
+		_fRowNum = caculateRowOfPannel(_fBallNum);
 	}
 
 	/**
 	 * 创建选号小球对象的集合
 	 */
 	private void createSelectNumberBalls() {
-		_fSelectNumberBalls = new SelectNumberBall[_fSelectNumberBallNum];
+		_fSelectNumberBalls = new SelectNumberBall[_fBallNum];
 
-		for (int ball_i = 0; ball_i < _fSelectNumberBallNum; ball_i++) {
+		for (int ball_i = 0; ball_i < _fBallNum; ball_i++) {
 			SelectNumberBall selectNumberBall = new SelectNumberBall(_fContext);
 
-			selectNumberBall.setNumber(String.valueOf(_fSelectNumberBallStartNum + ball_i));
+			selectNumberBall.setNumber(String.valueOf(_fStartNum + ball_i));
 			setSelectNumberBallLossValueWithPosition(selectNumberBall, ball_i, _fIsShowLossValue);
-			selectNumberBall.setSelectNumberBallType(_fSelectNumberBallType);
+			selectNumberBall.setSelectNumberBallType(_fBallType);
 
 			_fSelectNumberBalls[ball_i] = selectNumberBall;
 		}
@@ -150,12 +177,12 @@ public class SelectNumberBallsTableLayout extends TableLayout {
 	 * 将创建好的选号小球对象集合添加到表格布局中
 	 */
 	private void addSelectNumberBalls() {
-		for (int row_i = 0; row_i < _fSelectBallTableLayoutRowNum; row_i++) {
+		for (int row_i = 0; row_i < _fRowNum; row_i++) {
 			// 创建每行选号小球
 			TableRow tableRow = new TableRow(_fContext);
 
-			for (int colum_j = 0; colum_j < _fSelectBallTableLayoutColumOfPreRow; colum_j++) {
-				if (!isLastItem(_fSelectNumberBallNum, row_i, colum_j)) {
+			for (int colum_j = 0; colum_j < _fColumOfPreRow; colum_j++) {
+				if (!isLastItem(_fBallNum, row_i, colum_j)) {
 					// 创建每列选号小球
 					SelectNumberBall selectNumberBall = getSelectNumberBallWithRowAndColum(row_i,
 							colum_j);
@@ -177,37 +204,23 @@ public class SelectNumberBallsTableLayout extends TableLayout {
 
 	/**
 	 * 根据选号小球的序号计算在面板中的行数
-	 *
+	 * 
 	 * @param aBallNum
 	 *            选号小球的序号
 	 * @return 计算的小球所在行数结果
 	 */
 	private int caculateRowOfPannel(int aBallNum) {
 		if (isFullRow(aBallNum)) {
-			return aBallNum / _fSelectBallTableLayoutColumOfPreRow;
+			return aBallNum / _fColumOfPreRow;
 		} else {
-			return aBallNum / _fSelectBallTableLayoutColumOfPreRow + 1;
+			return aBallNum / _fColumOfPreRow + 1;
 		}
 	}
 
-	/**
-	 * 根据选号小球的序号计算在选号面板中的列数
-	 *
-	 * @param aBallNum
-	 * @return
-	 */
-	private int caculateColumOfLastRow(int aBallNum) {
-
-		if (isFullRow(aBallNum)) {
-			return _fSelectBallTableLayoutColumOfPreRow;
-		} else {
-			return aBallNum % _fSelectBallTableLayoutColumOfPreRow;
-		}
-	}
 
 	/**
 	 * 根据小球位置，为小球设置遗漏值
-	 *
+	 * 
 	 * @param aSelectNumberBall
 	 *            选号小球
 	 * @param aBall_i
@@ -227,7 +240,7 @@ public class SelectNumberBallsTableLayout extends TableLayout {
 
 	/**
 	 * 判断第aBallNum选号小球是否是最后一个选项
-	 *
+	 * 
 	 * @param aBallNum
 	 *            判断的选号小球的序号
 	 * @param aRow
@@ -237,7 +250,7 @@ public class SelectNumberBallsTableLayout extends TableLayout {
 	 * @return 是否是最后一个选项标识
 	 */
 	private boolean isLastItem(int aBallNum, int aRow, int aColum) {
-		int itemIndex = aRow * _fSelectBallTableLayoutColumOfPreRow + aColum;
+		int itemIndex = aRow * _fColumOfPreRow + aColum;
 
 		if (itemIndex == aBallNum) {
 			return true;
@@ -248,7 +261,7 @@ public class SelectNumberBallsTableLayout extends TableLayout {
 
 	/**
 	 * 根据行和列获取相应的小球对象
-	 *
+	 * 
 	 * @param aRow
 	 *            小球的行数
 	 * @param aColum
@@ -256,32 +269,29 @@ public class SelectNumberBallsTableLayout extends TableLayout {
 	 * @return 获取的指向选号小球对象
 	 */
 	private SelectNumberBall getSelectNumberBallWithRowAndColum(int aRow, int aColum) {
-		return _fSelectNumberBalls[(aRow * _fSelectBallTableLayoutColumOfPreRow) + aColum];
+		return _fSelectNumberBalls[(aRow * _fColumOfPreRow) + aColum];
 	}
 
 	/**
 	 * 是否是满行
-	 *
+	 * 
 	 * @param _aBallNum
 	 *            选号小球的个数
 	 * @return 是否是满行标识
 	 */
 	private boolean isFullRow(int _aBallNum) {
-		return _aBallNum % _fSelectBallTableLayoutColumOfPreRow == 0;
+		return _aBallNum % _fColumOfPreRow == 0;
 	}
-
-
-
 
 	/**
 	 * 获取选中小球的号码
-	 *
+	 * 
 	 * @return 选中小球号码集合
 	 */
 	public List<Integer> getSelectedBallNumbers() {
 		List<Integer> selectedNumberList = new ArrayList<Integer>();
 
-		for (int ball_i = 0; ball_i < _fSelectNumberBallNum; ball_i++) {
+		for (int ball_i = 0; ball_i < _fBallNum; ball_i++) {
 			SelectNumberBall selectNumberBall = _fSelectNumberBalls[ball_i];
 
 			if (selectNumberBall.isSelected()) {
@@ -296,7 +306,7 @@ public class SelectNumberBallsTableLayout extends TableLayout {
 	 * 清空选中的号码小球
 	 */
 	public void clearSelectedNumberBalls() {
-		for (int ball_i = 0; ball_i < _fSelectNumberBallNum; ball_i++) {
+		for (int ball_i = 0; ball_i < _fBallNum; ball_i++) {
 			SelectNumberBall selectNumberBall = _fSelectNumberBalls[ball_i];
 
 			if (selectNumberBall.isSelected()) {
@@ -307,7 +317,7 @@ public class SelectNumberBallsTableLayout extends TableLayout {
 
 	/**
 	 * 选定指定的小球，小组数组中是指定的小球的位置，如{0,3,4}指定第0,3和4个小球选中（注意，小球的个数从0个开始）
-	 *
+	 * 
 	 * @param aSpecifiedNumber
 	 *            指定小球的号码
 	 */
@@ -325,7 +335,7 @@ public class SelectNumberBallsTableLayout extends TableLayout {
 
 	/**
 	 * 获取已选择的小球号码字符串
-	 *
+	 * 
 	 * @return 已选择的小球号码字符串
 	 */
 	public String getSelectedNumbersString() {

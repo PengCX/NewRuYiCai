@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- 双色球自选普通页面 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.ruyicai.android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-
-    <TextView
+    
+    <!-- 红球选号面板 -->
+    <com.ruyicai.android.controller.compontent.panel.SelectNumberPanel
+        android:id="@+id/doubleball_selfselect_red_selectnumberpanel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="selfnormal" />
+        custom:_fIsShowLossValue="false"
+        custom:_fRandomButtonDropDownMenuButtonNum="11"
+        custom:_fRandomButtonMinRandomNum="6"
+        custom:_fRandomButtonRandomNum="6"
+        custom:_fSelectNumberBallNum="33"
+        custom:_fSelectNumberBallStartNum="1"
+        custom:_fSelectNumberBallType="red"
+        custom:_fTitleTextId="@string/doubleball_selfselect_redselectnumberpanel_title" />
 
 </LinearLayout>

@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.LinearLayout.LayoutParams;
 
 /**
  * 标题栏自定义控件：该控件主要包含控件：左侧标签（_fLeftTextView）和右侧按钮（_fRightButton）两个元素；包含自定义属性：
@@ -45,6 +46,14 @@ public class TitleBar extends RelativeLayout {
 
 	/** 右按钮点击监听接口 */
 	private OnRightButtonClickListener _fOnRightButtonClickListener;
+	
+	//初始化代码块，初始化标题栏根线性布局的属性
+	{
+		LayoutParams layoutParams = new LayoutParams(LayoutParams.MATCH_PARENT,
+				LayoutParams.WRAP_CONTENT);
+		setLayoutParams(layoutParams);
+		setBackgroundResource(R.drawable.promptdialog_title_background);
+	}
 
 	/**
 	 * 暴露相关的属性，为了在xml文件中初始化意外的地方改变相关的属性
@@ -123,37 +132,43 @@ public class TitleBar extends RelativeLayout {
 		super(aContext, aAttributeSet);
 		_fContext = aContext;
 
-		// 获取标题栏布局
-		LayoutInflater layoutInflater = (LayoutInflater) aContext
-				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		layoutInflater.inflate(R.layout.title_bar, this);
-
 		// 获取自定义属性
 		TypedArray typedArray = _fContext.getTheme().obtainStyledAttributes(aAttributeSet,
 				R.styleable.TitleBar, 0, 0);
 		try {
-			_fLeftTextId = typedArray.getResourceId(R.styleable.TitleBar__fLeftTextId, -1);
+			// 左侧文本默认显示：双色球
+			_fLeftTextId = typedArray.getResourceId(R.styleable.TitleBar__fLeftTextId,
+					R.string.doubleball);
+			// 右侧按钮默认显示：登陆注册
 			_fRightButtonTextId = typedArray.getResourceId(
-					R.styleable.TitleBar__fRightButtonTextId, -1);
+					R.styleable.TitleBar__fRightButtonTextId,
+					R.string.buylotteryhall_titlebar_rightbuttontext);
+			// 右侧按钮显示默认：不显示
 			_fIsShowRightButton = typedArray.getBoolean(R.styleable.TitleBar__fIsShowRightButton,
 					false);
+			// 下拉按钮显示默认：不显示
 			_fIsShowSpreadButton = typedArray.getBoolean(R.styleable.TitleBar__fIsShowSpreadButton,
 					false);
 		} finally {
 			typedArray.recycle();
 		}
+		
+		// 获取标题栏布局
+		LayoutInflater layoutInflater = (LayoutInflater) aContext
+				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		/**
+		 * inflate方法说明：第一个参数resource:是指填充的布局资源id,第二个参数root:是resource布局填充到的根布局。
+		 * 相关解释：在这里为设置为root为本身this，将title_bar中的视图以TitleBar（继承RelativeLayout）
+		 * 自身为根视图填充， 并且在title_bar布局中使用merge标签，避免深的视图结构。
+		 */
+		layoutInflater.inflate(R.layout.title_bar, this);
 
 		// 获取标题栏控件并设置相关的属性
 		_fLeftTextView = (TextView) findViewById(R.id.titlebar_textview_title);
-		if (_fLeftTextId != -1) {
-			_fLeftTextView.setText(_fLeftTextId);
-		}
+		_fLeftTextView.setText(_fLeftTextId);
 
 		_fRightButton = (Button) findViewById(R.id.titlebar_button_loginorregister);
-		if (_fRightButtonTextId != -1) {
-			_fRightButton.setText(_fRightButtonTextId);
-		}
-
+		_fRightButton.setText(_fRightButtonTextId);
 		if (_fIsShowRightButton) {
 			_fRightButton.setVisibility(View.VISIBLE);
 		}

@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- 标题栏布局 -->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/promptdialog_title_background" >
-
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- 标题 -->
 
     <TextView
@@ -40,5 +36,4 @@
         android:layout_marginRight="10dp"
         android:background="@drawable/titlebar_spreadbutton_background"
         android:visibility="gone" />
-
-</RelativeLayout>
+</merge>

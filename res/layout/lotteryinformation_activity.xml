@@ -7,6 +7,9 @@
     android:background="@color/white"
     android:orientation="horizontal" >
 
-
+    <com.ruyicai.android.controller.compontent.button.RandomSelectButton
+        android:id="@+id/randomSelectNumberButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

@@ -2,7 +2,7 @@ package com.ruyicai.android.controller.compontent.dropdownmenu;
 
 import com.ruyicai.android.R;
 import com.ruyicai.android.controller.adapter.gridview.RandomButtonGridViewAdapter;
-import com.ruyicai.android.controller.compontent.button.RandomSelectNumberButton;
+import com.ruyicai.android.controller.compontent.button.RandomSelectButton;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -20,11 +20,11 @@ import android.widget.PopupWindow;
  * @author xiang_000
  * @since RYC1.0 2013-4-12
  */
-public class RandomButtonDropDownMenu {
+public class SelectRandomNumDropDownMenu {
 	/** 上下文对象 */
 	private Context _fContext;
 	/** 产生下拉菜单的按钮 */
-	private RandomSelectNumberButton _fRandomSelectNumberButton;
+	private RandomSelectButton _fRandomSelectNumberButton;
 	/** popupwindow对象 */
 	private PopupWindow _fPopupWindow;
 	/** 选号按钮网格布局 */
@@ -41,11 +41,11 @@ public class RandomButtonDropDownMenu {
 	 * @param _fRandomSelectNumberButton
 	 *            产生下拉菜单的按钮
 	 */
-	public void set_fRandomSelectNumberButton(RandomSelectNumberButton _fRandomSelectNumberButton) {
+	public void set_fRandomSelectNumberButton(RandomSelectButton _fRandomSelectNumberButton) {
 		this._fRandomSelectNumberButton = _fRandomSelectNumberButton;
 	}
 
-	public RandomButtonDropDownMenu(Context aContext, int aMinRandomNum, int aSelectBallNum) {
+	public SelectRandomNumDropDownMenu(Context aContext, int aMinRandomNum, int aSelectBallNum) {
 		setAttributes(aContext, aMinRandomNum, aSelectBallNum);
 
 		View contentView = setDropDownMenuLayout();
@@ -151,7 +151,7 @@ public class RandomButtonDropDownMenu {
 		@Override
 		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 			String randomNum = (String) ((Button) view).getText();
-			_fRandomSelectNumberButton.set_fRandomSelectNum(Integer.valueOf(randomNum));
+			_fRandomSelectNumberButton.set_fRandomNum(Integer.valueOf(randomNum));
 			dismissRandomButtonDropDownMenu();
 		}
 	}

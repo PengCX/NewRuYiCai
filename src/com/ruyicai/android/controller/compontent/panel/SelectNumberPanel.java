@@ -1,9 +1,9 @@
 package com.ruyicai.android.controller.compontent.panel;
 
 import com.ruyicai.android.R;
-import com.ruyicai.android.controller.compontent.button.RandomSelectNumberButton;
+import com.ruyicai.android.controller.compontent.button.RandomSelectButton;
 import com.ruyicai.android.controller.compontent.selectnumberpanel.SelectNumberBallType;
-import com.ruyicai.android.controller.compontent.selectnumberpanel.SelectNumberBallsTableLayout;
+import com.ruyicai.android.controller.compontent.selectnumberpanel.SelectNumberBallsTable;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -26,27 +26,13 @@ public class SelectNumberPanel extends LinearLayout {
 	/** 标题文本框 */
 	private TextView _fTitleTextView;
 	/** 随机选号按钮 */
-	private RandomSelectNumberButton _fRandomSelectNumberButton;
+	private RandomSelectButton _fRandomSelectButton;
 	/** 选号小球表格布局 */
-	private SelectNumberBallsTableLayout _fSelectNumberBallsTableLayout;
+	private SelectNumberBallsTable _fSelectNumberBallsTable;
 
 	/** 标题字符串资源id */
 	private int _fTitleTextId;
-	/**随机按钮随机号码个数*/
-	private int _fRandomNumberNum;
-	/** 随机按钮最小的随机个数 */
-	private int _fRandomButtonMinRandomNum;
-	/** 随机按钮下拉菜单按钮的个数 */
-	private int _fRandomButtonDropDownMenuButtonNum;
-	/** 选号小球的起始号码 */
-	private int _fSelectNumberBallStartNum;
-	/** 选号小球的个数 */
-	private int _fSelectNumberBallNum;
-	/** 选号小球的类型 */
-	private SelectNumberBallType _fSelectNumberBallType;
-	/** 是否显示遗漏值 */
-	private boolean _fIsShowLossValue;
-
+	
 	/**
 	 * 构造函数
 	 *
@@ -60,7 +46,7 @@ public class SelectNumberPanel extends LinearLayout {
 
 	/**
 	 * 构造函数
-	 *
+	 * 
 	 * @param aContext
 	 *            上下文对象
 	 * @param aAttrs
@@ -69,72 +55,110 @@ public class SelectNumberPanel extends LinearLayout {
 	public SelectNumberPanel(Context aContext, AttributeSet aAttributeSet) {
 		super(aContext, aAttributeSet);
 		_fContext = aContext;
+		inflaterSelectNumberPanelLayout(aContext);
 
+		getCustomDefineAttributes(aAttributeSet);
+		
+		initTitleTextViewShow();
+
+		initSelectNumberBallsTableShow();
+	}
+
+	/**
+	 * 解析并填充选号面板的布局
+	 * 
+	 * @param aContext
+	 *            上下文对象
+	 */
+	private void inflaterSelectNumberPanelLayout(Context aContext) {
 		// 获取标题栏布局
 		LayoutInflater layoutInflater = (LayoutInflater) aContext
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		layoutInflater.inflate(R.layout.selectnumber_panel, this);
 
+		_fTitleTextView = (TextView) findViewById(R.id.selectnumberpanel_textview_title);
+		_fRandomSelectButton = (RandomSelectButton) findViewById(R.id.selectnumberpanel_selectnumberbutton_random);
+		_fSelectNumberBallsTable = new SelectNumberBallsTable(_fContext);
+	}
+
+	/**
+	 * 获取自定义属性的值
+	 * 
+	 * @param aAttributeSet
+	 *            aAttributeSet对象
+	 */
+	private void getCustomDefineAttributes(AttributeSet aAttributeSet) {
 		// 获取自定义属性
 		TypedArray typedArray = _fContext.getTheme().obtainStyledAttributes(aAttributeSet,
 				R.styleable.SelectNumberPanel, 0, 0);
 		try {
+			/**
+			 * 获取选号面板标题属性
+			 */
+			// 标题默认显示：红球区：
 			_fTitleTextId = typedArray.getResourceId(R.styleable.SelectNumberPanel__fTitleTextId,
-					-1);
-			_fRandomNumberNum = typedArray.getInt(R.styleable.SelectNumberPanel__fRandomNumberNum, -1);
-			_fRandomButtonMinRandomNum = typedArray.getInt(
-					R.styleable.SelectNumberPanel__fSelectNumberBallNum, -1);
-			_fRandomButtonDropDownMenuButtonNum = typedArray.getInt(
-					R.styleable.SelectNumberPanel__fRandomButtonDropDownMenuButtonNum, -1);
-			_fSelectNumberBallStartNum = typedArray.getInt(
-					R.styleable.SelectNumberPanel__fSelectNumberBallStartNum, -1);
-			_fSelectNumberBallNum = typedArray.getInt(
-					R.styleable.SelectNumberPanel__fSelectNumberBallNum, -1);
+					R.string.doubleball_selfselect_redselectnumberpanel_title);
+			
+			/**
+			 * 获取随机按钮属性
+			 */
+			// 随机按钮默认随机号码个数：6个号码
+			_fRandomSelectButton.set_fRandomNum(typedArray.getInt(
+					R.styleable.SelectNumberPanel__fRandomButtonRandomNum, 6));
+			// 随机按钮默认最小随机号码个数：6个号码
+			_fRandomSelectButton.set_fMinRandomNum(typedArray.getInt(
+					R.styleable.SelectNumberPanel__fRandomButtonMinRandomNum, 6));
+			// 随机按钮下拉菜单随机按钮个数：11个按钮
+			_fRandomSelectButton.set_fDropDownMenuButtonNum(typedArray.getInt(
+					R.styleable.SelectNumberPanel__fRandomButtonDropDownMenuButtonNum, 11));
+
+			/**
+			 * 获取选号小球表格属性
+			 */
+			// 选号小球默认起始号码：1
+			_fSelectNumberBallsTable.set_fStartNum(typedArray.getInt(
+					R.styleable.SelectNumberPanel__fSelectNumberBallStartNum, 1));
+			// 选号小球默认个数：33个
+			_fSelectNumberBallsTable.set_fBallNum(typedArray.getInt(
+					R.styleable.SelectNumberPanel__fSelectNumberBallNum, 33));
+			// 选号小球类型：红球
 			int ballType = typedArray.getInt(R.styleable.SelectNumberPanel__fSelectNumberBallType,
 					0);
 			if (ballType == 0) {
-				_fSelectNumberBallType = SelectNumberBallType.REDBALL;
+				_fSelectNumberBallsTable.set_fBallType(SelectNumberBallType.REDBALL);
 			} else {
-				_fSelectNumberBallType = SelectNumberBallType.BLUEBALL;
+				_fSelectNumberBallsTable.set_fBallType(SelectNumberBallType.BLUEBALL);
 			}
-			_fIsShowLossValue = typedArray.getBoolean(
-					R.styleable.SelectNumberPanel__fIsShowLossValue, false);
+			// 是否显示遗漏值默认：不显示
+			_fSelectNumberBallsTable.set_fIsShowLossValue(typedArray.getBoolean(
+					R.styleable.SelectNumberPanel__fIsShowLossValue, false));
 		} finally {
 			typedArray.recycle();
 		}
+	}
 
-		_fTitleTextView = (TextView) findViewById(R.id.selectnumberpanel_textview_title);
-		if (_fTitleTextId != -1) {
-			_fTitleTextView.setText(_fTitleTextId);
-		}
+	/**
+	 * 初始化选号面板标题显示
+	 */
+	private void initTitleTextViewShow() {
+		_fTitleTextView.setText(_fTitleTextId);
+	}
 
-		_fRandomSelectNumberButton = (RandomSelectNumberButton) findViewById(R.id.selectnumberpanel_selectnumberbutton_random);
-		if (_fRandomNumberNum != -1) {
-			_fRandomSelectNumberButton.set_fRandomSelectNum(_fRandomNumberNum);
-		}
-		if (_fRandomButtonMinRandomNum != -1) {
-			_fRandomSelectNumberButton.setDropDownMenuMinRandomNum(_fRandomButtonMinRandomNum);
-		}
-		if (_fRandomButtonDropDownMenuButtonNum != -1) {
-			_fRandomSelectNumberButton
-					.setDropDownMenuSelectButtonNum(_fRandomButtonDropDownMenuButtonNum);
-		}
-
-		_fSelectNumberBallsTableLayout = (SelectNumberBallsTableLayout) findViewById(R.id.selectnumberpanel_selectnumberballs_tablelayout);
-		if(_fSelectNumberBallStartNum != -1){
-			_fSelectNumberBallsTableLayout.set_fSelectNumberBallStartNum(_fSelectNumberBallStartNum);
-		}
-
-		if(_fSelectNumberBallNum != -1){
-			_fSelectNumberBallsTableLayout.set_fSelectNumberBallNum(_fSelectNumberBallNum);
-		}
-		_fSelectNumberBallsTableLayout.set_fSelectNumberBallType(_fSelectNumberBallType);
-		_fSelectNumberBallsTableLayout.set_fIsShowLossValue(_fIsShowLossValue);
-		_fSelectNumberBallsTableLayout.initSelectNumberBallsTableLayoutShow();
-
+	/**
+	 * 初始化选号小球表格的显示
+	 */
+	public void initSelectNumberBallsTableShow() {
+		// FIXME 在没有输入任何参数的情况下的处理
+		_fSelectNumberBallsTable.initSelectNumberBallsTableLayout();
+		
+		LayoutParams layoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT,
+				LayoutParams.WRAP_CONTENT);
+		layoutParams.topMargin = 5;
+		addView(_fSelectNumberBallsTable, layoutParams);
+		
+		
 		// 设置随机按钮控制的选号小球表格
-		_fRandomSelectNumberButton
-				.set_fSelectNumberBallsTableLayout(_fSelectNumberBallsTableLayout);
+		_fRandomSelectButton.set_fSelectNumberBallsTableLayout(_fSelectNumberBallsTable);
 	}
 
 	/**
@@ -154,7 +178,7 @@ public class SelectNumberPanel extends LinearLayout {
 	 *            最小的随机号码个数
 	 */
 	public void setMinRandomNum(int aMinRandomNum) {
-		_fRandomSelectNumberButton.setDropDownMenuMinRandomNum(aMinRandomNum);
+		_fRandomSelectButton.setDropDownMenuMinRandomNum(aMinRandomNum);
 	}
 
 	/**
@@ -164,14 +188,14 @@ public class SelectNumberPanel extends LinearLayout {
 	 *            下拉菜单选择随机数个数按钮的个数
 	 */
 	public void setSelectButtonNum(int aSelectButtonNum) {
-		_fRandomSelectNumberButton.setDropDownMenuSelectButtonNum(aSelectButtonNum);
+		_fRandomSelectButton.setDropDownMenuSelectButtonNum(aSelectButtonNum);
 	}
 
 	/**
 	 * 设置选号小球的起始号码
 	 */
 	public void setSelectBallsStartNum(int aSelectNumberBallStartNum) {
-		_fSelectNumberBallsTableLayout.set_fSelectNumberBallStartNum(aSelectNumberBallStartNum);
+		_fSelectNumberBallsTable.set_fSelectNumberBallStartNum(aSelectNumberBallStartNum);
 	}
 
 	/**
@@ -182,8 +206,8 @@ public class SelectNumberPanel extends LinearLayout {
 	 */
 	public void setRandomButtonVisibiity(int visibility) {
 		// FIXME 如何控制在为空的调用的时候的异常处理
-		if (_fRandomSelectNumberButton != null) {
-			_fRandomSelectNumberButton.setVisibility(visibility);
+		if (_fRandomSelectButton != null) {
+			_fRandomSelectButton.setVisibility(visibility);
 		}
 	}
 
@@ -193,6 +217,6 @@ public class SelectNumberPanel extends LinearLayout {
 	 * @return 当前选择的小球号码集合
 	 */
 	public String getSelectedNumbersString() {
-		return _fSelectNumberBallsTableLayout.getSelectedNumbersString();
+		return _fSelectNumberBallsTable.getSelectedNumbersString();
 	}
 }

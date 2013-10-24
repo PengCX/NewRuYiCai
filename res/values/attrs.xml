@@ -19,7 +19,7 @@
  		<!-- 标题字符串资源id -->
         <attr name="_fTitleTextId" format="reference" />
         <!-- 随机按钮随机号码个数 -->
-        <attr name="_fRandomNumberNum" format="integer" />
+        <attr name="_fRandomButtonRandomNum" format="integer" />
         <!-- 随机按钮最小的随机个数 -->
         <attr name="_fRandomButtonMinRandomNum" format="integer" />
         <!-- 随机按钮下拉菜单按钮的个数 -->
@@ -36,5 +36,15 @@
         <!-- 是否显示遗漏值 -->
         <attr name="_fIsShowLossValue" format="boolean" />
     </declare-styleable>
-
+    
+     <!-- 随机按钮属性 -->
+    <declare-styleable name="RandomSelectButton">
+        <!-- 随机按钮随机号码个数 -->
+        <attr name="_fRandomNum" format="integer" />
+        <!-- 随机按钮最小的随机个数 -->
+        <attr name="_fMinRandomNum" format="integer" />
+        <!-- 随机按钮下拉菜单按钮的个数 -->
+        <attr name="_fDropDownMenuButtonNum" format="integer" />
+    </declare-styleable>
+    
 </resources>

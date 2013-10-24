@@ -11,6 +11,7 @@
         android:gravity="center_vertical" >
 
         <!-- 标题 -->
+
         <TextView
             android:id="@+id/selectnumberpanel_textview_title"
             android:layout_width="wrap_content"
@@ -21,20 +22,14 @@
             android:textSize="16sp" />
 
         <!-- 随机选号按钮 -->
-        <com.ruyicai.android.controller.compontent.selectnumber.RandomSelectNumberButton
+
+        <com.ruyicai.android.controller.compontent.button.RandomSelectButton
             android:id="@+id/selectnumberpanel_selectnumberbutton_random"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true" />
-
-        <!-- 选号小球表格 -->
-        <com.ruyicai.android.controller.compontent.selectnumberpanel.SelectNumberBallsTableLayout
-            android:id="@+id/selectnumberpanel_selectnumberballs_tablelayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/selectnumberpanel_randomselectnumberbutton_random"/>
-
     </RelativeLayout>
+    
+    <!-- ！！！经过尝试，选号小球表格继承了TableLayout，无法直接在XML中应用布局，所以改用代码创建对象添加 -->
 
 </LinearLayout>
