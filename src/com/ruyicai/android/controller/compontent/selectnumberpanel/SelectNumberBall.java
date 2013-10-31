@@ -29,13 +29,21 @@ public class SelectNumberBall extends LinearLayout {
 	private TextView _fLossValueTextView;
 
 	/** 小球编号：默认标号为0 */
-	private String _fNumber = "0";
+	private String _fNumber;
 	/** 小球遗漏值：默认遗漏值为0 */
-	private String _fLossValue = "0";
+	private String _fLossValue;
 	/** 选号球类型：默认为红球 */
-	private SelectNumberBallType _fSelectNumberBallType = SelectNumberBallType.REDBALL;
+	private SelectNumberBallType _fSelectNumberBallType;
 	/** 是否显示遗漏值：默认显示遗漏值 */
-	private boolean _fIsShowLossValue = true;
+	private boolean _fIsShowLossValue;
+
+	// 初始化代码块，初始化选号小球的默认属性
+	{
+		_fNumber = "0";
+		_fLossValue = "0";
+		_fSelectNumberBallType = SelectNumberBallType.REDBALL;
+		_fIsShowLossValue = true;
+	}
 
 	/**
 	 * 获取选号小球的编号

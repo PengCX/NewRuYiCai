@@ -8,6 +8,7 @@ import com.ruyicai.android.controller.adapter.viewpager.ViewPagerAdapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,6 +31,13 @@ public abstract class LotteryViewPagerSelectNumberActivity extends Activity {
 	 * 设置显示的布局资源id数组
 	 */
 	protected abstract void setShowLayoutIds();
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.lottery_viewpager_activity);
+		_fViewPager = (ViewPager) findViewById(R.id.lottery_viewpagers_slidearea);
+	}
 
 	@Override
 	protected void onStart() {

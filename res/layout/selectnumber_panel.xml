@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- 选号面板页面布局 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+<merge xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -29,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true" />
     </RelativeLayout>
-    
+
     <!-- ！！！经过尝试，选号小球表格继承了TableLayout，无法直接在XML中应用布局，所以改用代码创建对象添加 -->
 
-</LinearLayout>
+</merge>

@@ -1,13 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- 双色球自选遗漏值页面 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.ruyicai.android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
+    
+      <!-- 红球选号面板 -->
 
-    <TextView
+    <com.ruyicai.android.controller.compontent.panel.SelectNumberPanel
+        android:id="@+id/doubleball_selfselect_loss_red_selectnumberpanel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="selfloss" />
+        android:layout_marginTop="10dp"
+        custom:_fIsShowLossValue="true"
+        custom:_fRandomButtonDropDownMenuButtonNum="11"
+        custom:_fRandomButtonMinRandomNum="6"
+        custom:_fRandomButtonRandomNum="6"
+        custom:_fSelectNumberBallNum="33"
+        custom:_fSelectNumberBallStartNum="1"
+        custom:_fSelectNumberBallType="red"
+        custom:_fTitleTextId="@string/doubleball_selfselect_redselectnumberpanel_title" />
+
+    <!-- 蓝球选号面板 -->
+
+    <com.ruyicai.android.controller.compontent.panel.SelectNumberPanel
+        android:id="@+id/doubleball_selfselect_loss_blue_selectnumberpanel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        custom:_fIsShowLossValue="true"
+        custom:_fRandomButtonDropDownMenuButtonNum="16"
+        custom:_fRandomButtonMinRandomNum="1"
+        custom:_fRandomButtonRandomNum="1"
+        custom:_fSelectNumberBallNum="16"
+        custom:_fSelectNumberBallStartNum="1"
+        custom:_fSelectNumberBallType="blue"
+        custom:_fTitleTextId="@string/doubleball_selfselect_redselectnumberpanel_title" />
 
 </LinearLayout>

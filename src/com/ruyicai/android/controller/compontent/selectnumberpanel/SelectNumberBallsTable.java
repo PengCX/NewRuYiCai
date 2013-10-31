@@ -19,26 +19,28 @@ public class SelectNumberBallsTable extends TableLayout {
 	/** 上下文对象 */
 	private Context _fContext;
 
-	/** 选号面板选号小球的行数：默认为1行 */
-	private int _fRowNum = 1;
-	/** 选号面板每行的列数:默认为9列 */
-	private int _fColumOfPreRow = 9;
+	/** 选号面板选号小球的行数 */
+	private int _fRowNum;
+	/** 选号面板每行的列数 */
+	private int _fColumOfPreRow;
 
 	/** 选号小球数组 */
 	private SelectNumberBall[] _fSelectNumberBalls;
-	/** 选号小球起始的数字：默认起始值数字为1 */
+	/** 选号小球起始的数字*/
 	private int _fStartNum;
-	/** 选号小球的总个数：默认为9个 */
+	/** 选号小球的总个数 */
 	private int _fBallNum;
-	/** 选号小球的类型：默认为红球 */
+	/** 选号小球的类型 */
 	private SelectNumberBallType _fBallType;
-	/** 选号小球是否显示遗漏值：默认显示遗漏值 */
+	/** 选号小球是否显示遗漏值 */
 	private boolean _fIsShowLossValue;
-	/** 选号小球遗漏值数组：默认全为0 */
+	/** 选号小球遗漏值数组*/
 	private int[] _fLossValues;
 	
-	//初始化块，初始化选号小球表格的一些属性
+	// 初始化块，初始化选号小球表格的一些属性
 	{
+		_fRowNum = 1;
+		_fColumOfPreRow = 9;
 		_fStartNum = 1;
 		_fBallNum = 33;
 		_fBallType = SelectNumberBallType.REDBALL;

@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/doubleball_switchtabs_activitygroup_titlebar" />
 
-    <!-- 投注栏占位 -->
+    <!-- 投注栏-->
 
     <com.ruyicai.android.controller.compontent.bar.BetBar
         android:id="@+id/doubleball_switchtabs_activitygroup_betbar"

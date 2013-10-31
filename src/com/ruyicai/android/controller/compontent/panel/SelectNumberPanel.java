@@ -32,7 +32,15 @@ public class SelectNumberPanel extends LinearLayout {
 
 	/** 标题字符串资源id */
 	private int _fTitleTextId;
-	
+
+	//初始化代码块，初始化选号面板的线性布局的属性
+	{
+		LayoutParams layoutParams = new LayoutParams(LayoutParams.MATCH_PARENT,
+				LayoutParams.WRAP_CONTENT);
+		setLayoutParams(layoutParams);
+		setOrientation(VERTICAL);
+	}
+
 	/**
 	 * 构造函数
 	 *
@@ -74,6 +82,11 @@ public class SelectNumberPanel extends LinearLayout {
 		// 获取标题栏布局
 		LayoutInflater layoutInflater = (LayoutInflater) aContext
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		/**
+		 * inflate方法说明：第一个参数resource:是指填充的布局资源id,第二个参数root:是resource布局填充到的根布局。
+		 * 相关解释：在这里为设置为root为本身this，将selectnumber_panel中的视图以SelectNumberPanel（继承RelativeLayout）
+		 * 自身为根视图填充， 并且在selectnumber_panel布局中使用merge标签，避免深的视图结构。
+		 */
 		layoutInflater.inflate(R.layout.selectnumber_panel, this);
 
 		_fTitleTextView = (TextView) findViewById(R.id.selectnumberpanel_textview_title);
