@@ -6,19 +6,19 @@ import java.util.Random;
 
 /**
  * 数学运算工具类：1.获取制定范围内的随机数组
- * 
+ *
  * @author xiang_000
  * @since RYC1.0 2013-4-10
  */
-public class MathTools {
+public final class MathTools {
 	/**
 	 * 获取制定范围不重复的随机数
-	 * 
+	 *
 	 * @return 随机数数组
 	 */
 	/**
 	 * 获取指定范围内部重复的随机数
-	 * 
+	 *
 	 * @param aBegainNumber
 	 *            范围开始数字
 	 * @param aEndNumber
@@ -27,7 +27,7 @@ public class MathTools {
 	 *            随机数的个数
 	 * @return 随机数集合
 	 */
-	public static List<Integer> getSpecifiedRangeRadomNumberWithoutRepetation(int aBegainNumber,
+	public static final List<Integer> getSpecifiedRangeRadomNumberWithoutRepetation(int aBegainNumber,
 			int aEndNumber, int aNumberNum) {
 		List<Integer> randomIntegers = new ArrayList<Integer>();
 		Random random = new Random();
@@ -53,14 +53,14 @@ public class MathTools {
 
 	/**
 	 * 产生的随机数是否与已经产生随机数集合重复
-	 * 
+	 *
 	 * @param aRandomInt
 	 *            产生的随机数
 	 * @param aRandomNumbers
 	 *            已经产生的随机数集合
 	 * @return 是否重复标识
 	 */
-	private static boolean isNotRepeation(int aRandomInt, List<Integer> aRandomNumbers) {
+	private static final boolean isNotRepeation(int aRandomInt, List<Integer> aRandomNumbers) {
 		int randomNum = aRandomNumbers.size();
 
 		for (int random_i = 0; random_i < randomNum; random_i++) {
@@ -74,8 +74,8 @@ public class MathTools {
 
 	/**
 	 * 随机数是否在范围内
-	 * 
-	 * @param random
+	 *
+	 * @param aRandom
 	 *            随机数
 	 * @param aBegainNumber
 	 *            范围开始数字
@@ -83,11 +83,44 @@ public class MathTools {
 	 *            范围接受数组
 	 * @return 是否在范围内标识
 	 */
-	private static boolean isInRange(int random, int aBegainNumber, int aEndNumber) {
-		if (random >= aBegainNumber && random <= aEndNumber) {
+	private static final boolean isInRange(int aRandom, int aBegainNumber, int aEndNumber) {
+		if (aRandom >= aBegainNumber && aRandom <= aEndNumber) {
 			return true;
 		} else {
 			return false;
 		}
+	}
+
+	/**
+	 * 排列算法：p(a,b) = a * (a-1) * ... ... *(a-b+1) = a! / (a-b)!
+	 *
+	 * @param a
+	 * @param b
+	 * @return 排列结果个数
+	 */
+	public static final int permutation(int a, int b) {
+		return factorial(a)/factorial(a-b);
+	}
+
+	/**
+	 * 组合算法：c(a,b) = p(a,b) / b! = a! / ((a-b)! * b!)
+	 *
+	 * @param a
+	 * @param b
+	 * @return 组合结果个数
+	 */
+	public static final int combination(int a, int b) {
+		return permutation(a, b) / factorial(b);
+	}
+
+	/**
+	 * 阶乘算法：n!=n*(n-1)*(n-2)*...*2*1
+	 *
+	 * @param n
+	 *            求阶乘的数
+	 * @return 阶乘结果
+	 */
+	public static final int factorial(int n) {
+		return (n == 0) ? 1 : n * factorial(n - 1);
 	}
 }

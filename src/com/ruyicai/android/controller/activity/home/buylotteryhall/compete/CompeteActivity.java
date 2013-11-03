@@ -20,7 +20,6 @@ import com.ruyicai.android.controller.activity.BaseActivity;
 import com.ruyicai.android.controller.compontent.bar.CompeteBar;
 import com.ruyicai.android.controller.compontent.bar.CompeteBarInterface;
 import com.ruyicai.android.controller.compontent.bar.TitleBar;
-import com.ruyicai.android.controller.compontent.bar.TitleBarInterface;
 import com.ruyicai.android.controller.compontent.dialog.DialogFactory;
 import com.ruyicai.android.controller.compontent.dialog.DialogType;
 import com.ruyicai.android.model.bean.lottery.compete.against.AgainstInfo;
@@ -32,12 +31,11 @@ import roboguice.inject.InjectView;
 
 /**
  * 竞彩选号页面父类
- * 
+ *
  * @author Administrator
  * @since RYC1.0 2013-7-4
  */
-public abstract class CompeteActivity extends BaseActivity implements TitleBarInterface,
-		CompeteBarInterface {
+public abstract class CompeteActivity extends BaseActivity implements CompeteBarInterface {
 	/** 标题栏 */
 	@InjectView(R.id.compete_titlebar)
 	protected TitleBar _fTitleBar;
@@ -89,11 +87,6 @@ public abstract class CompeteActivity extends BaseActivity implements TitleBarIn
 	}
 
 	@Override
-	public void setTitleButton() {
-
-	}
-
-	@Override
 	public void setPlayMethodChangeButton() {
 		_fCompeteBar._fPlayMehodChangeButton
 				.setOnClickListener(new CompeteFootballCompeteBarOnClickListener());
@@ -113,7 +106,7 @@ public abstract class CompeteActivity extends BaseActivity implements TitleBarIn
 
 	/**
 	 * 竞彩栏点击事件监听实现类
-	 * 
+	 *
 	 * @author xiang_000
 	 * @since RYC1.0 2013-5-4
 	 */
@@ -143,7 +136,7 @@ public abstract class CompeteActivity extends BaseActivity implements TitleBarIn
 
 	/**
 	 * 对阵列表适配器
-	 * 
+	 *
 	 * @author Administrator
 	 * @since RYC1.0 2013-7-11
 	 */
@@ -157,7 +150,7 @@ public abstract class CompeteActivity extends BaseActivity implements TitleBarIn
 
 		/**
 		 * 構造方法
-		 * 
+		 *
 		 * @param groups
 		 *            分組的名称集合
 		 * @param againstLists

@@ -1,5 +1,7 @@
 package com.ruyicai.android.controller.compontent.panel;
 
+import java.util.List;
+
 import com.ruyicai.android.R;
 import com.ruyicai.android.controller.compontent.button.RandomSelectButton;
 import com.ruyicai.android.controller.compontent.selectnumberpanel.SelectNumberBallType;
@@ -54,7 +56,7 @@ public class SelectNumberPanel extends LinearLayout {
 
 	/**
 	 * 构造函数
-	 * 
+	 *
 	 * @param aContext
 	 *            上下文对象
 	 * @param aAttrs
@@ -66,7 +68,7 @@ public class SelectNumberPanel extends LinearLayout {
 		inflaterSelectNumberPanelLayout(aContext);
 
 		getCustomDefineAttributes(aAttributeSet);
-		
+
 		initTitleTextViewShow();
 
 		initSelectNumberBallsTableShow();
@@ -74,7 +76,7 @@ public class SelectNumberPanel extends LinearLayout {
 
 	/**
 	 * 解析并填充选号面板的布局
-	 * 
+	 *
 	 * @param aContext
 	 *            上下文对象
 	 */
@@ -96,7 +98,7 @@ public class SelectNumberPanel extends LinearLayout {
 
 	/**
 	 * 获取自定义属性的值
-	 * 
+	 *
 	 * @param aAttributeSet
 	 *            aAttributeSet对象
 	 */
@@ -111,7 +113,7 @@ public class SelectNumberPanel extends LinearLayout {
 			// 标题默认显示：红球区：
 			_fTitleTextId = typedArray.getResourceId(R.styleable.SelectNumberPanel__fTitleTextId,
 					R.string.doubleball_selfselect_redselectnumberpanel_title);
-			
+
 			/**
 			 * 获取随机按钮属性
 			 */
@@ -163,13 +165,13 @@ public class SelectNumberPanel extends LinearLayout {
 	public void initSelectNumberBallsTableShow() {
 		// FIXME 在没有输入任何参数的情况下的处理
 		_fSelectNumberBallsTable.initSelectNumberBallsTableLayout();
-		
+
 		LayoutParams layoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT,
 				LayoutParams.WRAP_CONTENT);
 		layoutParams.topMargin = 5;
 		addView(_fSelectNumberBallsTable, layoutParams);
-		
-		
+
+
 		// 设置随机按钮控制的选号小球表格
 		_fRandomSelectButton.set_fSelectNumberBallsTableLayout(_fSelectNumberBallsTable);
 	}
@@ -229,7 +231,24 @@ public class SelectNumberPanel extends LinearLayout {
 	 *
 	 * @return 当前选择的小球号码集合
 	 */
-	public String getSelectedNumbersString() {
-		return _fSelectNumberBallsTable.getSelectedNumbersString();
+	public List<Integer> getSelectedNumberList() {
+		return _fSelectNumberBallsTable.getSelectedBallNumberList();
+	}
+
+	/**
+	 * 使用指定集合设置选号面板选中的小球
+	 *
+	 * @param aSpecifiedNumbers
+	 *            指定的选号集合
+	 */
+	public void selectSpecifiedNumberBallsByList(List<Integer> aSpecifiedNumbers) {
+		_fSelectNumberBallsTable.selectSpecifiedNumberBallsByList(aSpecifiedNumbers);
+	}
+
+	/**
+	 * 清空当前选中的小球
+	 */
+	public void clearNowSelectedNumberBalls(){
+		_fSelectNumberBallsTable.clearNowSelectedNumberBalls();
 	}
 }

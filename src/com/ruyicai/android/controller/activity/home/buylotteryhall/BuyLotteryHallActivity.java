@@ -14,13 +14,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.ruyicai.android.R;
 import com.ruyicai.android.controller.activity.BaseActivity;
 import com.ruyicai.android.controller.adapter.viewpager.ViewPagerAdapter;
 import com.ruyicai.android.controller.compontent.bar.TitleBar;
-import com.ruyicai.android.controller.compontent.bar.TitleBar.OnRightButtonClickListener;
 import com.ruyicai.android.controller.compontent.pagerindicator.BuyLotteryHallPageIndicator;
 import com.ruyicai.android.controller.compontent.panel.BuyLotteryHallSlidePanel;
 import com.ruyicai.android.model.bean.lottery.Lottery;
@@ -90,7 +88,7 @@ public class BuyLotteryHallActivity extends BaseActivity implements OnClickListe
 
 	/**
 	 * 获取滑动页面的视图集合
-	 * 
+	 *
 	 * @return 滑动页面的视图集合
 	 */
 	private List<View> getSlidePannelPageViewList() {
@@ -108,7 +106,7 @@ public class BuyLotteryHallActivity extends BaseActivity implements OnClickListe
 
 	/**
 	 * 获取中奖排行的页面视图
-	 * 
+	 *
 	 * @return 中奖排行页面视图
 	 */
 	private TextView getWinningListView() {
@@ -120,7 +118,7 @@ public class BuyLotteryHallActivity extends BaseActivity implements OnClickListe
 
 	/**
 	 * 获取购彩页面的视图集合：购彩页面的集合根据屏幕分辨率和彩种的变化而变化
-	 * 
+	 *
 	 * @return 购彩页面视图集合
 	 */
 	private List<View> getBuyLotteryPannelViewList() {
@@ -150,7 +148,7 @@ public class BuyLotteryHallActivity extends BaseActivity implements OnClickListe
 
 	/**
 	 * 分配每页显示的彩种选项
-	 * 
+	 *
 	 * @return 返回页面显示彩种选项集合
 	 */
 	private List<List<Object>> distributePanelItemOfPrePage() {
@@ -217,7 +215,7 @@ public class BuyLotteryHallActivity extends BaseActivity implements OnClickListe
 
 	/**
 	 * 跳转到目标页面
-	 * 
+	 *
 	 * @param aClass
 	 *            页面的Activity类
 	 */

@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- 彩票资讯页面 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:custom="http://schemas.android.com/apk/res/com.ruyicai.android"
     android:id="@+id/lotteryinformation"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/white"
     android:orientation="horizontal" >
 
-    <com.ruyicai.android.controller.compontent.button.RandomSelectButton
-        android:id="@+id/randomSelectNumberButton1"
+    <!-- 红球选号面板 -->
+
+    <com.ruyicai.android.controller.compontent.panel.SelectNumberPanel
+        android:id="@+id/doubleball_selfselect_normal_red_selectnumberpanel"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        custom:_fIsShowLossValue="true"
+        custom:_fRandomButtonDropDownMenuButtonNum="11"
+        custom:_fRandomButtonMinRandomNum="6"
+        custom:_fRandomButtonRandomNum="6"
+        custom:_fSelectNumberBallNum="33"
+        custom:_fSelectNumberBallStartNum="1"
+        custom:_fSelectNumberBallType="red"
+        custom:_fTitleTextId="@string/doubleball_selfselect_redselectnumberpanel_title" />
 
 </LinearLayout>

@@ -14,7 +14,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:text="红球区："
+            android:text="@string/doubleball_selfselect_redselectnumberpanel_title"
             android:textColor="@color/black"
             android:textSize="16sp" />
 

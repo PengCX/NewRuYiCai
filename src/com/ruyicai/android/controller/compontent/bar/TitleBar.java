@@ -11,14 +11,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.LinearLayout.LayoutParams;
 
 /**
  * 标题栏自定义控件：该控件主要包含控件：左侧标签（_fLeftTextView）和右侧按钮（_fRightButton）两个元素；包含自定义属性：
  * 左侧标签显示的字符串Id
  * （custom:_fLeftTextId）、右侧按钮显示字符串Id（custom:_fRightButtonId）和是否显示右侧按钮
  * （custom:_fIsShowRightButton）。
- * 
+ *
  * @author PengCX
  * @since RYC1.0 2013-3-18
  */
@@ -44,9 +43,9 @@ public class TitleBar extends RelativeLayout {
 	/** 下拉按钮是否显示 */
 	private boolean _fIsShowSpreadButton;
 
-	/** 右按钮点击监听接口 */
-	private OnRightButtonClickListener _fOnRightButtonClickListener;
-	
+	/**标题接口*/
+	private TitleBarInterface _fTitleBarInterface;
+
 	//初始化代码块，初始化标题栏根线性布局的属性
 	{
 		LayoutParams layoutParams = new LayoutParams(LayoutParams.MATCH_PARENT,
@@ -64,7 +63,7 @@ public class TitleBar extends RelativeLayout {
 
 	/**
 	 * 设置标题栏左标签的文本显示
-	 * 
+	 *
 	 * @param aLeftTextId
 	 *            显示文本的字符串资源id
 	 */
@@ -75,7 +74,7 @@ public class TitleBar extends RelativeLayout {
 
 	/**
 	 * 设置标题栏左标签的文本显示
-	 * 
+	 *
 	 * @param aLeftTextString
 	 *            显示文本的字符串
 	 */
@@ -105,14 +104,8 @@ public class TitleBar extends RelativeLayout {
 		}
 	}
 
-	public OnRightButtonClickListener get_fOnRightButtonClickListener() {
-		return _fOnRightButtonClickListener;
-	}
-
-	public void set_fOnRightButtonClickListener(
-			OnRightButtonClickListener aOnRightButtonClickListener) {
-		_fOnRightButtonClickListener = aOnRightButtonClickListener;
-		_fRightButton.setOnClickListener(_fOnRightButtonClickListener);
+	public void set_fTitleBarInterface(TitleBarInterface aTitleBarInterface) {
+		this._fTitleBarInterface = aTitleBarInterface;
 	}
 
 	public TitleBar(Context aContext) {
@@ -122,7 +115,7 @@ public class TitleBar extends RelativeLayout {
 
 	/**
 	 * 构造方法
-	 * 
+	 *
 	 * @param aContext
 	 *            上下文对象
 	 * @param aAttributeSet
@@ -152,7 +145,7 @@ public class TitleBar extends RelativeLayout {
 		} finally {
 			typedArray.recycle();
 		}
-		
+
 		// 获取标题栏布局
 		LayoutInflater layoutInflater = (LayoutInflater) aContext
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -167,10 +160,11 @@ public class TitleBar extends RelativeLayout {
 		_fLeftTextView = (TextView) findViewById(R.id.titlebar_textview_title);
 		_fLeftTextView.setText(_fLeftTextId);
 
-		_fRightButton = (Button) findViewById(R.id.titlebar_button_loginorregister);
+		_fRightButton = (Button) findViewById(R.id.titlebar_button_right);
 		_fRightButton.setText(_fRightButtonTextId);
 		if (_fIsShowRightButton) {
 			_fRightButton.setVisibility(View.VISIBLE);
+			_fRightButton.setOnClickListener(new TitleBarButtonOnClickListener());
 		}
 
 		_fSpreadButton = (Button) findViewById(R.id.titlebar_button_dropdown);
@@ -186,7 +180,7 @@ public class TitleBar extends RelativeLayout {
 
 	/**
 	 * 标题栏按钮点击事件监听器
-	 * 
+	 *
 	 * @author Administrator
 	 * @since RYC1.0 2013-10-23
 	 */
@@ -196,6 +190,7 @@ public class TitleBar extends RelativeLayout {
 		public void onClick(View v) {
 			switch (v.getId()) {
 				case R.id.titlebar_button_dropdown:
+					//下拉按钮
 					if (_fTitleDropDownMenu == null) {
 						_fTitleDropDownMenu = new TitleDropDownMenu(_fContext);
 					}
@@ -207,6 +202,10 @@ public class TitleBar extends RelativeLayout {
 					}
 
 					break;
+				case R.id.titlebar_button_right:
+					//右按钮
+					_fTitleBarInterface.setRightButton();
+					break;
 
 				default:
 					// 抛出AssertionError错误，当新的按钮添加事件监听时候，忘记处理该按钮，switch语句跳到default语句排除错误提示，易于寻找代码错误。
@@ -214,14 +213,5 @@ public class TitleBar extends RelativeLayout {
 			}
 		}
 
-	}
-
-	/**
-	 * 右按钮点击事件监听器
-	 * 
-	 * @author xiang_000
-	 * @since RYC1.0 2013-10-20
-	 */
-	public interface OnRightButtonClickListener extends OnClickListener {
 	}
 }

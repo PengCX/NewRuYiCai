@@ -12,10 +12,10 @@
         android:layout_marginLeft="10dp"
         android:textColor="@color/white"
         android:textSize="19sp" />
-    <!-- 登录注册按钮 -->
+    <!-- 右按钮 -->
 
     <Button
-        android:id="@+id/titlebar_button_loginorregister"
+        android:id="@+id/titlebar_button_right"
         android:layout_width="70dip"
         android:layout_height="30dip"
         android:layout_alignParentRight="true"

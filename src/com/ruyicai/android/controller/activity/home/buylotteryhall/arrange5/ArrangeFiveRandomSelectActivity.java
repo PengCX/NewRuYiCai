@@ -1,27 +1,6 @@
 package com.ruyicai.android.controller.activity.home.buylotteryhall.arrange5;
 
-import com.ruyicai.android.controller.activity.home.buylotteryhall.SelectNumberActivity;
+import roboguice.activity.RoboActivity;
 
-public class ArrangeFiveRandomSelectActivity extends SelectNumberActivity {
-
-	@Override
-	protected boolean isAddPlayMethodTextView() {
-		return false;
-	}
-
-	@Override
-	protected boolean isAddPageChangeRadioButtons() {
-		return false;
-	}
-
-	@Override
-	protected void setSelectNumberPanelNum() {
-
-	}
-
-	@Override
-	protected void initSelectNumberPanelsWithPage(int aPage_i) {
-
-	}
-
+public class ArrangeFiveRandomSelectActivity extends RoboActivity {
 }

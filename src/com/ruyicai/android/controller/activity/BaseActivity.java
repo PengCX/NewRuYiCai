@@ -16,7 +16,7 @@ import android.view.KeyEvent;
 
 /**
  * 如意彩页面基类，实现了所有页面都要实现的相关方法，如： 1.设置屏幕标题和全屏显示属性
- * 
+ *
  * @author PengCX
  * @since RYC1.0 2013-2-22
  */

@@ -2,7 +2,7 @@ package com.ruyicai.android.controller.compontent.bar;
 
 /**
  * 投注栏接口：定义了使用投注栏必须实现的方法
- * 
+ *
  * @author xiang_000
  * @since RYC1.0 2013-4-18
  */
@@ -26,4 +26,9 @@ public interface BetBarInterface {
 	 * 设置投注按钮
 	 */
 	abstract void setBettingButton();
+
+	/**
+	 * 更新已选号码的显示
+	 */
+	abstract void updateSelectedNumbersShow();
 }

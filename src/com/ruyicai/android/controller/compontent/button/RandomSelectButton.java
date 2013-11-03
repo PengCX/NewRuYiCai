@@ -178,7 +178,7 @@ public class RandomSelectButton extends LinearLayout {
 					LogTools.showLog(TAG, "产生的指定小球的编号集合为：" + specifyNumberList.toString() + "，大小为："
 							+ specifyNumberList.size(), LogTools.INFO);
 					// 根据随机数集合指定小球表格当中的小球为选定状态
-					_fSelectNumberBallsTable.selectSpecifiedNumberBalls(specifyNumberList);
+					_fSelectNumberBallsTable.selectSpecifiedNumberBallsByList(specifyNumberList);
 					break;
 				default:
 					throw new AssertionError("switch语句无新增分支");

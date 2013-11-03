@@ -1,11 +1,10 @@
 package com.ruyicai.android.controller.activity.home.buylotteryhall.guangdong11xuan5;
 
-import com.ruyicai.android.controller.activity.home.buylotteryhall.SelectNumberActivity;
 import com.ruyicai.android.controller.activity.home.buylotteryhall.SpinnersActivityGroup;
 
 /**
  * 广东11选5选号页面组
- * 
+ *
  * @author xiang_000
  * @since RYC1.0 2013-4-5
  */
