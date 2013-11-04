@@ -24,7 +24,7 @@
 
     <!-- 投注栏占位 -->
 
-    <com.ruyicai.android.controller.compontent.bar.BetBar
+    <com.ruyicai.android.controller.compontent.bar.BettingBar
         android:id="@+id/servenstar_switchtabs_activitygroup_betbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

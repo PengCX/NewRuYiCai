@@ -11,11 +11,11 @@ import java.util.List;
  */
 public class NumberBasket {
 	/** 投注信息集合 */
-	private List<BettingInfo> _fbettingInfoList;
+	private List<BettingInformation> _fbettingInfoList;
 
 	// 初始化代码块，初始化投注信息集合
 	{
-		_fbettingInfoList = new ArrayList<BettingInfo>();
+		_fbettingInfoList = new ArrayList<BettingInformation>();
 	}
 
 	/**
@@ -24,7 +24,7 @@ public class NumberBasket {
 	 * @param bettingInfo
 	 *            添加投注信息对象
 	 */
-	public void addBettingInfo(BettingInfo bettingInfo) {
+	public void addBettingInfo(BettingInformation bettingInfo) {
 		_fbettingInfoList.add(bettingInfo);
 	}
 

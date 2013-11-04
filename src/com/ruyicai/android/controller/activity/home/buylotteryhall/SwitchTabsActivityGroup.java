@@ -3,7 +3,7 @@ package com.ruyicai.android.controller.activity.home.buylotteryhall;
 import roboguice.activity.RoboActivityGroup;
 
 import com.ruyicai.android.R;
-import com.ruyicai.android.controller.compontent.bar.BetBar;
+import com.ruyicai.android.controller.compontent.bar.BettingBar;
 import com.ruyicai.android.controller.compontent.bar.TitleBar;
 
 import android.content.Intent;
@@ -31,7 +31,7 @@ public abstract class SwitchTabsActivityGroup extends RoboActivityGroup {
 	/**选项卡*/
 	protected TabHost _fSwitchTabHost;
 	/**投注栏*/
-	protected BetBar _fBetBar;
+	protected BettingBar _fBetBar;
 
 	/**
 	 * 设置切换选项卡切换卡类集合

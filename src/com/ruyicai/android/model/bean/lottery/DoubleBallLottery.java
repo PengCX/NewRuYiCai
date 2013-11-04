@@ -207,8 +207,8 @@ public class DoubleBallLottery extends Lottery {
 		int redNum = aNowSelectedNumberLists.get(0).size();
 		int blueNum = aNowSelectedNumberLists.get(1).size();
 
-		int betNumber = MathTools.combination(redNum, 6) * MathTools.combination(blueNum, 1);
-		int betAmount = betNumber * 2;
+		long betNumber = MathTools.combination(redNum, 6) * MathTools.combination(blueNum, 1);
+		long betAmount = betNumber * 2;
 
 		StringBuilder betInfStringBuilder = new StringBuilder();
 		betInfStringBuilder.append("共").append(betNumber).append("注").append(betAmount).append("元");

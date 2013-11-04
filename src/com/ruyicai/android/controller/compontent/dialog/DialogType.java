@@ -14,7 +14,9 @@ public enum DialogType {
 	/** 没有互联网连接对话框 */
 	NOTCONNECTED_INTENET_DIALOG(3),
 	/** 竞彩足球玩法改变对话框 */
-	COMPETEFOOTBALL_PLAYMETHODCHANGE_DIALOG(4);
+	COMPETEFOOTBALL_PLAYMETHODCHANGE_DIALOG(4),
+	/**号码蓝显示投注信息对话框*/
+	NUMBERBASKET_SHOWBETTINGINFO_DIALOG(5);
 
 	/** 对话框编号 */
 	public int _fDialogNumber;

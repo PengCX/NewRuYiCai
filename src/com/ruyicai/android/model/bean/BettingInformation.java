@@ -8,7 +8,7 @@ import java.util.List;
  * @author xiang_000
  * @since RYC1.0 2013-11-3
  */
-public class BettingInfo {
+public class BettingInformation {
 	/** 投注号码集合 */
 	private List<List<Integer>> _fBettingNumberLists;
 
@@ -18,7 +18,7 @@ public class BettingInfo {
 	 * @param _fBettingNumberList
 	 *            投注号码集合
 	 */
-	public BettingInfo(List<List<Integer>> aBettingNumberLists) {
+	public BettingInformation(List<List<Integer>> aBettingNumberLists) {
 		super();
 		_fBettingNumberLists = aBettingNumberLists;
 	}

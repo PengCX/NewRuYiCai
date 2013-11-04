@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <com.ruyicai.android.controller.compontent.bar.BetBar
+    <com.ruyicai.android.controller.compontent.bar.BettingBar
         android:id="@+id/switchtabs_activitygroup_betbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

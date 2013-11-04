@@ -17,7 +17,7 @@ import android.widget.TextView;
  * @author xiang_000
  * @since RYC1.0 2013-4-7
  */
-public class BetBar extends LinearLayout {
+public class BettingBar extends LinearLayout {
 	/** 上下文对象 */
 	private Context _fContext;
 
@@ -53,7 +53,7 @@ public class BetBar extends LinearLayout {
 	 * @param context
 	 *            上下文对象
 	 */
-	public BetBar(Context context) {
+	public BettingBar(Context context) {
 		super(context);
 	}
 
@@ -65,7 +65,7 @@ public class BetBar extends LinearLayout {
 	 * @param aAttributeSet
 	 *            属性对象
 	 */
-	public BetBar(Context aContext, AttributeSet aAttributeSet) {
+	public BettingBar(Context aContext, AttributeSet aAttributeSet) {
 		super(aContext, aAttributeSet);
 		_fContext = aContext;
 	}

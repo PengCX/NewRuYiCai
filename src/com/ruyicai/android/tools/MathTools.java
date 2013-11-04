@@ -96,9 +96,9 @@ public final class MathTools {
 	 *
 	 * @param a
 	 * @param b
-	 * @return 排列结果个数
+	 * @return 排列结果个数，使用long类型，避免大小越界
 	 */
-	public static final int permutation(int a, int b) {
+	public static final long permutation(int a, int b) {
 		return factorial(a)/factorial(a-b);
 	}
 
@@ -107,9 +107,9 @@ public final class MathTools {
 	 *
 	 * @param a
 	 * @param b
-	 * @return 组合结果个数
+	 * @return 组合结果个数，使用long型，避免大小越界
 	 */
-	public static final int combination(int a, int b) {
+	public static final long combination(int a, int b) {
 		return permutation(a, b) / factorial(b);
 	}
 
@@ -118,9 +118,9 @@ public final class MathTools {
 	 *
 	 * @param n
 	 *            求阶乘的数
-	 * @return 阶乘结果
+	 * @return 阶乘结果，使用long型，避免大小越界
 	 */
-	public static final int factorial(int n) {
+	public static final long factorial(int n) {
 		return (n == 0) ? 1 : n * factorial(n - 1);
 	}
 }

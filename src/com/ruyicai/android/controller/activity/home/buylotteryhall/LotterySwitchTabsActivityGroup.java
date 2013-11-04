@@ -7,7 +7,6 @@ import android.widget.TabHost.OnTabChangeListener;
 import com.ruyicai.android.controller.compontent.bar.BetBarInterface;
 import com.ruyicai.android.model.bean.NumberBasket;
 import com.ruyicai.android.model.bean.lottery.DoubleBallLottery;
-import com.ruyicai.android.model.bean.lottery.Lottery;
 
 /**
  * 彩种选项卡选号页面组，实现了投注栏接口
@@ -17,10 +16,18 @@ import com.ruyicai.android.model.bean.lottery.Lottery;
  */
 public abstract class LotterySwitchTabsActivityGroup extends SwitchTabsActivityGroup implements
 		BetBarInterface {
+	/**在选号组页面底部显示投注信息，为了避免快速显示信息的时候出现延迟，故整个页面使用该对象显示Toast信息*/
+	private Toast _fBottomToast;
+	
 	/** 当前选择的号码集合 */
 	private List<List<Integer>> _fNowSelectedNumberLists;
 	/** 号码篮对象：一个彩种多种玩法共用一个号码篮，故声明在此类中 */
 	protected NumberBasket _fNumberBasket;
+	
+	//初始化代码块
+	{
+		_fNumberBasket = new NumberBasket();
+	}
 
 	@Override
 	protected void onStart() {
@@ -47,8 +54,26 @@ public abstract class LotterySwitchTabsActivityGroup extends SwitchTabsActivityG
 	public void showNowSelectedNumberBettingInfo() {
 		if("".equals(DoubleBallLottery.judgeSelectedNumberListsLegitimacy(_fNowSelectedNumberLists))){
 			String betInfoString = DoubleBallLottery.calculateNowSelectedNumberBetInfo(_fNowSelectedNumberLists);
-			Toast.makeText(this, betInfoString, Toast.LENGTH_SHORT).show();
+			showToastInBottom(betInfoString);
 		}
+	}
+
+	/**
+	 * 在屏幕的底部显示Toast提示信息，整个页面使用同一个Toast对象显示，避免了过快显示Toast的时候，出现的延迟现象
+	 * 
+	 * @param betInfoString
+	 *            显示在Toast中的信息字符串
+	 */
+	private void showToastInBottom(String aBetInfoString) {
+		// 如果当前的Toast对象已经存在，就要创建新对象
+		if (_fBottomToast == null) {
+			_fBottomToast = Toast.makeText(this, aBetInfoString, Toast.LENGTH_SHORT);
+		}
+		// 如果Toast对象不存在，则设置当前对象的文本
+		else {
+			_fBottomToast.setText(aBetInfoString);
+		}
+		_fBottomToast.show();
 	}
 
 	/**

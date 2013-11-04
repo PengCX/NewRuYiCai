@@ -11,8 +11,8 @@ import com.ruyicai.android.R;
 import com.ruyicai.android.controller.activity.home.buylotteryhall.LotterySwitchTabsActivityGroup;
 import com.ruyicai.android.controller.activity.home.buylotteryhall.LotteryViewPagerActivity;
 import com.ruyicai.android.controller.activity.home.buylotteryhall.betinformation.BetInformationSwitchTabsActivityGroup;
-import com.ruyicai.android.controller.compontent.bar.BetBar;
-import com.ruyicai.android.model.bean.BettingInfo;
+import com.ruyicai.android.controller.compontent.bar.BettingBar;
+import com.ruyicai.android.model.bean.BettingInformation;
 import com.ruyicai.android.model.bean.NumberBasket;
 import com.ruyicai.android.model.bean.lottery.DoubleBallLottery;
 
@@ -30,7 +30,7 @@ public class DoubleBallSwitchTabsActivityGroup extends LotterySwitchTabsActivity
 		//设置该页面的布局，获取布局中控件对象
 		setContentView(R.layout.doubleball_switchtabs_activitygroup);
 		_fSwitchTabHost = (TabHost) findViewById(R.id.doubleball_switchtabs_activitygroup_tabhost);
-		_fBetBar = (BetBar) findViewById(R.id.doubleball_switchtabs_activitygroup_betbar);
+		_fBetBar = (BettingBar) findViewById(R.id.doubleball_switchtabs_activitygroup_betbar);
 	}
 
 	@Override
@@ -69,10 +69,7 @@ public class DoubleBallSwitchTabsActivityGroup extends LotterySwitchTabsActivity
 			Toast.makeText(this, promptString, Toast.LENGTH_SHORT).show();
 		}else{
 			//初始化投注信息对象
-			BettingInfo bettingInfo = new BettingInfo(selectedNumberLists);
-			if(_fNumberBasket == null){
-				_fNumberBasket = new NumberBasket();
-			}
+			BettingInformation bettingInfo = new BettingInformation(selectedNumberLists);
 			//将投注信息对象添加到号码篮中
 			_fNumberBasket.addBettingInfo(bettingInfo);
 			Toast.makeText(this, _fNumberBasket.getNumberBasketSize() + "",Toast.LENGTH_SHORT).show();

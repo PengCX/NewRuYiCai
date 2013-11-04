@@ -6,13 +6,13 @@
     android:orientation="vertical" >
 
     <!-- 已选号码栏 -->
-
     <TextView
         android:id="@+id/bettingbar_textview_selectednumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bettingbar_textview_selected"
         android:gravity="center_vertical"
+        android:singleLine="true"
         android:text="@string/bettingbar_textview_selected"
         android:textColor="@color/black" />
 
