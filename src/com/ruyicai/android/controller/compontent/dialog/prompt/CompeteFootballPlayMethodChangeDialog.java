@@ -12,11 +12,11 @@ import android.widget.Toast;
 
 /**
  * 竞彩足球玩法切换对话框
- * 
+ *
  * @author xiang_000
  * @since RYC1.0 2013-5-5
  */
-public class CompeteFootballPlayMethodChangeDialog extends PromptDialog {
+public class CompeteFootballPlayMethodChangeDialog extends PromptDialogAbstract {
 	/** 胜平负单选按钮组 */
 	private RadioGroup _fWinTieLossPassRadioGroup;
 	/** 胜平负过关按钮 */
@@ -66,7 +66,7 @@ public class CompeteFootballPlayMethodChangeDialog extends PromptDialog {
 	public void set_fContentView() {
 		LayoutInflater layoutInflater = (LayoutInflater) _fContext
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		_fContentView = layoutInflater.inflate(R.layout.compete_playmethodchange_content, null);
+		_fContentView = layoutInflater.inflate(R.layout.compete_playmethodchange_dialog_content, null);
 
 		_fWinTieLossPassRadioGroup = (RadioGroup) _fContentView
 				.findViewById(R.id.competefootball_radiogroup_wintielosspass);
@@ -129,22 +129,22 @@ public class CompeteFootballPlayMethodChangeDialog extends PromptDialog {
 
 	@Override
 	public void set_fPositiveButton() {
-
+		// 没有该按钮，则空实现
 	}
 
 	@Override
 	public void set_fOtherButton() {
-
+		// 没有该按钮，则空实现
 	}
 
 	@Override
 	public void set_fNegativeButton() {
-
+		// 没有该按钮，则空实现
 	}
 
 	/**
 	 * 竞彩足球玩法切换单选按钮组选中监听实现类
-	 * 
+	 *
 	 * @author Administrator
 	 * @since RYC1.0 2013-7-4
 	 */

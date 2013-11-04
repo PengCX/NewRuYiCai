@@ -1,8 +1,8 @@
 package com.ruyicai.android.controller.compontent.dialog.alert;
 
 /**
- * 警告对话框接口：定义了警告对话框需要实现的方法
- * 
+ * 警告对话框接口：定义了警告对话框需要实现的方法，该系统中警告对话框即系统的AlertDialog
+ *
  * @author xiang_000
  * @since RYC1.0 2013-3-30
  */

@@ -1,5 +1,7 @@
 package com.ruyicai.android.controller.activity.home.buylotteryhall.doubleball;
 
+import static com.ruyicai.android.controller.compontent.dialog.DialogType.*;
+
 import java.util.List;
 
 import android.content.Intent;
@@ -13,7 +15,6 @@ import com.ruyicai.android.controller.activity.home.buylotteryhall.LotteryViewPa
 import com.ruyicai.android.controller.activity.home.buylotteryhall.betinformation.BetInformationSwitchTabsActivityGroup;
 import com.ruyicai.android.controller.compontent.bar.BettingBar;
 import com.ruyicai.android.model.bean.BettingInformation;
-import com.ruyicai.android.model.bean.NumberBasket;
 import com.ruyicai.android.model.bean.lottery.DoubleBallLottery;
 
 /**
@@ -48,7 +49,7 @@ public class DoubleBallSwitchTabsActivityGroup extends LotterySwitchTabsActivity
 
 	@Override
 	public void setNumberBasketButton() {
-		Toast.makeText(this, "号码篮按钮", Toast.LENGTH_SHORT).show();
+		showDialog(NUMBERBASKET_SHOWBETTINGINFO_DIALOG.ordinal());
 	}
 
 	@Override

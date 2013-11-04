@@ -8,7 +8,8 @@ import com.ruyicai.android.controller.activity.home.lotterynotice.LotteryNoticeA
 import com.ruyicai.android.controller.activity.home.more.MoreActivity;
 import com.ruyicai.android.controller.activity.home.usercenter.UserCenterActivity;
 import com.ruyicai.android.controller.compontent.dialog.DialogFactory;
-import com.ruyicai.android.controller.compontent.dialog.DialogType;
+import com.ruyicai.android.controller.compontent.dialog.alert.AlertDialogInterface;
+import com.ruyicai.android.controller.compontent.dialog.prompt.PromptDialogAbstract;
 
 import roboguice.activity.RoboActivity;
 import android.app.Dialog;
@@ -30,7 +31,7 @@ public abstract class BaseActivity extends RoboActivity {
 				if (this instanceof BuyLotteryHallActivity || this instanceof LotteryNoticeActivity
 						|| this instanceof AccountRechargeActivity
 						|| this instanceof UserCenterActivity || this instanceof MoreActivity) {
-					showDialog(APPLICATION_EXIT_DIALOG._fDialogNumber);
+					showDialog(APPLICATION_EXIT_DIALOG.ordinal());
 				}
 				break;
 			default:
@@ -45,18 +46,8 @@ public abstract class BaseActivity extends RoboActivity {
 	 */
 	@Override
 	protected Dialog onCreateDialog(int aId) {
-		Dialog dialog = null;
+		// 将所有对话框的创建都集中于此，在任何继承BaseActivity的字类中，只需要调用showDialog(int id)就可以显示对话框了
 		DialogFactory dialogFactory = new DialogFactory(this);
-
-		if (aId == NOTCONNECTED_INTENET_DIALOG._fDialogNumber) {
-			dialog = (Dialog) dialogFactory
-					.assembleAlertDialogWithType(NOTCONNECTED_INTENET_DIALOG);
-		} else if (aId == SOFTWARE_UPDATE_DIALOG._fDialogNumber) {
-			dialog = dialogFactory.assemblePromptDialogWithType(SOFTWARE_UPDATE_DIALOG);
-		} else if (aId == DialogType.APPLICATION_EXIT_DIALOG._fDialogNumber) {
-			dialog = dialogFactory.assemblePromptDialogWithType(DialogType.APPLICATION_EXIT_DIALOG);
-		}
-
-		return dialog;
+		return dialogFactory.createDialogById(aId);
 	}
 }

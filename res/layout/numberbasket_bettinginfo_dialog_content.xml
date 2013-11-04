@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 号码篮子投注信息对话框内容布局 -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- 投注信息列表 -->
+
+    <ListView
+        android:id="@+id/numberbasket_bettinginfo_dialog_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- 投注信息文本 -->
+
+    <TextView
+        android:id="@+id/numberbasket_bettinginfo_dialog_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

@@ -2,9 +2,12 @@ package com.ruyicai.android.controller.activity.home.buylotteryhall;
 
 import java.util.List;
 
+import android.app.Dialog;
 import android.widget.Toast;
 import android.widget.TabHost.OnTabChangeListener;
 import com.ruyicai.android.controller.compontent.bar.BetBarInterface;
+import com.ruyicai.android.controller.compontent.dialog.DialogFactory;
+import com.ruyicai.android.controller.compontent.dialog.prompt.PromptDialogAbstract;
 import com.ruyicai.android.model.bean.NumberBasket;
 import com.ruyicai.android.model.bean.lottery.DoubleBallLottery;
 
@@ -16,15 +19,15 @@ import com.ruyicai.android.model.bean.lottery.DoubleBallLottery;
  */
 public abstract class LotterySwitchTabsActivityGroup extends SwitchTabsActivityGroup implements
 		BetBarInterface {
-	/**在选号组页面底部显示投注信息，为了避免快速显示信息的时候出现延迟，故整个页面使用该对象显示Toast信息*/
+	/** 在选号组页面底部显示投注信息，为了避免快速显示信息的时候出现延迟，故整个页面使用该对象显示Toast信息 */
 	private Toast _fBottomToast;
-	
+
 	/** 当前选择的号码集合 */
 	private List<List<Integer>> _fNowSelectedNumberLists;
 	/** 号码篮对象：一个彩种多种玩法共用一个号码篮，故声明在此类中 */
-	protected NumberBasket _fNumberBasket;
-	
-	//初始化代码块
+	public NumberBasket _fNumberBasket;
+
+	// 初始化代码块
 	{
 		_fNumberBasket = new NumberBasket();
 	}
@@ -36,6 +39,12 @@ public abstract class LotterySwitchTabsActivityGroup extends SwitchTabsActivityG
 
 		_fBetBar.set_fBetBarInterface(this);
 		_fBetBar.initBetBarShow();
+	}
+
+	@Override
+	protected Dialog onCreateDialog(int aId) {
+		DialogFactory dialogFactory = new DialogFactory(this);
+		return dialogFactory.createDialogById(aId);
 	}
 
 	@Override
@@ -52,15 +61,17 @@ public abstract class LotterySwitchTabsActivityGroup extends SwitchTabsActivityG
 	 * 显示当前选择号码的投注信息：如，2注4元
 	 */
 	public void showNowSelectedNumberBettingInfo() {
-		if("".equals(DoubleBallLottery.judgeSelectedNumberListsLegitimacy(_fNowSelectedNumberLists))){
-			String betInfoString = DoubleBallLottery.calculateNowSelectedNumberBetInfo(_fNowSelectedNumberLists);
+		if ("".equals(DoubleBallLottery
+				.judgeSelectedNumberListsLegitimacy(_fNowSelectedNumberLists))) {
+			String betInfoString = DoubleBallLottery
+					.calculateNowSelectedNumberBetInfo(_fNowSelectedNumberLists);
 			showToastInBottom(betInfoString);
 		}
 	}
 
 	/**
 	 * 在屏幕的底部显示Toast提示信息，整个页面使用同一个Toast对象显示，避免了过快显示Toast的时候，出现的延迟现象
-	 * 
+	 *
 	 * @param betInfoString
 	 *            显示在Toast中的信息字符串
 	 */
@@ -78,6 +89,7 @@ public abstract class LotterySwitchTabsActivityGroup extends SwitchTabsActivityG
 
 	/**
 	 * TabHost事件监听器：当TabHost切换选项卡的时候，更新新显示页面选中号码
+	 *
 	 * @author xiang_000
 	 * @since RYC1.0 2013-11-3
 	 */

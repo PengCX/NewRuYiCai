@@ -9,11 +9,11 @@ import android.widget.TextView;
 
 /**
  * 应用程序退出对话框类：退出应用程序提醒对话框
- * 
+ *
  * @author xiang_000
  * @since RYC1.0 2013-3-30
  */
-public class ApplicationExitDialog extends PromptDialog {
+public class ApplicationExitDialog extends PromptDialogAbstract {
 
 	public ApplicationExitDialog(Context context) {
 		super(context);
@@ -62,6 +62,6 @@ public class ApplicationExitDialog extends PromptDialog {
 
 	@Override
 	public void set_fOtherButton() {
-		// 没有该按钮，则空实现
+		// 如果没有该按钮，则空实现
 	}
 }

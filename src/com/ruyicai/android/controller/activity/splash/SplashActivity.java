@@ -23,7 +23,7 @@ import com.ruyicai.android.tools.ImageTools;
 
 /**
  * 该类负责应用程序启动页面的显示，实现了如下功能： 1.显示企业Logo； 2.检查手机网络连接状态； 3.自动跳转到下一个页面；
- * 
+ *
  * @author PengCX
  * @since RYC1.0 2013-2-22
  */
@@ -53,7 +53,7 @@ public class SplashActivity extends BaseActivity {
 			switch (msg.what) {
 				case SOFTWARE_UPDATE_MESSAGE:
 					// 软件更新，显示软件更新提示对话框
-					showDialog(SOFTWARE_UPDATE_DIALOG._fDialogNumber);
+					showDialog(SOFTWARE_UPDATE_DIALOG.ordinal());
 					break;
 				default:
 					throw new AssertionError("switch语句中，没有新增的分支");
@@ -79,7 +79,7 @@ public class SplashActivity extends BaseActivity {
 
 		// 页面启动或者从网络设置页面恢复的时候，都需要重新检查网络状态
 		if (!_fPhoneInfo.isConnectedIntenet()) {
-			showDialog(NOTCONNECTED_INTENET_DIALOG._fDialogNumber);
+			showDialog(NOTCONNECTED_INTENET_DIALOG.ordinal());
 		} else {
 			// 如果网络有效，则检查软件更新
 			// FIXME 为了测试快捷省去了联网请求的步骤
@@ -134,7 +134,7 @@ public class SplashActivity extends BaseActivity {
 
 	/**
 	 * 获取第一次启动的标识
-	 * 
+	 *
 	 * @return 是否是第一次启动标识
 	 */
 	private boolean getFirstLaunchedFlag() {

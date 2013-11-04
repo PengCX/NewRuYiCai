@@ -57,10 +57,10 @@ public class IconListViewAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(int aPosition, View aConvertView, ViewGroup aParent) {
-		ViewHoler viewHoler = null;
+		ViewHolder viewHoler = null;
 
 		if (aConvertView == null) {
-			viewHoler = new ViewHoler();
+			viewHoler = new ViewHolder();
 
 			LayoutInflater fInflater = LayoutInflater.from(_fContext);
 			aConvertView = fInflater.inflate(R.layout.icon_listview_item, null);
@@ -71,7 +71,7 @@ public class IconListViewAdapter extends BaseAdapter {
 					.findViewById(R.id.iconlistviewitem_textview_text);
 			aConvertView.setTag(viewHoler);
 		} else {
-			viewHoler = (ViewHoler) aConvertView.getTag();
+			viewHoler = (ViewHolder) aConvertView.getTag();
 		}
 
 		viewHoler._fIconImageView.setImageResource(_fIconResourceIds[aPosition]);
@@ -80,7 +80,7 @@ public class IconListViewAdapter extends BaseAdapter {
 		return aConvertView;
 	}
 
-	static class ViewHoler {
+	static class ViewHolder {
 		ImageView _fIconImageView;
 		TextView _fTextView;
 	}

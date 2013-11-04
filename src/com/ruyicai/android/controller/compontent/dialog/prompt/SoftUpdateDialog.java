@@ -14,7 +14,7 @@ import android.widget.Toast;
  * @author xiang_000
  * @since RYC1.0 2013-3-30
  */
-public class SoftUpdateDialog extends PromptDialog {
+public class SoftUpdateDialog extends PromptDialogAbstract {
 
 	public SoftUpdateDialog(Context context) {
 		super(context);

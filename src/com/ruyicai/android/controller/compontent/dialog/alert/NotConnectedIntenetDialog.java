@@ -11,8 +11,8 @@ import android.content.Intent;
 import android.content.res.Resources;
 
 /**
- * 没有连接互联网警告对话框
- * 
+ * 没有连接互联网警告对话框，由于各种警告对话框之间没有逻辑关系，故使用接口
+ *
  * @author xiang_000
  * @since RYC1.0 2013-3-30
  */

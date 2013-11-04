@@ -1,5 +1,7 @@
 package com.ruyicai.android.controller.activity.home.buylotteryhall.compete;
 
+import static com.ruyicai.android.controller.compontent.dialog.DialogType.*;
+
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
@@ -21,7 +23,7 @@ import com.ruyicai.android.controller.compontent.bar.CompeteBar;
 import com.ruyicai.android.controller.compontent.bar.CompeteBarInterface;
 import com.ruyicai.android.controller.compontent.bar.TitleBar;
 import com.ruyicai.android.controller.compontent.dialog.DialogFactory;
-import com.ruyicai.android.controller.compontent.dialog.DialogType;
+import com.ruyicai.android.controller.compontent.dialog.DialogType.*;
 import com.ruyicai.android.model.bean.lottery.compete.against.AgainstInfo;
 
 import java.util.ArrayList;
@@ -116,10 +118,7 @@ public abstract class CompeteActivity extends BaseActivity implements CompeteBar
 		public void onClick(View v) {
 			switch (v.getId()) {
 				case R.id.competebar_button_playmethodchange:
-					DialogFactory dialogFactory = new DialogFactory(CompeteActivity.this);
-					Dialog dialog = (Dialog) dialogFactory
-							.assemblePromptDialogWithType(DialogType.COMPETEFOOTBALL_PLAYMETHODCHANGE_DIALOG);
-					dialog.show();
+					showDialog(COMPETEFOOTBALL_PLAYMETHODCHANGE_DIALOG.ordinal());
 					break;
 				case R.id.competebar_button_eventchange:
 					Toast.makeText(CompeteActivity.this, "赛事选择按钮", Toast.LENGTH_SHORT).show();

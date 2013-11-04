@@ -18,6 +18,11 @@ public class NumberBasket {
 		_fbettingInfoList = new ArrayList<BettingInformation>();
 	}
 
+
+	public List<BettingInformation> get_fbettingInfoList() {
+		return _fbettingInfoList;
+	}
+
 	/**
 	 * 向号码篮子添加投注信息
 	 *

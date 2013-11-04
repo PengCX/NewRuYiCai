@@ -91,7 +91,6 @@
     <string name="randombutton_button_randomselectnumber">机选号码</string>
     <string name="randombutton_button_unit">个</string>
 
-
     <!-- 以下是除了彩种投注页面之外其他页面的字符串资源，按着页面区分 -->
     <!-- 启动页面 -->
     <string name="splash_imageview_logodes">如意彩欢迎您！</string>
@@ -210,7 +209,9 @@
     <string name="doubleball_courageselect_courageselectnumberpanel_title">胆码区：</string>
     <string name="doubleball_courageselect_tuoselectnumberpanel_title">脱码区：</string>
     <string name="doubleball_courageselect_blueselectnumberpanel_title">@string/doubleball_selfselect_blueselectnumberpanel_title</string>
-
+	<string name="doubleball_numberbasket_dialog_title">已选号码</string>
+	<string name="doubleball_numberbasket_dialog_positivebutton">继续选号</string>
+	<string name="doubleball_numberbasket_dialog_negetivebutton">立即投注</string>
 	<!-- 大乐透 -->
 	<string name="superlotto">大乐透</string>
 
