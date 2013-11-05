@@ -55,13 +55,13 @@ public class DialogFactory {
 	 * @return 创建的对话框对象
 	 */
 	public Dialog createDialogById(int aId) {
+		Dialog dialog = null;
 		if (isAlertDialog(aId)) {
-			return createAlertDialogById(aId);
+			dialog =  createAlertDialogById(aId);
 		} else if (isPromptDialog(aId)) {
-			return createPromptDialogById(aId);
+			dialog =  createPromptDialogById(aId);
 		}
-
-		return null;
+		return dialog;
 	}
 
 	/**

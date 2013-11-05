@@ -6,6 +6,7 @@
     android:orientation="vertical" >
 
     <!-- 已选号码栏 -->
+
     <TextView
         android:id="@+id/bettingbar_textview_selectednumber"
         android:layout_width="match_parent"
@@ -24,13 +25,18 @@
         android:orientation="horizontal" >
 
         <!-- 号码篮按钮 -->
-
         <Button
             android:id="@+id/bettingbar_button_numberbasket"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:background="@drawable/bettingbar_button_numberbasket" />
+            android:background="@drawable/bettingbar_button_numberbasket"
+            android:gravity="top|right"
+            android:paddingRight="10dp"
+            android:text="0"
+            android:textSize="12sp"
+            android:textColor="@color/black" />
+
         <!-- 清除选号按钮 -->
 
         <Button

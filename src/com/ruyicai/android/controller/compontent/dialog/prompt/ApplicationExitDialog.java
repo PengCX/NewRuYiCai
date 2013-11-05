@@ -64,4 +64,13 @@ public class ApplicationExitDialog extends PromptDialogAbstract {
 	public void set_fOtherButton() {
 		// 如果没有该按钮，则空实现
 	}
+
+	class ApplicationExitDialogButtonOnclickListener implements OnClickListener{
+		@Override
+		public void onClick(DialogInterface dialog, int which) {
+			// TODO Auto-generated method stub
+
+		}
+
+	}
 }

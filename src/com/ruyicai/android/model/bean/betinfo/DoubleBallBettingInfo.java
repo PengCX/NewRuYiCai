@@ -1,6 +1,10 @@
 package com.ruyicai.android.model.bean.betinfo;
 
+import static com.ruyicai.android.model.bean.betinfo.BettingType.*;
+
 import java.util.List;
+
+import com.ruyicai.android.tools.MathTools;
 
 import android.graphics.Color;
 import android.text.Spannable;
@@ -10,42 +14,43 @@ import android.text.style.ForegroundColorSpan;
 
 /**
  * 双色球投注信息类
- * 
+ *
  * @author Administrator
  * @since RYC1.0 2013-11-5
  */
 public class DoubleBallBettingInfo extends BettingInfo {
-	/** 红球个数 */
-	private int redNum;
-	/** 蓝球个数 */
-	private int blueNum;
-	/** 胆码个数 */
-	private int courageNum;
-	/** 拖码个数 */
-	private int dragNum;
-	
-	
+
+	/**
+	 * 构造方法
+	 *
+	 * @param aBettingType
+	 *            投注方法类型
+	 * @param aBettingNumberLists
+	 *            投注号码列表 集合
+	 */
+	public DoubleBallBettingInfo(BettingType aBettingType, List<List<Integer>> aBettingNumberLists) {
+		super(aBettingType, aBettingNumberLists);
+	}
+
 	@Override
-	protected String get_fFormatedNumberString() {
-		SpannableStringBuilder formatSpannableStringBuilder = new SpannableStringBuilder();
-		// 如果是自选玩法
-		if (_fBettingType == BettingType.SELF_SELECT) {
-			formatSpannableStringBuilder = formatSelfSelectedNumberListsToString();
+	public SpannableStringBuilder get_fFormatedNumberString() {
+		// 如果已经格式化了，则不再此进行格式化
+		if (_fFormatedSpannableStringBuilder == null) {
+			// 如果是自选玩法
+			if (isSelfSelect()) {
+				_fFormatedSpannableStringBuilder = formatSelfSelectedNumberListsToString();
+			}
+			// 如果是胆拖玩法
+			else if (isCourageSelect()) {
+				_fFormatedSpannableStringBuilder = formatCourageSelectNumberListsToString();
+			}
 		}
-		// 如果是胆拖玩法
-		else {
-			formatSpannableStringBuilder = formatCourageSelectNumberListsToString();
-		}
-		
-		//保存格式化字符串
-		_fFormatedNumberString = formatSpannableStringBuilder.toString();
-		
-		return _fFormatedNumberString;
+		return _fFormatedSpannableStringBuilder;
 	}
 
 	/**
 	 * 将自选选中小球号码集合格式化成指定的字符串
-	 * 
+	 *
 	 * @param aSelectedNumberLists
 	 *            选中小球集合
 	 * @return 格式化字符串对象
@@ -78,7 +83,7 @@ public class DoubleBallBettingInfo extends BettingInfo {
 
 	/**
 	 * 格式化选号小球字符串，返回格式为：1，2，3....（中间使用，分隔符分离，最后一个不分隔）
-	 * 
+	 *
 	 * @param aSelectedNumberList
 	 * @return
 	 */
@@ -99,7 +104,7 @@ public class DoubleBallBettingInfo extends BettingInfo {
 
 	/**
 	 * 将胆拖选中小球号码集合格式化成指定的字符串
-	 * 
+	 *
 	 * @param aSelectedNumberLists
 	 *            选中小球集合
 	 * @param formatSpannableStringBuilder
@@ -141,42 +146,195 @@ public class DoubleBallBettingInfo extends BettingInfo {
 	}
 
 	@Override
-	protected long get_fNumber() {
-		return 0;
+	public long get_fNumber() {
+		// 如果已经计算了注数就不再进行计算
+		if (_fNumber == -1) {
+			if (isSelfSelect()) {
+				_fNumber = MathTools.combination(getRedNumberNum(), 6)
+						* MathTools.combination(getBlueNumberNum(), 1);
+			} else if (isCourageSelect()) {
+				_fNumber = MathTools.combination(getCourageNumberNum() + getDragNumberNum(), 6)
+						* MathTools.combination(getBlueNumberNum(), 1);
+			}
+		}
+		return _fNumber;
 	}
 
 	@Override
-	protected long get_fAmount() {
-		return 0;
+	public long get_fAmount() {
+		// 如果计算了金额就不再进行计算
+		if (_fAmount == -1) {
+			_fAmount = get_fNumber() * 2;
+		}
+		return _fAmount;
 	}
 
 	@Override
-	protected boolean get_fIsLegitimacy() {
-		//如果是自选玩法，当红球的个数超过6个，并且蓝球的个数大于1个的时候，投注合法
-		if (_fBettingType == BettingType.SELF_SELECT) {
-			int redNum = _fBettingNumberLists.get(0).size();
-			int blueNum = _fBettingNumberLists.get(1).size();
-
-			if (redNum >= 6 && blueNum >= 1) {
-				_fIsLegitimacy = true;
-			} else {
-				_fIsLegitimacy = false;
+	public boolean get_fIsLegitimacy() {
+		// 如果已经判断了合法性，则不再进行合法性判断
+		if (_fIsLegitimacy == false) {
+			if (isSelfSelect()) {
+				_fIsLegitimacy = isSelfSelectLegitimacy();
+			} else if (isCourageSelect()) {
+				_fIsLegitimacy = isCourageSelectLegitimacy();
 			}
 		}
-		//如果是胆拖玩法，当胆码的个数加上拖码的个数大于6个，蓝球的个数大于1个的时候，投注合法
-		else if (_fBettingType == BettingType.COURAGE_SELECT) {
-			int courageNum = _fBettingNumberLists.get(0).size();
-			int dragNum = _fBettingNumberLists.get(1).size();
-			int blueNum = _fBettingNumberLists.get(2).size();
-
-			if ((courageNum + dragNum) >= 6 && blueNum >= 1) {
-				_fIsLegitimacy = true;
-			} else {
-				_fIsLegitimacy = false;
-			}
-		}
-
 		return _fIsLegitimacy;
 	}
 
+	/**
+	 * 胆拖是否合法标识
+	 *
+	 * @return 是否合法标识
+	 */
+	private boolean isCourageSelectLegitimacy() {
+		// 如果是胆拖玩法，当胆码的个数加上拖码的个数大于6个，蓝球的个数大于1个的时候，投注合法
+		int courageNum = getCourageNumberNum();
+		int dragNum = getDragNumberNum();
+		int blueNum = getBlueNumberNum();
+
+		boolean isLegitimacy;
+		if ((courageNum + dragNum) >= 6 && blueNum >= 1) {
+			isLegitimacy = true;
+		} else {
+			isLegitimacy = false;
+		}
+
+		return isLegitimacy;
+	}
+
+	/**
+	 * 自选选号是否合法
+	 *
+	 * @return 是否合法标识
+	 */
+	private boolean isSelfSelectLegitimacy() {
+		// 自选玩法，当红球的个数超过6个，并且蓝球的个数大于1个的时候，投注合法
+		int redNum = getRedNumberNum();
+		int blueNum = getBlueNumberNum();
+
+		boolean isLegitimacy;
+		if (redNum >= 6 && blueNum >= 1) {
+			isLegitimacy = true;
+		} else {
+			isLegitimacy = false;
+		}
+		return isLegitimacy;
+	}
+
+	@Override
+	public String getNotLegitimacyPromptString() {
+		// 如果已经获取了不合法提示信息字符串，在不再获取
+		if (_fNotLegitimacyString == null) {
+			if (isSelfSelect()) {
+				_fNotLegitimacyString = getSelfSelectNotLegitimacyPromptString();
+			} else if (isCourageSelect()) {
+				_fNotLegitimacyString = getCourageSelectNotLegitimacyPromptString();
+			}
+		}
+		return _fNotLegitimacyString;
+	}
+
+	/**
+	 * 获取自选不合法提示信息字符串
+	 *
+	 * @return 自选不合法提示信息字符串
+	 */
+	private String getSelfSelectNotLegitimacyPromptString() {
+		StringBuilder promptStringBuilder = new StringBuilder();
+		int redNum = getRedNumberNum();
+		int blueNum = getBlueNumberNum();
+		promptStringBuilder.append("您选择了(").append(redNum).append("红+").append(blueNum)
+				.append("蓝),请至少再选择");
+		if (redNum < 6) {
+			promptStringBuilder.append(6 - redNum).append("个红球");
+		}
+		if (blueNum < 1) {
+			promptStringBuilder.append(1 - blueNum).append("个蓝球");
+		}
+		return promptStringBuilder.toString();
+	}
+
+	/**
+	 * 获取胆拖不合法提示信息字符串
+	 *
+	 * @return 胆拖不合法提示信息字符串
+	 */
+	private String getCourageSelectNotLegitimacyPromptString() {
+		StringBuilder promptStringBuilder = new StringBuilder();
+		int courageNum = getCourageNumberNum();
+		int dragNum = getDragNumberNum();
+		int blueNum = getBlueNumberNum();
+		promptStringBuilder.append("您选择了(").append(courageNum + dragNum).append("红+")
+				.append(blueNum).append("蓝),请至少再选择");
+
+		if ((courageNum + dragNum) < 6) {
+			promptStringBuilder.append(6 - (courageNum + dragNum)).append("个红球");
+		}
+		if (blueNum < 1) {
+			promptStringBuilder.append(1 - blueNum).append("个蓝球");
+		}
+
+		return promptStringBuilder.toString();
+	}
+
+	/**
+	 * 获取红球选号个数
+	 *
+	 * @return 红球选号个数
+	 */
+	private int getRedNumberNum() {
+		return _fBettingNumberLists.get(0).size();
+	}
+
+	/**
+	 * 获取蓝球选号个数
+	 *
+	 * @return 蓝球选号个数
+	 */
+	private int getBlueNumberNum() {
+		int blueNum = 0;
+		if (isSelfSelect()) {
+			blueNum = _fBettingNumberLists.get(1).size();
+		} else if (isCourageSelect()) {
+			blueNum = _fBettingNumberLists.get(2).size();
+		}
+		return blueNum;
+	}
+
+	/**
+	 * 是否是胆拖玩法
+	 *
+	 * @return 是否是胆拖玩法布尔标识
+	 */
+	private boolean isCourageSelect() {
+		return _fBettingType == COURAGE_SELECT;
+	}
+
+	/**
+	 * 是否是自选玩法
+	 *
+	 * @return 是否是自选玩法布尔标识
+	 */
+	private boolean isSelfSelect() {
+		return _fBettingType == SELF_SELECT;
+	}
+
+	/**
+	 * 获取胆选号个数
+	 *
+	 * @return 胆选号个数
+	 */
+	private int getCourageNumberNum() {
+		return _fBettingNumberLists.get(0).size();
+	}
+
+	/**
+	 * 获取拖选号小球的个数
+	 *
+	 * @return
+	 */
+	private int getDragNumberNum() {
+		return _fBettingNumberLists.get(1).size();
+	}
 }

@@ -197,7 +197,7 @@ public class SelectNumberBall extends LinearLayout {
 
 			// 显示当前选择号码注数和金额信息
 			((LotterySwitchTabsActivityGroup) ((LotteryViewPagerActivity) _fContext).getParent())
-			.showNowSelectedNumberBettingInfo();
+			.showNowSelectedBettingInfo();
 		}
 
 		/**

@@ -105,10 +105,17 @@ public class BettingBar extends LinearLayout {
 	 * @param aShowTextString
 	 *            要显示的文本字符串
 	 */
-	public void set_fSelectedNumberTextViewText(SpannableStringBuilder aShowTextString) {
+	public void setSelectedNumberTextViewText(SpannableStringBuilder aShowTextString) {
 		SpannableStringBuilder formatSpannableStringBuilder = new SpannableStringBuilder("已选：")
 				.append(aShowTextString);
 		_fSelectedNumberTextView.setText(formatSpannableStringBuilder);
+	}
+
+	/**
+	 *设置号码篮子投注信息的数目
+	 */
+	public void setNumberBasketBetInfoNum(int aBetInfoNum){
+		_fNumberBasketButton.setText(String.valueOf(aBetInfoNum));
 	}
 
 	/**

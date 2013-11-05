@@ -5,7 +5,9 @@ import com.ruyicai.android.controller.activity.home.buylotteryhall.LotterySwitch
 import com.ruyicai.android.controller.adapter.listview.NumberBasketDialogListViewAdapter;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -20,6 +22,8 @@ public class NumberBasketBettingInfoDialog extends PromptDialogAbstract {
 	private ListView _fBettingInfoListView;
 	/**投注信息文本*/
 	private TextView _fBettingInfoTextView;
+	/**投注信息列表适配器*/
+	public NumberBasketDialogListViewAdapter _fNumberBasketDialogListViewAdapter;
 
 	public NumberBasketBettingInfoDialog(Context aContext) {
 		super(aContext);
@@ -39,11 +43,9 @@ public class NumberBasketBettingInfoDialog extends PromptDialogAbstract {
 
 		_fBettingInfoListView = (ListView) _fContentView
 				.findViewById(R.id.numberbasket_bettinginfo_dialog_listview);
-		NumberBasketDialogListViewAdapter numberBasketDialogListViewAdapter = new NumberBasketDialogListViewAdapter(
-				_fContext,
+		_fNumberBasketDialogListViewAdapter = new NumberBasketDialogListViewAdapter(_fContext,
 				((LotterySwitchTabsActivityGroup) _fContext)._fNumberBasket.get_fbettingInfoList());
-		_fBettingInfoListView.setAdapter(numberBasketDialogListViewAdapter);
-
+		_fBettingInfoListView.setAdapter(_fNumberBasketDialogListViewAdapter);
 		_fBettingInfoTextView = (TextView) _fContentView
 				.findViewById(R.id.numberbasket_bettinginfo_dialog_textview);
 	}
@@ -51,6 +53,7 @@ public class NumberBasketBettingInfoDialog extends PromptDialogAbstract {
 	@Override
 	public void set_fPositiveButton() {
 		_fPositiveButtonString = _fResources.getString(R.string.doubleball_numberbasket_dialog_positivebutton);
+		_fPositiveButtonClickListener = new NumberBasketDialogButtonOnClickListener();
 	}
 
 	@Override
@@ -62,6 +65,25 @@ public class NumberBasketBettingInfoDialog extends PromptDialogAbstract {
 	public void set_fNegativeButton() {
 		_fNegativeButtonString = _fResources
 				.getString(R.string.doubleball_numberbasket_dialog_negetivebutton);
+	}
+
+	/**
+	 * 号码篮子对话框按钮点击事件监听器
+	 * @author xiang_000
+	 * @since RYC1.0 2013-11-5
+	 */
+	class NumberBasketDialogButtonOnClickListener implements android.view.View.OnClickListener{
+		@Override
+		public void onClick(View v) {
+			switch (v.getId()) {
+				case R.id.number:
+
+					break;
+
+				default:
+					break;
+			}
+		}
 	}
 
 }

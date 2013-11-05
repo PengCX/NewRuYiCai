@@ -5,10 +5,10 @@ import com.ruyicai.android.R;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -42,11 +42,11 @@ public abstract class PromptDialogAbstract extends AlertDialog {
 	private View _fDialogView;
 
 	/** 确定按钮事件监听器接口 */
-	protected DialogInterface.OnClickListener _fPositiveButtonClickListener;
+	protected OnClickListener _fPositiveButtonClickListener;
 	/** 其它按钮事件监听器 */
-	protected DialogInterface.OnClickListener _fOtherButtonClickListener;
+	protected OnClickListener _fOtherButtonClickListener;
 	/** 取消按钮事件监听器接口 */
-	protected DialogInterface.OnClickListener _fNegativeButtOnClickListener;
+	protected OnClickListener _fNegativeButtOnClickListener;
 
 	public PromptDialogAbstract(Context aContext) {
 		super(aContext);
