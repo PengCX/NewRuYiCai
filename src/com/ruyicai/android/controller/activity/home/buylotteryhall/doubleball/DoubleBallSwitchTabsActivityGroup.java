@@ -14,7 +14,7 @@ import com.ruyicai.android.controller.activity.home.buylotteryhall.LotterySwitch
 import com.ruyicai.android.controller.activity.home.buylotteryhall.LotteryViewPagerActivity;
 import com.ruyicai.android.controller.activity.home.buylotteryhall.betinformation.BetInformationSwitchTabsActivityGroup;
 import com.ruyicai.android.controller.compontent.bar.BettingBar;
-import com.ruyicai.android.model.bean.BettingInformation;
+import com.ruyicai.android.model.bean.betinfo.BettingInfo;
 import com.ruyicai.android.model.bean.lottery.DoubleBallLottery;
 
 /**
@@ -70,7 +70,7 @@ public class DoubleBallSwitchTabsActivityGroup extends LotterySwitchTabsActivity
 			Toast.makeText(this, promptString, Toast.LENGTH_SHORT).show();
 		}else{
 			//初始化投注信息对象
-			BettingInformation bettingInfo = new BettingInformation(selectedNumberLists);
+			BettingInfo bettingInfo = new BettingInfo(selectedNumberLists);
 			//将投注信息对象添加到号码篮中
 			_fNumberBasket.addBettingInfo(bettingInfo);
 			Toast.makeText(this, _fNumberBasket.getNumberBasketSize() + "",Toast.LENGTH_SHORT).show();

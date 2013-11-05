@@ -3,6 +3,8 @@ package com.ruyicai.android.model.bean;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.ruyicai.android.model.bean.betinfo.BettingInfo;
+
 /**
  * 号码篮对象：负责保存投注信息
  *
@@ -11,15 +13,15 @@ import java.util.List;
  */
 public class NumberBasket {
 	/** 投注信息集合 */
-	private List<BettingInformation> _fbettingInfoList;
+	private List<BettingInfo> _fbettingInfoList;
 
 	// 初始化代码块，初始化投注信息集合
 	{
-		_fbettingInfoList = new ArrayList<BettingInformation>();
+		_fbettingInfoList = new ArrayList<BettingInfo>();
 	}
 
 
-	public List<BettingInformation> get_fbettingInfoList() {
+	public List<BettingInfo> get_fbettingInfoList() {
 		return _fbettingInfoList;
 	}
 
@@ -29,7 +31,7 @@ public class NumberBasket {
 	 * @param bettingInfo
 	 *            添加投注信息对象
 	 */
-	public void addBettingInfo(BettingInformation bettingInfo) {
+	public void addBettingInfo(BettingInfo bettingInfo) {
 		_fbettingInfoList.add(bettingInfo);
 	}
 

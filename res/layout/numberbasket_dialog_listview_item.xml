@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 号码篮对话框投注信息列表表项布局 -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/numberbasket_dialog_listitem_background" >
+
+    <!-- 序号 -->
+
+    <TextView
+        android:id="@+id/numberbasket_dialog_listitem_serialnumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="13dp"
+        android:text="2"
+        android:textColor="@color/black" />
+
+    <!-- 投注号码 -->
+
+    <TextView
+        android:id="@+id/numberbasket_dialog_listitem_bettingnumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="3dp"
+        android:text="01,02,03,04,05,06,07"
+        android:textColor="@color/black" />
+    <!-- 投注信息 -->
+
+    <TextView
+        android:id="@+id/numberbasket_dialog_listitem_bettinginfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/numberbasket_dialog_listitem_bettingnumber"
+        android:layout_centerHorizontal="true"
+        android:text="1注    2元"
+        android:textColor="@color/black" />
+
+    <!-- 删除按钮 -->
+
+    <ImageButton
+        android:id="@+id/numberbasket_dialog_listitem_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/numberbasket_dialog_listitem_delete" />
+
+</RelativeLayout>

@@ -2,7 +2,7 @@ package com.ruyicai.android.controller.compontent.dialog.prompt;
 
 import com.ruyicai.android.R;
 import com.ruyicai.android.controller.activity.home.buylotteryhall.LotterySwitchTabsActivityGroup;
-import com.ruyicai.android.controller.adapter.listview.NumberBasketBettingDialogListViewAdapter;
+import com.ruyicai.android.controller.adapter.listview.NumberBasketDialogListViewAdapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -34,14 +34,15 @@ public class NumberBasketBettingInfoDialog extends PromptDialogAbstract {
 	public void set_fContentView() {
 		LayoutInflater layoutInflater = (LayoutInflater) _fContext
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		_fContentView = layoutInflater.inflate(R.layout.numberbasket_bettinginfo_dialog_content, null);
+		_fContentView = layoutInflater.inflate(R.layout.numberbasket_dialog_content,
+				null);
 
 		_fBettingInfoListView = (ListView) _fContentView
 				.findViewById(R.id.numberbasket_bettinginfo_dialog_listview);
-		NumberBasketBettingDialogListViewAdapter numberBasketBettingDialogListViewAdapter = new NumberBasketBettingDialogListViewAdapter(
+		NumberBasketDialogListViewAdapter numberBasketDialogListViewAdapter = new NumberBasketDialogListViewAdapter(
 				_fContext,
 				((LotterySwitchTabsActivityGroup) _fContext)._fNumberBasket.get_fbettingInfoList());
-		_fBettingInfoListView.setAdapter(numberBasketBettingDialogListViewAdapter);
+		_fBettingInfoListView.setAdapter(numberBasketDialogListViewAdapter);
 
 		_fBettingInfoTextView = (TextView) _fContentView
 				.findViewById(R.id.numberbasket_bettinginfo_dialog_textview);
