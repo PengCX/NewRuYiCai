@@ -1,13 +1,17 @@
 package com.ruyicai.android.controller.adapter.listview;
 
 import com.ruyicai.android.R;
+import com.ruyicai.android.controller.activity.home.buylotteryhall.LotterySwitchTabsActivityGroup;
+import com.ruyicai.android.controller.compontent.dialog.prompt.NumberBasketBettingInfoDialog;
 import com.ruyicai.android.model.bean.betinfo.BettingInfo;
 
 import java.util.List;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageButton;
@@ -24,20 +28,23 @@ public class NumberBasketDialogListViewAdapter extends BaseAdapter {
 	private Context _fContext;
 	/**投注信息集合*/
 	private List<BettingInfo> _fBettingInformations;
-
+	/**显示的对话框对象*/
+	private Dialog _fDialog;
 	/**
 	 * 构造方法
+	 * @param numberBasketBettingInfoDialog
 	 *
 	 * @param aContext
 	 *            上下文对象
 	 * @param aBettingInformations
 	 *            投注信息集合
 	 */
-	public NumberBasketDialogListViewAdapter(Context aContext,
+	public NumberBasketDialogListViewAdapter(Dialog aDialog, Context aContext,
 			List<BettingInfo> aBettingInformations) {
 		super();
-		this._fContext = aContext;
-		this._fBettingInformations = aBettingInformations;
+		_fDialog = aDialog;
+		_fContext = aContext;
+		_fBettingInformations = aBettingInformations;
 	}
 
 	@Override
@@ -79,9 +86,12 @@ public class NumberBasketDialogListViewAdapter extends BaseAdapter {
 		}
 
 		BettingInfo bettingInformation = _fBettingInformations.get(aPosition);
-		viewHoler._fSerialTextView.setText(String.valueOf(aPosition));
-		viewHoler._fBettingNumberTextView.setText(bettingInformation.get_fFormatedNumberString());
-		viewHoler._fBettingInfoTextView.setText(String.valueOf(bettingInformation.get_fNumber()));
+		viewHoler._fSerialTextView.setText(String.valueOf(aPosition + 1));
+		viewHoler._fBettingNumberTextView.setText(bettingInformation.get_fFormatedSpannelStringBuilder());
+		StringBuilder bettingInfoStringBuilder = new StringBuilder();
+		bettingInfoStringBuilder.append(bettingInformation.get_fNumber()).append("注   ").append(bettingInformation.get_fAmount()).append("元");
+		viewHoler._fBettingInfoTextView.setText(bettingInfoStringBuilder.toString());
+		viewHoler._fDeleteImageButton.setOnClickListener(new NumberBasketDialogListItemButtonOnClickListener(aPosition));
 
 		return aConvertView;
 	}
@@ -95,6 +105,34 @@ public class NumberBasketDialogListViewAdapter extends BaseAdapter {
 		private TextView _fBettingInfoTextView;
 		/** 删除按钮 */
 		private ImageButton _fDeleteImageButton;
+	}
+
+	/**
+	 * 号码篮子对话框列表项按钮事件监听器
+	 * @author xiang_000
+	 * @since RYC1.0 2013-11-6
+	 */
+	class NumberBasketDialogListItemButtonOnClickListener implements OnClickListener{
+		/**当前点击列表项的索引*/
+		private int _fItemIndex;
+
+		private NumberBasketDialogListItemButtonOnClickListener(int _fItemIndex) {
+			super();
+			this._fItemIndex = _fItemIndex;
+		}
+
+		@Override
+		public void onClick(View v) {
+			switch (v.getId()) {
+				case R.id.numberbasket_dialog_listitem_delete:
+					//从号码篮子中移除该投注信息
+					((LotterySwitchTabsActivityGroup)_fContext)._fNumberBasket.deleteBettingInfo(_fItemIndex);
+					break;
+
+				default:
+					break;
+			}
+		}
 	}
 }
 

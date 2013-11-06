@@ -2,7 +2,6 @@ package com.ruyicai.android.controller.activity.home.buylotteryhall.compete;
 
 import static com.ruyicai.android.controller.compontent.dialog.DialogType.*;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -22,8 +21,6 @@ import com.ruyicai.android.controller.activity.BaseActivity;
 import com.ruyicai.android.controller.compontent.bar.CompeteBar;
 import com.ruyicai.android.controller.compontent.bar.CompeteBarInterface;
 import com.ruyicai.android.controller.compontent.bar.TitleBar;
-import com.ruyicai.android.controller.compontent.dialog.DialogFactory;
-import com.ruyicai.android.controller.compontent.dialog.DialogType.*;
 import com.ruyicai.android.model.bean.lottery.compete.against.AgainstInfo;
 
 import java.util.ArrayList;

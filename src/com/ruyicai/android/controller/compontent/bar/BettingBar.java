@@ -1,6 +1,9 @@
 package com.ruyicai.android.controller.compontent.bar;
 
 import com.ruyicai.android.R;
+import com.ruyicai.android.controller.activity.home.buylotteryhall.LotterySwitchTabsActivityGroup;
+import com.ruyicai.android.model.bean.betinfo.BettingInfoObserver;
+import com.ruyicai.android.model.bean.numberbasket.NumberBasketObserver;
 
 import android.content.Context;
 import android.text.SpannableStringBuilder;
@@ -17,7 +20,7 @@ import android.widget.TextView;
  * @author xiang_000
  * @since RYC1.0 2013-4-7
  */
-public class BettingBar extends LinearLayout {
+public class BettingBar extends LinearLayout implements NumberBasketObserver,BettingInfoObserver{
 	/** 上下文对象 */
 	private Context _fContext;
 
@@ -106,16 +109,7 @@ public class BettingBar extends LinearLayout {
 	 *            要显示的文本字符串
 	 */
 	public void setSelectedNumberTextViewText(SpannableStringBuilder aShowTextString) {
-		SpannableStringBuilder formatSpannableStringBuilder = new SpannableStringBuilder("已选：")
-				.append(aShowTextString);
-		_fSelectedNumberTextView.setText(formatSpannableStringBuilder);
-	}
 
-	/**
-	 *设置号码篮子投注信息的数目
-	 */
-	public void setNumberBasketBetInfoNum(int aBetInfoNum){
-		_fNumberBasketButton.setText(String.valueOf(aBetInfoNum));
 	}
 
 	/**
@@ -145,5 +139,18 @@ public class BettingBar extends LinearLayout {
 					throw new AssertionError("投注栏按钮点击事件监听时，没有处理id为：" + v.getId() + "按钮的事件。");
 			}
 		}
+	}
+
+	@Override
+	public void updateNumberBasketInfoShow() {
+		int bettingInfoNumber = ((LotterySwitchTabsActivityGroup)_fContext)._fNumberBasket.getBettingInfoNumber();
+		_fNumberBasketButton.setText(String.valueOf(bettingInfoNumber));
+	}
+
+	@Override
+	public void updateBettingInfoShow() {
+		SpannableStringBuilder formatedSpannableStringBuilder = ((LotterySwitchTabsActivityGroup) _fContext)._fNowSelectBettingInfo
+				.get_fFormatedSpannelStringBuilder();
+		_fSelectedNumberTextView.setText(formatedSpannableStringBuilder);
 	}
 }

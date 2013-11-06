@@ -20,20 +20,8 @@ import android.text.style.ForegroundColorSpan;
  */
 public class DoubleBallBettingInfo extends BettingInfo {
 
-	/**
-	 * 构造方法
-	 *
-	 * @param aBettingType
-	 *            投注方法类型
-	 * @param aBettingNumberLists
-	 *            投注号码列表 集合
-	 */
-	public DoubleBallBettingInfo(BettingType aBettingType, List<List<Integer>> aBettingNumberLists) {
-		super(aBettingType, aBettingNumberLists);
-	}
-
 	@Override
-	public SpannableStringBuilder get_fFormatedNumberString() {
+	public SpannableStringBuilder get_fFormatedSpannelStringBuilder() {
 		// 如果已经格式化了，则不再此进行格式化
 		if (_fFormatedSpannableStringBuilder == null) {
 			// 如果是自选玩法
@@ -233,6 +221,15 @@ public class DoubleBallBettingInfo extends BettingInfo {
 			}
 		}
 		return _fNotLegitimacyString;
+	}
+
+	@Override
+	public void set_fBettingType(int aTabIndex) {
+		if (aTabIndex == 0) {
+			_fBettingType = SELF_SELECT;
+		} else if (aTabIndex == 1) {
+			_fBettingType = COURAGE_SELECT;
+		}
 	}
 
 	/**

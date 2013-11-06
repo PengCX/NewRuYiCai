@@ -2,6 +2,7 @@ package com.ruyicai.android.controller.compontent.dialog;
 
 import static com.ruyicai.android.controller.compontent.dialog.DialogType.*;
 
+import com.ruyicai.android.controller.activity.home.buylotteryhall.LotterySwitchTabsActivityGroup;
 import com.ruyicai.android.controller.compontent.dialog.alert.AlertDialogInterface;
 import com.ruyicai.android.controller.compontent.dialog.alert.NotConnectedIntenetDialog;
 import com.ruyicai.android.controller.compontent.dialog.prompt.ApplicationExitDialog;
@@ -74,6 +75,7 @@ public class DialogFactory {
 	 * @return 提示对话框对象
 	 */
 	private Dialog createPromptDialogById(int aId) {
+		//使用了模版模式：使用模版方法将具体的算法和流程确定，然后再子类中实现每个细节流程
 		PromptDialogAbstract promptDialog = factoryPromptDialogById(aId);
 		promptDialog.set_fView();
 		promptDialog.set_fTitleString();
@@ -138,6 +140,7 @@ public class DialogFactory {
 	 * @return 提示对话框对象
 	 */
 	private PromptDialogAbstract factoryPromptDialogById(int aId) {
+		//使用了工厂模式：根据指定的类型，创建同样的抽象类型对象
 		PromptDialogAbstract promptDialog = null;
 		if (aId == SOFTWARE_UPDATE_DIALOG.ordinal()) {
 			promptDialog = new SoftUpdateDialog(_fContext);
@@ -147,6 +150,8 @@ public class DialogFactory {
 			promptDialog = new CompeteFootballPlayMethodChangeDialog(_fContext);
 		} else if(aId == NUMBERBASKET_SHOWBETTINGINFO_DIALOG.ordinal()){
 			promptDialog = new NumberBasketBettingInfoDialog(_fContext);
+			//使用了观察者模式：在创建号码篮子对话框之前，就把它添加为号码篮子观察者
+			((LotterySwitchTabsActivityGroup)_fContext)._fNumberBasket.addNumberBasketObserver((NumberBasketBettingInfoDialog)promptDialog);
 		}else {
 			// 避免出现没有对话框的类型分支时，抛出错误，易于查找问题
 			throw new AssertionError("提示对话框工厂DialogFactory类，根据对话框类型枚举创建对话框实例对象时，没有你需要创建的对话框类型："

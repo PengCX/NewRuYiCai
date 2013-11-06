@@ -3,7 +3,6 @@ package com.ruyicai.android.controller.compontent.dialog.prompt;
 import com.ruyicai.android.R;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.graphics.Color;
 import android.widget.TextView;
 
@@ -37,27 +36,12 @@ public class ApplicationExitDialog extends PromptDialogAbstract {
 	public void set_fPositiveButton() {
 		_fPositiveButtonString = _fResources
 				.getString(R.string.exitapplicationdialog_button_positive);
-		_fPositiveButtonClickListener = new OnClickListener() {
-
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				dismiss();
-				System.exit(0);
-			}
-		};
 	}
 
 	@Override
 	public void set_fNegativeButton() {
 		_fNegativeButtonString = _fResources
 				.getString(R.string.exitapplicationdialog_button_negative);
-		_fNegativeButtOnClickListener = new OnClickListener() {
-
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				dismiss();
-			}
-		};
 	}
 
 	@Override
@@ -65,12 +49,19 @@ public class ApplicationExitDialog extends PromptDialogAbstract {
 		// 如果没有该按钮，则空实现
 	}
 
-	class ApplicationExitDialogButtonOnclickListener implements OnClickListener{
-		@Override
-		public void onClick(DialogInterface dialog, int which) {
-			// TODO Auto-generated method stub
+	@Override
+	public void setPositiveButtonOnClick() {
+		dismiss();
+		System.exit(0);
+	}
 
-		}
+	@Override
+	public void setOtherButtonOnClick() {
+		// 如果没有该按钮，则空实现
+	}
 
+	@Override
+	public void setNegativeButtonOnClick() {
+		dismiss();
 	}
 }

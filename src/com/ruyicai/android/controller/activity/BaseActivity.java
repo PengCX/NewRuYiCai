@@ -8,9 +8,6 @@ import com.ruyicai.android.controller.activity.home.lotterynotice.LotteryNoticeA
 import com.ruyicai.android.controller.activity.home.more.MoreActivity;
 import com.ruyicai.android.controller.activity.home.usercenter.UserCenterActivity;
 import com.ruyicai.android.controller.compontent.dialog.DialogFactory;
-import com.ruyicai.android.controller.compontent.dialog.alert.AlertDialogInterface;
-import com.ruyicai.android.controller.compontent.dialog.prompt.PromptDialogAbstract;
-
 import roboguice.activity.RoboActivity;
 import android.app.Dialog;
 import android.view.KeyEvent;

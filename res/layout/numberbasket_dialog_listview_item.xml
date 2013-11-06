@@ -6,7 +6,6 @@
     android:background="@drawable/numberbasket_dialog_listitem_background" >
 
     <!-- 序号 -->
-
     <TextView
         android:id="@+id/numberbasket_dialog_listitem_serialnumber"
         android:layout_width="wrap_content"
@@ -15,7 +14,8 @@
         android:layout_centerVertical="true"
         android:layout_marginLeft="13dp"
         android:text="2"
-        android:textColor="@color/black" />
+        android:textColor="@color/white"
+        android:textSize="14sp" />
 
     <!-- 投注号码 -->
 
@@ -26,6 +26,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="3dp"
         android:text="01,02,03,04,05,06,07"
+        android:textSize="14sp"
         android:textColor="@color/black" />
     <!-- 投注信息 -->
 
@@ -35,6 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/numberbasket_dialog_listitem_bettingnumber"
         android:layout_centerHorizontal="true"
+        android:textSize="14sp"
         android:text="1注    2元"
         android:textColor="@color/black" />
 

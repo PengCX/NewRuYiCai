@@ -12,10 +12,11 @@
         android:layout_height="wrap_content" />
 
     <!-- 投注信息文本 -->
-
     <TextView
         android:id="@+id/numberbasket_bettinginfo_dialog_textview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/numberbasket_bettinginfo_dialog_listview"
+        android:textColor="@color/black" />
 
 </RelativeLayout>

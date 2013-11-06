@@ -127,21 +127,6 @@ public class CompeteFootballPlayMethodChangeDialog extends PromptDialogAbstract 
 				.setOnCheckedChangeListener(new CompeteFootballPlayMethodChangeRadioButtonOnCheckedChangeListener());
 	}
 
-	@Override
-	public void set_fPositiveButton() {
-		// 没有该按钮，则空实现
-	}
-
-	@Override
-	public void set_fOtherButton() {
-		// 没有该按钮，则空实现
-	}
-
-	@Override
-	public void set_fNegativeButton() {
-		// 没有该按钮，则空实现
-	}
-
 	/**
 	 * 竞彩足球玩法切换单选按钮组选中监听实现类
 	 *
@@ -227,6 +212,36 @@ public class CompeteFootballPlayMethodChangeDialog extends PromptDialogAbstract 
 
 			dismiss();
 		}
+
+	}
+
+	@Override
+	public void set_fPositiveButton() {
+		// 没有该按钮，则空实现
+	}
+
+	@Override
+	public void set_fOtherButton() {
+		// 没有该按钮，则空实现
+	}
+
+	@Override
+	public void set_fNegativeButton() {
+		// 没有该按钮，则空实现
+	}
+
+	@Override
+	public void setPositiveButtonOnClick() {
+
+	}
+
+	@Override
+	public void setOtherButtonOnClick() {
+
+	}
+
+	@Override
+	public void setNegativeButtonOnClick() {
 
 	}
 }

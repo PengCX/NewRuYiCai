@@ -1,9 +1,5 @@
 package com.ruyicai.android.controller.activity.home.buylotteryhall.doubleball;
 
-import static com.ruyicai.android.model.bean.betinfo.BettingType.*;
-
-import java.util.List;
-
 import android.os.Bundle;
 import android.widget.TabHost;
 
@@ -43,12 +39,8 @@ public class DoubleBallSwitchTabsActivityGroup extends LotterySwitchTabsActivity
 	}
 
 	@Override
-	protected void initNowSelectedBettingInfo(int aCurrentTabIndex,
-			List<List<Integer>> aNowSelectedNumberLists) {
-		if(aCurrentTabIndex == 0){
-			_fNowSelectBettingInfo = new DoubleBallBettingInfo(SELF_SELECT, aNowSelectedNumberLists);
-		}else if(aCurrentTabIndex == 1){
-			_fNowSelectBettingInfo = new DoubleBallBettingInfo(COURAGE_SELECT, aNowSelectedNumberLists);
-		}
+	protected void createNowBettingInfo() {
+		_fNowSelectBettingInfo = new DoubleBallBettingInfo();
 	}
+
 }

@@ -1,7 +1,7 @@
 package com.ruyicai.android.model.bean.betinfo;
 
+import java.util.ArrayList;
 import java.util.List;
-
 import android.text.SpannableStringBuilder;
 
 /**
@@ -10,7 +10,7 @@ import android.text.SpannableStringBuilder;
  * @author xiang_000
  * @since RYC1.0 2013-11-3
  */
-public abstract class BettingInfo {
+public abstract class BettingInfo implements BettingInfoSubject{
 	/** 注数 */
 	protected long _fNumber;
 	/** 金额 */
@@ -27,6 +27,8 @@ public abstract class BettingInfo {
 	/** 投注号码集合 */
 	protected List<List<Integer>> _fBettingNumberLists;
 
+	private List<BettingInfoObserver> _fBettingInfoObservers;
+
 	//初始化代码块，初始化一些属性的默认值
 	{
 		//注数默认-1
@@ -40,26 +42,21 @@ public abstract class BettingInfo {
 		//默认不合法提示字符串为null
 		_fNotLegitimacyString = null;
 	}
+
 	/**
-	 * 构造方法
+	 * 根据选项卡的索引，设置投注类型
 	 *
-	 * @param aBettingType
-	 *            投注类型
-	 * @param aBettingNumberLists
-	 *            投注号码集合
+	 * @param aTabIndex
+	 *            选项卡索引
 	 */
-	public BettingInfo(BettingType aBettingType, List<List<Integer>> aBettingNumberLists) {
-		super();
-		this._fBettingType = aBettingType;
-		this._fBettingNumberLists = aBettingNumberLists;
-	}
+	public abstract void set_fBettingType(int aTabIndex);
 
 	/**
 	 * 获取投注号码格式化字符串
 	 *
 	 * @return 格式化字符串
 	 */
-	public abstract SpannableStringBuilder get_fFormatedNumberString();
+	public abstract SpannableStringBuilder get_fFormatedSpannelStringBuilder();
 
 	/**
 	 * 获取投注的注数
@@ -88,4 +85,56 @@ public abstract class BettingInfo {
 	 * @return 不合法提示字符串
 	 */
 	public abstract String getNotLegitimacyPromptString();
+
+	/**
+	 * 构造方法
+	 *
+	 * @param aBettingType
+	 *            投注类型
+	 * @param aBettingNumberLists
+	 *            投注号码集合
+	 */
+	public BettingInfo() {
+		super();
+	}
+
+	/**
+	 * 设置投注号码集合
+	 *
+	 * @param aBettingNumberLists
+	 *            投注号码集合
+	 */
+	public void set_fBettingNumberLists(List<List<Integer>> aBettingNumberLists) {
+		_fBettingNumberLists = aBettingNumberLists;
+	}
+
+	/**
+	 * 获取投注号码集合
+	 *
+	 * @return 投注号码集合
+	 */
+	public List<List<Integer>> get_fBettingNumberLists() {
+		return _fBettingNumberLists;
+	}
+
+	@Override
+	public void attachBettingInfoObserver(BettingInfoObserver aBettingInfoObserver) {
+		if(_fBettingInfoObservers == null){
+			_fBettingInfoObservers = new ArrayList<BettingInfoObserver>();
+		}
+		_fBettingInfoObservers.add(aBettingInfoObserver);
+	}
+
+	@Override
+	public void detachBettingInfoObserver(BettingInfoObserver aBettingInfoObserver) {
+		_fBettingInfoObservers.remove(aBettingInfoObserver);
+	}
+
+	@Override
+	public void notifyBettingInfoObservers() {
+		int observerNum = _fBettingInfoObservers.size();
+		for(int obs_i = 0; obs_i < observerNum; obs_i++){
+			_fBettingInfoObservers.get(obs_i).updateBettingInfoShow();
+		}
+	}
 }
