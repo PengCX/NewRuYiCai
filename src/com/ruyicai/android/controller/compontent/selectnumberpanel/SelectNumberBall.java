@@ -191,13 +191,9 @@ public class SelectNumberBall extends LinearLayout {
 			//根据小球是否被选中，改变小球的号码的颜色
 			changeSelectBallTextColor(isChecked);
 
-			// 当小球状态发生变化的时候，更新投注已选号码栏当前选中号码的显示
+			// 当小球状态发生变化的时候，更新当前选择的投注信息
 			((LotterySwitchTabsActivityGroup) ((LotteryViewPagerActivity) _fContext).getParent())
-					.updateSelectedNumbersShow();
-
-			// 显示当前选择号码注数和金额信息
-			((LotterySwitchTabsActivityGroup) ((LotteryViewPagerActivity) _fContext).getParent())
-			.showNowSelectedBettingInfo();
+					.updateNowSelectBettingInfo();
 		}
 
 		/**

@@ -10,7 +10,7 @@ import android.text.SpannableStringBuilder;
  * @author xiang_000
  * @since RYC1.0 2013-11-3
  */
-public abstract class BettingInfo implements BettingInfoSubject{
+public abstract class BettingInfo{
 	/** 注数 */
 	protected long _fNumber;
 	/** 金额 */
@@ -26,8 +26,6 @@ public abstract class BettingInfo implements BettingInfoSubject{
 
 	/** 投注号码集合 */
 	protected List<List<Integer>> _fBettingNumberLists;
-
-	private List<BettingInfoObserver> _fBettingInfoObservers;
 
 	//初始化代码块，初始化一些属性的默认值
 	{
@@ -115,26 +113,5 @@ public abstract class BettingInfo implements BettingInfoSubject{
 	 */
 	public List<List<Integer>> get_fBettingNumberLists() {
 		return _fBettingNumberLists;
-	}
-
-	@Override
-	public void attachBettingInfoObserver(BettingInfoObserver aBettingInfoObserver) {
-		if(_fBettingInfoObservers == null){
-			_fBettingInfoObservers = new ArrayList<BettingInfoObserver>();
-		}
-		_fBettingInfoObservers.add(aBettingInfoObserver);
-	}
-
-	@Override
-	public void detachBettingInfoObserver(BettingInfoObserver aBettingInfoObserver) {
-		_fBettingInfoObservers.remove(aBettingInfoObserver);
-	}
-
-	@Override
-	public void notifyBettingInfoObservers() {
-		int observerNum = _fBettingInfoObservers.size();
-		for(int obs_i = 0; obs_i < observerNum; obs_i++){
-			_fBettingInfoObservers.get(obs_i).updateBettingInfoShow();
-		}
 	}
 }

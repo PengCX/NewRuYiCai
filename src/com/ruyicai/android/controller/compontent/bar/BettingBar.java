@@ -1,8 +1,9 @@
 package com.ruyicai.android.controller.compontent.bar;
 
+import java.io.Serializable;
+
 import com.ruyicai.android.R;
 import com.ruyicai.android.controller.activity.home.buylotteryhall.LotterySwitchTabsActivityGroup;
-import com.ruyicai.android.model.bean.betinfo.BettingInfoObserver;
 import com.ruyicai.android.model.bean.numberbasket.NumberBasketObserver;
 
 import android.content.Context;
@@ -20,7 +21,9 @@ import android.widget.TextView;
  * @author xiang_000
  * @since RYC1.0 2013-4-7
  */
-public class BettingBar extends LinearLayout implements NumberBasketObserver,BettingInfoObserver{
+public class BettingBar extends LinearLayout implements  NumberBasketObserver {
+	private static final String TAG = "BettingBar";
+
 	/** 上下文对象 */
 	private Context _fContext;
 
@@ -35,7 +38,7 @@ public class BettingBar extends LinearLayout implements NumberBasketObserver,Bet
 	/** 投注按钮 */
 	private Button _fBettingButton;
 	/** 投注栏接口对象 */
-	private BetBarInterface _fBetBarInterface;
+	private BettingBarInterface _fBetBarInterface;
 
 	{
 		// 初始化代码块
@@ -48,6 +51,11 @@ public class BettingBar extends LinearLayout implements NumberBasketObserver,Bet
 		_fClearSelectNumberButton = (Button) findViewById(R.id.bettingbar_button_clearselectednumber);
 		_fAddToNumberBasketButton = (Button) findViewById(R.id.bettingbar_button_addtonumberbasket);
 		_fBettingButton = (Button) findViewById(R.id.bettingbar_button_betting);
+
+		_fNumberBasketButton.setOnClickListener(new BettingBarButtonOnClickListener());
+		_fClearSelectNumberButton.setOnClickListener(new BettingBarButtonOnClickListener());
+		_fAddToNumberBasketButton.setOnClickListener(new BettingBarButtonOnClickListener());
+		_fBettingButton.setOnClickListener(new BettingBarButtonOnClickListener());
 	}
 
 	/**
@@ -78,7 +86,7 @@ public class BettingBar extends LinearLayout implements NumberBasketObserver,Bet
 	 *
 	 * @return 投注栏接口
 	 */
-	public BetBarInterface get_fBetBarInterface() {
+	public BettingBarInterface get_fBetBarInterface() {
 		return _fBetBarInterface;
 	}
 
@@ -88,28 +96,16 @@ public class BettingBar extends LinearLayout implements NumberBasketObserver,Bet
 	 * @param _fBarInterface
 	 *            投注栏接口
 	 */
-	public void set_fBetBarInterface(BetBarInterface _fBarInterface) {
+	public void set_fBetBarInterface(BettingBarInterface _fBarInterface) {
 		this._fBetBarInterface = _fBarInterface;
 	}
 
 	/**
-	 * 初始化投注栏的显示
+	 * 更新选中的号码显示
+	 * @param aFormatedSpannableStringBuilder 选中号码格式化字符串
 	 */
-	public void initBetBarShow() {
-		_fNumberBasketButton.setOnClickListener(new BettingBarButtonOnClickListener());
-		_fClearSelectNumberButton.setOnClickListener(new BettingBarButtonOnClickListener());
-		_fAddToNumberBasketButton.setOnClickListener(new BettingBarButtonOnClickListener());
-		_fBettingButton.setOnClickListener(new BettingBarButtonOnClickListener());
-	}
-
-	/**
-	 * 设置已选择号码文本标签的文本
-	 *
-	 * @param aShowTextString
-	 *            要显示的文本字符串
-	 */
-	public void setSelectedNumberTextViewText(SpannableStringBuilder aShowTextString) {
-
+	public void updateSelectedNumberShow(SpannableStringBuilder aFormatedSpannableStringBuilder) {
+		_fSelectedNumberTextView.setText(aFormatedSpannableStringBuilder);
 	}
 
 	/**
@@ -145,12 +141,5 @@ public class BettingBar extends LinearLayout implements NumberBasketObserver,Bet
 	public void updateNumberBasketInfoShow() {
 		int bettingInfoNumber = ((LotterySwitchTabsActivityGroup)_fContext)._fNumberBasket.getBettingInfoNumber();
 		_fNumberBasketButton.setText(String.valueOf(bettingInfoNumber));
-	}
-
-	@Override
-	public void updateBettingInfoShow() {
-		SpannableStringBuilder formatedSpannableStringBuilder = ((LotterySwitchTabsActivityGroup) _fContext)._fNowSelectBettingInfo
-				.get_fFormatedSpannelStringBuilder();
-		_fSelectedNumberTextView.setText(formatedSpannableStringBuilder);
 	}
 }

@@ -6,11 +6,13 @@ import java.util.List;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.text.SpannableStringBuilder;
+import android.util.Log;
 import android.widget.Toast;
 import android.widget.TabHost.OnTabChangeListener;
 
 import com.ruyicai.android.controller.activity.home.buylotteryhall.betinformation.BetInformationSwitchTabsActivityGroup;
-import com.ruyicai.android.controller.compontent.bar.BetBarInterface;
+import com.ruyicai.android.controller.compontent.bar.BettingBarInterface;
 import com.ruyicai.android.controller.compontent.dialog.DialogFactory;
 import com.ruyicai.android.model.bean.betinfo.BettingInfo;
 import com.ruyicai.android.model.bean.numberbasket.NumberBasket;
@@ -22,7 +24,8 @@ import com.ruyicai.android.model.bean.numberbasket.NumberBasket;
  * @since RYC1.0 2013-11-2
  */
 public abstract class LotterySwitchTabsActivityGroup extends SwitchTabsActivityGroup implements
-		BetBarInterface {
+		BettingBarInterface {
+	private static final String TAG = "LotterySwitchTabsActivityGroup";
 	/** 号码篮对象：一个彩种多种玩法共用一个号码篮，故声明在此类中 */
 	public NumberBasket _fNumberBasket;
 	/**
@@ -49,8 +52,8 @@ public abstract class LotterySwitchTabsActivityGroup extends SwitchTabsActivityG
 	@Override
 	protected void onStart() {
 		super.onStart();
+		_fSwitchTabHost.setOnTabChangedListener(new SwitchTabsOnTabChangeListener());
 		_fBetBar.set_fBetBarInterface(this);
-		_fBetBar.initBetBarShow();
 
 		//使用了管着者模式：将投注栏填加为号码篮子的观察者
 		_fNumberBasket.addNumberBasketObserver(_fBetBar);
@@ -103,22 +106,21 @@ public abstract class LotterySwitchTabsActivityGroup extends SwitchTabsActivityG
 	}
 
 	@Override
-	public void updateSelectedNumbersShow() {
+	public void updateNowSelectBettingInfo() {
+		// 初始化投注信息对象，设置投注类型，投注号码集合
+		createNowBettingInfo();
 		// 获取当前显示Activity选中的小球号码
 		List<List<Integer>> nowSelectedNumberLists = ((LotteryViewPagerActivity) getCurrentActivity())
-				.getSelectedNumberBallNumberLists();
-		//初始化投注信息对象，设置投注类型，投注号码集合
-		createNowBettingInfo();
+				.getNowSelectNumberLists();
 		_fNowSelectBettingInfo.set_fBettingType(_fSwitchTabHost.getCurrentTab());
 		_fNowSelectBettingInfo.set_fBettingNumberLists(nowSelectedNumberLists);
-		// 获取格式化字符串并显示在投注栏已选号码文本框中
-		_fBetBar.setSelectedNumberTextViewText(_fNowSelectBettingInfo.get_fFormatedSpannelStringBuilder());
-	}
 
-	/**
-	 * 显示当前选择号码的投注信息：如，2注4元
-	 */
-	public void showNowSelectedBettingInfo() {
+		// 更新投注栏已选号码显示
+		SpannableStringBuilder formatedSpannableStringBuilder = new SpannableStringBuilder("已选：");
+		formatedSpannableStringBuilder.append(_fNowSelectBettingInfo
+				.get_fFormatedSpannelStringBuilder());
+		_fBetBar.updateSelectedNumberShow(formatedSpannableStringBuilder);
+
 		// 如果当前选择的投注信息合法，则在页面的底部显示投注信息
 		if (_fNowSelectBettingInfo.get_fIsLegitimacy()) {
 			StringBuilder stringBuilder = new StringBuilder();
@@ -127,7 +129,6 @@ public abstract class LotterySwitchTabsActivityGroup extends SwitchTabsActivityG
 			showToastInBottom(stringBuilder.toString());
 		}
 	}
-
 	/**
 	 * 在屏幕的底部显示Toast提示信息，整个页面使用同一个Toast对象显示，避免了过快显示Toast的时候，出现的延迟现象
 	 *
@@ -144,5 +145,19 @@ public abstract class LotterySwitchTabsActivityGroup extends SwitchTabsActivityG
 			_fBottomToast.setText(aBetInfoString);
 		}
 		_fBottomToast.show();
+	}
+
+	/**
+	 * 选项卡切换事件监听器
+	 * @author xiang_000
+	 * @since RYC1.0 2013-11-7
+	 */
+	class SwitchTabsOnTabChangeListener implements OnTabChangeListener{
+
+		@Override
+		public void onTabChanged(String tabId) {
+			updateNowSelectBettingInfo();
+		}
+
 	}
 }

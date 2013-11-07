@@ -119,7 +119,7 @@ public abstract class LotteryViewPagerActivity extends RoboActivity {
 	 *
 	 * @return 当前面板选中的选号小球号码集合
 	 */
-	public List<List<Integer>> getSelectedNumberBallNumberLists() {
+	public List<List<Integer>> getNowSelectNumberLists() {
 		// 通过当前显示的滑动页面索引，获取选号面板集合
 		int pageIndex = _fViewPager.getCurrentItem();
 		List<SelectNumberPanel> selectNumberPanels = _fSelectNumberPanelList.get(pageIndex);
@@ -144,7 +144,7 @@ public abstract class LotteryViewPagerActivity extends RoboActivity {
 		int relateIndex = (_fViewPager.getCurrentItem() + 1) % _fViewPager.getChildCount();
 		List<SelectNumberPanel> relateSelectNumberPanels = _fSelectNumberPanelList.get(relateIndex);
 
-		List<List<Integer>> selectedNumberLists = getSelectedNumberBallNumberLists();
+		List<List<Integer>> selectedNumberLists = getNowSelectNumberLists();
 		int panelNum = relateSelectNumberPanels.size();
 		for (int panel_i = 0; panel_i < panelNum; panel_i++) {
 			SelectNumberPanel selectNumberPanel = relateSelectNumberPanels.get(panel_i);

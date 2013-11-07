@@ -22,16 +22,13 @@ public class DoubleBallBettingInfo extends BettingInfo {
 
 	@Override
 	public SpannableStringBuilder get_fFormatedSpannelStringBuilder() {
-		// 如果已经格式化了，则不再此进行格式化
-		if (_fFormatedSpannableStringBuilder == null) {
-			// 如果是自选玩法
-			if (isSelfSelect()) {
-				_fFormatedSpannableStringBuilder = formatSelfSelectedNumberListsToString();
-			}
-			// 如果是胆拖玩法
-			else if (isCourageSelect()) {
-				_fFormatedSpannableStringBuilder = formatCourageSelectNumberListsToString();
-			}
+		// 如果是自选玩法
+		if (isSelfSelect()) {
+			_fFormatedSpannableStringBuilder = formatSelfSelectedNumberListsToString();
+		}
+		// 如果是胆拖玩法
+		else if (isCourageSelect()) {
+			_fFormatedSpannableStringBuilder = formatCourageSelectNumberListsToString();
 		}
 		return _fFormatedSpannableStringBuilder;
 	}
