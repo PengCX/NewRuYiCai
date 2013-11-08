@@ -5,6 +5,7 @@ import com.ruyicai.android.controller.activity.home.buylotteryhall.LotterySwitch
 import com.ruyicai.android.controller.adapter.listview.NumberBasketDialogListViewAdapter;
 import com.ruyicai.android.model.bean.numberbasket.NumberBasketObserver;
 
+import android.R.dimen;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.widget.ListView;
@@ -79,7 +80,9 @@ public class NumberBasketBettingInfoDialog extends PromptDialogAbstract implemen
 
 	@Override
 	public void setNegativeButtonOnClick() {
-
+		//调用投注页面投注按钮逻辑
+		((LotterySwitchTabsActivityGroup)_fContext).setBettingButton();
+		dismiss();
 	}
 
 	@Override

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 大乐透胆拖遗漏值页面 -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:custom="http://schemas.android.com/apk/res/com.ruyicai.android"
+    android:layout_height="match_parent"
+    android:scrollbars="none" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <!-- 胆码选号面板 -->
+
+        <com.ruyicai.android.controller.compontent.panel.SelectNumberPanel
+            android:id="@+id/superlotto_courageselect_loss_courage_selectnumberpanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            custom:_fIsShowLossValue="true"
+            custom:_fRandomButtonDropDownMenuButtonNum="5"
+            custom:_fRandomButtonMinRandomNum="1"
+            custom:_fRandomButtonRandomNum="5"
+            custom:_fSelectNumberBallNum="33"
+            custom:_fSelectNumberBallStartNum="1"
+            custom:_fSelectNumberBallType="red"
+            custom:_fTitleTextId="@string/doubleball_courageselect_courageselectnumberpanel_title" />
+
+        <!-- 脱码选号面板 -->
+
+        <com.ruyicai.android.controller.compontent.panel.SelectNumberPanel
+            android:id="@+id/doubleball_courageselect_loss_tuo_selectnumberpanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            custom:_fIsShowLossValue="true"
+            custom:_fRandomButtonDropDownMenuButtonNum="17"
+            custom:_fRandomButtonMinRandomNum="2"
+            custom:_fRandomButtonRandomNum="2"
+            custom:_fSelectNumberBallNum="33"
+            custom:_fSelectNumberBallStartNum="1"
+            custom:_fSelectNumberBallType="red"
+            custom:_fTitleTextId="@string/doubleball_courageselect_tuoselectnumberpanel_title" />
+
+        <!-- 后区选号面板 -->
+
+        <com.ruyicai.android.controller.compontent.panel.SelectNumberPanel
+            android:id="@+id/doubleball_courageselect_loss_blue_selectnumberpanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            custom:_fIsShowLossValue="true"
+            custom:_fRandomButtonDropDownMenuButtonNum="16"
+            custom:_fRandomButtonMinRandomNum="1"
+            custom:_fRandomButtonRandomNum="1"
+            custom:_fSelectNumberBallNum="16"
+            custom:_fSelectNumberBallStartNum="1"
+            custom:_fSelectNumberBallType="blue"
+            custom:_fTitleTextId="@string/doubleball_courageselect_tuoselectnumberpanel_title" />
+    </LinearLayout>
+
+</ScrollView>

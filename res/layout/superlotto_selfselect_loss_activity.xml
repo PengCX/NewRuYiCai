@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 大乐透自选遗漏值页面 -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.ruyicai.android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <!-- 前区选号面板 -->
+
+        <com.ruyicai.android.controller.compontent.panel.SelectNumberPanel
+            android:id="@+id/superlotto_selfselect_loss_proparea_selectnumberpanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            custom:_fIsShowLossValue="true"
+            custom:_fRandomButtonDropDownMenuButtonNum="13"
+            custom:_fRandomButtonMinRandomNum="5"
+            custom:_fRandomButtonRandomNum="5"
+            custom:_fSelectNumberBallNum="35"
+            custom:_fSelectNumberBallStartNum="1"
+            custom:_fSelectNumberBallType="red"
+            custom:_fTitleTextId="@string/superlotto_selfselect_propareaselectnumberpanel_title" />
+
+        <!-- 后区选号面板 -->
+
+        <com.ruyicai.android.controller.compontent.panel.SelectNumberPanel
+            android:id="@+id/superlotto_selfselect_loss_backarea_selectnumberpanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            custom:_fIsShowLossValue="true"
+            custom:_fRandomButtonDropDownMenuButtonNum="10"
+            custom:_fRandomButtonMinRandomNum="2"
+            custom:_fRandomButtonRandomNum="2"
+            custom:_fSelectNumberBallNum="12"
+            custom:_fSelectNumberBallStartNum="1"
+            custom:_fSelectNumberBallType="blue"
+            custom:_fTitleTextId="@string/superlotto_selfselect_backareaselectnumberpanel_title" />
+    </LinearLayout>
+
+</ScrollView>

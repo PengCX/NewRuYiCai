@@ -6,7 +6,6 @@ import java.util.List;
 
 import android.app.Dialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.text.SpannableStringBuilder;
 import android.widget.Toast;
 import android.widget.TabHost.OnTabChangeListener;
@@ -60,7 +59,6 @@ public abstract class LotterySwitchTabsActivityGroup extends SwitchTabsActivityG
 		super.onStart();
 		_fSwitchTabHost.setOnTabChangedListener(new SwitchTabsOnTabChangeListener());
 		_fBetBar.set_fBetBarInterface(this);
-
 		//使用了管着者模式：将投注栏填加为号码篮子的观察者
 		_fNumberBasket.addNumberBasketObserver(_fBetBar);
 	}

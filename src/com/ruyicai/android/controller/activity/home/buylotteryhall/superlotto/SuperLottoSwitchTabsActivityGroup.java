@@ -1,7 +1,9 @@
 package com.ruyicai.android.controller.activity.home.buylotteryhall.superlotto;
 
 import com.ruyicai.android.R;
+import com.ruyicai.android.controller.activity.home.buylotteryhall.LotterySwitchTabsActivityGroup;
 import com.ruyicai.android.controller.activity.home.buylotteryhall.SwitchTabsActivityGroup;
+import com.ruyicai.android.model.bean.betinfo.SuperLottoBettingInfo;
 
 import android.os.Bundle;
 import android.widget.TabHost;
@@ -12,7 +14,7 @@ import android.widget.TabHost;
  * @author xiang_000
  * @since RYC1.0 2013-4-5
  */
-public class SuperLottoSwitchTabsActivityGroup extends SwitchTabsActivityGroup {
+public class SuperLottoSwitchTabsActivityGroup extends LotterySwitchTabsActivityGroup {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -31,5 +33,10 @@ public class SuperLottoSwitchTabsActivityGroup extends SwitchTabsActivityGroup {
 	protected void set_fSwitchTabSpecTags() {
 		_fSwitchTabSpecTagIds = new int[] { R.string.tabhost_textview_selfselect,
 				R.string.tabhost_textview_courageselect, R.string.tabhost_textview_12xuan2 };
+	}
+
+	@Override
+	protected void createNowBettingInfo() {
+		_fNowSelectBettingInfo = new SuperLottoBettingInfo();
 	}
 }

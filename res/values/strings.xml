@@ -214,7 +214,12 @@
 	<string name="doubleball_numberbasket_dialog_negetivebutton">立即投注</string>
 	<!-- 大乐透 -->
 	<string name="superlotto">大乐透</string>
-
+	<string name="superlotto_selfselect_propareaselectnumberpanel_title">前区：</string>
+	<string name="superlotto_selfselect_backareaselectnumberpanel_title">后区：</string>
+	<string name="superlotto_courageselect_couragenumberpanel_title">胆码区：</string>
+	<string name="superlotto_courageselect_dragslectnumberpanel_title">拖码区：</string>
+	<string name="superlotto_courageselect_backareaselectnumberpanel_title">@string/superlotto_selfselect_backareaselectnumberpanel_title</string>
+	
 	<!-- 福彩3D -->
 	<string name="welfare3d">福彩3D</string>
 
