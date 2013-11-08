@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- 登陆页面 -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.ruyicai.android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grey"
@@ -13,7 +14,8 @@
         android:id="@+id/login_title_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentTop="true" 
+        custom:_fLeftTextId="@string/login_title_text" />
 
     <!-- 滑动登陆布局 -->
 
@@ -34,9 +36,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:text="@string/login_textview_username"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="18sp"
                 android:textColor="@color/black" />
             <!-- 用户名输入框 -->
 
@@ -59,7 +61,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="25dp"
                 android:text="@string/login_textview_password"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                 android:textSize="18sp"
                 android:textColor="@color/black" />
             <!-- 密码输入框 -->
 
@@ -79,7 +81,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/login_edittext_password"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:orientation="horizontal" >
 

@@ -8,6 +8,8 @@ import com.ruyicai.android.controller.activity.home.lotterynotice.LotteryNoticeA
 import com.ruyicai.android.controller.activity.home.more.MoreActivity;
 import com.ruyicai.android.controller.activity.home.usercenter.UserCenterActivity;
 import com.ruyicai.android.controller.compontent.dialog.DialogFactory;
+import com.ruyicai.android.model.preferences.AppSharedPreferences;
+
 import roboguice.activity.RoboActivity;
 import android.app.Dialog;
 import android.view.KeyEvent;
@@ -19,7 +21,7 @@ import android.view.KeyEvent;
  * @since RYC1.0 2013-2-22
  */
 public abstract class BaseActivity extends RoboActivity {
-
+	
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		switch (keyCode) {

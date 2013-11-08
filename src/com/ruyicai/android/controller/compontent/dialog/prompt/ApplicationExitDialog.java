@@ -51,7 +51,11 @@ public class ApplicationExitDialog extends PromptDialogAbstract {
 
 	@Override
 	public void setPositiveButtonOnClick() {
+		//取消对话框
 		dismiss();
+		//退出当前登陆的用户
+		
+		//退出应用程序
 		System.exit(0);
 	}
 

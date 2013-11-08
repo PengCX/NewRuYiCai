@@ -6,16 +6,19 @@ import java.util.List;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.text.SpannableStringBuilder;
-import android.util.Log;
 import android.widget.Toast;
 import android.widget.TabHost.OnTabChangeListener;
 
+import com.ruyicai.android.R;
 import com.ruyicai.android.controller.activity.home.buylotteryhall.betinformation.BetInformationSwitchTabsActivityGroup;
+import com.ruyicai.android.controller.activity.loginorregister.LoginActivity;
 import com.ruyicai.android.controller.compontent.bar.BettingBarInterface;
 import com.ruyicai.android.controller.compontent.dialog.DialogFactory;
 import com.ruyicai.android.model.bean.betinfo.BettingInfo;
 import com.ruyicai.android.model.bean.numberbasket.NumberBasket;
+import com.ruyicai.android.model.preferences.AppSharedPreferences;
 
 /**
  * 彩种选项卡选号页面组，实现了投注栏接口
@@ -25,7 +28,7 @@ import com.ruyicai.android.model.bean.numberbasket.NumberBasket;
  */
 public abstract class LotterySwitchTabsActivityGroup extends SwitchTabsActivityGroup implements
 		BettingBarInterface {
-	private static final String TAG = "LotterySwitchTabsActivityGroup";
+	
 	/** 号码篮对象：一个彩种多种玩法共用一个号码篮，故声明在此类中 */
 	public NumberBasket _fNumberBasket;
 	/**
@@ -33,9 +36,12 @@ public abstract class LotterySwitchTabsActivityGroup extends SwitchTabsActivityG
 	 * 但是具体的各种算法在子类中实现
 	 */
 	public BettingInfo _fNowSelectBettingInfo;
-
 	/** 在选号组页面底部显示投注信息，为了避免快速显示信息的时候出现延迟，故整个页面使用该对象显示Toast信息 */
 	private Toast _fBottomToast;
+	/**是否是清除当前选号小球*/
+	public boolean _fIsClearSelectedNumberBall;
+	/**应用共享参数*/
+	private AppSharedPreferences _fAppSharedPreferences;
 
 	// 初始化代码块
 	{
@@ -76,8 +82,23 @@ public abstract class LotterySwitchTabsActivityGroup extends SwitchTabsActivityG
 
 	@Override
 	public void setBettingButton() {
-		Intent intent = new Intent(this, BetInformationSwitchTabsActivityGroup.class);
-		startActivity(intent);
+		if(isAlreadyLogged()){
+			Intent intent = new Intent(this, BetInformationSwitchTabsActivityGroup.class);
+			startActivity(intent);
+		}else{
+			Intent intent = new Intent(this,LoginActivity.class);
+			startActivity(intent);
+		}
+		
+	}
+
+	private boolean isAlreadyLogged() {
+		//初始化应用共享参数对象
+		_fAppSharedPreferences = AppSharedPreferences.getInstance(this);
+		
+		return _fAppSharedPreferences.getBoolean(
+				getString(R.string.sharedpreferences_alreadylogged_key), false);
+
 	}
 
 	@Override
@@ -106,7 +127,7 @@ public abstract class LotterySwitchTabsActivityGroup extends SwitchTabsActivityG
 	}
 
 	@Override
-	public void updateNowSelectBettingInfo() {
+	public void updateNowBettingInfoShow() {
 		// 初始化投注信息对象，设置投注类型，投注号码集合
 		createNowBettingInfo();
 		// 获取当前显示Activity选中的小球号码
@@ -121,14 +142,15 @@ public abstract class LotterySwitchTabsActivityGroup extends SwitchTabsActivityG
 				.get_fFormatedSpannelStringBuilder());
 		_fBetBar.updateSelectedNumberShow(formatedSpannableStringBuilder);
 
-		// 如果当前选择的投注信息合法，则在页面的底部显示投注信息
-		if (_fNowSelectBettingInfo.get_fIsLegitimacy()) {
+		// 如果当前选择的投注信息合法，并且不是代码清除选号面板选择号码的时候，则在页面的底部显示投注信息
+		if (_fNowSelectBettingInfo.get_fIsLegitimacy() && !_fIsClearSelectedNumberBall) {
 			StringBuilder stringBuilder = new StringBuilder();
 			stringBuilder.append("共").append(_fNowSelectBettingInfo.get_fNumber()).append("注")
 					.append(_fNowSelectBettingInfo.get_fAmount()).append("元");
 			showToastInBottom(stringBuilder.toString());
 		}
 	}
+
 	/**
 	 * 在屏幕的底部显示Toast提示信息，整个页面使用同一个Toast对象显示，避免了过快显示Toast的时候，出现的延迟现象
 	 *
@@ -156,7 +178,7 @@ public abstract class LotterySwitchTabsActivityGroup extends SwitchTabsActivityG
 
 		@Override
 		public void onTabChanged(String tabId) {
-			updateNowSelectBettingInfo();
+			updateNowBettingInfoShow();
 		}
 
 	}

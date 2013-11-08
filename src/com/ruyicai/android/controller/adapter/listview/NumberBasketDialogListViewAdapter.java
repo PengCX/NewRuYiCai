@@ -2,7 +2,6 @@ package com.ruyicai.android.controller.adapter.listview;
 
 import com.ruyicai.android.R;
 import com.ruyicai.android.controller.activity.home.buylotteryhall.LotterySwitchTabsActivityGroup;
-import com.ruyicai.android.controller.compontent.dialog.prompt.NumberBasketBettingInfoDialog;
 import com.ruyicai.android.model.bean.betinfo.BettingInfo;
 
 import java.util.List;

@@ -30,5 +30,5 @@ public interface BettingBarInterface {
 	/**
 	 * 更新已选号码的显示
 	 */
-	void updateNowSelectBettingInfo();
+	void updateNowBettingInfoShow();
 }

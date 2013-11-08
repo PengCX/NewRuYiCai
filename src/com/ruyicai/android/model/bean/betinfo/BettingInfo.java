@@ -1,6 +1,5 @@
 package com.ruyicai.android.model.bean.betinfo;
 
-import java.util.ArrayList;
 import java.util.List;
 import android.text.SpannableStringBuilder;
 

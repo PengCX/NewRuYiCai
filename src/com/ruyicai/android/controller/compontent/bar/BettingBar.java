@@ -1,7 +1,5 @@
 package com.ruyicai.android.controller.compontent.bar;
 
-import java.io.Serializable;
-
 import com.ruyicai.android.R;
 import com.ruyicai.android.controller.activity.home.buylotteryhall.LotterySwitchTabsActivityGroup;
 import com.ruyicai.android.model.bean.numberbasket.NumberBasketObserver;
@@ -22,7 +20,6 @@ import android.widget.TextView;
  * @since RYC1.0 2013-4-7
  */
 public class BettingBar extends LinearLayout implements  NumberBasketObserver {
-	private static final String TAG = "BettingBar";
 
 	/** 上下文对象 */
 	private Context _fContext;

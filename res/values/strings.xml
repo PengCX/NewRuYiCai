@@ -301,5 +301,9 @@
     <!-- 足彩 -->
 
     <!-- 竞彩篮球 -->
-
+    
+    <!-- 共享参数键字符串 -->
+    <string name="sharedpreferences_file_key">com.android.ruyicai.appsharedpreferences</string>
+    <string name="sharedpreferences_firstlaunch_key">ruyicai.firstlaunch</string>
+    <string name="sharedpreferences_alreadylogged_key">ruyicai.alreadylogged</string>
 </resources>

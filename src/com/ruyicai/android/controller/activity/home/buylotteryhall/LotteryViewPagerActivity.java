@@ -157,6 +157,9 @@ public abstract class LotteryViewPagerActivity extends RoboActivity {
 	 * 清楚当前所有选中的号码
 	 */
 	public void clearNowAllSelectedNumbers() {
+		//设置当前页面为清除当前选择号码状态，避免显示当前选择的投注信息
+		((LotterySwitchTabsActivityGroup)getParent())._fIsClearSelectedNumberBall = true;
+		
 		//获取当前页面选号面板的对象集合
 		int currentPage = _fViewPager.getCurrentItem();
 		List<SelectNumberPanel> selectNumberPanels = _fSelectNumberPanelList.get(currentPage);
@@ -167,6 +170,9 @@ public abstract class LotteryViewPagerActivity extends RoboActivity {
 			SelectNumberPanel selectNumberPanel = (SelectNumberPanel)selectNumberPanels.get(panel_i);
 			selectNumberPanel.clearNowSelectedNumberBalls();
 		}
+		
+		//恢复状态
+		((LotterySwitchTabsActivityGroup)getParent())._fIsClearSelectedNumberBall = false;
 	}
 
 	/**

@@ -37,7 +37,7 @@ public class SplashActivity extends BaseActivity {
 	/** 手机信息对象 */
 	private PhoneInfo _fPhoneInfo;
 	/** 应用程序共享参数对象 */
-	AppSharedPreferences _fAppSharedPreferences;
+	protected AppSharedPreferences _fAppSharedPreferences;
 
 	/** 引用视图：显示企业Logo */
 	@InjectView(R.id.splash_imageview_logo)
@@ -66,7 +66,7 @@ public class SplashActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.splash_activity);
 
-		_fAppSharedPreferences = new AppSharedPreferences(this);
+		_fAppSharedPreferences = AppSharedPreferences.getInstance(this);
 		_fPhoneInfo = PhoneInfo.getInstance(this);
 
 		// 初始化Logo图片的显示
@@ -139,7 +139,7 @@ public class SplashActivity extends BaseActivity {
 	 */
 	private boolean getFirstLaunchedFlag() {
 		boolean isFirst = _fAppSharedPreferences.getBoolean(
-				AppSharedPreferences.FIRST_LAUNCHER_KEY, true);
+				getString(R.string.sharedpreferences_firstlaunch_key), true);
 		return isFirst;
 	}
 
@@ -147,7 +147,8 @@ public class SplashActivity extends BaseActivity {
 	 * 设置已经第一启动过标识
 	 */
 	private void setFirstLaunchedFlag() {
-		_fAppSharedPreferences.putBoolean(AppSharedPreferences.FIRST_LAUNCHER_KEY, false);
+		_fAppSharedPreferences.putBoolean(getString(R.string.sharedpreferences_firstlaunch_key),
+				false);
 	}
 
 	/**

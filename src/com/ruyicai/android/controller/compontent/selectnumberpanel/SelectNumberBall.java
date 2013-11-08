@@ -99,7 +99,6 @@ public class SelectNumberBall extends LinearLayout {
 	 *            是否显示遗漏值标识
 	 */
 	public void setLossValue(String aLossValue, Boolean aIsShowLossValue) {
-		_fIsShowLossValue = aIsShowLossValue;
 		_fLossValue = aLossValue;
 
 		if (_fIsShowLossValue) {
@@ -188,12 +187,12 @@ public class SelectNumberBall extends LinearLayout {
 
 		@Override
 		public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-			//根据小球是否被选中，改变小球的号码的颜色
+			// 根据小球是否被选中，改变小球的号码的颜色
 			changeSelectBallTextColor(isChecked);
 
 			// 当小球状态发生变化的时候，更新当前选择的投注信息
 			((LotterySwitchTabsActivityGroup) ((LotteryViewPagerActivity) _fContext).getParent())
-					.updateNowSelectBettingInfo();
+					.updateNowBettingInfoShow();
 		}
 
 		/**

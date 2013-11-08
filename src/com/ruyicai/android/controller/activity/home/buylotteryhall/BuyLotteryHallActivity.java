@@ -17,15 +17,16 @@ import android.widget.TextView;
 
 import com.ruyicai.android.R;
 import com.ruyicai.android.controller.activity.BaseActivity;
+import com.ruyicai.android.controller.activity.loginorregister.LoginActivity;
 import com.ruyicai.android.controller.adapter.viewpager.ViewPagerAdapter;
 import com.ruyicai.android.controller.compontent.bar.TitleBar;
+import com.ruyicai.android.controller.compontent.bar.TitleBarInterface;
 import com.ruyicai.android.controller.compontent.pagerindicator.BuyLotteryHallPageIndicator;
 import com.ruyicai.android.controller.compontent.panel.BuyLotteryHallSlidePanel;
 import com.ruyicai.android.model.bean.lottery.Lottery;
 import com.ruyicai.android.model.bean.lottery.LotteryType;
 
-public class BuyLotteryHallActivity extends BaseActivity implements OnClickListener,
-		OnPageChangeListener {
+public class BuyLotteryHallActivity extends BaseActivity implements TitleBarInterface{
 	/** 底部栏彩票资讯按钮id */
 	private static final int BOTTOMBAR_BUTTON_LOTTERINFO_ID = 0;
 	/** 底部栏彩活动中心按钮id */
@@ -60,7 +61,9 @@ public class BuyLotteryHallActivity extends BaseActivity implements OnClickListe
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.buylotteryhall_activity);
-
+		
+		_fTitleBar.set_fTitleBarInterface(this);
+		
 		// 初始化中部滑动面板显示
 		initMiddleSlidePanelShow();
 
@@ -82,7 +85,7 @@ public class BuyLotteryHallActivity extends BaseActivity implements OnClickListe
 		ViewPagerAdapter slidePannelAdapter = new ViewPagerAdapter(_fViewList);
 		_fPanelViewPager.setAdapter(slidePannelAdapter);
 		// 设置当前的页面为第2页和页面改变监听器
-		_fPanelViewPager.setOnPageChangeListener(this);
+		_fPanelViewPager.setOnPageChangeListener(new BuyLotteryHallOnPageChangeListener());
 		_fPanelViewPager.setCurrentItem(1);
 	}
 
@@ -190,27 +193,9 @@ public class BuyLotteryHallActivity extends BaseActivity implements OnClickListe
 	 */
 	private void initButtomBarShow() {
 		// 设置按钮的事件监听器
-		_fLotteryInfoButton.setOnClickListener(this);
-		_fActionCenterButton.setOnClickListener(this);
-		_fLucklyPickButton.setOnClickListener(this);
-	}
-
-	@Override
-	public void onClick(View v) {
-		int id = Integer.valueOf(v.getTag().toString());
-		switch (id) {
-			case BOTTOMBAR_BUTTON_LOTTERINFO_ID:
-				goToDestinationScreen(LotteryInformationActivity.class);
-				break;
-			case BOTTOMBAR_BUTTON_ACTIONCENTER_ID:
-				goToDestinationScreen(ActionCenterActivity.class);
-				break;
-			case BOTTOMBAR_BUTTON_LUCKLYPICK_ID:
-				goToDestinationScreen(LucklyPickActivity.class);
-				break;
-			default:
-				throw new AssertionError("switch语句中，没有新增的分支");
-		}
+		_fLotteryInfoButton.setOnClickListener(new BuyLotteryHallButtonOnclickListener());
+		_fActionCenterButton.setOnClickListener(new BuyLotteryHallButtonOnclickListener());
+		_fLucklyPickButton.setOnClickListener(new BuyLotteryHallButtonOnclickListener());
 	}
 
 	/**
@@ -223,20 +208,64 @@ public class BuyLotteryHallActivity extends BaseActivity implements OnClickListe
 		Intent intent = new Intent(BuyLotteryHallActivity.this, aClass);
 		startActivity(intent);
 	}
-
+	
 	@Override
-	public void onPageScrollStateChanged(int arg0) {
+	public void setRightButton() {
+		Intent intent = new Intent(this,LoginActivity.class);
+		startActivity(intent);
+	}
+	
+	/**
+	 * 购彩大厅按钮点击事件监听器
+	 * 
+	 * @author Administrator
+	 * @since RYC1.0 2013-11-8
+	 */
+	class BuyLotteryHallButtonOnclickListener implements OnClickListener {
+
+		@Override
+		public void onClick(View v) {
+			int id = Integer.valueOf(v.getTag().toString());
+			switch (id) {
+				case BOTTOMBAR_BUTTON_LOTTERINFO_ID:
+					goToDestinationScreen(LotteryInformationActivity.class);
+					break;
+				case BOTTOMBAR_BUTTON_ACTIONCENTER_ID:
+					goToDestinationScreen(ActionCenterActivity.class);
+					break;
+				case BOTTOMBAR_BUTTON_LUCKLYPICK_ID:
+					goToDestinationScreen(LucklyPickActivity.class);
+					break;
+				default:
+					throw new AssertionError("switch语句中，没有新增的分支");
+			}
+		}
 
 	}
+	
+	/**
+	 * 购彩大厅ViewPager页面改变事件监听器
+	 * 
+	 * @author Administrator
+	 * @since RYC1.0 2013-11-8
+	 */
+	class BuyLotteryHallOnPageChangeListener implements OnPageChangeListener {
 
-	@Override
-	public void onPageScrolled(int arg0, float arg1, int arg2) {
+		@Override
+		public void onPageScrollStateChanged(int arg0) {
 
-	}
+		}
 
-	@Override
-	public void onPageSelected(int arg0) {
-		// 当一个新的页面被选中的时候调用
-		_fPageIndicator.setPresentPage(arg0);
+		@Override
+		public void onPageScrolled(int arg0, float arg1, int arg2) {
+
+		}
+
+		@Override
+		public void onPageSelected(int arg0) {
+			// 当一个新的页面被选中的时候调用
+			_fPageIndicator.setPresentPage(arg0);
+		}
+
 	}
 }

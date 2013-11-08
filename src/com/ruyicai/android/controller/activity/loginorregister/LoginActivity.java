@@ -2,6 +2,9 @@ package com.ruyicai.android.controller.activity.loginorregister;
 
 import roboguice.inject.InjectView;
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.ruyicai.android.R;
@@ -9,8 +12,9 @@ import com.ruyicai.android.controller.activity.BaseActivity;
 import com.ruyicai.android.controller.adapter.listview.IconListViewAdapter;
 import com.ruyicai.android.controller.adapter.listview.SimpleListViewAdapter;
 import com.ruyicai.android.controller.compontent.bar.TitleBar;
+import com.ruyicai.android.model.preferences.AppSharedPreferences;
 
-public class LoginActivity extends BaseActivity {
+public class LoginActivity extends BaseActivity{
 
 	/** 视图引用用户登录标题栏 */
 	@InjectView(R.id.login_title_bar)
@@ -21,20 +25,33 @@ public class LoginActivity extends BaseActivity {
 	/** 视图引用：引用微博登陆列表 */
 	@InjectView(R.id.login_listview_microbloglogin)
 	private ListView _fMicroBlogLoginListView;
+	/**视图应用：登陆按钮*/
+	@InjectView(R.id.login_button_login)
+	private Button _fLoginButton;
+	
+	/**应用共享参数*/
+	private AppSharedPreferences _fAppSharedPreferences;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login_activity);
-
-		// _fTitleBar.set_fTitleBarInterface(new LoginTitleBarInterface());
-		// _fTitleBar.initTitleBarShow();
-
+	
 		// 初始化新用户注册等列表
 		initNewUserRegisterListViewShow();
 
 		// 初始化微博登陆列表
 		initMicroBlogLoginListViewShow();
+		
+		//初始化登录按钮
+		initLoginButton();
+	}
+
+	/**
+	 * 初始化登录按钮
+	 */
+	private void initLoginButton() {
+		_fLoginButton.setOnClickListener(new LoginButtonOnClickListener());
 	}
 
 	/**
@@ -100,5 +117,28 @@ public class LoginActivity extends BaseActivity {
 		iconResourceIds[1] = R.drawable.login_imageview_qq;
 
 		return iconResourceIds;
+	}
+	
+	/**
+	 * 登陆页面按钮事件监听器
+	 * @author Administrator
+	 * @since RYC1.0 2013-11-8
+	 */
+	class LoginButtonOnClickListener implements OnClickListener{
+
+		@Override
+		public void onClick(View v) {
+			switch (v.getId()) {
+				case R.id.login_button_login:
+					_fAppSharedPreferences = AppSharedPreferences.getInstance(LoginActivity.this);
+					_fAppSharedPreferences.putBoolean(LoginActivity.this.getString(R.string.sharedpreferences_alreadylogged_key), true);
+					finish();
+					break;
+
+				default:
+					break;
+			}
+		}
+		
 	}
 }
