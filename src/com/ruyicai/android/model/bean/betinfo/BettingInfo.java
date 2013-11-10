@@ -32,12 +32,6 @@ public abstract class BettingInfo{
 		_fNumber = -1;
 		//金额默认-1
 		_fAmount = -1;
-		//默认不合法
-		_fIsLegitimacy = false;
-		//默认格式化字符串位为null
-		_fFormatedSpannableStringBuilder = null;
-		//默认不合法提示字符串为null
-		_fNotLegitimacyString = null;
 	}
 
 	/**

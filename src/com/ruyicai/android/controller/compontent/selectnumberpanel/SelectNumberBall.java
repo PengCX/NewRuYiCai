@@ -100,6 +100,7 @@ public class SelectNumberBall extends LinearLayout {
 	 */
 	public void setLossValue(String aLossValue, Boolean aIsShowLossValue) {
 		_fLossValue = aLossValue;
+		_fIsShowLossValue = aIsShowLossValue;
 
 		if (_fIsShowLossValue) {
 			_fLossValueTextView.setText(aLossValue);

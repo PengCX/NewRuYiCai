@@ -27,7 +27,7 @@ import com.ruyicai.android.model.preferences.AppSharedPreferences;
  */
 public abstract class LotterySwitchTabsActivityGroup extends SwitchTabsActivityGroup implements
 		BettingBarInterface {
-	
+
 	/** 号码篮对象：一个彩种多种玩法共用一个号码篮，故声明在此类中 */
 	public NumberBasket _fNumberBasket;
 	/**
@@ -87,13 +87,13 @@ public abstract class LotterySwitchTabsActivityGroup extends SwitchTabsActivityG
 			Intent intent = new Intent(this,LoginActivity.class);
 			startActivity(intent);
 		}
-		
+
 	}
 
 	private boolean isAlreadyLogged() {
 		//初始化应用共享参数对象
 		_fAppSharedPreferences = AppSharedPreferences.getInstance(this);
-		
+
 		return _fAppSharedPreferences.getBoolean(
 				getString(R.string.sharedpreferences_alreadylogged_key), false);
 
@@ -101,15 +101,19 @@ public abstract class LotterySwitchTabsActivityGroup extends SwitchTabsActivityG
 
 	@Override
 	public void setAddToNumberBasketButton() {
-		// 如果当前页面选中的投注信息合法，则将当前选中的投注信息加入到号码篮子中
-		if (_fNowSelectBettingInfo.get_fIsLegitimacy()) {
-			_fNumberBasket.addBettingInfo(_fNowSelectBettingInfo);
-			// 加入完成后，清空当前选中的选号小球
-			((LotteryViewPagerActivity) getCurrentActivity()).clearNowAllSelectedNumbers();
-		}
-		// 如果不合法，则提示不合法信息
-		else {
-			showToastInBottom(_fNowSelectBettingInfo.getNotLegitimacyPromptString());
+		//如果当前页面还没有进行选号
+		if (_fNowSelectBettingInfo == null) {
+			showToastInBottom("请选择投注号码");
+		} else {
+			// 如果当前页面选中的投注信息合法，则将当前选中的投注信息加入到号码篮子中
+			if (_fNowSelectBettingInfo.get_fIsLegitimacy()) {
+				_fNumberBasket.addBettingInfo(_fNowSelectBettingInfo);
+				// 加入完成后，清空当前选中的选号小球
+				((LotteryViewPagerActivity) getCurrentActivity()).clearNowAllSelectedNumbers();
+			} // 如果不合法，则提示不合法信息
+			else {
+				showToastInBottom(_fNowSelectBettingInfo.getNotLegitimacyPromptString());
+			}
 		}
 	}
 

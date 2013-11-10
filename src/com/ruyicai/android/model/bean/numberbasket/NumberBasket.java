@@ -30,6 +30,7 @@ public class NumberBasket {
 	{
 		_fTotalNumber = -1;
 		_fTotalAmount = -1;
+		_fbettingInfoList = new ArrayList<BettingInfo>();
 	}
 
 	/**
@@ -59,9 +60,6 @@ public class NumberBasket {
 	 *            添加投注信息对象
 	 */
 	public void addBettingInfo(BettingInfo bettingInfo) {
-		if(_fbettingInfoList == null){
-			_fbettingInfoList = new ArrayList<BettingInfo>();
-		}
 		_fbettingInfoList.add(bettingInfo);
 
 		//通知观察者更新

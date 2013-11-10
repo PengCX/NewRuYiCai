@@ -5,7 +5,7 @@ import com.ruyicai.android.controller.activity.home.buylotteryhall.LotteryViewPa
 
 /**
  * 大乐透自选页面
- * 
+ *
  * @author xiang_000
  * @since RYC1.0 2013-4-21
  */
@@ -20,10 +20,10 @@ public class SuperLottoSelfSelectActivity extends LotteryViewPagerActivity {
 	@Override
 	protected void setSelectNumberPanelIds() {
 		_fSelectNumberPanelIds = new int[][] {
-				{ R.id.su,
-						R.id.doubleball_selfselect_normal_blue_selectnumberpanel },
-				{ R.id.doubleball_selfselect_loss_red_selectnumberpanel,
-						R.id.doubleball_selfselect_loss_blue_selectnumberpanel, } };
+				{ R.id.superlotto_selfselect_normal_proparea_selectnumberpanel,
+						R.id.superlotto_selfselect_normal_backarea_selectnumberpanel },
+				{ R.id.superlotto_selfselect_loss_proparea_selectnumberpanel,
+						R.id.superlotto_selfselect_loss_backarea_selectnumberpanel, } };
 
 	}
 }

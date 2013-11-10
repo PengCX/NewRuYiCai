@@ -1,37 +1,14 @@
 package com.ruyicai.android.model.bean.betinfo;
-
-import android.text.SpannableStringBuilder;
-
-public class SuperLottoBettingInfo extends BettingInfo {
-
-	@Override
-	public void set_fBettingType(int aTabIndex) {
-
+/**
+ * 大乐透投注信息类
+ * @author xiang_000
+ * @since RYC1.0 2013-11-10
+ */
+public class SuperLottoBettingInfo extends NumberBettingInfo {
+	{
+		_fFirstNumberNum = 5;
+		_fSecoundNumberNum = 2;
+		_fFirstNumberName = "前区";
+		_fSecoundNumberName = "后区";
 	}
-
-	@Override
-	public SpannableStringBuilder get_fFormatedSpannelStringBuilder() {
-		return null;
-	}
-
-	@Override
-	public long get_fNumber() {
-		return 0;
-	}
-
-	@Override
-	public long get_fAmount() {
-		return 0;
-	}
-
-	@Override
-	public boolean get_fIsLegitimacy() {
-		return false;
-	}
-
-	@Override
-	public String getNotLegitimacyPromptString() {
-		return null;
-	}
-
 }

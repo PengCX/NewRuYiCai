@@ -13,7 +13,7 @@
          <!-- 胆码选号面板 -->
 
         <com.ruyicai.android.controller.compontent.panel.SelectNumberPanel
-            android:id="@+id/doubleball_courageselect_normal_courage_selectnumberpanel"
+            android:id="@+id/superlotto_courageselect_normal_courage_selectnumberpanel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -24,12 +24,12 @@
             custom:_fSelectNumberBallNum="33"
             custom:_fSelectNumberBallStartNum="1"
             custom:_fSelectNumberBallType="red"
-            custom:_fTitleTextId="@string/doubleball_courageselect_courageselectnumberpanel_title" />
+            custom:_fTitleTextId="@string/superlotto_courageselect_couragenumberpanel_title" />
 
         <!-- 脱码选号面板 -->
 
         <com.ruyicai.android.controller.compontent.panel.SelectNumberPanel
-            android:id="@+id/doubleball_courageselect_normal_tuo_selectnumberpanel"
+            android:id="@+id/superlotto_courageselect_normal_drag_selectnumberpanel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -40,11 +40,11 @@
             custom:_fSelectNumberBallNum="33"
             custom:_fSelectNumberBallStartNum="1"
             custom:_fSelectNumberBallType="red"
-            custom:_fTitleTextId="@string/doubleball_courageselect_tuoselectnumberpanel_title" />
+            custom:_fTitleTextId="@string/superlotto_courageselect_dragslectnumberpanel_title" />
 
         <!-- 蓝球选号面板 -->
         <com.ruyicai.android.controller.compontent.panel.SelectNumberPanel
-            android:id="@+id/doubleball_courageselect_normal_blue_selectnumberpanel"
+            android:id="@+id/superlotto_courageselect_normal_blue_selectnumberpanel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -55,7 +55,7 @@
             custom:_fSelectNumberBallNum="16"
             custom:_fSelectNumberBallStartNum="1"
             custom:_fSelectNumberBallType="blue"
-            custom:_fTitleTextId="@string/doubleball_courageselect_tuoselectnumberpanel_title" />
+            custom:_fTitleTextId="@string/superlotto_selfselect_backareaselectnumberpanel_title" />
     </LinearLayout>
 
 </ScrollView>
