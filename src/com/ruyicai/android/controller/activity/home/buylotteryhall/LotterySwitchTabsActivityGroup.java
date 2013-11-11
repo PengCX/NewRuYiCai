@@ -6,6 +6,7 @@ import java.util.List;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.hardware.SensorManager;
 import android.text.SpannableStringBuilder;
 import android.widget.Toast;
 import android.widget.TabHost.OnTabChangeListener;
@@ -28,6 +29,10 @@ import com.ruyicai.android.model.preferences.AppSharedPreferences;
 public abstract class LotterySwitchTabsActivityGroup extends SwitchTabsActivityGroup implements
 		BettingBarInterface {
 
+	/**是否是清除当前选号小球*/
+	public boolean _fIsClearSelectedNumberBall;
+	
+	
 	/** 号码篮对象：一个彩种多种玩法共用一个号码篮，故声明在此类中 */
 	public NumberBasket _fNumberBasket;
 	/**
@@ -37,17 +42,19 @@ public abstract class LotterySwitchTabsActivityGroup extends SwitchTabsActivityG
 	public BettingInfo _fNowSelectBettingInfo;
 	/** 在选号组页面底部显示投注信息，为了避免快速显示信息的时候出现延迟，故整个页面使用该对象显示Toast信息 */
 	private Toast _fBottomToast;
-	/**是否是清除当前选号小球*/
-	public boolean _fIsClearSelectedNumberBall;
+
 	/**应用共享参数*/
 	private AppSharedPreferences _fAppSharedPreferences;
+	
+	/**传感器管理对象*/
+	private SensorManager _fSensorManager;
+	
 
 	// 初始化代码块
 	{
 		// 初始化号码蓝对象
 		_fNumberBasket = new NumberBasket();
 	}
-
 
 	/**
 	 * 设置当前选择的投注信息对象
