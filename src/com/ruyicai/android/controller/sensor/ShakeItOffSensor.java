@@ -13,7 +13,7 @@ import android.os.Vibrator;
  * @author Administrator
  * @since RYC1.0 2013-11-11
  */
-public abstract class ShakeAccelerometerSensor implements SensorEventListener{
+public abstract class ShakeItOffSensor implements SensorEventListener{
 	/**检测间隔时间常量，毫秒*/
 	private static long NTERVAL_TIME = 200;
 	/**摇晃幅度的阀值*/
@@ -25,6 +25,8 @@ public abstract class ShakeAccelerometerSensor implements SensorEventListener{
 	private SensorManager _fSensorManager;
 	/** 传感器对象 */
 	private Sensor _fSensor;
+	/**是否存在传感器*/
+	protected boolean _fIsExist;
 	
 	/** 上一次检测的时间 */
 	private long _fLastTime;
@@ -38,35 +40,48 @@ public abstract class ShakeAccelerometerSensor implements SensorEventListener{
 	private float _fShake;
 
 	/**
-	 * 摇一摇触发的动作方法
+	 * 摇一摇触发的动作方法，最佳实践，不要阻塞该方法
 	 */
-	public abstract void actionLogic();
+	public abstract void shakeItOffAction();
 	
 	/**
 	 * 构造方法
 	 * @param aSensorManager 
 	 */
-	public ShakeAccelerometerSensor(Context aContext) {
+	public ShakeItOffSensor(Context aContext) {
 		super();
 		_fContext = aContext;
+
 		// 获取系统的穿传感器管理服务
 		_fSensorManager = (SensorManager) _fContext.getSystemService(Context.SENSOR_SERVICE);
-		_fSensor = _fSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+		// 最佳的实践，在运行时使用前检测传感器是否存在
+		if (_fSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) != null) {
+			_fSensor = _fSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+			_fIsExist = true;
+		} else {
+			//TODO 提示用户该设备没有给传感器
+			_fIsExist = false;
+		}
 	}
-	
+
 	/**
 	 * 启动传感器
 	 */
 	public void startSensor() {
-		// 为系统的加速度传感器注册监听器
-		_fSensorManager.registerListener(this, _fSensor, SensorManager.SENSOR_DELAY_FASTEST);
+		// 如果设备上没有改传感器就不注册
+		if (_fIsExist) {
+			// 为系统的加速度传感器注册监听器
+			_fSensorManager.registerListener(this, _fSensor, SensorManager.SENSOR_DELAY_FASTEST);
+		}
 	}
 
 	/**
 	 * 暂停传感器
 	 */
 	public void stopSensor(){
-		_fSensorManager.unregisterListener(this);
+		if(_fIsExist){
+			_fSensorManager.unregisterListener(this);
+		}
 	}
 	
 
@@ -89,7 +104,7 @@ public abstract class ShakeAccelerometerSensor implements SensorEventListener{
 			//如果摇晃的振幅超过阀值，则调用动作方法
 			if(_fShake > SHAKE_THRESHOLD_VALUE){
 				//执行摇一摇的动作逻辑
-				actionLogic();
+				shakeItOffAction();
 				//执行震动
 				actionVibrator();
 				//重置上一次的值

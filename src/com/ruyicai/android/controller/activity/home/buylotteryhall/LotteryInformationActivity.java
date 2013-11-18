@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.ruyicai.android.R;
-import com.ruyicai.android.controller.sensor.ShakeAccelerometerSensor;
+import com.ruyicai.android.controller.sensor.ShakeItOffSensor;
 
 /**
  * 彩种资讯页面：
@@ -36,14 +36,14 @@ public class LotteryInformationActivity extends RoboActivityGroup {
 		_fTestSensor.stopSensor();
 	}
 	
-	class TestSensor extends ShakeAccelerometerSensor {
+	class TestSensor extends ShakeItOffSensor {
 
 		public TestSensor(Context aContext) {
 			super(aContext);
 		}
 
 		@Override
-		public void actionLogic() {
+		public void shakeItOffAction() {
 			Toast.makeText(LotteryInformationActivity.this, "摇一摇成功", Toast.LENGTH_SHORT).show();
 		}
 

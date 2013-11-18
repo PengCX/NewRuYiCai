@@ -251,4 +251,11 @@ public class SelectNumberPanel extends LinearLayout {
 	public void clearNowSelectedNumberBalls(){
 		_fSelectNumberBallsTable.clearNowSelectedNumberBalls();
 	}
+	
+	/**
+	 * 随机选择号码小球
+	 */
+	public void randomSelectNumberBalls(){
+		_fRandomSelectButton.clickRandomSelectNumberButton();
+	}
 }

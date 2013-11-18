@@ -8,6 +8,7 @@ import roboguice.activity.RoboActivity;
 import com.ruyicai.android.R;
 import com.ruyicai.android.controller.adapter.viewpager.ViewPagerAdapter;
 import com.ruyicai.android.controller.compontent.panel.SelectNumberPanel;
+import com.ruyicai.android.controller.sensor.ShakeItOffSensor;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -15,10 +16,11 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Toast;
 
 /**
  * 彩种滑动选号页面
- *
+ * 
  * @author Administrator
  * @since RYC1.0 2013-10-23
  */
@@ -27,13 +29,16 @@ public abstract class LotteryViewPagerActivity extends RoboActivity {
 	protected ViewPager _fViewPager;
 	/** ViewPager适配器对象 */
 	private ViewPagerAdapter _fViewPagerAdapter;
-	/**滑动显示页面的布局资源id数组*/
+	/** 滑动显示页面的布局资源id数组 */
 	protected int[] _fShowLayoutIds;
-	/**选号面板id数组*/
+	/** 选号面板id数组 */
 	protected int[][] _fSelectNumberPanelIds;
+	/** 摇一摇传感器 */
+	private LotteryViewPagerShakeItOffSensor _fLotteryViewPagerShakeItOffSensor;
 
-	/**选号页面中选号面板对象集合:一个页面的面板放在一个List集合中，故声明了List<List<E>>类型*/
+	/** 选号页面中选号面板对象集合:一个页面的面板放在一个List集合中，故声明了List<List<E>>类型 */
 	protected List<List<SelectNumberPanel>> _fSelectNumberPanelList;
+
 	/**
 	 * 设置显示的布局资源id数组
 	 */
@@ -50,13 +55,28 @@ public abstract class LotteryViewPagerActivity extends RoboActivity {
 		setContentView(R.layout.lottery_viewpager_activity);
 		_fViewPager = (ViewPager) findViewById(R.id.lottery_viewpagers_slidearea);
 		_fViewPager.setOnPageChangeListener(new ViewPagerOnPagerChangeListener());
+
+		_fLotteryViewPagerShakeItOffSensor = new LotteryViewPagerShakeItOffSensor(this);
 	}
+	
 
 	@Override
 	protected void onStart() {
 		super.onStart();
 		// 初始化滑动控件ViewPager显示
 		initViewPagerShow();
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		_fLotteryViewPagerShakeItOffSensor.startSensor();
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		_fLotteryViewPagerShakeItOffSensor.stopSensor();
 	}
 
 	/**
@@ -73,7 +93,7 @@ public abstract class LotteryViewPagerActivity extends RoboActivity {
 
 	/**
 	 * 获取ViewPager滑动区域显示的滑动视图集合，并从视图对象中获取选号面板对象
-	 *
+	 * 
 	 * @return 在ViewPaer中要显示的视图集合
 	 */
 	private List<View> getViewPagerViewListAndSelectPanels() {
@@ -90,7 +110,7 @@ public abstract class LotteryViewPagerActivity extends RoboActivity {
 					_fSelectNumberPanelIds[page_i].length);
 
 			for (int panel_j = 0; panel_j < _fSelectNumberPanelIds[page_i].length; panel_j++) {
-				//必须通过View视图对象，才能获取其中的选号面板对象
+				// 必须通过View视图对象，才能获取其中的选号面板对象
 				SelectNumberPanel selectNumberPanel = (SelectNumberPanel) viewPageView
 						.findViewById(_fSelectNumberPanelIds[page_i][panel_j]);
 				selectNumberPanels.add(selectNumberPanel);
@@ -104,7 +124,7 @@ public abstract class LotteryViewPagerActivity extends RoboActivity {
 
 	/**
 	 * 设置ViewPager的是适配器
-	 *
+	 * 
 	 * @param aViewPagerViewList
 	 *            ViewPager显示的视图集合
 	 */
@@ -116,7 +136,7 @@ public abstract class LotteryViewPagerActivity extends RoboActivity {
 
 	/**
 	 * 获取当前页面选号面板选取的选号小球
-	 *
+	 * 
 	 * @return 当前面板选中的选号小球号码集合
 	 */
 	public List<List<Integer>> getNowSelectNumberLists() {
@@ -137,7 +157,9 @@ public abstract class LotteryViewPagerActivity extends RoboActivity {
 
 	/**
 	 * 同步相关的选号面板的选号小球，即要保证普通选号页面和遗漏值选号页面的选号小球的同步
-	 * @param _fNumber 需要同步的小球的号码
+	 * 
+	 * @param _fNumber
+	 *            需要同步的小球的号码
 	 */
 	public void syncRelateSelectNumberPanel() {
 		// 设置对应选号面板的选号小球号码
@@ -157,27 +179,28 @@ public abstract class LotteryViewPagerActivity extends RoboActivity {
 	 * 清楚当前所有选中的号码
 	 */
 	public void clearNowAllSelectedNumbers() {
-		//设置当前页面为清除当前选择号码状态，避免显示当前选择的投注信息
-		((LotterySwitchTabsActivityGroup)getParent())._fIsClearSelectedNumberBall = true;
-		
-		//获取当前页面选号面板的对象集合
+		// 设置当前页面为清除当前选择号码状态，避免显示当前选择的投注信息
+		((LotterySwitchTabsActivityGroup) getParent())._fIsClearSelectedNumberBall = true;
+
+		// 获取当前页面选号面板的对象集合
 		int currentPage = _fViewPager.getCurrentItem();
 		List<SelectNumberPanel> selectNumberPanels = _fSelectNumberPanelList.get(currentPage);
 
-		//遍历面板对象集合，清空面板当前选中的号码
+		// 遍历面板对象集合，清空面板当前选中的号码
 		int panelNum = selectNumberPanels.size();
-		for(int  panel_i = 0; panel_i < panelNum; panel_i ++){
-			SelectNumberPanel selectNumberPanel = (SelectNumberPanel)selectNumberPanels.get(panel_i);
+		for (int panel_i = 0; panel_i < panelNum; panel_i++) {
+			SelectNumberPanel selectNumberPanel = (SelectNumberPanel) selectNumberPanels
+					.get(panel_i);
 			selectNumberPanel.clearNowSelectedNumberBalls();
 		}
-		
-		//恢复状态
-		((LotterySwitchTabsActivityGroup)getParent())._fIsClearSelectedNumberBall = false;
+
+		// 恢复状态
+		((LotterySwitchTabsActivityGroup) getParent())._fIsClearSelectedNumberBall = false;
 	}
 
 	/**
 	 * ViewPager控件事件监听器：当ViewPager进行滑动的时候，使得普通投注页面和遗漏值投注页面的相应选号面板的选号小球相同
-	 *
+	 * 
 	 * @author xiang_000
 	 * @since RYC1.0 2013-11-3
 	 */
@@ -201,5 +224,30 @@ public abstract class LotteryViewPagerActivity extends RoboActivity {
 		public void onPageSelected(int arg0) {
 			// 此方法在页面滑动完成后得到调用，arg0是你当前选中的页面的索引
 		}
+	}
+
+	/**
+	 * 彩种购彩页面摇一摇机选类
+	 * 
+	 * @author Administrator
+	 * @since RYC1.0 2013-11-18
+	 */
+	class LotteryViewPagerShakeItOffSensor extends ShakeItOffSensor {
+
+		public LotteryViewPagerShakeItOffSensor(Context aContext) {
+			super(aContext);
+		}
+
+		@Override
+		public void shakeItOffAction() {
+			List<SelectNumberPanel> selectNumberPanels = _fSelectNumberPanelList.get(_fViewPager
+					.getCurrentItem());
+			int panelNum = selectNumberPanels.size();
+			for (int panel_i = 0; panel_i < panelNum; panel_i++) {
+				SelectNumberPanel selectNumberPanel = selectNumberPanels.get(panel_i);
+				selectNumberPanel.randomSelectNumberBalls();
+			}
+		}
+
 	}
 }

@@ -269,13 +269,13 @@ public class NumberBettingInfo extends BettingInfo {
 		int dragNum = getDragNumberNum();
 		int secoundNum = getSecoundNumberNum();
 		promptStringBuilder.append("您选择了(").append(courageNum + dragNum).append(_fFirstNumberName)
-				.append("+").append(secoundNum).append(_fFirstNumberName).append("),请至少再选择");
+				.append("+").append(secoundNum).append(_fSecoundNumberName).append("),请至少再选择");
 
 		if ((courageNum + dragNum) < _fFirstNumberNum) {
 			promptStringBuilder.append(_fFirstNumberNum - (courageNum + dragNum)).append("个")
-					.append(_fSecoundNumberName).append("球");
+					.append(_fFirstNumberName).append("球");
 		}
-		if (secoundNum < 1) {
+		if (secoundNum < _fSecoundNumberNum) {
 			promptStringBuilder.append(_fSecoundNumberNum - secoundNum).append("个")
 					.append(_fSecoundNumberName).append("球");
 		}

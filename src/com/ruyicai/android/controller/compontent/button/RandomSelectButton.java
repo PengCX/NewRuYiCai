@@ -144,6 +144,13 @@ public class RandomSelectButton extends LinearLayout {
 	public void setDropDownMenuSelectButtonNum(int aSelectButtonNum) {
 		_fDropDownMenuButtonNum = aSelectButtonNum;
 	}
+	
+	/**
+	 * 代码触发随机号按钮的点击事件
+	 */
+	public void clickRandomSelectNumberButton(){
+		_fRandomSelectNumberButton.performClick();
+	}
 
 	/**
 	 * 随机选号按钮事件监听器实现类
