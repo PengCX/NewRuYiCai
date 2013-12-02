@@ -5,7 +5,7 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 
 import com.ruyicai.android.R;
-import com.ruyicai.android.controller.activity.home.buylotteryhall.SpinnersActivityGroup;
+import com.ruyicai.android.controller.activity.home.buylotteryhall.LotterySpinnersActivityGroup;
 
 /**
  * 11运夺金选号页面组
@@ -13,7 +13,7 @@ import com.ruyicai.android.controller.activity.home.buylotteryhall.SpinnersActiv
  * @author xiang_000
  * @since RYC1.0 2013-4-5
  */
-public class ElevenLuckGoldSpinnersActivityGroup extends SpinnersActivityGroup {
+public class ElevenLuckGoldSpinnersActivityGroup extends LotterySpinnersActivityGroup {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,5 +35,10 @@ public class ElevenLuckGoldSpinnersActivityGroup extends SpinnersActivityGroup {
 				ElvenLuckGoldBeforThreeSelfSelectActivity.class,
 				ElvenLuckGoldBeforTwoGroupSelectActivity.class,
 				ElvenLuckGoldBeforThreeGroupSelectActivity.class };
+	}
+
+	@Override
+	protected void set_fSpinnerItems() {
+		
 	}
 }

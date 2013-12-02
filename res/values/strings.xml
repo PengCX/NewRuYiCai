@@ -224,6 +224,11 @@
 
     <!-- 江西11选5 -->
     <string name="jiangxi11xuan5">江西11选5</string>
+    <string name="jiangxi11xuan5_radiobutton_selfselect">@string/tabhost_textview_selfselect</string>
+    <string name="jiangxi11xuan5_radiobutton_courageselect">@string/tabhost_textview_courageselect</string>
+    <string name="jiangxi11xuan5_selectnumberpanel_selfselect_title">请选择投注号码</string>
+    <string name="jiangxi11xuan5_courageselect_couragenumberpanel_title">@string/superlotto_courageselect_couragenumberpanel_title</string>
+    <string name="jiangxi11xuan5_courageselect_dragnumberpanel_title">@string/superlotto_courageselect_dragslectnumberpanel_title</string>
     <string name="jiangxi11xuan5_textview_selfselect_optionaltwopalymethod">至少选择2个号码投注，命中任意2位即中奖！奖金：6元</string>
     <string name="jiangxi11xuan5_textview_courageselect_optionaltwopalymethod">至少选择1个胆码和2个拖码投注，胆码加拖码≥3个，投注号码与开奖号码前两位一致，位置不限即中奖！奖金：6元</string>
     <string name="jiangxi11xuan5_textview_selfselect_optionalthreepalymethod">至少选择3个号码投注，命中任意3位即中奖！奖金：19元</string>

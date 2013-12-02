@@ -11,6 +11,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -34,6 +35,19 @@ public class SelectNumberPanel extends LinearLayout {
 
 	/** 标题字符串资源id */
 	private int _fTitleTextId;
+	/**是否显示随机按钮*/
+	private boolean _fIsShowRandomButton;
+	
+
+	/**
+	 * 设置是否显示随机按钮
+	 * 
+	 * @param aIsShowRandomButton
+	 *            是否显示随机按钮标识
+	 */
+	public void set_fIsShowRandomButton(boolean aIsShowRandomButton) {
+		_fIsShowRandomButton = aIsShowRandomButton;
+	}
 
 	//初始化代码块，初始化选号面板的线性布局的属性
 	{
@@ -147,6 +161,10 @@ public class SelectNumberPanel extends LinearLayout {
 			// 是否显示遗漏值默认：不显示
 			_fSelectNumberBallsTable.set_fIsShowLossValue(typedArray.getBoolean(
 					R.styleable.SelectNumberPanel__fIsShowLossValue, false));
+
+			// 是否显示随机按钮默认：显示
+			set_fIsShowRandomButton(typedArray.getBoolean(
+					R.styleable.SelectNumberPanel__fIsShowRadomButton, true));
 		} finally {
 			typedArray.recycle();
 		}
@@ -173,7 +191,12 @@ public class SelectNumberPanel extends LinearLayout {
 
 
 		// 设置随机按钮控制的选号小球表格
-		_fRandomSelectButton.set_fSelectNumberBallsTableLayout(_fSelectNumberBallsTable);
+		if(_fIsShowRandomButton){
+			_fRandomSelectButton.set_fSelectNumberBallsTableLayout(_fSelectNumberBallsTable);
+		}else{
+			_fRandomSelectButton.setVisibility(View.GONE);
+		}
+		
 	}
 
 	/**

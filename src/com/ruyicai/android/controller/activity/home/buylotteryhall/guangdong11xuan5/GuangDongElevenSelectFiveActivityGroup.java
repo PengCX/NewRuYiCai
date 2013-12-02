@@ -1,6 +1,6 @@
 package com.ruyicai.android.controller.activity.home.buylotteryhall.guangdong11xuan5;
 
-import com.ruyicai.android.controller.activity.home.buylotteryhall.SpinnersActivityGroup;
+import com.ruyicai.android.controller.activity.home.buylotteryhall.LotterySpinnersActivityGroup;
 
 /**
  * 广东11选5选号页面组
@@ -8,7 +8,7 @@ import com.ruyicai.android.controller.activity.home.buylotteryhall.SpinnersActiv
  * @author xiang_000
  * @since RYC1.0 2013-4-5
  */
-public class GuangDongElevenSelectFiveActivityGroup extends SpinnersActivityGroup {
+public class GuangDongElevenSelectFiveActivityGroup extends LotterySpinnersActivityGroup {
 
 
 	@Override
@@ -25,6 +25,11 @@ public class GuangDongElevenSelectFiveActivityGroup extends SpinnersActivityGrou
 				GuangDongElevenSelectFiveBeforThreeSelfSelectActivity.class,
 				GuangDongElevenSelectFiveBeforTwoGroupSelectActivity.class,
 				GuangDongElevenSelectFiveBeforThreeGroupSelectActivity.class };
+	}
+
+	@Override
+	protected void set_fSpinnerItems() {
+		
 	}
 
 }

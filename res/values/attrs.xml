@@ -35,6 +35,7 @@
         </attr>
         <!-- 是否显示遗漏值 -->
         <attr name="_fIsShowLossValue" format="boolean" />
+        <attr name="_fIsShowRadomButton" format="boolean"/>
     </declare-styleable>
     
      <!-- 随机按钮属性 -->

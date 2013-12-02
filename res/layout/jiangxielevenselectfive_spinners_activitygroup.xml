@@ -42,13 +42,13 @@
         android:layout_alignParentBottom="true" />
 
     <!-- Activity容器 -->
-
     <LinearLayout
         android:id="@+id/jiangxielevenselectfive_spinners_activitygroup_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/jiangxielevenselectfive_spinners_activitygroup_betbar"
-        android:layout_below="@id/jiangxielevenselectfive_spinners_activitygroup_spinner" >
+        android:layout_below="@id/jiangxielevenselectfive_spinners_activitygroup_spinner"
+        android:orientation="vertical" >
     </LinearLayout>
 
 </RelativeLayout>

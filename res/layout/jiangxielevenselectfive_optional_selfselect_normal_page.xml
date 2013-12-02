@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 双色球自选普通页面 -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.ruyicai.android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <!-- 玩法说明文本框 -->
+
+        <TextView
+            android:id="@+id/jiangxi11xuan5_selfselect_normal_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black" />
+        <!-- 选号面板 -->
+
+        <com.ruyicai.android.controller.compontent.panel.SelectNumberPanel
+            android:id="@+id/jiangxi11xuan5_selfselect_normal_selectnumberpanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            custom:_fIsShowLossValue="false"
+            custom:_fIsShowRadomButton="false"
+            custom:_fRandomButtonDropDownMenuButtonNum="11"
+            custom:_fRandomButtonMinRandomNum="6"
+            custom:_fRandomButtonRandomNum="6"
+            custom:_fSelectNumberBallNum="11"
+            custom:_fSelectNumberBallStartNum="1"
+            custom:_fSelectNumberBallType="red"
+            custom:_fTitleTextId="@string/jiangxi11xuan5_selectnumberpanel_selfselect_title" />
+    </LinearLayout>
+
+</ScrollView>

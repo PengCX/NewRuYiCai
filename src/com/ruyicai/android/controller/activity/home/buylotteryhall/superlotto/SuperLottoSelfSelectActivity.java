@@ -13,8 +13,8 @@ public class SuperLottoSelfSelectActivity extends LotteryViewPagerActivity {
 
 	@Override
 	protected void setShowLayoutIds() {
-		_fShowLayoutIds = new int[] { R.layout.superlotto_selfselect_normal_activity,
-				R.layout.superlotto_selfselect_loss_activity };
+		_fShowLayoutIds = new int[] { R.layout.superlotto_selfselect_normal_page,
+				R.layout.superlotto_selfselect_loss_page };
 	}
 
 	@Override

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 双色球自选普通页面 -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.ruyicai.android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <!-- 玩法说明文本框 -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/jiangxi11xuan5_textview_courageselect_optionaltwopalymethod"
+            android:textColor="@color/black" />
+        <!-- 胆码面板 -->
+
+        <com.ruyicai.android.controller.compontent.panel.SelectNumberPanel
+            android:id="@+id/jiangxi11xuan5_courageselect_courage_selectnumberpanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            custom:_fIsShowLossValue="true"
+            custom:_fIsShowRadomButton="false"
+            custom:_fRandomButtonDropDownMenuButtonNum="11"
+            custom:_fRandomButtonMinRandomNum="6"
+            custom:_fRandomButtonRandomNum="6"
+            custom:_fSelectNumberBallNum="11"
+            custom:_fSelectNumberBallStartNum="1"
+            custom:_fSelectNumberBallType="red"
+            custom:_fTitleTextId="@string/jiangxi11xuan5_courageselect_couragenumberpanel_title" />
+
+        <!-- 拖码面板 -->
+
+        <com.ruyicai.android.controller.compontent.panel.SelectNumberPanel
+            android:id="@+id/jiangxi11xuan5_courageselect_drag_selectnumberpanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            custom:_fIsShowLossValue="true"
+            custom:_fIsShowRadomButton="false"
+            custom:_fRandomButtonDropDownMenuButtonNum="11"
+            custom:_fRandomButtonMinRandomNum="6"
+            custom:_fRandomButtonRandomNum="6"
+            custom:_fSelectNumberBallNum="11"
+            custom:_fSelectNumberBallStartNum="1"
+            custom:_fSelectNumberBallType="red"
+            custom:_fTitleTextId="@string/jiangxi11xuan5_courageselect_dragnumberpanel_title" />
+    </LinearLayout>
+
+</ScrollView>

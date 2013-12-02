@@ -1,7 +1,5 @@
 package com.ruyicai.android.controller.activity.home.buylotteryhall;
 
-import com.ruyicai.android.R;
-
 import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
@@ -17,7 +15,7 @@ import roboguice.activity.RoboActivityGroup;
  * @author xiang_000
  * @since RYC1.0 2013-5-1
  */
-public abstract class SpinnersActivityGroup extends RoboActivityGroup {
+public abstract class LotterySpinnersActivityGroup extends RoboActivityGroup {
 	/** 下拉列表跳转页面类数组 */
 	protected Class<?>[] _fSpinnersClasses;
 	/** 下拉列表选项字符串数组 */
@@ -34,7 +32,11 @@ public abstract class SpinnersActivityGroup extends RoboActivityGroup {
 	 * 设置下拉菜单切换类数组
 	 */
 	protected abstract void set_fSpinnerClasses();
-
+	/**
+	 * 设置下拉菜单itemid
+	 */
+	protected abstract void set_fSpinnerItems();
+	
 	@Override
 	protected void onStart() {
 		super.onStart();
@@ -66,18 +68,6 @@ public abstract class SpinnersActivityGroup extends RoboActivityGroup {
 		_fSpinner.setOnItemSelectedListener(new SpinnerOnItemSelectedListener());
 	}
 
-	private void set_fSpinnerItems() {
-		_fSpinnerStringIds = new int[] { R.string.spinner_item_optionaltwo,
-				R.string.spinner_item_optionalthree, R.string.spinner_item_optionalfour,
-				R.string.spinner_item_optionalfive, R.string.spinner_item_optionalsix,
-				R.string.spinner_item_optionalseven, R.string.spinner_item_optionaleight,
-				R.string.spinner_item_beforoneselfselect, R.string.spinner_item_befortwoselfselect,
-				R.string.spinner_item_beforthreeselfselect,
-				R.string.spinner_item_beforonesgroupselect,
-				R.string.spinner_item_befortwogroupselect,
-				R.string.spinner_item_beforthreegroupselect };
-	}
-
 	/**
 	 * 下拉列表选项选中事件监听器实现类
 	 * 
@@ -89,9 +79,10 @@ public abstract class SpinnersActivityGroup extends RoboActivityGroup {
 		@Override
 		public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 			_fContainerLinearLayout.removeAllViews();
+			//在ActivityGroup添加子Activity
 			_fContainerLinearLayout.addView(getLocalActivityManager().startActivity(
 					_fSpinnerStrings[position],
-					new Intent(SpinnersActivityGroup.this, _fSpinnersClasses[position])
+					new Intent(LotterySpinnersActivityGroup.this, _fSpinnersClasses[position])
 							.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)).getDecorView());
 		}
 

@@ -13,8 +13,8 @@ public class DoubleBallCourageSelectViewPagerActivity extends LotteryViewPagerAc
 
 	@Override
 	protected void setShowLayoutIds() {
-		_fShowLayoutIds = new int[] { R.layout.doubleball_courageselect_normal_activity,
-				R.layout.doubleball_courageselect_loss_activity };
+		_fShowLayoutIds = new int[] { R.layout.doubleball_courageselect_normal_page,
+				R.layout.doubleball_courageselect_loss_page };
 	}
 
 	@Override

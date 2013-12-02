@@ -4,6 +4,7 @@ import com.ruyicai.android.R;
 import com.ruyicai.android.controller.activity.home.buylotteryhall.LotterySwitchTabsActivityGroup;
 import com.ruyicai.android.controller.activity.home.buylotteryhall.LotteryViewPagerActivity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -191,14 +192,20 @@ public class SelectNumberBall extends LinearLayout {
 			// 根据小球是否被选中，改变小球的号码的颜色
 			changeSelectBallTextColor(isChecked);
 
+			
+			// TODO
+			// 因为在江西11选5等彩种，父Activity不一定是LotterySwitchTabsActivityGroup，暂时做一个类型判断处理，等以后看看能不能使用接口统一类型
 			// 当小球状态发生变化的时候，更新当前选择的投注信息
-			((LotterySwitchTabsActivityGroup) ((LotteryViewPagerActivity) _fContext).getParent())
-					.updateNowBettingInfoShow();
+			Activity parentActivity = ((LotteryViewPagerActivity) _fContext).getParent();
+			if (parentActivity instanceof LotterySwitchTabsActivityGroup) {
+				((LotterySwitchTabsActivityGroup) parentActivity).updateNowBettingInfoShow();
+			}
+
 		}
 
 		/**
 		 * 改变小球的号码的颜色
-		 *
+		 * 
 		 * @param isChecked
 		 *            小球是否被选中
 		 */

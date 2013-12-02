@@ -5,7 +5,7 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 
 import com.ruyicai.android.R;
-import com.ruyicai.android.controller.activity.home.buylotteryhall.SpinnersActivityGroup;
+import com.ruyicai.android.controller.activity.home.buylotteryhall.LotterySpinnersActivityGroup;
 
 /**
  * 广东快乐十分选号页面组
@@ -13,7 +13,7 @@ import com.ruyicai.android.controller.activity.home.buylotteryhall.SpinnersActiv
  * @author xiang_000
  * @since RYC1.0 2013-4-5
  */
-public class GuangDongHappyVerySpinnersActivityGroup extends SpinnersActivityGroup {
+public class GuangDongHappyVerySpinnersActivityGroup extends LotterySpinnersActivityGroup {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,11 @@ public class GuangDongHappyVerySpinnersActivityGroup extends SpinnersActivityGro
 				GuangDongHappyVerySelectThreeBeforDirectly.class,
 				GuangDongHappyVerySelectTwoLinkGroup.class,
 				GuangDongHappyVerySelectThreeBeforGroupActivity.class };
+	}
+
+	@Override
+	protected void set_fSpinnerItems() {
+		
 	}
 
 }

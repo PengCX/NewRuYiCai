@@ -117,7 +117,7 @@
             android:name=".controller.activity.home.buylotteryhall.welfare3d.Welfare3DGroupSixActivity"
             android:screenOrientation="portrait" >
         </activity>
-        <!-- 江西11选5选号页面组-->
+        <!-- 江西11选5选号页面组 -->
         <activity
             android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveSpinnersActivityGroup"
             android:screenOrientation="portrait" >
@@ -125,37 +125,49 @@
         <!-- 江西11选5任选二选号页面 -->
 
         <activity
-            android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalTwoActivity"
+            android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalTwoRadioActivityGroup"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 江西11选5任选二自选选号页面 -->
+
+        <activity
+            android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalTwoSelfSelectViewPagerActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 江西11选5任选二胆拖选号页面 -->
+
+        <activity
+            android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalTwoCourageSelectViewPagerActivity"
             android:screenOrientation="portrait" >
         </activity>
         <!-- 江西11选5任选三选号页面 -->
         <activity
-            android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalThreeActivity"
+            android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalThreeRadioActivityGroup"
             android:screenOrientation="portrait" >
         </activity>
         <!-- 江西11选5任选四选号页面 -->
         <activity
-            android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalFourActivity"
+            android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalFourRadioActivityGroup"
             android:screenOrientation="portrait" >
         </activity>
         <!-- 江西11选5任选五选号页面 -->
         <activity
-            android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalFiveActivity"
+            android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalFiveRadioActivityGroup"
             android:screenOrientation="portrait" >
         </activity>
         <!-- 江西11选5任选六选号页面 -->
         <activity
-            android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalSixActivity"
+            android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalSixRadioActivityGroup"
             android:screenOrientation="portrait" >
         </activity>
         <!-- 江西11选5任选七选号页面 -->
         <activity
-            android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalSevenActivity"
+            android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalServenRadioActivityGroup"
             android:screenOrientation="portrait" >
         </activity>
         <!-- 江西11选5任选八选号页面 -->
         <activity
-            android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalEightActivity"
+            android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalEightRadioActivityGroup"
             android:screenOrientation="portrait" >
         </activity>
         <!-- 江西11选5前一直选选号页面 -->
@@ -225,7 +237,7 @@
             android:name="com.ruyicai.android.controller.activity.home.buylotteryhall.compete.football.CompeteFootballActivity"
             android:screenOrientation="portrait" >
         </activity>
-        <!-- 广东快乐十分选号页面组-->
+        <!-- 广东快乐十分选号页面组 -->
         <activity
             android:name=".controller.activity.home.buylotteryhall.happyevery.GuangDongHappyVerySpinnersActivityGroup"
             android:screenOrientation="portrait" >
