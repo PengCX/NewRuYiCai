@@ -38,6 +38,8 @@ public abstract class LotteryViewPagerActivity extends RoboActivity {
 
 	/** 选号页面中选号面板对象集合:一个页面的面板放在一个List集合中，故声明了List<List<E>>类型 */
 	protected List<List<SelectNumberPanel>> _fSelectNumberPanelList;
+	/**滑动页面视图集合*/
+	protected List<View> _fViewPagerViewList;
 
 	/**
 	 * 设置显示的布局资源id数组
@@ -87,8 +89,8 @@ public abstract class LotteryViewPagerActivity extends RoboActivity {
 
 		setSelectNumberPanelIds();
 
-		List<View> viewPagerViewList = getViewPagerViewListAndSelectPanels();
-		setViewPagerAdapter(viewPagerViewList);
+		_fViewPagerViewList = getViewPagerViewListAndSelectPanels();
+		setViewPagerAdapter(_fViewPagerViewList);
 	}
 
 	/**

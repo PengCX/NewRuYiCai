@@ -4,25 +4,17 @@ import com.ruyicai.android.controller.activity.home.buylotteryhall.LotteryRadioG
 
 /**
  * 江西11选5任选七选号页面： 1.实现玩法介绍的设置
- *
+ * 
  * @author xiang_000
  * @since RYC1.0 2013-5-2
  */
-public class JiangXiElevenSelectFiveOptionalServenRadioActivityGroup extends LotteryRadioGroupActivityGroup {
+public class JiangXiElevenSelectFiveOptionalServenRadioActivityGroup extends
+		LotteryRadioGroupActivityGroup {
 
 	@Override
 	protected void set_fRadioButtonsClasses() {
-		
+		_fRadioButtonsClasses = new Class<?>[] {
+				JiangXiElevenSelectFiveOptionalServenSelfSelectViewPagerActivity.class,
+				JiangXiElevenSelectFiveOptionalServenCourageSelectViewPagerActivity.class };
 	}
-
-	@Override
-	protected void set_fRadioButtonsIds() {
-		
-	}
-
-	@Override
-	protected void set_fRadioButtonsStringIds() {
-		
-	}
-
 }

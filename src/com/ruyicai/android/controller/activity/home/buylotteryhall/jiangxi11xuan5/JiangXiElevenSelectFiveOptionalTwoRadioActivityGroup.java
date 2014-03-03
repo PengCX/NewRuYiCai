@@ -1,7 +1,6 @@
 package com.ruyicai.android.controller.activity.home.buylotteryhall.jiangxi11xuan5;
 
 
-import com.ruyicai.android.R;
 import com.ruyicai.android.controller.activity.home.buylotteryhall.LotteryRadioGroupActivityGroup;
 
 /**
@@ -16,14 +15,7 @@ public class JiangXiElevenSelectFiveOptionalTwoRadioActivityGroup extends
 	@Override
 	protected void set_fRadioButtonsClasses() {
 		_fRadioButtonsClasses = new Class<?>[] {
-				JiangXiElevenSelectFiveOptionalSelfSelectViewPagerActivity.class,
+				JiangXiElevenSelectFiveOptionalTwoSelfSelectViewPagerActivity.class,
 				JiangXiElevenSelectFiveOptionalTwoCourageSelectViewPagerActivity.class };
 	}
-
-	@Override
-	protected void set_fRadioButtonsStringIds() {
-		_fRadioButtonsStringIds = new int[] { R.string.jiangxi11xuan5_radiobutton_selfselect,
-				R.string.jiangxi11xuan5_radiobutton_courageselect };
-	}
-
 }

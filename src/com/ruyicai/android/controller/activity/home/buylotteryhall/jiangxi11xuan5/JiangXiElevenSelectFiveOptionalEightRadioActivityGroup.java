@@ -12,17 +12,8 @@ public class JiangXiElevenSelectFiveOptionalEightRadioActivityGroup extends Lott
 
 	@Override
 	protected void set_fRadioButtonsClasses() {
-		
-	}
-
-	@Override
-	protected void set_fRadioButtonsIds() {
-		
-	}
-
-	@Override
-	protected void set_fRadioButtonsStringIds() {
-		
-	}
-	
+		_fRadioButtonsClasses = new Class<?>[] {
+				JiangXiElevenSelectFiveOptionalEightSelfSelectViewPagerActivity.class,
+				JiangXiElevenSelectFiveOptionalEightCourageSelectViewPagerActivity.class };
+	}	
 }

@@ -10,7 +10,7 @@ public class DoubleBallBettingInfo extends NumberBettingInfo
 {
 	{
 		_fFirstNumberNum = 6;
-		_fSecoundNumberNum = 2;
+		_fSecoundNumberNum = 1;
 		_fFirstNumberName = "红";
 		_fSecoundNumberName = "蓝";
 	}

@@ -219,9 +219,9 @@ public abstract class CompeteActivity extends BaseActivity implements CompeteBar
 			groupTitle.setTextSize(15.0f);
 			groupTitle.setPadding(10, 0, 0, 0);
 			if (isExpanded) {
-				groupTitle.setBackgroundResource(R.drawable.compete_grouptitle_down);
+				groupTitle.setBackgroundResource(R.drawable.expandablelistview_grouptitle_down);
 			} else {
-				groupTitle.setBackgroundResource(R.drawable.compete_grouptitle_up);
+				groupTitle.setBackgroundResource(R.drawable.expandablelistview_grouptitle_up);
 			}
 			groupTitle.setText((CharSequence) getGroup(groupPosition));
 			return groupTitle;

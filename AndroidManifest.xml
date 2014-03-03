@@ -122,10 +122,15 @@
             android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveSpinnersActivityGroup"
             android:screenOrientation="portrait" >
         </activity>
-        <!-- 江西11选5任选二选号页面 -->
+        <!-- 江西11选5任选二选号页面组 -->
 
         <activity
             android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalTwoRadioActivityGroup"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 江西11选5任选选号页面抽象类 -->
+        <activity
+            android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalSelfSelectViewPagerActivity"
             android:screenOrientation="portrait" >
         </activity>
         <!-- 江西11选5任选二自选选号页面 -->
@@ -140,29 +145,87 @@
             android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalTwoCourageSelectViewPagerActivity"
             android:screenOrientation="portrait" >
         </activity>
-        <!-- 江西11选5任选三选号页面 -->
+        <!-- 江西11选5任选三选号页面组 -->
         <activity
             android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalThreeRadioActivityGroup"
             android:screenOrientation="portrait" >
         </activity>
-        <!-- 江西11选5任选四选号页面 -->
+        <!-- 江西11选5任选三自选选号页面 -->
+
+        <activity
+            android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalThreeSelfSelectViewPagerActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 江西11选5任选三胆拖选号页面 -->
+
+        <activity
+            android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalThreeCourageSelectViewPagerActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 江西11选5任选四选号页面组 -->
         <activity
             android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalFourRadioActivityGroup"
             android:screenOrientation="portrait" >
         </activity>
-        <!-- 江西11选5任选五选号页面 -->
+        <!-- 江西11选5任选四自选选号页面 -->
+
+        <activity
+            android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalFourSelfSelectViewPagerActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 江西11选5任选四胆拖选号页面 -->
+
+        <activity
+            android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalFourCourageSelectViewPagerActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 江西11选5任选五选号页面组 -->
         <activity
             android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalFiveRadioActivityGroup"
             android:screenOrientation="portrait" >
         </activity>
-        <!-- 江西11选5任选六选号页面 -->
+           <!-- 江西11选5任选五自选选号页面 -->
+
+        <activity
+            android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalFiveSelfSelectViewPagerActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 江西11选5任选五胆拖选号页面 -->
+
+        <activity
+            android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalFiveCourageSelectViewPagerActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 江西11选5任选六选号页面组 -->
         <activity
             android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalSixRadioActivityGroup"
             android:screenOrientation="portrait" >
         </activity>
-        <!-- 江西11选5任选七选号页面 -->
+        <!-- 江西11选5任选六自选选号页面 -->
+        <activity
+            android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalSixSelfSelectViewPagerActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 江西11选5任选六胆拖选号页面 -->
+
+        <activity
+            android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalSixCourageSelectViewPagerActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 江西11选5任选七选号页面组 -->
         <activity
             android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalServenRadioActivityGroup"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 江西11选5任选七自选选号页面 -->
+        <activity
+            android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalServenSelfSelectViewPagerActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 江西11选5任选七胆拖选号页面 -->
+
+        <activity
+            android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalServenCourageSelectViewPagerActivity"
             android:screenOrientation="portrait" >
         </activity>
         <!-- 江西11选5任选八选号页面 -->
@@ -170,6 +233,17 @@
             android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalEightRadioActivityGroup"
             android:screenOrientation="portrait" >
         </activity>
+        <!-- 江西11选5任选八自选选号页面 -->
+        <activity
+            android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalEightSelfSelectViewPagerActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 江西11选5任选八胆拖选号页面 -->
+        <activity
+            android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveOptionalEightCourageSelectViewPagerActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
         <!-- 江西11选5前一直选选号页面 -->
         <activity
             android:name=".controller.activity.home.buylotteryhall.jiangxi11xuan5.JiangXiElevenSelectFiveBeforOneSelfSelectActivity"

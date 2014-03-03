@@ -2,7 +2,6 @@ package com.ruyicai.android.controller.activity.home.buylotteryhall;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.LinearLayout;
@@ -37,10 +36,6 @@ public abstract class LotteryRadioGroupActivityGroup extends RoboActivityGroup {
 	 * 设置单选按钮切换类数组
 	 */
 	protected abstract void set_fRadioButtonsClasses();
-	/**
-	 * 设置单选按钮的按钮字符串id数组
-	 */
-	protected abstract void set_fRadioButtonsStringIds();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -63,9 +58,17 @@ public abstract class LotteryRadioGroupActivityGroup extends RoboActivityGroup {
 	}
 	
 	/**
+	 * 设置单选按钮的按钮字符串id数组
+	 */
+	private void set_fRadioButtonsStringIds() {
+		_fRadioButtonsStringIds = new int[] { R.string.jiangxi11xuan5_radiobutton_selfselect,
+				R.string.jiangxi11xuan5_radiobutton_courageselect };
+	}
+	
+	/**
 	 * 设置单选按钮的按钮id数组
 	 */
-	protected void set_fRadioButtonsIds() {
+	private void set_fRadioButtonsIds() {
 		_fRadioButtonsIds = new int[] { R.id.lottery_optionselect_selfselect_radiobutton,
 				R.id.lottery_optionselect_courageselect_radiobutton };
 	}

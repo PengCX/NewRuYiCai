@@ -17,7 +17,7 @@
             android:id="@+id/jiangxi11xuan5_selfselect_loss_textview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/black" />
+            android:textColor="@color/red" />
         <!-- 选号面板 -->
 
         <com.ruyicai.android.controller.compontent.panel.SelectNumberPanel

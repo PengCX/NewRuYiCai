@@ -8,14 +8,4 @@ public class GuangDongElevenSelectFiveOptionalTwoActivity extends LotteryRadioGr
 	protected void set_fRadioButtonsClasses() {
 		
 	}
-
-	@Override
-	protected void set_fRadioButtonsIds() {
-		
-	}
-
-	@Override
-	protected void set_fRadioButtonsStringIds() {
-		
-	}
 }

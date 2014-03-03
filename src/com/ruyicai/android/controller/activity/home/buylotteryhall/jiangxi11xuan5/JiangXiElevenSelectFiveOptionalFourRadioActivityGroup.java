@@ -12,17 +12,8 @@ public class JiangXiElevenSelectFiveOptionalFourRadioActivityGroup extends Lotte
 
 	@Override
 	protected void set_fRadioButtonsClasses() {
-		
+		_fRadioButtonsClasses = new Class<?>[] {
+				JiangXiElevenSelectFiveOptionalFourSelfSelectViewPagerActivity.class,
+				JiangXiElevenSelectFiveOptionalFourCourageSelectViewPagerActivity.class };
 	}
-
-	@Override
-	protected void set_fRadioButtonsIds() {
-		
-	}
-
-	@Override
-	protected void set_fRadioButtonsStringIds() {
-		
-	}
-	
 }

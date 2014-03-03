@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/jiangxi11xuan5_textview_courageselect_optionaltwopalymethod"
-            android:textColor="@color/black" />
+            android:textColor="@color/red" />
         <!-- 胆码面板 -->
 
         <com.ruyicai.android.controller.compontent.panel.SelectNumberPanel

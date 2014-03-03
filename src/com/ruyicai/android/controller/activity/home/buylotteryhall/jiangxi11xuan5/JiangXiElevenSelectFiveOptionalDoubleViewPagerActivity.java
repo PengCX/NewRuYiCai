@@ -1,12 +1,11 @@
 package com.ruyicai.android.controller.activity.home.buylotteryhall.jiangxi11xuan5;
 
-import android.os.Bundle;
 import android.widget.TextView;
 
 import com.ruyicai.android.R;
 import com.ruyicai.android.controller.activity.home.buylotteryhall.LotteryViewPagerActivity;
 
-public abstract class JiangXiElevenSelectFiveOptionalSelfSelectViewPagerActivity extends
+public abstract class JiangXiElevenSelectFiveOptionalDoubleViewPagerActivity extends
 		LotteryViewPagerActivity {
 	/**普通页面玩法文本框*/
 	protected TextView _fNormalPlayMethodTextView;
@@ -16,15 +15,25 @@ public abstract class JiangXiElevenSelectFiveOptionalSelfSelectViewPagerActivity
 	/**
 	 * 设置玩法文本框的文本
 	 */
-	protected abstract void setPlayMethodTextViewText();
+	protected abstract String setPlayMethodTextViewText();
 	
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		_fNormalPlayMethodTextView = (TextView) findViewById(R.id.jiangxi11xuan5_selfselect_normal_textview);
-		_fLossPlayMethodTextView = (TextView) findViewById(R.id.jiangxi11xuan5_selfselect_loss_textview);
-		
-		setPlayMethodTextViewText();
+	protected void onStart() {
+		super.onStart();
+		initPlayMethodStringShow();
+	}
+
+	/**
+	 * 初始化玩法字符串的显示
+	 */
+	private void initPlayMethodStringShow() {
+		_fNormalPlayMethodTextView = (TextView) _fViewPagerViewList.get(0).findViewById(
+				R.id.jiangxi11xuan5_selfselect_normal_textview);
+		_fLossPlayMethodTextView = (TextView) _fViewPagerViewList.get(1).findViewById(
+				R.id.jiangxi11xuan5_selfselect_loss_textview);
+		String playMethodString = setPlayMethodTextViewText();
+		_fNormalPlayMethodTextView.setText(playMethodString);
+		_fLossPlayMethodTextView.setText(playMethodString);
 	}
 	
 	@Override
